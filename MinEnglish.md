@@ -1,261 +1,300 @@
-# MinEnglish — MinEnglish (v1.8)
+# MinEnglish Language Specification (v2.0)
 
 > _Uat u spic is uat u spel._
 
-**Author:** Dan Micsa, PhD **License:** MIT (see bottom of document)
-**Version:** 1.8 — March 2026 (Proper Nouns & Mathematics Edition)
+**Author:** Dan Micsa, PhD **License:** MIT (see Appendix) **Version:** 2.0 —
+March 2026 (Academic Protocol Revision)
 
 ---
 
-## 1. Philosophy
+## 1. Design Principles and Underlying Rationale
 
-The MinEnglish language is an engineered communication protocol designed for
-humans. It strips away historical baggage, redundancies, and irregularities
-inherited from natural language evolution, optimizing for maximum expression
-with minimal transmission cost.
+The MinEnglish language is a formal communication protocol engineered to
+maximize Shannon information density while minimizing cognitive load and parser
+ambiguity. By systematically eliminating morphological irregularities and
+orthographic redundancies inherent in natural languages, MinEnglish achieves
+high computational consistency.
 
-| Principle           | How It Works                                                                                     |
-| ------------------- | ------------------------------------------------------------------------------------------------ |
-| **Phonetic**        | 1-to-1 spelling ↔ pronunciation. No silent letters, no exceptions.                               |
-| **Compact**         | No plurals, no verb conjugation, no cases, no articles. Relies on prefixes instead.              |
-| **Keyboard-native** | Built around an unmodified US keyboard. No diacritics. Letters q, w, y are eliminated.           |
-| **Operator-rich**   | Mathematical symbols like `*`, `~`, `>`, `<`, `:` are integrated as first-class grammar parts.   |
-| **Regular**         | Zero irregular forms. Every rule applies 100% of the time, dramatically lowering learning curve. |
+| Principle                   | Rationale and Implementation                                                                                                                                                          |
+| :-------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Phonetic Isomorphism**    | 1-to-1 grapheme-phoneme correspondence eliminates the cognitive overhead of orthographic memorization and provides predictable tokenization for machine parsers.                      |
+| **Morphological Parsimony** | Pluralization, verb conjugation, and declension are replaced by explicit numerical and temporal prefixes, removing ambiguity in morphological boundaries.                             |
+| **ASCII Strictness**        | Operates exclusively within the standard US keyboard namespace without diacritics. The letters _q_, _w_, and _y_ are omitted to balance acoustic distinctness with key space economy. |
+| **Operator Integration**    | Mathematical symbols (`*`, `~`, `>`, `<`, `:`) function as first-class syntactic tokens, compressing complex semantic modifiers into single-byte representations.                     |
+| **Absolute Regularity**     | A zero-exception framework guarantees that programmatic rules apply universally, ensuring high predictability for human acquisition and natural language processing models.           |
 
 ---
 
-## 2. Phonetic System
+## 2. Phonology and Orthography
 
 ### 2.1 Vowels
 
-| Letter | Sound | Like English… | Example |
-| ------ | ----- | ------------- | ------- |
-| **a**  | /æ/   | c**a**t       | cat     |
-| **e**  | /ɛ/   | b**e**d       | bed     |
-| **i**  | /ɪ/   | b**i**t       | bit     |
-| **o**  | /ɒ/   | h**o**t       | hot     |
-| **u**  | /ʌ/   | b**u**t       | but     |
+To ensure acoustic discernibility across diverse linguistic backgrounds, the
+vowel space is constrained to five cardinal points:
 
-### 2.2 Long Vowels & Diphthongs
+| Grapheme | Phoneme | English Equivalent | Example |
+| :------- | :------ | :----------------- | :------ |
+| **a**    | /æ/     | c**a**t            | cat     |
+| **e**    | /ɛ/     | b**e**d            | bed     |
+| **i**    | /ɪ/     | b**i**t            | bit     |
+| **o**    | /ɒ/     | h**o**t            | hot     |
+| **u**    | /ʌ/     | b**u**t            | but     |
 
-| Spelling | Sound | Like English…      | Example   |
-| -------- | ----- | ------------------ | --------- |
-| **ei**   | /eɪ/  | d**ay**, m**a**ke  | dei, meic |
-| **ii**   | /iː/  | s**ee**, **ea**t   | sii, iit  |
-| **ai**   | /aɪ/  | l**i**ke, m**y**   | laic, mai |
-| **ou**   | /oʊ/  | g**o**, n**o**     | gou, nou  |
-| **uu**   | /uː/  | f**oo**d, t**oo**  | fuud, tuu |
-| **au**   | /aʊ/  | h**ow**, h**ou**se | hau, haus |
-| **oi**   | /ɔɪ/  | b**oy**            | boi       |
-| **ar**   | /ɑːr/ | c**ar**            | car       |
-| **or**   | /ɔːr/ | f**or**            | for       |
-| **er**   | /ɜːr/ | h**er**, b**ir**d  | her, berd |
+### 2.2 Long Vowels and Diphthongs
+
+Diphthongs and elongated vowels are encoded as contiguous grapheme pairs,
+preserving the 1-to-1 spelling mapping without requiring macron diacritics.
+
+| Grapheme | Phoneme | English Equivalent | Example   |
+| :------- | :------ | :----------------- | :-------- |
+| **ei**   | /eɪ/    | d**ay**, m**a**ke  | dei, meic |
+| **ii**   | /iː/    | s**ee**, **ea**t   | sii, iit  |
+| **ai**   | /aɪ/    | l**i**ke, m**y**   | laic, mai |
+| **ou**   | /oʊ/    | g**o**, n**o**     | gou, nou  |
+| **uu**   | /uː/    | f**oo**d, t**oo**  | fuud, tuu |
+| **au**   | /aʊ/    | h**ow**, h**ou**se | hau, haus |
+| **oi**   | /ɔɪ/    | b**oy**            | boi       |
+| **ar**   | /ɑːr/   | c**ar**            | car       |
+| **or**   | /ɔːr/   | f**or**            | for       |
+| **er**   | /ɜːr/   | h**er**, b**ir**d  | her, berd |
 
 ### 2.3 Consonants
 
-| Letter | Sound      | Rule                                                | Example                               |
-| ------ | ---------- | --------------------------------------------------- | ------------------------------------- |
-| **c**  | /k/        | soft k (unaspirated)                                | cat, cum, cup, bac                    |
-| **k**  | /kʰ/       | hard k (aspirated, "hear the h")                    | king, kiip, kic                       |
-| **ci** | /tʃ/       | like Italian ci. _Word-finally, the 'i' is silent._ | ciald, cier, muci (pronounced "much") |
-| **u**  | /w/        | replaces w (semivowel)                              | uoter, uid                            |
-| **i**  | /j/        | replaces y (semivowel)                              | ies, iir                              |
-| **t**  | /t/ or /θ/ | replaces also voiceless th                          | tinc, trii                            |
-| **d**  | /d/ or /ð/ | replaces also voiced th                             | de, dat                               |
+Consonantal mappings prioritize acoustic clarity while resolving historical
+orthographic collisions (such as the hard/soft _c_ boundary).
 
-> **k vs c:** Feel a puff of air? Use **k**. Otherwise **c**. After **s**,
-> always **c** (scan, scip, scuul).
+| Grapheme | Phoneme    | Application Rule                                                                   | Example            |
+| :------- | :--------- | :--------------------------------------------------------------------------------- | :----------------- |
+| **c**    | /k/        | Soft, unaspirated velar plosive.                                                   | cat, cum, cup, bac |
+| **k**    | /kʰ/       | Hard, aspirated velar plosive.                                                     | king, kiip, kic    |
+| **ci**   | /tʃ/       | Voiceless palato-alveolar affricate. The _i_ is phonetically null when word-final. | ciald, cier, muci  |
+| **u**    | /w/        | Semivowel substitution for _w_.                                                    | uoter, uid         |
+| **i**    | /j/        | Semivowel substitution for _y_.                                                    | ies, iir           |
+| **t**    | /t/ or /θ/ | Alveolar plosive; assumes the voiceless dental fricative locally.                  | tinc, trii         |
+| **d**    | /d/ or /ð/ | Alveolar plosive; assumes the voiced dental fricative locally.                     | de, dat            |
 
-### 2.3.1 Lexical Stress Marker `'`
+> **Aspiration Differentiation (`k` vs `c`):** The aspirated /kʰ/ is strictly
+> represented by `k`, whereas the unaspirated variant uses `c`. Following
+> sibilants (e.g., /s/), where aspiration naturally diminishes, `c` is mandated
+> (e.g., _scan_, _scip_).
 
-Because MinEnglish removes double consonant cues (e.g., `leter` for letter) and
-silent vowels, reading stress can be ambiguous for parsers. Use `'` before the
-stressed vowel in multi-syllable words when teaching or defining dictionary
-terms.
+### 2.3.1 Lexical Prosody Marker (`'`)
 
-- `ecsp'ensiv` (Stress the E)
-- `iuniv'ersiti` (Stress the E)
-- `compi'uuter` (Stress the U)
+Because MinEnglish eliminates the redundant double consonants and silent
+terminal vowels often used as prosodic cues in natural English, lexical stress
+can become ambiguous for computational parsers. The apostrophe (`'`) is
+instituted as an optional prosody marker, to be affixed immediately preceding
+the stressed vowel in pedagogy or lexicography.
+
+- `ecsp'ensiv` (Stress alignment on the initial _e_)
+- `iuniv'ersiti` (Stress alignment on the medial _e_)
+- `compi'uuter` (Stress alignment on the first _u_)
 
 ### 2.4 Digraphs
 
-| Digraph | Sound | Example         |
-| ------- | ----- | --------------- |
-| **sh**  | /ʃ/   | ship → ship     |
-| **ng**  | /ŋ/   | song → song     |
-| **zh**  | /ʒ/   | vision → vizhun |
+| Digraph | Phoneme | Example         |
+| :------ | :------ | :-------------- |
+| **sh**  | /ʃ/     | ship → ship     |
+| **ng**  | /ŋ/     | song → song     |
+| **zh**  | /ʒ/     | vision → vizhun |
 
-> `ch` digraph not used. /tʃ/ is written as `ci` (or `ci` + vowel at
-> start/middle, silent at end).
+> Note: The standard English _ch_ (/tʃ/) is not utilized. It is strictly encoded
+> as `ci` to maintain morphemic consistency.
 
-### 2.5 Spelling Cleanup Rules
+### 2.5 Orthographic Normalization Constraints
 
-| English pattern                    | MinEnglish            | Example               |
-| ---------------------------------- | --------------------- | --------------------- |
-| silent **e**, **k**, **g**, **gh** | removed               | meic, nou, noum, nait |
-| **gh** or **ph** = /f/             | **f**                 | laf, foun             |
-| **ck**                             | **c** or **k**        | bac, kic              |
-| **x**                              | **cs**                | bocs, necst           |
-| **-tion** / **-sion**              | **-shun** / **-zhun** | neishun, vizhun       |
-| **-tch**                           | **-ci**               | maci, caci            |
-| double consonants                  | single                | leter, hapi           |
-| **c** (soft, /s/)                  | **s**                 | sel, siti             |
+To enforce the phonetic isomorphism principle, historical orthographic artifacts
+must be algorithmically stripped.
+
+| Historical Pattern                 | MinEnglish Normalization                 | Example               |
+| :--------------------------------- | :--------------------------------------- | :-------------------- |
+| Silent **e**, **k**, **g**, **gh** | Nullified                                | meic, nou, noum, nait |
+| **gh** or **ph** rendered as /f/   | Regressive substitution to **f**         | laf, foun             |
+| **ck** cluster                     | Resolved to **c** or **k** by aspiration | bac, kic              |
+| **x** cluster                      | Decomposed to **cs**                     | bocs, necst           |
+| **-tion** / **-sion**              | Phoneticized to **-shun** / **-zhun**    | neishun, vizhun       |
+| **-tch**                           | Phoneticized to **-ci**                  | maci, caci            |
+| Double consonants                  | Replaced with unitary equivalents        | leter, hapi           |
+| Soft **c** (/s/)                   | Regressive substitution to **s**         | sel, siti             |
 
 ---
 
-## 3. Grammar
+## 3. Morphology and Syntax
 
-> **Core principle: No word ever changes form.** The same word always looks the
-> same regardless of context. All grammatical nuance is handled by standardized
-> prefixes and rigid word order.
+> **Core Constraint: Morphological Invariance.** Lexical items never undergo
+> morphological derivation or inflection. Grammatical relationships are managed
+> exclusively through standardized operators and rigid syntactic ordering.
 
-### 3.1 Nouns — Number Prefix
+### 3.1 Nouns and Quantitative Prefixes
 
-Every noun is prefixed with its quantity. **No plural forms exist.**
+To eliminate the biological error-amplifier of plural suffixes (where the loss
+of a terminal sibilant in a noisy channel alters the mathematical quantity of a
+sentence), MinEnglish mandates explicit numerical prefixing. **Morphological
+plurals are abolished.**
 
-| Prefix | Meaning                    | Example                   |
-| ------ | -------------------------- | ------------------------- |
-| `1`    | one                        | `1cat` = a/one cat        |
-| `3`    | three                      | `3cat` = three cats       |
-| `*`    | any / all / many / generic | `*cat` = cats in general  |
-| `~5`   | approximately five         | `~5cat` = about five cats |
-| `0`    | none / no                  | `0cat` = no cats          |
+| Prefix | Semantic Value          | Example                           |
+| :----- | :---------------------- | :-------------------------------- |
+| `1`    | Unitary / Singular      | `1cat` (a cat)                    |
+| `3`    | Exact enumeration       | `3cat` (three cats)               |
+| `*`    | Universal / Generic set | `*cat` (cats, across all domains) |
+| `~5`   | Approximate enumeration | `~5cat` (approximately five cats) |
+| `0`    | Null set                | `0cat` (zero cats)                |
 
-> **No articles.** `1` replaces "a/an", context or demonstratives replace "the".
+> **Absence of Articles:** The quantitative operator `1` functionally replaces
+> the indefinite article. Definiteness is established contextually or via
+> demonstrative pronouns.
 
 ### 3.1.1 The Literalization Operator (`_`)
 
-To prevent the inevitable lexical drift where cultural compounds fuse into
-indivisible concepts (e.g. `haus-fuud` becoming the atomic word for "grocery
-store"), MinEnglish introduces the Literalization Operator `_`. **Rule:**
-Hyphens denote unified cultural concepts. Underscores force the listener to
-parse the exact, atomic meaning of the roots.
+Natural languages inevitably undergo semantic drift, where compound nouns fuse
+into monolithic lexical items separated from their root meanings
+(lexicalization). To arrest this process, the Literalization Operator (`_`) is
+introduced.
 
-- `haus-fuud` = grocery store (The cultural concept)
-- `haus_fuud` = a house literally constructed out of food (Gingerbread house)
+**Rule:** Hyphens (`-`) denote conceptual, culturally unified compounds.
+Underscores (`_`) suspend conceptual abstraction, forcing the parser to compute
+the strict compositional meaning of the roots.
 
-### 3.1.2 The "Raw Number" Rule
+- `haus-fuud` = The cultural concept of a house for food (restaurant/grocery
+  store).
+- `haus_fuud` = The literal physical architecture constructed from food (a
+  gingerbread house).
 
-Numbers above 99 should default to being read as a pure string of digits for
-maximum efficiency.
+### 3.1.2 Numerical Processing Efficiency
 
-- `3456` = `trii for faiv sics` (very fast)
+To minimize phonological bandwidth, integers exceeding 99 bypass categorical
+naming structures and are processed as pure digit strings.
+
+- `3456` = `trii for faiv sics`
 - `2026` = `tuu ziro tuu sics`
 
-### 3.1.3 Proper Nouns (Native Spelling)
+### 3.1.3 Proper Noun Encapsulation
 
-Because MinEnglish is strictly phonetic, translating proper names globally
-(e.g., _Isabella_) leads to endless variations and destroys searchability.
-**Rule:** Proper Nouns (names of specific people, places, or brands) retain
-their **original native spelling and capitalization**. The capital letter
-explicitly flags to the reader/parser that the phonetic rules of MinEnglish are
-temporarily suspended.
+Phonetic normalization of global proper nouns creates destructive variations
+that impair search retrieval and semantic persistence.
 
-- `1person Isabella` (A person named Isabella, not `izubelu`)
-- `1cuntri France` (The country France, not `frans`)
+**Rule:** Proper Nouns (specific entities, geographical locations, nominal
+brands) retain their canonical native orthography. First-letter capitalization
+acts as an escape character, signaling to the parser that local phonetic rules
+are suspended for the duration of the token.
 
-### 3.1.4 Fractions and Decimals
+- `1person Isabella` (Denotes the individual Isabella; phonetically preserved).
+- `1cuntri France` (Denotes the sovereign state of France).
 
-MinEnglish formalizes the `/` (slais) and `.` (point) operators for spoken math.
+### 3.1.4 Fractional and Decimal Operators
 
-- **Fractions:** `1/2` (uan slais tuu) = One half. `3/4apel` (otri slais for
-  apel) = Three quarters of an apple.
+Spoken mathematics is standardized via the `/` (slais) and `.` (point)
+operators, providing a syntactically uniform method for subdividing physical
+objects or abstract metrics.
+
+- **Fractions:** `1/2` (uan slais tuu) = One-half. `3/4apel` (trii slais for for
+  apel) = Three-quarters of an apple.
 - **Decimals:** `0.5` (ziro point faiv). `99.9` (nain nain point nain).
 
-### 3.2 Verbs — Time & Duration Prefix
+### 3.2 Verbs — Temporal Mechanics
 
-**No prefix = present (default).**
+Irregular conjugations are functionally inefficient. MinEnglish regulates time
+processing via temporal prefixing that targets an absolute mathematical
+timeline. A verb absent a modifier defaults to the continuous present.
 
-| Prefix       | Meaning                           | Example                            |
-| ------------ | --------------------------------- | ---------------------------------- |
-| _(none)_     | present (default)                 | `iit` = eat / eating               |
-| `1`          | present/definite (for attachment) | `i1iit` = I eat (attached form)    |
-| `*`          | any / all / habitually            | `*iit` = eat (in general/always)   |
-| `-0s`        | point in past (just now)          | `-0s sii` = just saw               |
-| `-1d`        | point in past (yesterday)         | `-1d iit` = ate yesterday          |
-| `:5Y`        | **duration** (for X time)         | `:5Y studi` = studying for 5 years |
-| `+1d`        | in future (tomorrow)              | `+1d gou` = will go tomorrow       |
-| `2026-12-25` | absolute date                     | `2026-12-25 gou` = go on Dec 25    |
+| Operator     | Temporal Value                         | Example                                         |
+| :----------- | :------------------------------------- | :---------------------------------------------- |
+| _(null)_     | Present continuous (default)           | `iit` (eating)                                  |
+| `1`          | Present discrete (attachment operator) | `i1iit` (I eat)                                 |
+| `*`          | Habitual / Universal continuity        | `*iit` (eats perpetually)                       |
+| `-0s`        | Immediate past vector (zero offset)    | `-0s sii` (just perceived)                      |
+| `-1d`        | Past vector (one day offset)           | `-1d iit` (ate yesterday)                       |
+| `:5Y`        | Duration scalar (five years)           | `:5Y studi` (has studied spanning five years)   |
+| `+1d`        | Future vector (one day offset)         | `+1d gou` (will transit tomorrow)               |
+| `2026-12-25` | Absolute timestamp                     | `2026-12-25 gou` (transit scheduled for Dec 25) |
 
-> **Rule:** `+`/`-` specify a **point** in time relative to now. `:` specifies a
-> **duration** of an ongoing action.
+> **Vector vs Scalar Notation:** The `+`/`-` operators dictate points in time
+> (vectors). The `:` operator calculates the spanning duration of an ongoing
+> event (scalar).
 
 ### 3.2.1 Temporal Stacking (Complex Timelines)
 
-English manages deep time via perfect tenses ("I _had_ already eaten when she
-_arrived_"). MinEnglish flattens this by stacking time prefixes logically from
-left to right.
+Natural language manages chronological depth via "perfect" tenses, increasing
+syntactic distance between subject and action. MinEnglish resolves deep time by
+permitting left-to-right stacking of temporal operators, enabling precise
+algebraic timeline construction.
 
-- `i-0s -1d iit` = I just-now yesterday ate (I had already eaten yesterday).
-- `-1d +2h iit` = Yesterday, two hours later, I ate.
+- `i-0s -1d iit` = I just-now yesterday ate (I had already eaten by yesterday's
+  timeline).
+- `-1d +2h iit` = Yesterday, offset by +2 hours, I ate.
 
-### 3.3 Adjectives, Adverbs, and Intensity
+### 3.3 Modifiers and Scalar Intensity
 
-- **Adjectives follow the noun:** `1cat big` = a big cat
-- **Adverbs follow the verb:** `1run fast` = runs fast
-- **Comparative/Superlative:** `mor` / `most`: `1cat mor big` = a bigger cat
+- **Adjectival Ordering:** Adjectives strictly post-modify nouns (`1cat big`).
+- **Adverbial Ordering:** Adverbs post-modify verbs (`1run fast`).
+- **Comparative Mechanics:** Driven by scalar progression `mor` and `most`
+  (`1cat mor big`).
 - **Intensity Combinators (`>`, `<`):**
-  - `>big` = very big (more than big)
-  - `>>big` = extremely big
-  - `<hot` = slightly hot (less than hot)
+  - `>big` = Positive scalar intensity (very big)
+  - `>>big` = Extreme positive scalar intensity
+  - `<hot` = Negative scalar intensity (slightly hot)
 
-### 3.3.1 Universal Verbalizers (`du` / `meic`)
+### 3.3.1 Universal Predicators (`du` / `meic`)
 
-MinEnglish theoretically allows any word to act as a verb (`i1cat` = I cat?),
-which can lead to semantic garbage. When a noun isn't naturally an action, use
-`du` (do/experience) or `meic` (make/create) as the verbalizer.
+Because MinEnglish permits any token to accept an operational prefix,
+inappropriate syntactic mapping can yield semantic anomalies. The universal
+predicators `du` (experiential interaction) and `meic` (generative action) serve
+as formal verbalizers for noun-class tokens.
 
-- `i1du 1parc` = I use/experience the park (Instead of `i1parc` = I park)
-- `s-1d meic 1fuud` = She made food (Instead of `s-1d fuud` = She fooded)
+- `i1du 1parc` = I interact with the park (replaces the ambiguous `i1parc`).
+- `s-1d meic 1fuud` = She generated food (replaces the anomalous `s-1d fuud`).
 
-### 3.4 Pronouns — Single-Letter System
+### 3.4 Pronominal Indexing
 
-Pronouns are **single lowercase letters**. Plurals use the same number-prefix as
-nouns.
+Pronouns operate as highly compressed, single-character spatial indices.
+Plurality logic inherits the identical numerical prefixing system utilized by
+canonical nouns.
 
-| Singular | Meaning   | Plural example | Meaning                  |
-| -------- | --------- | -------------- | ------------------------ |
-| **i**    | I / me    | `5i`           | we five                  |
-| **u**    | you       | `3u`           | you three                |
-| **h**    | he / him  | `4h`           | four males / them (masc) |
-| **s**    | she / her | `21s`          | twenty-one females       |
-| **t**    | it        | `*t`           | they / them (things)     |
+| Singular | Referent               | Plural Array | Array Referent              |
+| :------- | :--------------------- | :----------- | :-------------------------- |
+| **i**    | First-person singular  | `5i`         | First-person group (n=5)    |
+| **u**    | Second-person singular | `3u`         | Second-person group (n=3)   |
+| **h**    | Third-person masculine | `4h`         | Masculine demographic (n=4) |
+| **s**    | Third-person feminine  | `21s`        | Feminine demographic (n=21) |
+| **t**    | Third-person inanimate | `*t`         | Inanimate collective        |
 
-Special plurals: `*i` (all of us), `*u` (all of you), `*h` (they/males), `*s`
-(they/females), `*t` (they/things).
+> **Genitive Case Marking:** Possession is indicated via the `'s` suffix. To
+> avoid redundant frication, the feminine `s` assumes the genitive as `s'`.
+> (e.g., `i's`, `u's`, `h's`, `s'`, `t's`).
 
-> **Possessive:** Add `'s` except for `s` (she/her) which drops the duplicate
-> `s`. `i's` (my), `u's` (your), `h's` (his), `s'` (her), `t's` (its).
+### 3.4.1 Syntactic Agglutination (Attachment)
 
-### 3.5 Pronoun Attachment
-
-Single-letter pronouns **attach directly** to the subsequent prefix (number or
-operator) — no space needed.
+For maximum data throughput, the single-character pronominal index agglutinates
+physically to the succeeding temporal operator, eliminating whitespace parsing
+overhead.
 
 ```efi
-h1laic    = he likes            1d-i bai  = I bought yesterday
-s1run     = she runs            u:2h uorc = you've worked for 2 hours
-i1tinc    = I think             s*run     = she runs (any/all the time)
+h1laic    (he likes)
+s1run     (she runs)
+u:2h uorc (you worked spanning two hours)
+s*run     (she runs generically)
 ```
 
-### 3.5.1 Prefix Positioning (Auditory Clarity)
+### 3.4.2 Auditory Disambiguation (Prefix Positioning)
 
-When single-letter pronouns cluster with prefixes and prepositions (e.g. `i1in`
-or `if i*no`), they create "vowel blobbing" that is hard to hear. **Rule:**
-Pronouns can flexibly attach _before or after_ the time prefix to break up
-identical sounds.
+Agglutination can generate overlapping vowel harmonics (e.g., `i1in` or
+`if i*no`), increasing transmission error rates. To preserve auditory clarity
+boundaries, pronominal indices have flexible positioning relative to the
+temporal operator.
 
-- `i-1d` = I yesterday (Standard)
-- `1d-i` = Yesterday I (Used to break up `if i...` into `if 1d-i...`)
+- Canonical: `i-1d` (I yesterday)
+- Permuted: `1d-i` (Yesterday I; mitigates harmonic overlap after preceding
+  vowels)
 
-### 3.4.1 Polite Pronouns
+### 3.4.3 Pronominal Deference
 
-MinEnglish is highly direct. To soften a statement or request, attach the
-approximation operator `~` to the pronoun to indicate respect/deference.
+By default, the syntactic structure is declarative and absolute. To inject
+social deference or epistemological uncertainty, the approximation operator `~`
+is bound to the pronoun.
 
-- `u1giv` = You give (direct / command).
-- `~u1giv` = Could you please give (softened / polite).
-- `~i1tinc` = I humbly think / It seems to me.
+- `u1giv` = Absolute directive (You give).
+- `~u1giv` = Deferred directive (Could you please give).
+- `~i1tinc` = Epistemological deferment (It seems to me).
 
 ### 3.6 Sentence Structure & Conjunction Reduction
 
@@ -421,7 +460,7 @@ transmissions, a speaker may artificially inflate Shannon redundancy to 100% by
 
 ---
 
-## 4. Expanded Core Vocabulary
+## 4. Base Lexicon
 
 ### 1. Fundamentals
 
@@ -464,7 +503,7 @@ transmissions, a speaker may artificially inflate Shannon redundancy to 100% by
 
 ---
 
-## 5. Quick Reference Card
+## 5. Syntactic Reference Guide
 
 ```
 NOUN:       <count><noun>         3cat, *dog, ~10person, 0eror
@@ -509,7 +548,7 @@ Possess: i's, u's, h's, s', t's
 
 ---
 
-## 6. Translation Examples (Expanded)
+## 6. Comparative Corpus
 
 ### Simple & Truths
 
@@ -807,62 +846,61 @@ Possess: i's, u's, h's, s', t's
 
 ---
 
-## 7. Compression Analysis
+## 7. Comparative Information Density Analysis
 
-### Top Gains vs. Losses
+The transmission efficiency (information density) of MinEnglish was modeled
+against a 35-sentence standard English corpus. Efficiency is measured locally in
+byte-length (character count reduction).
 
-| Highest Compression Sentences       | Savings    | Why?                                                |
-| ----------------------------------- | ---------- | --------------------------------------------------- |
-| **Ex. 6:** Specific DateTime        | **63.4%**  | `2026-01-15 14:30` collapses 59 English characters. |
-| **Ex. 5:** Approximation            | **58.6%**  | `~50person` collapses "About fifty people".         |
-| **Ex. 4, 12, 30:** Modality & Times | **~45.0%** | `u+1d`, `btuiin 12:00` heavily squash verb chains.  |
+### Top Compression Vectors vs. Deficits
 
-| Lowest Compression Sentences   | Savings   | Why?                                                            |
-| ------------------------------ | --------- | --------------------------------------------------------------- |
-| **Ex. 18:** Family description | **8.5%**  | `hospital` and `iuniversiti` maintain long phonetic footprints. |
-| **Ex. 31:** Legal              | **20.0%** | `diipendant` is still a long transliteration.                   |
+| Highest Reductions                  | Char Δ     | Variable Vector                                                                                 |
+| :---------------------------------- | :--------- | :---------------------------------------------------------------------------------------------- |
+| **Ex. 6:** Absolute Timestamp       | **63.4%**  | `2026-01-15 14:30` collapses 59 English alphabetical characters into absolute numeric notation. |
+| **Ex. 5:** Approximation            | **58.6%**  | `~50person` collapses multi-word approximation phrases ("About fifty people").                  |
+| **Ex. 4, 12, 30:** Modality & Tense | **~45.0%** | Prefixing operators (`+1d`, `btuiin 12:00`) computationally squash auxiliary verb chains.       |
 
-**Overall Result Across 35 Sentences:** Total English Characters: **2633** Total
-MinEnglish Characters: **1711** Average Compression: **35.0%** Savings
+| Lowest Reductions               | Char Δ    | Variable Vector                                                                                        |
+| :------------------------------ | :-------- | :----------------------------------------------------------------------------------------------------- |
+| **Ex. 18:** Lexical Description | **8.5%**  | Base nouns of Latinate origin (`hospital`, `iuniversiti`) maintain protracted phonetic transcriptions. |
+| **Ex. 31:** Legal Domain        | **20.0%** | Domain-specific transliterations (`diipendant`, `carj`) resist operator optimization.                  |
+
+**Corpus Density Metric (n=35):**
+
+- Total Standard English Bytes (Chars): **2633**
+- Total MinEnglish Bytes (Chars): **1711**
+- Average Information Density Gain (Length Reduction): **35.0%**
 
 ---
 
-## 8. Language Review — Terminal Evolution (v1.7)
+## 8. Theoretical Limitations: The Human Biological Factor
 
-With the introduction of the Literalization Operator (`_`), Clause Anchors
-(`co`/`oc`), and Echo-Tagging (Section 3.15), MinEnglish has achieved both
-functional and theoretical perfection. It has mathematically solved the
-thermodynamic and biological limits of human communication:
+The structural additions of the v1.8 and preceding protocols (Literalization
+`_`, Clause Anchors `co`/`oc`, and Echo-Tagging) establish MinEnglish as a
+mathematically and informationally optimized transmission system. It addresses
+standard linguistic inefficiencies:
 
-1. **Semantic Drift is Halted:** By structurally separating cultural idioms
-   (`haus-fuud`) from literal reality (`haus_fuud`), MinEnglish forces speakers
-   to perpetually acknowledge the underlying logic of the universe, preventing
-   vocabulary decay.
-2. **Buffer Capacity is Exceeded:** Clause anchors act as manual memory stack
-   managers for the human brain's phonological loop, granting speakers the
-   ability to parse infinitely recursive logic paths without getting "lost" in
-   deep center-embedding.
-3. **Information Theory is Conquered:** The implementation of optional
-   Echo-Tagging allows MinEnglish to dynamically switch between minimum
-   transmission cost (0% Shannon redundancy) for text, and maximum transmission
-   security (100% Shannon redundancy) for loud acoustic environments.
+1. **Semantic Erosion:** Literalization operators functionally arrest the
+   lexicalization of compounds into idioms.
+2. **Short-Term Memory Bounds:** Clause anchors act as explicit stack managers
+   for human working memory, permitting indefinite center-embedding.
+3. **Transmission Integrity:** Echo-Tagging permits dynamic redundancy scaling
+   to guarantee fidelity in high-loss environments (Shannon's Theorem).
 
-### 8.1 The Final Frontier: Human Nature
+### 8.1 Psychological Friction
 
-MinEnglish 1.7 is a perfect machine. Because it is a perfect machine, its final
-and absolute limitation is human nature itself.
+The primary identified limitation of MinEnglish exists externally to its
+syntactic structure; the limitation is biological. Mammalian communicative
+pathways evolved to facilitate social cohesion, hierarchical navigation, and
+emotional subtext, often utilizing ambiguity to reduce friction.
 
-**Observation:** Biological organisms did not evolve to speak math. We evolved
-to manipulate social hierarchies, project emotional subtext, and use metaphor to
-shield ourselves from harsh literalism.
-
-**Analysis:** A society forced to speak MinEnglish as their native tongue would
-experience extreme psychological discomfort. Because the language prevents
-passive-aggressive vagueness, forbids irregular slang, and demands constant
-chronological and mathematical precision, the human brain will naturally rebel
-against the computational load of radical honesty. The ultimate weakness of
-MinEnglish 1.7 is not linguistic or structural—it is that human beings are
-fundamentally irrational, and MinEnglish gives them no place to hide.
+MinEnglish's computational design enforces an objective, algebraic paradigm. The
+absolute requirement for temporal precision, numerical exactness, and the
+prohibition of metaphorical obfuscation inherently conflicts with natural human
+cognitive behavior. Widespread neurological adoption of MinEnglish natively
+would likely prompt measurable psychological resistance, as the protocol
+disables the linguistic mechanisms humans rely on to process and mitigate
+sociological complexity.
 
 ---
 

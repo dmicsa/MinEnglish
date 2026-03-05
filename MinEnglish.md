@@ -458,6 +458,26 @@ transmissions, a speaker may artificially inflate Shannon redundancy to 100% by
 - Standard: `3boi 1uoc` (Three boys are walking)
 - Echo-Tagged: `3boi trii 1uoc nau` (Three boys three are-walking now)
 
+### 3.16 Formal Syntax (Backus-Naur Form)
+
+The absolute regularity of MinEnglish allows it to be algorithmically validated.
+Below is the strict parsing configuration for a standard declarative sentence.
+
+```ebnf
+<sentence>      ::= [<subject_block>] <verb_block> [<object_block>] [<modifier_block>]...
+<subject_block> ::= <noun_phrase> | <pronoun_phrase>
+<object_block>  ::= <noun_phrase> | <pronoun_phrase>
+
+<noun_phrase>   ::= <quantity> <noun_root> [<adjective_phrase>]
+<pronoun_phrase>::= [<quantity>] <pronoun_root>
+<adjective_phrase> ::= [<intensity>] <adjective_root>
+
+<verb_block>    ::= [<temporal_vector>] <verb_root> [<adverb_phrase>]
+<temporal_vector> ::= <time_prefix> | <duration_prefix> | <unix_timestamp>
+
+<clause>        ::= "co" <connective> <sentence> "oc"
+```
+
 ---
 
 ## 4. Base Lexicon
@@ -501,9 +521,26 @@ transmissions, a speaker may artificially inflate Shannon redundancy to 100% by
 | new / old   | **niu** / **ould** | quick / slow  | **cuic** / **slou**  |
 | red / blue  | **red** / **bluu** | green / black | **griin** / **blac** |
 
+### 5. Academic & Computational Data Lexicon
+
+MinEnglish is engineered for high-density theoretical and technical discourse.
+To define complex systems, literal conceptual building blocks are used.
+
+| English    | MinEnglish Compound | Literal Roots                 |
+| :--------- | :------------------ | :---------------------------- |
+| Database   | **daatabeis**       | Canonical adaptation          |
+| Variable   | **ting-ceinj**      | Thing-change                  |
+| Hypothesis | **aidia-test**      | Idea-test                     |
+| Algorithm  | **rul-mat**         | Rule-math                     |
+| Equation   | **balans-mat**      | Balance-math                  |
+| System     | **net-ting**        | Net-thing / Network of things |
+| Energy     | **pauer-mun**       | Power-movement                |
+| Cell (Bio) | **bocs-laif**       | Box-life                      |
+| Evolution  | **ceinj-taim**      | Change-time                   |
+
 ---
 
-## 5. Syntactic Reference Guide
+## 6. Syntactic Reference Guide
 
 ```
 NOUN:       <count><noun>         3cat, *dog, ~10person, 0eror
@@ -548,7 +585,7 @@ Possess: i's, u's, h's, s', t's
 
 ---
 
-## 6. Comparative Corpus
+## 7. Comparative Corpus
 
 ### Simple & Truths
 
@@ -583,7 +620,7 @@ Possess: i's, u's, h's, s', t's
 |                | Text                                          | Chars |
 | -------------- | --------------------------------------------- | ----- |
 | **English**    | Will you eat dinner with us tomorrow evening? | 45    |
-| **MinEnglish** | u+1d iit 1diner uid *i?                       | 23    |
+| **MinEnglish** | u+1d iit 1diner uid \*i?                      | 23    |
 | **↩ Back**     | You in-one-day eat one-dinner with all-of-us? |       |
 
 **5. Approximation (58.6%)**
@@ -617,7 +654,7 @@ Possess: i's, u's, h's, s', t's
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
 | **English**    | We are going to the extremely new restaurant tomorrow at seven in the evening. | 78    |
-| **MinEnglish** | *i+1d gou tu 1fuud/haus >>niu @ 19:00.                                         | 38    |
+| **MinEnglish** | \*i+1d gou tu 1fuud/haus >>niu @ 19:00.                                        | 38    |
 | **↩ Back**     | All-of-us in-one-day go to one-food/house extremely-new at 19:00.              |       |
 
 **9. Passive Voice (47.5%)**
@@ -651,7 +688,7 @@ Possess: i's, u's, h's, s', t's
 |                | Text                                                                                          | Chars |
 | -------------- | --------------------------------------------------------------------------------------------- | ----- |
 | **English**    | Every morning I drink two cups of coffee and eat one piece of toast before work.              | 82    |
-| **MinEnglish** | *morning i*drinc 2cup cofi an *iit 1piis toust bifor uorc.                                    | 56    |
+| **MinEnglish** | *morning i*drinc 2cup cofi an \*iit 1piis toust bifor uorc.                                   | 56    |
 | **↩ Back**     | Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece toast before work. |       |
 
 **13. Instructions (42.9%)**
@@ -659,7 +696,7 @@ Possess: i's, u's, h's, s', t's
 |                | Text                                                                                 | Chars |
 | -------------- | ------------------------------------------------------------------------------------ | ----- |
 | **English**    | Take three eggs, add two cups of flour, and mix everything together for ten minutes. | 84    |
-| **MinEnglish** | teic 3eg, ad 2cup flaur, an mics *ting for 10m.                                      | 48    |
+| **MinEnglish** | teic 3eg, ad 2cup flaur, an mics \*ting for 10m.                                     | 48    |
 | **↩ Back**     | Take three-egg, add two-cup flour, and mix all-thing for ten-minutes.                |       |
 
 **14. Request (32.7%)**
@@ -711,7 +748,7 @@ Possess: i's, u's, h's, s', t's
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
 | **English**    | The children were playing in the park when it started raining heavily.         | 70    |
-| **MinEnglish** | *ciald -0s 1in 1parc uen t-0s start rein >hevi.                                | 49    |
+| **MinEnglish** | \*ciald -0s 1in 1parc uen t-0s start rein >hevi.                               | 49    |
 | **↩ Back**     | Any-child just-now in(verb) one-park when it-just-now start rain very-heavily. |       |
 
 **20. Price & Comparison (21.4%)**
@@ -737,7 +774,7 @@ Possess: i's, u's, h's, s', t's
 |                | Text                                                                     | Chars |
 | -------------- | ------------------------------------------------------------------------ | ----- |
 | **English**    | To be or not to be, that is the question we must all answer eventually.  | 71    |
-| **MinEnglish** | bi or no bi, dat bi 1cuesciun *i must anser in +taim.                    | 53    |
+| **MinEnglish** | bi or no bi, dat bi 1cuesciun \*i must anser in +taim.                   | 53    |
 | **↩ Back**     | Be or not be, that be one-question all-of-us must answer in future-time. |       |
 
 **23. Business Strategy (28.7%)**
@@ -753,7 +790,7 @@ Possess: i's, u's, h's, s', t's
 |                | Text                                                                                              | Chars |
 | -------------- | ------------------------------------------------------------------------------------------------- | ----- |
 | **English**    | The president announced a new tax policy that will affect middle class families.                  | 78    |
-| **MinEnglish** | 1prezident -0s anauns 1nolisi-tacs niu dat +1d apect *pamili clas-midl.                           | 55    |
+| **MinEnglish** | 1prezident -0s anauns 1nolisi-tacs niu dat +1d apect \*pamili clas-midl.                          | 55    |
 | **↩ Back**     | One-president just-now announce one-policy-tax new that in-future affect any-family class-middle. |       |
 
 **25. Medicine (36.9%)**
@@ -761,7 +798,7 @@ Possess: i's, u's, h's, s', t's
 |                | Text                                                                                                                 | Chars |
 | -------------- | -------------------------------------------------------------------------------------------------------------------- | ----- |
 | **English**    | The doctor prescribed antibiotics to treat the patient's severe bacterial infection.                                 | 84    |
-| **MinEnglish** | 1doctor -0s prescraib tu *bac-med tu triit 1bac-sic >siirius 1peishent's.                                            | 53    |
+| **MinEnglish** | 1doctor -0s prescraib tu \*bac-med tu triit 1bac-sic >siirius 1peishent's.                                           | 53    |
 | **↩ Back**     | One-doctor just-now prescribe [Obj] any-bacteria-medicine to treat one-bacteria-sickness very-serious one-patient's. |       |
 
 **26. Real Estate (34.2%)**
@@ -793,7 +830,7 @@ Possess: i's, u's, h's, s', t's
 |                | Text                                                                                             | Chars |
 | -------------- | ------------------------------------------------------------------------------------------------ | ----- |
 | **English**    | The wind whispered through the ancient trees as the silver moon rose in the sky.                 | 80    |
-| **MinEnglish** | 1uind -0s uisper tru *trii >ould az 1muun silver -0s raiz in 1scai.                              | 56    |
+| **MinEnglish** | 1uind -0s uisper tru \*trii >ould az 1muun silver -0s raiz in 1scai.                             | 56    |
 | **↩ Back**     | One-wind just-now whisper through any-tree very-old as one-moon silver just-now rise in one-sky. |       |
 
 **30. Logistics (43.4%)**
@@ -809,7 +846,7 @@ Possess: i's, u's, h's, s', t's
 |                | Text                                                                                     | Chars |
 | -------------- | ---------------------------------------------------------------------------------------- | ----- |
 | **English**    | The defendant formally pleaded not guilty to all charges presented by the court.         | 80    |
-| **MinEnglish** | 1diipendant -0s formal pliid no gilti tu *carj prizent bai tu 1cort.                     | 64    |
+| **MinEnglish** | 1diipendant -0s formal pliid no gilti tu \*carj prizent bai tu 1cort.                    | 64    |
 | **↩ Back**     | One-defendant just-now formal plead not guilty to any-charge present by [Obj] one-court. |       |
 
 **32. Cooking/Recipe (34.3%)**
@@ -817,7 +854,7 @@ Possess: i's, u's, h's, s', t's
 |                | Text                                                                                     | Chars |
 | -------------- | ---------------------------------------------------------------------------------------- | ----- |
 | **English**    | Boil the water, add a pinch of salt, and stir constantly until the sauce thickens.       | 82    |
-| **MinEnglish** | boil tu 1uoter, ad tu 1pinci solt, an *ster until 1sos >tic.                             | 60    |
+| **MinEnglish** | boil tu 1uoter, ad tu 1pinci solt, an \*ster until 1sos >tic.                            | 60    |
 | **↩ Back**     | Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce very-thick. |       |
 
 **33. Emotional Confession (40.5%)**
@@ -846,7 +883,7 @@ Possess: i's, u's, h's, s', t's
 
 ---
 
-## 7. Comparative Information Density Analysis
+## 8. Comparative Information Density Analysis
 
 The transmission efficiency (information density) of MinEnglish was modeled
 against a 35-sentence standard English corpus. Efficiency is measured locally in
@@ -873,7 +910,7 @@ byte-length (character count reduction).
 
 ---
 
-## 8. Theoretical Limitations: The Human Biological Factor
+## 9. Theoretical Limitations: The Human Biological Factor
 
 The structural additions of the v1.8 and preceding protocols (Literalization
 `_`, Clause Anchors `co`/`oc`, and Echo-Tagging) establish MinEnglish as a

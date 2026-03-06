@@ -828,7 +828,7 @@ adhere to the following universal formalisms:
 
 ```text
 EN: Will you eat dinner with us tomorrow evening? (45)
-ME: u1d iit diner uid \*i? (22)
+ME: u1d iit diner uid *i? (22)
 BT: You in-one-day eat one-dinner with all-of-us?
 ```
 
@@ -882,7 +882,7 @@ BT: For-five-years study English but I negation-can speak fluent.
 
 ```text
 EN: We are going to the extremely new restaurant tomorrow at seven in the evening. (78)
-ME: \*i1d gou tu restaurant >>niu @ 19:00. (38)
+ME: *i1d gou tu restaurant >>niu @ 19:00. (38)
 BT: All-of-us in-one-day go to one-restaurant extremely-new at 19:00.
 ```
 
@@ -934,7 +934,7 @@ BT: If you-now-negation-stop [Obj] run, you-now-fall and break [Obj] your two-le
 
 ```text
 EN: Every morning I drink two cups of coffee and eat one piece of toast before work. (80)
-ME: *morning i*drinc 2cup cofi an \*iit piis toust bifor uorc. (58)
+ME: *morning i*drinc 2cup cofi an *iit piis toust bifor uorc. (58)
 BT: Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece toast before work.
 ```
 
@@ -947,7 +947,7 @@ BT: Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece t
 
 ```text
 EN: Take three eggs, add two cups of flour, and mix everything together for ten minutes. (84)
-ME: teic 3eg, ad 2cup flaur, an mics \*ting for 10m. (48)
+ME: teic 3eg, ad 2cup flaur, an mics *ting for 10m. (48)
 BT: Take three-egg, add two-cup flour, and mix all-thing for ten-minutes.
 ```
 
@@ -1027,7 +1027,7 @@ BT: My brother any-work at one-hospital and my sister any-study at one-universit
 
 ```text
 EN: The children were playing in the park when it started raining heavily. (70)
-ME: \*ciald in parc uen t-0s start rein >hevi. (42)
+ME: *ciald in parc uen t-0s start rein >hevi. (42)
 BT: Any-child just-now in(verb) one-park when it-just-now start rain very-heavily.
 ```
 
@@ -1067,7 +1067,7 @@ BT: One-spaceship just-now launch in one-orbit after one-count-down hit zero.
 
 ```text
 EN: To be or not to be, that is the question we must all answer eventually. (71)
-ME: bi or no bi, dat bi cuesciun \*i must anser in taim. (52)
+ME: bi or no bi, dat bi cuesciun *i must anser in taim. (52)
 BT: Be or not be, that be one-question all-of-us must answer in future-time.
 ```
 
@@ -1157,7 +1157,7 @@ BT: Global-warming now-melt any-cap-ice polar more-fast than any-scientist past-
 
 ```text
 EN: The wind whispered through the ancient trees as the silver moon rose in the sky. (80)
-ME: uind uisper tru \*trii >ould az muun silver raiz in scai. (57)
+ME: uind uisper tru *trii >ould az muun silver raiz in scai. (57)
 BT: One-wind just-now whisper through any-tree very-old as one-moon silver just-now rise in one-sky.
 ```
 
@@ -1185,7 +1185,7 @@ BT: One-delivery-truck in-future arrive with your package between 12:00 and 14:0
 
 ```text
 EN: The defendant formally pleaded not guilty to all charges presented by the court. (80)
-ME: diipendant formal pliid !gilti tu \*carj prizent bai tu cort. (63)
+ME: diipendant formal pliid !gilti tu *carj prizent bai tu cort. (63)
 BT: One-defendant just-now formal plead not guilty to any-charge present by [Obj] one-court.
 ```
 
@@ -1198,7 +1198,7 @@ BT: One-defendant just-now formal plead not guilty to any-charge present by [Obj
 
 ```text
 EN: Boil the water, add a pinch of salt, and stir constantly until the sauce thickens. (82)
-ME: boil tu uoter, ad tu pince solt, an \*ster until sos >tic. (58)
+ME: boil tu uoter, ad tu pince solt, an *ster until sos >tic. (58)
 BT: Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce very-thick.
 ```
 

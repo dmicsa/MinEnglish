@@ -679,10 +679,6 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | 3cat sit on mat big red.                       | 24  |
 | **↩ Back**     | Three-cat sit on one-mat big red.              |       |
 
-> **Compression:** 47.8% Δ **Observation:** High compression achieved via
-> removal of articles, auxiliary verbs, and phonetic normalization.
-
-
 > **Compression:** 47.8% Δ
 >
 > **Observation:** High compression achieved via removal of definite articles, auxiliary verbs, and strict phonetic normalization.
@@ -694,10 +690,6 @@ Possess: i's, u's, h's, s', t's
 | **English**    | Dogs are loyal animals that love their owners.             | 46  |
 | **MinEnglish** | *dog bi *animal loial dat *luv *h's ouner.                 | 42  |
 | **↩ Back**     | Any-dog be any-animal loyal that any-love any-their owner. |       |
-
-> **Compression:** 8.7% Δ **Observation:** Universal deference operators
-> substitute complex plural or aggregate nouns.
-
 
 > **Compression:** 8.7% Δ
 >
@@ -714,10 +706,6 @@ Possess: i's, u's, h's, s', t's
 | **↩ Back**     | I one-day-ago buy two-book and three-apple at one-store.    |       |
 
 ---
-
-> **Compression:** 50.8% Δ **Observation:** High compression achieved via
-> removal of articles, auxiliary verbs, and phonetic normalization.
-
 
 > **Compression:** 50.8% Δ
 >
@@ -822,10 +810,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | u1d iit diner uid \*i?                        | 22  |
 | **↩ Back**     | You in-one-day eat one-dinner with all-of-us? |       |
 
-> **Compression:** 51.1% Δ **Observation:** Universal deference operators
-> substitute complex plural or aggregate nouns.
-
-
 > **Compression:** 51.1% Δ
 >
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
@@ -837,10 +821,6 @@ adhere to the following universal formalisms:
 | **English**    | About fifty people arrived at approximately three o'clock. | 58  |
 | **MinEnglish** | ~50person ariv @ ~15:00.                                   | 24  |
 | **↩ Back**     | Approximately-fifty-person arrive at approximately-15:00.  |       |
-
-> **Compression:** 58.6% Δ **Observation:** Approximation operators drastically
-> reduce multi-word phrasings.
-
 
 > **Compression:** 58.6% Δ
 >
@@ -854,10 +834,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | miiting 2026-01-15 14:30 bi held.                                                             | 33  |
 | **↩ Back**     | One-meeting 2026-01-15 14:30 be held.                                                         |       |
 
-> **Compression:** 64.5% Δ **Observation:** High compression achieved via
-> removal of articles, auxiliary verbs, and phonetic normalization.
-
-
 > **Compression:** 64.5% Δ
 >
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
@@ -869,10 +845,6 @@ adhere to the following universal formalisms:
 | **English**    | I have been studying English for five years but I still cannot speak fluently. | 78  |
 | **MinEnglish** | :5Y studi inglish but i no can spiic fluuent.                                  | 45  |
 | **↩ Back**     | For-five-years study English but I not can speak fluent.                       |       |
-
-> **Compression:** 42.3% Δ **Observation:** High compression achieved via
-> removal of articles, auxiliary verbs, and phonetic normalization.
-
 
 > **Compression:** 42.3% Δ
 >
@@ -888,10 +860,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | \*i1d gou tu restaurant >>niu @ 19:00.                                         | 38  |
 | **↩ Back**     | All-of-us in-one-day go to one-restaurant extremely-new at 19:00.              |       |
 
-> **Compression:** 51.3% Δ **Observation:** Intensity operators eliminate
-> adverbial modifiers.
-
-
 > **Compression:** 51.3% Δ
 >
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
@@ -904,10 +872,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | !!uac! uindou glas breic bai man angri.                            | 39  |
 | **↩ Back**     | Watch-intensely! One-window glass just-now break by one-man angry. |       |
 
-> **Compression:** 35.0% Δ **Observation:** General lexical optimization and
-> phonetic spelling reduction.
-
-
 > **Compression:** 35.0% Δ
 >
 > **Observation:** Exclamatory prefixes (`!!`) enforce immediate semantic parsing, bypassing syntactic buildup.
@@ -919,10 +883,6 @@ adhere to the following universal formalisms:
 | **English**    | She must give her book to him before she can start working.                  | 59  |
 | **MinEnglish** | s1must giv s's buc tu h bifor s1can start tu uorc.                           | 50  |
 | **↩ Back**     | She-now-must give her book to he before she-now-can start [Object] one-work. |       |
-
-> **Compression:** 15.3% Δ **Observation:** General lexical optimization and
-> phonetic spelling reduction.
-
 
 > **Compression:** 15.3% Δ
 >
@@ -938,10 +898,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | if u1no stop tu run, u1fol an breic tu u's 2leg.                          | 48  |
 | **↩ Back**     | If you-now-not stop [Obj] run, you-now-fall and break [Obj] your two-leg. |       |
 
-> **Compression:** 21.3% Δ **Observation:** General lexical optimization and
-> phonetic spelling reduction.
-
-
 > **Compression:** 21.3% Δ
 >
 > **Observation:** General lexical optimization and phonetic spelling reduction.
@@ -953,10 +909,6 @@ adhere to the following universal formalisms:
 | **English**    | Every morning I drink two cups of coffee and eat one piece of toast before work.              | 80  |
 | **MinEnglish** | *morning i*drinc 2cup cofi an \*iit piis toust bifor uorc.                                    | 58  |
 | **↩ Back**     | Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece toast before work. |       |
-
-> **Compression:** 27.5% Δ **Observation:** Universal deference operators
-> substitute complex plural or aggregate nouns.
-
 
 > **Compression:** 27.5% Δ
 >
@@ -970,10 +922,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | teic 3eg, ad 2cup flaur, an mics \*ting for 10m.                                     | 48  |
 | **↩ Back**     | Take three-egg, add two-cup flour, and mix all-thing for ten-minutes.                |       |
 
-> **Compression:** 42.9% Δ **Observation:** Universal deference operators
-> substitute complex plural or aggregate nouns.
-
-
 > **Compression:** 42.9% Δ
 >
 > **Observation:** Universal deference operators (`*`) substitute complex plural or aggregate noun constraints.
@@ -985,10 +933,6 @@ adhere to the following universal formalisms:
 | **English**    | Please give me two glasses of water, I am very thirsty. | 55  |
 | **MinEnglish** | ~u giv i 2glas uoter, i bi >tersti.                     | 35  |
 | **↩ Back**     | Polite-you-give I two-glass water, I be very-thirsty.   |       |
-
-> **Compression:** 36.4% Δ **Observation:** Approximation operators drastically
-> reduce multi-word phrasings.
-
 
 > **Compression:** 36.4% Δ
 >
@@ -1004,10 +948,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | "haum ciald u hav?" "i hav 2boi an gerl."                        | 41  |
 | **↩ Back**     | "How-many child you have?" "I have two-boy and one-girl."        |       |
 
-> **Compression:** 35.9% Δ **Observation:** Interrogative prefixes condense
-> investigative clauses.
-
-
 > **Compression:** 35.9% Δ
 >
 > **Observation:** Interrogative prefixes condense investigative clauses into single tokens.
@@ -1020,10 +960,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s-1Y uant understand uerld mor gud.                                                 | 92  |
 | **↩ Back**     | She one-year-ago travel to five-country different and learn three-language new because she one-year-ago want understand one-world more good. |       |
 
-> **Compression:** 31.3% Δ **Observation:** General lexical optimization and
-> phonetic spelling reduction.
-
-
 > **Compression:** 31.3% Δ
 >
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
@@ -1035,10 +971,6 @@ adhere to the following universal formalisms:
 | **English**    | I might go to the party, but she loves him and he does not love her.              | 68  |
 | **MinEnglish** | i1d ~can gou tu parti, but s1luv h an !h no luv s.                                | 50  |
 | **↩ Back**     | I in-future might go to one-party, but she-now-love he and focus-he not love she. |       |
-
-> **Compression:** 26.5% Δ **Observation:** Approximation operators drastically
-> reduce multi-word phrasings.
-
 
 > **Compression:** 26.5% Δ
 >
@@ -1054,10 +986,6 @@ adhere to the following universal formalisms:
 
 > _Low compression — long Latin words maintain their length._
 
-> **Compression:** 11.3% Δ **Observation:** Universal deference operators
-> substitute complex plural or aggregate nouns.
-
-
 > **Compression:** 11.3% Δ
 >
 > **Observation:** Universal deference operators (`*`) substitute complex plural or aggregate noun constraints.
@@ -1070,10 +998,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | \*ciald in parc uen t-0s start rein >hevi.                                     | 42  |
 | **↩ Back**     | Any-child just-now in(verb) one-park when it-just-now start rain very-heavily. |       |
 
-> **Compression:** 40.0% Δ **Observation:** Intensity operators eliminate
-> adverbial modifiers.
-
-
 > **Compression:** 40.0% Δ
 >
 > **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial modifiers.
@@ -1085,10 +1009,6 @@ adhere to the following universal formalisms:
 | **English**    | How much does this car cost? It is too expensive for me.          | 56  |
 | **MinEnglish** | ?haum dis car cost? t bi >>ecspensiv for i.                       | 43  |
 | **↩ Back**     | Question-how-much this car cost? It be extremely-expensive for I. |       |
-
-> **Compression:** 23.2% Δ **Observation:** Intensity operators eliminate
-> adverbial modifiers.
-
 
 > **Compression:** 23.2% Δ
 >
@@ -1104,10 +1024,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | speisship lonci in orbit after caunt-daun hic 0.                          | 48  |
 | **↩ Back**     | One-spaceship just-now launch in one-orbit after one-count-down hit zero. |       |
 
-> **Compression:** 28.4% Δ **Observation:** General lexical optimization and
-> phonetic spelling reduction.
-
-
 > **Compression:** 28.4% Δ
 >
 > **Observation:** General lexical optimization and phonetic spelling reduction.
@@ -1119,10 +1035,6 @@ adhere to the following universal formalisms:
 | **English**    | To be or not to be, that is the question we must all answer eventually.  | 71  |
 | **MinEnglish** | bi or no bi, dat bi cuesciun \*i must anser in taim.                     | 52  |
 | **↩ Back**     | Be or not be, that be one-question all-of-us must answer in future-time. |       |
-
-> **Compression:** 26.8% Δ **Observation:** Universal deference operators
-> substitute complex plural or aggregate nouns.
-
 
 > **Compression:** 26.8% Δ
 >
@@ -1136,10 +1048,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | *i's compani niid optimaiz t's suplai-cein tu macsimaiz *marjin-profit 1Y.                           | 74  |
 | **↩ Back**     | All-of-us-possessive company need optimize its supply-chain to maximize any-margin-profit next-year. |       |
 
-> **Compression:** 11.9% Δ **Observation:** Universal deference operators
-> substitute complex plural or aggregate nouns.
-
-
 > **Compression:** 11.9% Δ
 >
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
@@ -1151,10 +1059,6 @@ adhere to the following universal formalisms:
 | **English**    | The president announced a new tax policy that will affect middle class families.                  | 80  |
 | **MinEnglish** | prezident anauns tacs-polisi niu dat 1d apect \*pamili clas-midl.                                 | 65  |
 | **↩ Back**     | One-president just-now announce one-tax-policy new that in-future affect any-family class-middle. |       |
-
-> **Compression:** 18.8% Δ **Observation:** Universal deference operators
-> substitute complex plural or aggregate nouns.
-
 
 > **Compression:** 18.8% Δ
 >
@@ -1168,10 +1072,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | doctor prescraib tu antibiotik tu triit bacteriel infecshun >siirius peishent's.                                | 80  |
 | **↩ Back**     | One-doctor just-now prescribe [Obj] one-antibiotic to treat one-bacterial-infection very-serious one-patient's. |       |
 
-> **Compression:** 4.8% Δ **Observation:** Intensity operators eliminate
-> adverbial modifiers.
-
-
 > **Compression:** 4.8% Δ
 >
 > **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial modifiers.
@@ -1183,10 +1083,6 @@ adhere to the following universal formalisms:
 | **English**    | The three bedroom house with a large backyard is currently on the market for rent. | 82  |
 | **MinEnglish** | haus 3bedruum uid baciard big in marcet for rent nau.                              | 53  |
 | **↩ Back**     | One-house three-bedroom with one-backyard big now-in one-market for rent now.      |       |
-
-> **Compression:** 35.4% Δ **Observation:** General lexical optimization and
-> phonetic spelling reduction.
-
 
 > **Compression:** 35.4% Δ
 >
@@ -1200,10 +1096,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | if server craish, backup sistem 1d otoristor daatabeis.                           | 55  |
 | **↩ Back**     | If one-server crash, one-backup-system in-future auto-restore one-database.       |       |
 
-> **Compression:** 32.1% Δ **Observation:** General lexical optimization and
-> phonetic spelling reduction.
-
-
 > **Compression:** 32.1% Δ
 >
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
@@ -1216,10 +1108,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | gloubal uorming melt *cap-ais poular >fast dan *saientist -1d pridiict.              | 71  |
 | **↩ Back**     | Global-warming now-melt any-cap-ice polar more-fast than any-scientist past-predict. |       |
 
-> **Compression:** 9.0% Δ **Observation:** Intensity operators eliminate
-> adverbial modifiers.
-
-
 > **Compression:** 9.0% Δ
 >
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
@@ -1231,10 +1119,6 @@ adhere to the following universal formalisms:
 | **English**    | The wind whispered through the ancient trees as the silver moon rose in the sky.                 | 80  |
 | **MinEnglish** | uind uisper tru \*trii >ould az muun silver raiz in scai.                                        | 57  |
 | **↩ Back**     | One-wind just-now whisper through any-tree very-old as one-moon silver just-now rise in one-sky. |       |
-
-> **Compression:** 28.7% Δ **Observation:** Intensity operators eliminate
-> adverbial modifiers.
-
 
 > **Compression:** 28.7% Δ
 >
@@ -1250,10 +1134,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | diliveri truc 1d ariv uid u's pacij btuiin 12:00 an 14:00.                     | 58  |
 | **↩ Back**     | One-delivery-truck in-future arrive with your package between 12:00 and 14:00. |       |
 
-> **Compression:** 25.6% Δ **Observation:** General lexical optimization and
-> phonetic spelling reduction.
-
-
 > **Compression:** 25.6% Δ
 >
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
@@ -1265,10 +1145,6 @@ adhere to the following universal formalisms:
 | **English**    | The defendant formally pleaded not guilty to all charges presented by the court.         | 80  |
 | **MinEnglish** | diipendant formal pliid no gilti tu \*carj prizent bai tu cort.                          | 63  |
 | **↩ Back**     | One-defendant just-now formal plead not guilty to any-charge present by [Obj] one-court. |       |
-
-> **Compression:** 21.3% Δ **Observation:** Universal deference operators
-> substitute complex plural or aggregate nouns.
-
 
 > **Compression:** 21.3% Δ
 >
@@ -1282,10 +1158,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | boil tu uoter, ad tu pinci solt, an \*ster until sos >tic.                               | 58  |
 | **↩ Back**     | Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce very-thick. |       |
 
-> **Compression:** 29.3% Δ **Observation:** Intensity operators eliminate
-> adverbial modifiers.
-
-
 > **Compression:** 29.3% Δ
 >
 > **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial modifiers.
@@ -1298,10 +1170,6 @@ adhere to the following universal formalisms:
 | **MinEnglish** | -1d *no fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.                                                | 67  |
 | **↩ Back**     | I-just-now-yesterday any-not feel this way about any-person before, you yesterday change [Obj] my life very-whole. |       |
 
-> **Compression:** 10.7% Δ **Observation:** Intensity operators eliminate
-> adverbial modifiers.
-
-
 > **Compression:** 10.7% Δ
 >
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
@@ -1313,10 +1181,6 @@ adhere to the following universal formalisms:
 | **English**    | Go straight for two miles, then turn left at the second traffic light you see. | 78  |
 | **MinEnglish** | gou streit for 2mail, den tern left @ trapic lait tuu u1sii.                   | 60  |
 | **↩ Back**     | Go straight for two-mile, then turn left at one-traffic-light two you-now-see. |       |
-
-> **Compression:** 23.1% Δ **Observation:** General lexical optimization and
-> phonetic spelling reduction.
-
 
 > **Compression:** 23.1% Δ
 >

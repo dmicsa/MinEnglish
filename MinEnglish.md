@@ -674,8 +674,8 @@ ME: *dog bi *animal loial dat *luv *h's ouner. (42)
 BT: Any-dog be any-animal loyal that any-love any-their owner.
 ```
 
-8.7% Δ
-
+> **Compression:** 8.7% Δ
+>
 > **Observation:** Universal deference operators (`*`) substitute complex plural
 > or aggregate noun constraints.
 
@@ -808,8 +808,8 @@ ME: u1d iit diner uid \*i? (22)
 BT: You in-one-day eat one-dinner with all-of-us?
 ```
 
-51.1% Δ
-
+> **Compression:** 51.1% Δ
+>
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -834,8 +834,8 @@ ME: miiting 2026-01-15 14:30 bi held. (33)
 BT: One-meeting 2026-01-15 14:30 be held.
 ```
 
-64.5% Δ
-
+> **Compression:** 64.5% Δ
+>
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -862,8 +862,8 @@ ME: \*i1d gou tu restaurant >>niu @ 19:00. (38)
 BT: All-of-us in-one-day go to one-restaurant extremely-new at 19:00.
 ```
 
-51.3% Δ
-
+> **Compression:** 51.3% Δ
+>
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -888,8 +888,8 @@ ME: s1must giv s's buc tu h bifor s1can start tu uorc. (50)
 BT: She-now-must give her book to he before she-now-can start [Object] one-work.
 ```
 
-15.3% Δ
-
+> **Compression:** 15.3% Δ
+>
 > **Observation:** General lexical optimization and phonetic spelling reduction.
 
 ### Conditionals, Logic & Commands
@@ -914,8 +914,8 @@ ME: *morning i*drinc 2cup cofi an \*iit piis toust bifor uorc. (58)
 BT: Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece toast before work.
 ```
 
-27.5% Δ
-
+> **Compression:** 27.5% Δ
+>
 > **Observation:** Universal deference operators (`*`) substitute complex plural
 > or aggregate noun constraints.
 
@@ -940,8 +940,8 @@ ME: ~u giv i 2glas uoter, i bi >tersti. (35)
 BT: Polite-you-give I two-glass water, I be very-thirsty.
 ```
 
-36.4% Δ
-
+> **Compression:** 36.4% Δ
+>
 > **Observation:** Approximation operators (`~`) drastically reduce multi-word
 > phrasings like "about" or "approximately".
 
@@ -968,8 +968,8 @@ ME: s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s-1Y uant understan
 BT: She one-year-ago travel to five-country different and learn three-language new because she one-year-ago want understand one-world more good.
 ```
 
-31.3% Δ
-
+> **Compression:** 31.3% Δ
+>
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -1020,8 +1020,8 @@ ME: haum dis car cost? t bi >>ecspensiv for i. (43)
 BT: How-much this car cost? It be extremely-expensive for I.
 ```
 
-23.2% Δ
-
+> **Compression:** 23.2% Δ
+>
 > **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial
 > modifiers.
 
@@ -1047,8 +1047,8 @@ ME: bi or no bi, dat bi cuesciun \*i must anser in taim. (52)
 BT: Be or not be, that be one-question all-of-us must answer in future-time.
 ```
 
-26.8% Δ
-
+> **Compression:** 26.8% Δ
+>
 > **Observation:** Universal deference operators (`*`) substitute complex plural
 > or aggregate noun constraints.
 
@@ -1073,8 +1073,8 @@ ME: prezident anauns tacs-polisi niu dat 1d apect \*pamili clas-midl. (65)
 BT: One-president just-now announce one-tax-policy new that in-future affect any-family class-middle.
 ```
 
-18.8% Δ
-
+> **Compression:** 18.8% Δ
+>
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -1099,8 +1099,8 @@ ME: haus 3bedruum uid baciard big in marcet for rent nau. (53)
 BT: One-house three-bedroom with one-backyard big now-in one-market for rent now.
 ```
 
-35.4% Δ
-
+> **Compression:** 35.4% Δ
+>
 > **Observation:** General lexical optimization and phonetic spelling reduction.
 
 #### Ex. 27
@@ -1124,8 +1124,8 @@ ME: gloubal uorming melt *cap-ais poular >fast dan *saientist -1d pridiict. (71)
 BT: Global-warming now-melt any-cap-ice polar more-fast than any-scientist past-predict.
 ```
 
-9.0% Δ
-
+> **Compression:** 9.0% Δ
+>
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -1152,8 +1152,8 @@ ME: diliveri truc 1d ariv uid u's pacij btuiin 12:00 an 14:00. (58)
 BT: One-delivery-truck in-future arrive with your package between 12:00 and 14:00.
 ```
 
-25.6% Δ
-
+> **Compression:** 25.6% Δ
+>
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -1178,8 +1178,8 @@ ME: boil tu uoter, ad tu pinci solt, an \*ster until sos >tic. (58)
 BT: Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce very-thick.
 ```
 
-29.3% Δ
-
+> **Compression:** 29.3% Δ
+>
 > **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial
 > modifiers.
 
@@ -1204,8 +1204,8 @@ ME: gou streit for 2mail, den tern left @ trapic lait tuu u1sii. (60)
 BT: Go straight for two-mile, then turn left at one-traffic-light two you-now-see.
 ```
 
-23.1% Δ
-
+> **Compression:** 23.1% Δ
+>
 > **Observation:** General lexical optimization and phonetic spelling reduction.
 
 #### Ex. 35
@@ -1216,17 +1216,9 @@ ME: >>haiperinflashun distroi tu pauer-bai an >siirius holt tu divelopment econo
 BT: Extremely-hyperinflation now-destroy [Obj] power-buy and very-serious halt [Obj] development economic.
 ```
 
----
-
-> **Compression:** 1.2% Δ **Observation:** Low compression due to retention of
-> exact international academic vocabulary.
-
----
-
-1.2% Δ
-
-> **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial
-> modifiers.
+> **Compression:** 1.2% Δ
+>
+> **Observation:** Low compression due to retention of exact international academic vocabulary.
 
 \newpage
 

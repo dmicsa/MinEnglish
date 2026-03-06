@@ -201,11 +201,75 @@ Spoken mathematics is standardized via the `/` (slais) and `.` (point)
 operators, providing a syntactically uniform method for subdividing physical
 objects or abstract metrics.
 
-- **Fractions:** `1/2` (uan slais tuu) = One-half. `3/4apel` (trii slais for for
+- **Fractions:** `1/2` (uan slais tuu) = One-half. `3/4apel` (trii slais for
   apel) = Three-quarters of an apple.
 - **Decimals:** `0.5` (ziro point faiv). `99.9` (nain nain point nain).
 
-### 3.2 Verbs — Temporal Mechanics
+### 3.1.5 Mathematical Notation: LaTeX Standardization
+
+For formal mathematical expressions, MinEnglish adopts LaTeX inline notation
+directly as a first-class citizen. Mathematical tokens enclosed in `$...$` are
+parsed as LaTeX and carry their standard semantics without phonetic
+transcription.
+
+**Rule:** Any token beginning and ending with `$` is treated as a mathematical
+literal and is exempt from MinEnglish phonetic rules.
+
+- `$\frac{1}{2}$` = One-half (rendered expression)
+- `$E = mc^2$` = Einstein mass-energy equivalence
+- `$\int_0^\infty f(x)\,dx$` = Integral of f(x) from zero to infinity
+- `$\nabla \cdot E = \frac{\rho}{\varepsilon_0}$` = Gauss's law
+
+In speech, the entire LaTeX expression is read naturally in English
+pronunciation. Written MinEnglish and spoken MinEnglish diverge only at
+mathematical literal boundaries.
+
+### 3.1.6 Token Optionality Rules (v2.0)
+
+Three categories of token may be omitted when their value is recoverable from
+context. **Parsers must implement the following defaults when a token is
+absent:**
+
+#### Rule A — Implicit Singular (`1` optional)
+
+When no quantitative prefix is present before a noun, the parser defaults to
+singular (`1`). The explicit `1` is required only when disambiguation from a
+preceding plural context is necessary.
+
+| Explicit            | Implicit          | Meaning              |
+| :------------------ | :---------------- | :------------------- |
+| `1cat sit on 1mat`  | `cat sit on mat`  | A cat sits on a mat  |
+| `1dog run in 1parc` | `dog run in parc` | A dog runs in a park |
+
+> **Note:** If the previous noun was plural, explicit `1` is required to
+> re-establish singular: `3cat run, den 1cat stop.`
+
+#### Rule B — Implicit First Person (`i` optional)
+
+When the subject is first-person singular and the sentence structure is
+declarative, the pronoun `i` may be omitted. The parser defaults to `i` when no
+subject precedes the verb block.
+
+| Explicit            | Implicit          | Meaning             |
+| :------------------ | :---------------- | :------------------ |
+| `i1laic 1cat`       | `1laic cat`       | I like a cat        |
+| `i-1d gou tu 1stor` | `-1d gou tu stor` | I went to the store |
+
+> **Disambiguation:** If a third-person pronoun or noun immediately precedes the
+> verb, `i` is not assumed. The implicit-I rule only fires when the verb begins
+> the sentence.
+
+#### Rule C — Implicit Present Tense (temporal marker optional)
+
+A verb with no temporal prefix is already defined as present continuous.
+Additionally, the discrete present marker `1` (as in `h1laic`) is also optional
+when the subject is explicit and no tense ambiguity exists. The `1` attachment
+is required only for disambiguation or emphasis.
+
+| Explicit      | Implicit     | Meaning        |
+| :------------ | :----------- | :------------- |
+| `h1laic 1cat` | `h laic cat` | He likes a cat |
+| `i1run fast`  | `run fast`   | I run fast     |
 
 Irregular conjugations are functionally inefficient. MinEnglish regulates time
 processing via temporal prefixing that targets an absolute mathematical
@@ -933,7 +997,261 @@ Possess: i's, u's, h's, s', t's
 
 ---
 
-## 8. Comparative Information Density Analysis
+## 8. Technical Domain Corpus
+
+The following examples demonstrate MinEnglish applied to formal technical
+disciplines, using the optionality rules of v2.0 (implicit singular, implicit
+`i`, implicit present tense) and LaTeX math notation where appropriate.
+Back-translations are omitted where the logical derivation is self-evident.
+
+### 8.1 Mathematics
+
+**M1 — The Pythagorean Theorem:**
+
+> In a right triangle, the square of the hypotenuse equals the sum of the
+> squares of the other two sides.
+
+```minenglish
+in triangle-rait, $a^2 + b^2 = c^2$, uen c bi said-hipoteniuz.
+```
+
+_Math literal `$a^2 + b^2 = c^2$` is exempt from phonetic rules. Compression:
+~51%._
+
+**M2 — Derivative Definition:**
+
+> The derivative of f(x) is the limit of the difference quotient as h approaches
+> zero.
+
+```minenglish
+$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$
+```
+
+_Pure LaTeX literal. No MinEnglish wrapping required for isolated mathematical
+definitions._
+
+**M3 — Quadratic Formula:**
+
+> Solve for x using the quadratic formula given coefficients a, b, and c.
+
+```minenglish
+solv for x, $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$, given a, b, c.
+```
+
+**M4 — Probability Statement:**
+
+> The probability that two independent events both occur equals the product of
+> their individual probabilities.
+
+```minenglish
+$P(A \cap B) = P(A) \cdot P(B)$ if A, B bi independent.
+```
+
+**M5 — Matrix Multiplication:**
+
+> The element at row i, column j of the product matrix equals the dot product of
+> row i of A and column j of B.
+
+```minenglish
+$(AB)_{ij} = \sum_k A_{ik} B_{kj}$
+```
+
+---
+
+### 8.2 Physics
+
+**P1 — Newton's Second Law:**
+
+> Force equals mass times acceleration.
+
+```minenglish
+$F = ma$ — fors bi mas * akselireshun.
+```
+
+**P2 — Mass-Energy Equivalence:**
+
+> Energy equals mass times the speed of light squared. This implies that a small
+> amount of mass converts to an enormous quantity of energy.
+
+```minenglish
+$E = mc^2$ — smol mas convert tu >uan-mun eneri.
+```
+
+**P3 — Gauss's Law (Electrostatics):**
+
+> The electric flux through a closed surface equals the enclosed charge divided
+> by the permittivity of free space.
+
+```minenglish
+$\oint \vec{E} \cdot d\vec{A} = \frac{Q_{enc}}{\varepsilon_0}$ — Gauss lau for field-elec.
+```
+
+**P4 — Uncertainty Principle:**
+
+> The product of the uncertainty in position and the uncertainty in momentum is
+> always greater than or equal to ħ/2.
+
+```minenglish
+$\Delta x \cdot \Delta p \geq \frac{\hbar}{2}$ — Heisenberg constrains *mesurment-cuantum.
+```
+
+**P5 — Wave Equation:**
+
+> The wave speed equals frequency times wavelength.
+
+```minenglish
+$v = f\lambda$ — spid-uav bi frekuensi * lent-uav.
+```
+
+---
+
+### 8.3 Chemistry
+
+**C1 — Ideal Gas Law:**
+
+> Pressure times volume equals the number of moles times the gas constant times
+> temperature.
+
+```minenglish
+$PV = nRT$ — presur * volium bi mol-n * R * temperatur.
+```
+
+**C2 — Reaction Rate:**
+
+> The combustion of methane with oxygen produces carbon dioxide, water, and
+> heat.
+
+```minenglish
+$\text{CH}_4 + 2\text{O}_2 \to \text{CO}_2 + 2\text{H}_2\text{O}$ + eneri-hit.
+```
+
+**C3 — pH Definition:**
+
+> The pH of a solution is the negative logarithm base 10 of the hydrogen ion
+> concentration.
+
+```minenglish
+$\text{pH} = -\log_{10}[\text{H}^+]$ — mesur asiditi-solushun.
+```
+
+**C4 — Avogadro's Number:**
+
+> One mole of any substance contains approximately 6.022 times 10 to the power
+> of 23 entities.
+
+```minenglish
+1mol *substans contain $6.022 \times 10^{23}$ entiti.
+```
+
+---
+
+### 8.4 Engineering
+
+**E1 — Ohm's Law:**
+
+> Voltage equals current times resistance.
+
+```minenglish
+$V = IR$ — volteij bi curent * rezistans.
+```
+
+**E2 — Structural Load (Stress):**
+
+> The stress in a material equals the applied force divided by the
+> cross-sectional area.
+
+```minenglish
+$\sigma = \frac{F}{A}$ — stres in material bi fors / area-cross.
+```
+
+**E3 — Signal-to-Noise Ratio:**
+
+> The SNR in decibels equals ten times the log base 10 of the signal power
+> divided by noise power.
+
+```minenglish
+$\text{SNR}_{dB} = 10\log_{10}\!\left(\frac{P_s}{P_n}\right)$ — mesur cuoliti-signal.
+```
+
+**E4 — Control Systems (Transfer Function):**
+
+> A PID controller adjusts output based on proportional, integral, and
+> derivative error terms.
+
+```minenglish
+$u(t) = K_p e(t) + K_i\int e\,dt + K_d\frac{de}{dt}$ — PID control output.
+```
+
+**E5 — Thermal Efficiency:**
+
+> The Carnot efficiency of a heat engine operating between temperatures T_hot
+> and T_cold is 1 minus T_cold over T_hot.
+
+```minenglish
+$\eta = 1 - \frac{T_c}{T_h}$ — macsimaum eficiensi-hit. T_h bi hot, T_c bi could.
+```
+
+---
+
+### 8.5 Investment & Financial Markets
+
+**I1 — Compound Interest:**
+
+> An initial investment of $10,000 at an annual rate of 7% compounded monthly
+> for 10 years yields a final value.
+
+```minenglish
+$A = P\!\left(1+\frac{r}{n}\right)^{nt}$ — $10000 @ 7%/iir compound-munt for 10iir.
+```
+
+**I2 — Sharpe Ratio:**
+
+> The Sharpe ratio measures risk-adjusted return: expected return minus
+> risk-free rate, divided by portfolio standard deviation.
+
+```minenglish
+$S = \frac{E[R] - R_f}{\sigma}$ — mesur return-risk-ajust portfolio.
+```
+
+**I3 — Portfolio Diversification:**
+
+> Allocate 60% to equities and 40% to fixed income to balance growth and
+> stability.
+
+```minenglish
+aloc 60% tu aset-ekuiti an 40% tu aset-bond, for balans grout-stabiliti.
+```
+
+**I4 — Options Pricing (Black-Scholes):**
+
+> The Black-Scholes model prices a European call option given the underlying
+> price, strike, volatility, time to expiry, and risk-free rate.
+
+```minenglish
+$C = S_0 N(d_1) - Ke^{-rT}N(d_2)$ — Black-Scholes prai *opsion-col European.
+```
+
+**I5 — Market Signal:**
+
+> The 50-day moving average crossing above the 200-day moving average is a
+> bullish signal, historically associated with trend continuation.
+
+```minenglish
+MA-50d cross > MA-200d bi signal-bulis. *histori asocieit uid trend-continue.
+```
+
+**I6 — Inflation-Adjusted Return:**
+
+> The real return equals the nominal return minus the inflation rate.
+
+```minenglish
+return-real bi return-nominal - ret-infleshun.
+$r_{real} \approx r_{nominal} - \pi$
+```
+
+---
+
+## 9. Comparative Information Density Analysis
 
 The transmission efficiency (information density) of MinEnglish was modeled
 against a 35-sentence standard English corpus. Efficiency is measured locally in

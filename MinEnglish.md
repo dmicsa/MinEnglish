@@ -34,11 +34,10 @@ aim is to **remove** the inconsistencies, redundancies, and irregularities that
 burden English — not to replace it with something foreign. The result is a
 leaner, fully regular version of English: same vocabulary, same phonemes, same
 word order — but with predictable spelling, explicit quantities, and precise
-time operators. This specification documents the phonological,
-morphological, and syntactic rules targeting the stable release,
-demonstrates a 35.0% average character reduction over standard English across a
-35-sentence corpus, and acknowledges the primary adoption challenge: human
-habit.
+time operators. This specification documents the phonological, morphological,
+and syntactic rules targeting the stable release, demonstrates a 35.0% average
+character reduction over standard English across a 35-sentence corpus, and
+acknowledges the primary adoption challenge: human habit.
 
 ---
 
@@ -55,7 +54,7 @@ habit.
 | **Phonetic Spelling**   | Removes the burden of memorizing irregular spelling. Every letter has one sound, every sound one letter. (`knight` → `nait`, `enough` → `inuf`) |
 | **Explicit Quantities** | Removes ambiguous pluralization. `cats` vs `cat` is a noise-channel problem. `3cat` is unambiguous. Singular is the default — no suffix needed. |
 | **Regular Time**        | Removes 12+ irregular tense forms. One temporal operator (`-1d`, `1d`, `:5Y`) does the work of went/gone/had gone/will go/would have gone.      |
-| **Symbolic Operators**  | Replaces multi-word constructs with single tokens already familiar from math and logic (`&`, `|`, `>`, `<`, `~`, `@`).                         |
+| **Symbolic Operators**  | Replaces multi-word constructs with single tokens already familiar from math and logic (`&`, `                                                  |
 | **Zero Exceptions**     | Removes the entire category of irregular verbs, irregular plurals, and silent letters. What works for one word works for all words.             |
 
 ---
@@ -100,15 +99,15 @@ preserving the 1-to-1 spelling mapping without requiring macron diacritics.
 Consonantal mappings prioritize acoustic clarity while resolving historical
 orthographic collisions (such as the hard-soft _c_ boundary).
 
-| Grapheme | Phoneme    | Application Rule                                                                   | Example            |
-| :------- | :--------- | :--------------------------------------------------------------------------------- | :----------------- |
-| **c**    | /k/        | Soft, unaspirated velar plosive.                                                   | cat, cum, cup, bac |
-| **k**    | /kʰ/       | Hard, aspirated velar plosive.                                                     | king, kiip, kic    |
-| **ci** / **ce** | /tʃ/ | Voiceless palato-alveolar affricate. The vowel functions as an orthographic trigger. | ciald, cier, ceic (check) |
-| **u**    | /w/        | Semivowel substitution for _w_.                                                    | uoter, uid         |
-| **i**    | /j/        | Semivowel substitution for _y_.                                                    | ies, iir           |
-| **t**    | /t/ or /θ/ | Alveolar plosive; assumes the voiceless dental fricative locally.                  | tinc, trii         |
-| **d**    | /d/ or /ð/ | Alveolar plosive; assumes the voiced dental fricative locally.                     | de, dat            |
+| Grapheme        | Phoneme    | Application Rule                                                                     | Example                   |
+| :-------------- | :--------- | :----------------------------------------------------------------------------------- | :------------------------ |
+| **c**           | /k/        | Soft, unaspirated velar plosive.                                                     | cat, cum, cup, bac        |
+| **k**           | /kʰ/       | Hard, aspirated velar plosive.                                                       | king, kiip, kic           |
+| **ci** / **ce** | /tʃ/       | Voiceless palato-alveolar affricate. The vowel functions as an orthographic trigger. | ciald, cier, ceic (check) |
+| **u**           | /w/        | Semivowel substitution for _w_.                                                      | uoter, uid                |
+| **i**           | /j/        | Semivowel substitution for _y_.                                                      | ies, iir                  |
+| **t**           | /t/ or /θ/ | Alveolar plosive; assumes the voiceless dental fricative locally.                    | tinc, trii                |
+| **d**           | /d/ or /ð/ | Alveolar plosive; assumes the voiced dental fricative locally.                       | de, dat                   |
 
 > **Aspiration Differentiation (`k` vs `c`):** The aspirated /kʰ/ is strictly
 > represented by `k`, whereas the unaspirated variant uses `c`. Following
@@ -201,6 +200,13 @@ brands) retain their canonical native orthography. First-letter capitalization
 acts as an escape character, signaling to the parser that local phonetic rules
 are suspended for the duration of the token.
 
+> **Strict Lowercase Axiom:** Because capitalization is an active mathematical
+> operator (the Escape key), MinEnglish strictly prohibits capitalizing the
+> first letter of sentences. Capitalizing a sentence-starting word would force
+> parsers to guess whether the word is an escaped proper noun or standard
+> orthographic decoration, destroying mathematical purity. All standard
+> MinEnglish text is strictly lowercase.
+
 - `person Isabella` (Denotes the individual Isabella; phonetically preserved).
 - `cuntri France` (Denotes the sovereign state of France).
 
@@ -228,8 +234,8 @@ preceding plural context is necessary.
 
 | Explicit            | Implicit          | Meaning              |
 | :------------------ | :---------------- | :------------------- |
-| `1cat sit on 1mat`  | `Cat sit on mat`  | A cat sits on a mat  |
-| `1dog run in 1parc` | `Dog run in parc` | A dog runs in a park |
+| `1cat sit on 1mat`  | `cat sit on mat`  | A cat sits on a mat  |
+| `1dog run in 1parc` | `dog run in parc` | A dog runs in a park |
 
 > **Note:** If the previous noun was plural, explicit `1` is required to
 > re-establish singular: `3cat run, den 1cat stop.`
@@ -300,10 +306,14 @@ algebraic timeline construction.
 - **Adverbial Ordering:** Adverbs post-modify verbs (`run fast`).
 - **Comparative Mechanics:** Driven by scalar progression `mor` and `most`
   (`cat mor big`).
-- **Intensity Combinators (`>`, `<`):**
-  - `>big` = Positive scalar intensity (very big)
-  - `>>big` = Extreme positive scalar intensity
-  - `<hot` = Negative scalar intensity (slightly hot)
+- **Intensity Combinators (`>`, `>>`, `<`, `<<`):** Adjectives and adverbs lack
+  morphological escalation (no "-er" or "-est"). Instead, magnitude is modulated
+  using absolute mathematical prefixes that attach directly to the front of
+  their target.
+  - `>big` = Positive magnification (very big)
+  - `>>big` = Extreme maximization (massive, huge)
+  - `<big` = Negative attenuation (slightly big)
+  - `<<big` = Extreme minimization (tiny, very small)
 
 ### 3.3.1 Universal Predicators (`du` / `meic`)
 
@@ -312,8 +322,8 @@ inappropriate syntactic mapping can yield semantic anomalies. The universal
 predicators `du` (experiential interaction) and `meic` (generative action) serve
 as formal verbalizers for noun-class tokens.
 
-- `Du parc` = I interact with the park (replaces the ambiguous `parc`).
-- `S-1d meic fuud` = She generated food (replaces the anomalous `s-1d fuud`).
+- `du parc` = I interact with the park (replaces the ambiguous `parc`).
+- `s-1d meic fuud` = She generated food (replaces the anomalous `s-1d fuud`).
 
 ### 3.4 Pronominal Indexing
 
@@ -362,7 +372,7 @@ By default, the syntactic structure is declarative and absolute. To inject
 social deference or epistemological uncertainty, the approximation operator `~`
 is bound to the pronoun.
 
-- `U giv` = Absolute directive (You give).
+- `u giv` = Absolute directive (You give).
 - `~u giv` = Deferred directive (Could you please give).
 - `~tinc` = Epistemological deferment (It seems to me).
 
@@ -371,9 +381,9 @@ is bound to the pronoun.
 Negation is expressed by prepending `no` immediately before the verb. The `no`
 token is invariant and does not conjugate.
 
-- `No laic cat` = I do not like the cat.
-- `U1d no cum` = You will not come tomorrow.
-- `*H no can spiic` = None of them can speak.
+- `no laic cat` = I do not like the cat.
+- `u1d no cum` = You will not come tomorrow.
+- `*h no can spiic` = None of them can speak.
 
 ### 3.6 Sentence Structure & Conjunction Reduction
 
@@ -389,8 +399,8 @@ laic cat >big.            → I like a very big cat.
 If multiple actions share the same subject, you can drop the subject after `an`
 or `or` (Conjunction Reduction):
 
-- `Iit an drinc` = I eat and (I) drink.
-- `Iit an h1drinc` = I eat and he drinks.
+- `iit an drinc` = I eat and (I) drink.
+- `iit an h1drinc` = I eat and he drinks.
 
 ### 3.7 Modality (can, must, should)
 
@@ -421,13 +431,13 @@ chained verb and a direct object noun. **Rule:** When a noun could be mistaken
 for a verb, prefix it with the transitive operator `tu` (acting like Esperanto's
 -n accusative).
 
-- `Laic tu cat` = I like the cat (Prevents reading as "I like and I cat").
-- `S1giv tu h buc` = She gives him a book.
+- `laic tu cat` = I like the cat (Prevents reading as "I like and I cat").
+- `s1giv tu h buc` = She gives him a book.
 
 ### 3.9 Connectors, Prepositions, Tone Markers
 
-- **Logic:** `an` / `&` (and), `or` / `|` (or), `but` (but), `if` (if), `cos`
-  (because), `sou` (so), `den` (then).
+- **Logic:** `an` / `&` (and), `or` / `|` (or), `^` (xor), `but` (but), `if`
+  (if), `cos` (because), `sou` (so), `den` (then).
 - **Shortcuts:** `@` (at), `>` (over / more than), `<` (under / less than).
 - **Tone:** `!` (emphasis), `?` (question), `..` (hesitation), `^` (sarcasm).
 
@@ -444,13 +454,15 @@ of the sentence clause.
 However, the `!` symbol has a dual function depending on whitespace spacing:
 
 - **Exclamation (Space/End):** When placed at the end of a sentence or separated
-  by a space, it acts natively as an exclamation.
+  by a space, it acts natively as an exclamation. Doubling the terminal marks
+  (`!!` or `??`) is supported and explicitly defined as an aggressive, warning,
+  or obnoxious tone multiplier.
 - **Negation Prefix (Attached):** When attached directly to the front of a word
   with _no space_, it acts as the logical NOT operator.
 
-- `Uen u1gou?` = **When** do you go?
-- `Uac!` = Watch out! (Exclamation)
-- `I !laic cat.` = I do **not** like cats. (Negation)
+- `uen u1gou??` = **When** do you go?! (Obnoxious Interrogation)
+- `uac!!` = Watch out! (Aggressive Warning)
+- `i !laic cat.` = I do **not** like cats. (Negation)
 - `!gud` = Not good.
 - `huu`, `uat`, `uai`, `haum` (who, what, why, how much-many).
 
@@ -465,6 +477,16 @@ close) to return to the parent set.
 - `man co dat dog co dat ciald luv oc -1d bait oc run auei.`
 - _Translation:_ The man [who the dog [that the child loves] bit] ran away.
 
+> **Orthographic Scope Analysis (`{ }`):** In strictly written or digital
+> mediums, the auditory `co` and `oc` tokens can be visually substituted with
+> the standard logical syntax braces `{` and `}` for enhanced structural
+> readability. However, because typographical braces cannot be vocalized
+> efficiently without injecting multi-syllable Latin terms ("brace open", "brace
+> close"), the `co` / `oc` strings remain the mandatory universal phonetic
+> standard for speech.
+>
+> - **Syntax Mapping:** `man { dat dog { dat ciald luv } -1d bait } run auei.`
+
 ### 3.9.3 Arithmetic & Logical Operator Inventory
 
 MinEnglish formally adopts five symbolic operators as first-class syntactic
@@ -478,6 +500,7 @@ compound word operator.
 | `*`      | Star      | Universal / generic quantifier             | `*cat` = all cats           |
 | `&`      | Ampersand | Logical AND (≡ `an`)                       | `laic cat & dog`            |
 | `        | `         | Pipe                                       | Logical OR (≡ `or`)         |
+| `^`      | Caret     | Logical XOR (Exclusive OR)                 | `iit cat ^ dog` (one only)  |
 
 > `*i` means "all of us" (universal quantifier on first-person pronoun) — not
 > habitual verb. When `*` prefixes a pronoun it quantifies it; when it prefixes
@@ -488,8 +511,8 @@ compound word operator.
 To avoid repeating the verb "to be" (`bi`), prepositions can act as verbs simply
 by attaching a time prefix to them.
 
-- `Haus in siti` = The house is in a city (`in` acts as the verb "to be in").
-- `Cat -1d on mat` = The cat was on a mat yesterday.
+- `haus in siti` = The house is in a city (`in` acts as the verb "to be in").
+- `cat -1d on mat` = The cat was on a mat yesterday.
 
 ### 3.10 Abjad Mode (Extreme Shorthand)
 
@@ -497,7 +520,7 @@ For ultra-fast texting or constrained bandwidth, MinEnglish formally defines
 "Abjad Mode". **Rule:** Drop all vowels _unless_ the word starts with a vowel or
 doing so breaks a core operator.
 
-- Standard: `tinc u bi >liit`
+- Standard / English: `tinc u bi >liit` (I think you are very late)
 - Abjad Mode: `tnc u b >lt`
 
 ### 3.11 Semantic Idiom Standardization
@@ -513,10 +536,10 @@ Idioms must be translated to their literal action equivalent.
 ### 3.12 Orthographic Stress Engine
 
 To solve the ambiguity of spoken MinEnglish without relying on the optional `'`
-marker, standardizes default pronunciation logic for parsers and
-speakers. **Rule:** Always stress the **first vowel** of a root word _unless_ it
-is a recognized prefix-suffix. In compound words, stress the first syllable of
-the primary noun.
+marker, standardizes default pronunciation logic for parsers and speakers.
+**Rule:** Always stress the **first vowel** of a root word _unless_ it is a
+recognized prefix-suffix. In compound words, stress the first syllable of the
+primary noun.
 
 - `c'ompiuuter` (Stress the O)
 - `b'ioloji` (Stress the I)
@@ -729,8 +752,8 @@ byte-length (character count reduction).
 
 ## 8. Theoretical Limitations: The Human Biological Factor
 
-The structural additions of previous linguistic protocols (Literalization
-`_`, Clause Anchors `co`/`oc`, and Echo-Tagging) establish MinEnglish as a
+The structural additions of previous linguistic protocols (Literalization `_`,
+Clause Anchors `co`/`oc`, and Echo-Tagging) establish MinEnglish as a
 mathematically and informationally optimized transmission system. It addresses
 standard linguistic inefficiencies:
 
@@ -843,8 +866,8 @@ BT: One-meeting 2026-01-15 14:30 be held.
 
 ```text
 EN: I have been studying English for five years but I still cannot speak fluently. (78)
-ME: :5Y studi inglish but i no can spiic fluuent. (45)
-BT: For-five-years study English but I not can speak fluent.
+ME: :5Y studi inglish but i !can spiic fluuent. (44)
+BT: For-five-years study English but I negation-can speak fluent.
 ```
 
 > **Compression:** 42.3% Δ
@@ -871,7 +894,7 @@ BT: All-of-us in-one-day go to one-restaurant extremely-new at 19:00.
 
 ```text
 EN: Look out! The glass window was just broken by the angry man. (60)
-ME: uac! uindou glas breic bai man angri. (39)
+ME: uac!! uindou glas breic bai man angri. (39)
 BT: Watch! One-window glass just-now break by one-man angry.
 ```
 
@@ -1218,7 +1241,8 @@ BT: Extremely-hyperinflation now-destroy [Obj] power-buy and very-serious halt [
 
 > **Compression:** 1.2% Δ
 >
-> **Observation:** Low compression due to retention of exact international academic vocabulary.
+> **Observation:** Low compression due to retention of exact international
+> academic vocabulary.
 
 \newpage
 

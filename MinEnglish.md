@@ -497,7 +497,7 @@ domain:
 To avoid repeating the verb "to be" (`bi`), prepositions can act as verbs simply
 by attaching a time prefix to them.
 
-- `haus in siti` = The house is in a city ("the house ins a city").
+- `haus in siti` = The house is in a city (`in` acts as the verb "to be in").
 - `cat -1d on mat` = The cat was on a mat yesterday.
 
 ### 3.10 Slash & Hyphen Composition (Compound Words)

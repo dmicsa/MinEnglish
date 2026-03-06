@@ -104,7 +104,7 @@ orthographic collisions (such as the hard-soft _c_ boundary).
 | :------- | :--------- | :--------------------------------------------------------------------------------- | :----------------- |
 | **c**    | /k/        | Soft, unaspirated velar plosive.                                                   | cat, cum, cup, bac |
 | **k**    | /kʰ/       | Hard, aspirated velar plosive.                                                     | king, kiip, kic    |
-| **ci**   | /tʃ/       | Voiceless palato-alveolar affricate. The _i_ is phonetically null when word-final. | ciald, cier, muci  |
+| **ci** / **ce** | /tʃ/ | Voiceless palato-alveolar affricate. The vowel functions as an orthographic trigger. | ciald, cier, ceic (check) |
 | **u**    | /w/        | Semivowel substitution for _w_.                                                    | uoter, uid         |
 | **i**    | /j/        | Semivowel substitution for _y_.                                                    | ies, iir           |
 | **t**    | /t/ or /θ/ | Alveolar plosive; assumes the voiceless dental fricative locally.                  | tinc, trii         |
@@ -630,7 +630,7 @@ ATTACH:     <pronoun><prefix>     h1laic, -1d, s1run
 
 ```
 c = /k/ soft (cat, cum, bac)      k = /kʰ/ hard (king, kiip, kic)
-ci = /tʃ/ (ciald, cier, final i silent) sh = /ʃ/   ng = /ŋ/   zh = /ʒ/
+ci / ce = /tʃ/ (ciald, cier, ceic) sh = /ʃ/   ng = /ŋ/   zh = /ʒ/
 u = /w/ (uoter, uid)              i = /j/ (ies, iir)
 t = /t/ (tinc, trii)              d = /d/ (de, dat)
 ```
@@ -1174,7 +1174,7 @@ BT: One-defendant just-now formal plead not guilty to any-charge present by [Obj
 
 ```text
 EN: Boil the water, add a pinch of salt, and stir constantly until the sauce thickens. (82)
-ME: boil tu uoter, ad tu pinci solt, an \*ster until sos >tic. (58)
+ME: boil tu uoter, ad tu pince solt, an \*ster until sos >tic. (58)
 BT: Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce very-thick.
 ```
 

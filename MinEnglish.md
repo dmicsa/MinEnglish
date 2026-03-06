@@ -192,8 +192,8 @@ brands) retain their canonical native orthography. First-letter capitalization
 acts as an escape character, signaling to the parser that local phonetic rules
 are suspended for the duration of the token.
 
-- `1person Isabella` (Denotes the individual Isabella; phonetically preserved).
-- `1cuntri France` (Denotes the sovereign state of France).
+- `person Isabella` (Denotes the individual Isabella; phonetically preserved).
+- `cuntri France` (Denotes the sovereign state of France).
 
 ### 3.1.4 Fractional and Decimal Operators
 
@@ -238,11 +238,11 @@ preceding plural context is necessary.
 
 | Explicit            | Implicit          | Meaning              |
 | :------------------ | :---------------- | :------------------- |
-| `1cat sit on 1mat`  | `cat sit on mat`  | A cat sits on a mat  |
-| `1dog run in 1parc` | `dog run in parc` | A dog runs in a park |
+| `cat sit on mat`  | `cat sit on mat`  | A cat sits on a mat  |
+| `dog run in parc` | `dog run in parc` | A dog runs in a park |
 
 > **Note:** If the previous noun was plural, explicit `1` is required to
-> re-establish singular: `3cat run, den 1cat stop.`
+> re-establish singular: `3cat run, den cat stop.`
 
 #### Rule B — Implicit First Person (`i` optional)
 
@@ -252,8 +252,8 @@ subject precedes the verb block.
 
 | Explicit            | Implicit          | Meaning             |
 | :------------------ | :---------------- | :------------------ |
-| `i1laic 1cat`       | `1laic cat`       | I like a cat        |
-| `i-1d gou tu 1stor` | `-1d gou tu stor` | I went to the store |
+| `laic cat`       | `laic cat`       | I like a cat        |
+| `i-1d gou tu stor` | `-1d gou tu stor` | I went to the store |
 
 > **Disambiguation:** If a third-person pronoun or noun immediately precedes the
 > verb, `i` is not assumed. The implicit-I rule only fires when the verb begins
@@ -268,8 +268,8 @@ is required only for disambiguation or emphasis.
 
 | Explicit      | Implicit     | Meaning        |
 | :------------ | :----------- | :------------- |
-| `h1laic 1cat` | `h laic cat` | He likes a cat |
-| `i1run fast`  | `run fast`   | I run fast     |
+| `h1laic cat` | `h laic cat` | He likes a cat |
+| `run fast`  | `run fast`   | I run fast     |
 
 Irregular conjugations are functionally inefficient. MinEnglish regulates time
 processing via temporal prefixing that targets an absolute mathematical
@@ -280,7 +280,7 @@ timeline. A verb absent a modifier defaults to the continuous present.
 | _(null)_     | Present continuous (default)           | `iit` (eating)                                  |
 | `1`          | Present discrete (attachment operator) | `i1iit` (I eat)                                 |
 | `*`          | Habitual / Universal continuity        | `*iit` (eats perpetually)                       |
-| `-0s`        | Immediate past vector (zero offset)    | `-0s sii` (just perceived)                      |
+| `-0s`        | Immediate past vector (zero offset)    | `sii` (just perceived)                      |
 | `-1d`        | Past vector (one day offset)           | `-1d iit` (ate yesterday)                       |
 | `:5Y`        | Duration scalar (five years)           | `:5Y studi` (has studied spanning five years)   |
 | `+1d`        | Future vector (one day offset)         | `+1d gou` (will transit tomorrow)               |
@@ -303,10 +303,10 @@ algebraic timeline construction.
 
 ### 3.3 Modifiers and Scalar Intensity
 
-- **Adjectival Ordering:** Adjectives strictly post-modify nouns (`1cat big`).
-- **Adverbial Ordering:** Adverbs post-modify verbs (`1run fast`).
+- **Adjectival Ordering:** Adjectives strictly post-modify nouns (`cat big`).
+- **Adverbial Ordering:** Adverbs post-modify verbs (`run fast`).
 - **Comparative Mechanics:** Driven by scalar progression `mor` and `most`
-  (`1cat mor big`).
+  (`cat mor big`).
 - **Intensity Combinators (`>`, `<`):**
   - `>big` = Positive scalar intensity (very big)
   - `>>big` = Extreme positive scalar intensity
@@ -319,8 +319,8 @@ inappropriate syntactic mapping can yield semantic anomalies. The universal
 predicators `du` (experiential interaction) and `meic` (generative action) serve
 as formal verbalizers for noun-class tokens.
 
-- `i1du 1parc` = I interact with the park (replaces the ambiguous `i1parc`).
-- `s-1d meic 1fuud` = She generated food (replaces the anomalous `s-1d fuud`).
+- `du parc` = I interact with the park (replaces the ambiguous `parc`).
+- `s-1d meic fuud` = She generated food (replaces the anomalous `s-1d fuud`).
 
 ### 3.4 Pronominal Indexing
 
@@ -355,7 +355,7 @@ s*run     (she runs generically)
 
 ### 3.4.2 Auditory Disambiguation (Prefix Positioning)
 
-Agglutination can generate overlapping vowel harmonics (e.g., `i1in` or
+Agglutination can generate overlapping vowel harmonics (e.g., `in` or
 `if i*no`), increasing transmission error rates. To preserve auditory clarity
 boundaries, pronominal indices have flexible positioning relative to the
 temporal operator.
@@ -379,7 +379,7 @@ is bound to the pronoun.
 Negation is expressed by prepending `no` immediately before the verb. The `no`
 token is invariant and does not conjugate.
 
-- `i1no laic 1cat` = I do not like the cat.
+- `no laic cat` = I do not like the cat.
 - `u+1d no cum` = You will not come tomorrow.
 - `*h no can spiic` = None of them can speak.
 
@@ -388,7 +388,7 @@ token is invariant and does not conjugate.
 **Subject + Time-Verb + Number-Object + Modifiers**
 
 ```efi
-i1laic 1cat >big.            → I like a very big cat.
+laic cat >big.            → I like a very big cat.
 *h-1d bai 3buc.              → They bought 3 books yesterday.
 ```
 
@@ -397,15 +397,15 @@ i1laic 1cat >big.            → I like a very big cat.
 To disambiguate negation or questions, the emphasis tone `!` acts as a Focus
 Operator to target exactly what is being negated/questioned.
 
-- `i1no laic !3cat` = It's not _three_ cats that I like (I like four).
-- `i1no laic 3!cat` = It's not _cats_ that I like three of (I like 3 dogs).
-- `!i 1no laic 3cat` = It's not _me_ who likes three cats (someone else does).
+- `no laic !3cat` = It's not _three_ cats that I like (I like four).
+- `no laic 3!cat` = It's not _cats_ that I like three of (I like 3 dogs).
+- `!i no laic 3cat` = It's not _me_ who likes three cats (someone else does).
 
 If multiple actions share the same subject, you can drop the subject after `an`
 or `or` (Conjunction Reduction):
 
-- `i1iit an drinc` = I eat and (I) drink.
-- `i1iit an h1drinc` = I eat and he drinks.
+- `iit an drinc` = I eat and (I) drink.
+- `iit an h1drinc` = I eat and he drinks.
 
 ### 3.7 Modality (can, must, should)
 
@@ -413,7 +413,7 @@ Modality verbs follow the time prefix, creating a composite verb phrase:
 
 | Modal    | Meaning                | Example                                  |
 | -------- | ---------------------- | ---------------------------------------- |
-| **can**  | ability / permission   | `i1can iit` = I can eat                  |
+| **can**  | ability / permission   | `can iit` = I can eat                  |
 | **must** | necessity / obligation | `u+1d must cum` = You must come tomorrow |
 | **shud** | advice / should        | `*h shud lern` = They should learn       |
 | **~can** | probability / might    | `i+1d ~can gou` = I might go tomorrow    |
@@ -425,8 +425,8 @@ Formed by moving the Object to the front, and following the verb with `bai`
 
 | Voice       | MinEnglish Structure           | Example                                                   |
 | ----------- | ------------------------------ | --------------------------------------------------------- |
-| **Active**  | Subj + Time-Verb + Obj         | `1boi -0s kic 1bol` (A boy just kicked a ball)            |
-| **Passive** | Obj + Time-Verb + `bai` + Subj | `1bol -0s kic bai 1boi` (A ball was just kicked by a boy) |
+| **Active**  | Subj + Time-Verb + Obj         | `boi kic bol` (A boy just kicked a ball)            |
+| **Passive** | Obj + Time-Verb + `bai` + Subj | `bol kic bai boi` (A ball was just kicked by a boy) |
 
 ### 3.8.1 The Direct Object Marker (`tu`)
 
@@ -436,8 +436,8 @@ chained verb and a direct object noun. **Rule:** When a noun could be mistaken
 for a verb, prefix it with the transitive operator `tu` (acting like Esperanto's
 -n accusative).
 
-- `i1laic tu 1cat` = I like the cat (Prevents reading as "I like and I cat").
-- `s1giv tu h 1buc` = She gives him a book.
+- `laic tu cat` = I like the cat (Prevents reading as "I like and I cat").
+- `s1giv tu h buc` = She gives him a book.
 
 ### 3.9 Connectors, Prepositions, Tone Markers
 
@@ -454,7 +454,7 @@ MinEnglish requires the `?` symbol attached to the front of interrogative words
 to strictly mark them as questions, preventing parser confusion.
 
 - `?uen u1gou` = **When** do you go? (Question)
-- `i1nou uen u1gou` = I know **when/the time that** you go. (Relative)
+- `nou uen u1gou` = I know **when/the time that** you go. (Relative)
 - `?huu` (who?), `?uat` (what?), `?uai` (why?), `?haum` (how much/many?).
 
 ### 3.9.2 Clause Anchors (`co` / `oc`)
@@ -465,7 +465,7 @@ memory (the phonological loop). **Rule:** When nesting 2 or more clauses, the
 speaker _must_ use `co` (clause open) to start the subset, and `oc` (clause
 close) to return to the parent set.
 
-- `1man co dat 1dog co dat 1ciald 1luv oc -1d bait oc -0s run auei.`
+- `man co dat dog co dat ciald luv oc -1d bait oc run auei.`
 - _Translation:_ The man [who the dog [that the child loves] bit] ran away.
 
 ### 3.9.1 Preposition Verbs
@@ -473,8 +473,8 @@ close) to return to the parent set.
 To avoid repeating the verb "to be" (`bi`), prepositions can act as verbs simply
 by attaching a time prefix to them.
 
-- `1haus 1in 1siti` = The house is in a city ("the house ins a city").
-- `1cat -1d on 1mat` = The cat was on a mat yesterday.
+- `haus in siti` = The house is in a city ("the house ins a city").
+- `cat -1d on mat` = The cat was on a mat yesterday.
 
 ### 3.10 Slash & Hyphen Composition (Compound Words)
 
@@ -498,8 +498,8 @@ For ultra-fast texting or constrained bandwidth, MinEnglish formally defines
 "Abjad Mode". **Rule:** Drop all vowels _unless_ the word starts with a vowel or
 doing so breaks a core operator.
 
-- Standard: `i1tinc u bi >liit`
-- Abjad Mode: `i1tnc u b >lt`
+- Standard: `tinc u bi >liit`
+- Abjad Mode: `tnc u b >lt`
 
 ### 3.12 Semantic Idiom Standardization
 
@@ -536,14 +536,14 @@ primary noun.
 ### 3.15 Echo-Tagging (Aviation/Noisy Protocol)
 
 Claude Shannon's Information Theory proves that "noise" requires "redundancy" to
-fix. MinEnglish's maximum data density strips all redundancy (`3boi 1uoc` marks
+fix. MinEnglish's maximum data density strips all redundancy (`3boi uoc` marks
 plural only once). In high-noise environments (construction, radios, wind),
 MinEnglish fails catastrophically if one syllable drops. **Rule:** For critical
 transmissions, a speaker may artificially inflate Shannon redundancy to 100% by
 "echoing" the prefix as a full word _after_ the root.
 
-- Standard: `3boi 1uoc` (Three boys are walking)
-- Echo-Tagged: `3boi trii 1uoc nau` (Three boys three are-walking now)
+- Standard: `3boi uoc` (Three boys are walking)
+- Echo-Tagged: `3boi trii uoc nau` (Three boys three are-walking now)
 
 ### 3.16 Formal Syntax (Backus-Naur Form)
 
@@ -658,22 +658,22 @@ following entries represent a representative sample across four core domains.
 
 ```
 NOUN:       <count><noun>         3cat, *dog, ~10person, 0eror
-PROPER:     <count><noun> <Name>  1person Isabella, 1cuntri Spain
+PROPER:     <count><noun> <Name>  person Isabella, cuntri Spain
 MATH:       <num>/<num>, <num>.<num>  1/2apel, 0.5bol
 VERB:       (none)=present        sit, iit, run (default now)
-            1 = present (attach)  h1laic, i1tinc
+            1 = present (attach)  h1laic, tinc
             * = any/all/habitual  *iit, *run
             +/- = future/past     -1d iit, +2h start
             : = duration          :5Y studi (studying for 5 years)
-ADJ:        <noun> <adj>          1cat big, 1haus niu
-INTENSITY:  >/< <adj>             1cat >big (very big), 1cat <big (slightly)
-MODAL:      <modal> <verb>        1can run, shud iit, ~can cum
+ADJ:        <noun> <adj>          cat big, haus niu
+INTENSITY:  >/< <adj>             cat >big (very big), cat <big (slightly)
+MODAL:      <modal> <verb>        can run, shud iit, ~can cum
 NEG:        no <verb>             no laic, -1d no cum
-QUEST:      ... ?                 u laic 1cat?
+QUEST:      ... ?                 u laic cat?
 COMPARE:    mor / most <adj>      mor big, most big
 APPROX:     ~<value>              ~5, ~big
 GENERIC:    *<noun>, *<verb>      *dog *laic *fuud
-PASSIVE:    <Obj> bai <Subj>      1bol kic bai i (ball kicked by me)
+PASSIVE:    <Obj> bai <Subj>      bol kic bai i (ball kicked by me)
 COMPOUND:   <noun>/<noun>         fuud/haus, buc/haus
 ATTACH:     <pronoun><prefix>     h1laic, i-1d, s1run
 ```
@@ -1140,7 +1140,7 @@ $\text{pH} = -\log_{10}[\text{H}^+]$ — mesur asiditi-solushun.
 > of 23 entities.
 
 ```minenglish
-1mol *substans contain $6.022 \times 10^{23}$ entiti.
+mol *substans contain $6.022 \times 10^{23}$ entiti.
 ```
 
 ---

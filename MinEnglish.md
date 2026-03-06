@@ -378,12 +378,13 @@ is bound to the pronoun.
 
 ### 3.5 Negation
 
-Negation is expressed by prepending `no` immediately before the verb. The `no`
-token is invariant and does not conjugate.
+Negation is uniquely expressed by attaching the `!` prefix directly to the
+target word (typically the verb or adjective) without a space.
 
-- `no laic cat` = I do not like the cat.
-- `u1d no cum` = You will not come tomorrow.
-- `*h no can spiic` = None of them can speak.
+- `!laic cat` = I do not like the cat.
+- `u1d !cum` = You will not come tomorrow.
+- `*h !can spiic` = None of them can speak.
+- `bi !gud` = It is not good.
 
 ### 3.6 Sentence Structure & Conjunction Reduction
 
@@ -921,8 +922,8 @@ BT: She-now-must give her book to he before she-now-can start [Object] one-work.
 
 ```text
 EN: If you don't stop running, you will fall and break your legs. (61)
-ME: if u1no stop tu run, u1fol an breic tu u's 2leg. (48)
-BT: If you-now-not stop [Obj] run, you-now-fall and break [Obj] your two-leg.
+ME: if u1!stop tu run, u1fol an breic tu u's 2leg. (48)
+BT: If you-now-negation-stop [Obj] run, you-now-fall and break [Obj] your two-leg.
 ```
 
 > **Compression:** 21.3% Δ
@@ -974,8 +975,8 @@ BT: Polite-you-give I two-glass water, I be very-thirsty.
 
 ```text
 EN: "How many children do you have?" "I have two boys and one girl." (64)
-ME: "haum ciald u hav?" "i hav 2boi an gerl." (41)
-BT: "How-many child you have?" "I have two-boy and one-girl."
+ME: "haum *ciald u hav?" "i hav 2boi an gerl." (42)
+BT: "How-many any-child you have?" "I have two-boy and one-girl."
 ```
 
 > **Compression:** 35.9% Δ
@@ -1000,8 +1001,8 @@ BT: She one-year-ago travel to five-country different and learn three-language n
 
 ```text
 EN: I might go to the party, but she loves him and he does not love her. (68)
-ME: i1d ~can gou tu parti, but s1luv h an h no luv s. (50)
-BT: I in-future might go to one-party, but she-now-love he and he not love she.
+ME: i1d ~can gou tu parti, but s1luv h an h !luv s. (50)
+BT: I in-future might go to one-party, but she-now-love he and he negation-love she.
 ```
 
 > **Compression:** 26.5% Δ
@@ -1184,7 +1185,7 @@ BT: One-delivery-truck in-future arrive with your package between 12:00 and 14:0
 
 ```text
 EN: The defendant formally pleaded not guilty to all charges presented by the court. (80)
-ME: diipendant formal pliid no gilti tu \*carj prizent bai tu cort. (63)
+ME: diipendant formal pliid !gilti tu \*carj prizent bai tu cort. (63)
 BT: One-defendant just-now formal plead not guilty to any-charge present by [Obj] one-court.
 ```
 
@@ -1210,8 +1211,8 @@ BT: Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce
 
 ```text
 EN: I have never felt this way about anyone before, you changed my entire life. (75)
-ME: -1d *no fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol. (67)
-BT: I-just-now-yesterday any-not feel this way about any-person before, you yesterday change [Obj] my life very-whole.
+ME: -1d *!fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol. (67)
+BT: I-just-now-yesterday any-negation-feel this way about any-person before, you yesterday change [Obj] my life very-whole.
 ```
 
 > **Compression:** 10.7% Δ

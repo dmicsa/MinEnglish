@@ -238,11 +238,11 @@ preceding plural context is necessary.
 
 | Explicit            | Implicit          | Meaning              |
 | :------------------ | :---------------- | :------------------- |
-| `cat sit on mat`  | `cat sit on mat`  | A cat sits on a mat  |
-| `dog run in parc` | `dog run in parc` | A dog runs in a park |
+| `1cat sit on 1mat`  | `cat sit on mat`  | A cat sits on a mat  |
+| `1dog run in 1parc` | `dog run in parc` | A dog runs in a park |
 
 > **Note:** If the previous noun was plural, explicit `1` is required to
-> re-establish singular: `3cat run, den cat stop.`
+> re-establish singular: `3cat run, den 1cat stop.`
 
 #### Rule B — Implicit First Person (`i` optional)
 
@@ -250,9 +250,9 @@ When the subject is first-person singular and the sentence structure is
 declarative, the pronoun `i` may be omitted. The parser defaults to `i` when no
 subject precedes the verb block.
 
-| Explicit            | Implicit          | Meaning             |
-| :------------------ | :---------------- | :------------------ |
-| `laic cat`       | `laic cat`       | I like a cat        |
+| Explicit           | Implicit          | Meaning             |
+| :----------------- | :---------------- | :------------------ |
+| `i1laic cat`       | `laic cat`        | I like a cat        |
 | `i-1d gou tu stor` | `-1d gou tu stor` | I went to the store |
 
 > **Disambiguation:** If a third-person pronoun or noun immediately precedes the
@@ -268,8 +268,8 @@ is required only for disambiguation or emphasis.
 
 | Explicit      | Implicit     | Meaning        |
 | :------------ | :----------- | :------------- |
-| `h1laic cat` | `h laic cat` | He likes a cat |
-| `run fast`  | `run fast`   | I run fast     |
+| `h1laic 1cat` | `h laic cat` | He likes a cat |
+| `i1run fast`  | `run fast`   | I run fast     |
 
 Irregular conjugations are functionally inefficient. MinEnglish regulates time
 processing via temporal prefixing that targets an absolute mathematical
@@ -280,7 +280,7 @@ timeline. A verb absent a modifier defaults to the continuous present.
 | _(null)_     | Present continuous (default)           | `iit` (eating)                                  |
 | `1`          | Present discrete (attachment operator) | `i1iit` (I eat)                                 |
 | `*`          | Habitual / Universal continuity        | `*iit` (eats perpetually)                       |
-| `-0s`        | Immediate past vector (zero offset)    | `sii` (just perceived)                      |
+| `-0s`        | Immediate past vector (zero offset)    | `sii` (just perceived)                          |
 | `-1d`        | Past vector (one day offset)           | `-1d iit` (ate yesterday)                       |
 | `:5Y`        | Duration scalar (five years)           | `:5Y studi` (has studied spanning five years)   |
 | `+1d`        | Future vector (one day offset)         | `+1d gou` (will transit tomorrow)               |
@@ -297,7 +297,7 @@ syntactic distance between subject and action. MinEnglish resolves deep time by
 permitting left-to-right stacking of temporal operators, enabling precise
 algebraic timeline construction.
 
-- `i-0s -1d iit` = I just-now yesterday ate (I had already eaten by yesterday's
+- `-0s -1d iit` = I just-now yesterday ate (I had already eaten by yesterday's
   timeline).
 - `-1d +2h iit` = Yesterday, offset by +2 hours, I ate.
 
@@ -413,7 +413,7 @@ Modality verbs follow the time prefix, creating a composite verb phrase:
 
 | Modal    | Meaning                | Example                                  |
 | -------- | ---------------------- | ---------------------------------------- |
-| **can**  | ability / permission   | `can iit` = I can eat                  |
+| **can**  | ability / permission   | `can iit` = I can eat                    |
 | **must** | necessity / obligation | `u+1d must cum` = You must come tomorrow |
 | **shud** | advice / should        | `*h shud lern` = They should learn       |
 | **~can** | probability / might    | `i+1d ~can gou` = I might go tomorrow    |
@@ -423,8 +423,8 @@ Modality verbs follow the time prefix, creating a composite verb phrase:
 Formed by moving the Object to the front, and following the verb with `bai`
 (by).
 
-| Voice       | MinEnglish Structure           | Example                                                   |
-| ----------- | ------------------------------ | --------------------------------------------------------- |
+| Voice       | MinEnglish Structure           | Example                                             |
+| ----------- | ------------------------------ | --------------------------------------------------- |
 | **Active**  | Subj + Time-Verb + Obj         | `boi kic bol` (A boy just kicked a ball)            |
 | **Passive** | Obj + Time-Verb + `bai` + Subj | `bol kic bai boi` (A ball was just kicked by a boy) |
 
@@ -675,7 +675,7 @@ APPROX:     ~<value>              ~5, ~big
 GENERIC:    *<noun>, *<verb>      *dog *laic *fuud
 PASSIVE:    <Obj> bai <Subj>      bol kic bai i (ball kicked by me)
 COMPOUND:   <noun>/<noun>         fuud/haus, buc/haus
-ATTACH:     <pronoun><prefix>     h1laic, i-1d, s1run
+ATTACH:     <pronoun><prefix>     h1laic, -1d, s1run
 ```
 
 ### Consonant Key
@@ -703,15 +703,15 @@ Possess: i's, u's, h's, s', t's
 
 ### Simple & Truths
 
-**1. Simple Statement (45.7%)**
+#### 
 
 |                | Text                                           | Chars |
 | -------------- | ---------------------------------------------- | ----- |
 | **English**    | The three cats are sitting on the big red mat. | 46    |
-| **MinEnglish** | 3cat sit on 1mat big red.                      | 25    |
+| **MinEnglish** | 3cat sit on mat big red.                       | 24    |
 | **↩ Back**     | Three-cat sit on one-mat big red.              |       |
 
-**2. General Truth (8.7%)**
+#### 
 
 |                | Text                                                       | Chars |
 | -------------- | ---------------------------------------------------------- | ----- |
@@ -721,23 +721,23 @@ Possess: i's, u's, h's, s', t's
 
 ### Relatives & Times
 
-**3. Past Event (47.5%)**
+#### 
 
 |                | Text                                                        | Chars |
 | -------------- | ----------------------------------------------------------- | ----- |
 | **English**    | Yesterday I bought two books and three apples at the store. | 59    |
-| **MinEnglish** | i-1d bai 2buc an 3apel @ 1stor.                             | 31    |
+| **MinEnglish** | -1d bai 2buc an 3apel @ stor.                               | 29    |
 | **↩ Back**     | I one-day-ago buy two-book and three-apple at one-store.    |       |
 
-**4. Future + Question (48.9%)**
+#### 
 
 |                | Text                                          | Chars |
 | -------------- | --------------------------------------------- | ----- |
 | **English**    | Will you eat dinner with us tomorrow evening? | 45    |
-| **MinEnglish** | u+1d iit 1diner uid \*i?                      | 23    |
+| **MinEnglish** | u+1d iit diner uid \*i?                       | 23    |
 | **↩ Back**     | You in-one-day eat one-dinner with all-of-us? |       |
 
-**5. Approximation (58.6%)**
+#### 
 
 |                | Text                                                       | Chars |
 | -------------- | ---------------------------------------------------------- | ----- |
@@ -745,67 +745,67 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | ~50person ariv @ ~15:00.                                   | 24    |
 | **↩ Back**     | Approximately-fifty-person arrive at approximately-15:00.  |       |
 
-**6. Specific DateTime (63.4%)**
+#### 
 
 |                | Text                                                                                          | Chars |
 | -------------- | --------------------------------------------------------------------------------------------- | ----- |
 | **English**    | The meeting was held on January fifteenth, twenty twenty-six, at two thirty in the afternoon. | 93    |
-| **MinEnglish** | 1miiting 2026-01-15 14:30 bi held.                                                            | 34    |
+| **MinEnglish** | miiting 2026-01-15 14:30 bi held.                                                             | 33    |
 | **↩ Back**     | One-meeting 2026-01-15 14:30 be held.                                                         |       |
 
-**7. Duration + Contrast (38.5%)**
+#### 
 
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
 | **English**    | I have been studying English for five years but I still cannot speak fluently. | 78    |
-| **MinEnglish** | i:5Y studi inglish but i no can spiic fluuent.                                 | 48    |
+| **MinEnglish** | i:5Y studi inglish but i no can spiic fluuent.                                 | 46    |
 | **↩ Back**     | I for-five-years study English but I not can speak fluent.                     |       |
 
 ### Complex Modifiers & Voice
 
-**8. Intensity & Compound Words (47.1%)**
+#### 
 
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
 | **English**    | We are going to the extremely new restaurant tomorrow at seven in the evening. | 78    |
-| **MinEnglish** | \*i+1d gou tu 1fuud/haus >>niu @ 19:00.                                        | 38    |
+| **MinEnglish** | \*i+1d gou tu fuud/haus >>niu @ 19:00.                                         | 38    |
 | **↩ Back**     | All-of-us in-one-day go to one-food/house extremely-new at 19:00.              |       |
 
-**9. Passive Voice (47.5%)**
+#### 
 
 |                | Text                                                               | Chars |
 | -------------- | ------------------------------------------------------------------ | ----- |
 | **English**    | Look out! The glass window was just broken by the angry man.       | 60    |
-| **MinEnglish** | !!uac! 1uindou glas -0s breic bai 1man angri.                      | 31    |
+| **MinEnglish** | !!uac! uindou glas breic bai man angri.                            | 39    |
 | **↩ Back**     | Watch-intensely! One-window glass just-now break by one-man angry. |       |
 
-**10. Modality & Possessive (29.2%)**
+#### 
 
 |                | Text                                                                         | Chars |
 | -------------- | ---------------------------------------------------------------------------- | ----- |
 | **English**    | She must give her book to him before she can start working.                  | 61    |
-| **MinEnglish** | s1must giv s' buc tu h bifor s1can start tu 1uorc.                           | 50    |
+| **MinEnglish** | s1must giv s' buc tu h bifor s1can start tu uorc.                            | 49    |
 | **↩ Back**     | She-now-must give her book to he before she-now-can start [Object] one-work. |       |
 
 ### Conditionals, Logic & Commands
 
-**11. Complex Sentence (31.1%)**
+#### 
 
 |                | Text                                                                      | Chars |
 | -------------- | ------------------------------------------------------------------------- | ----- |
 | **English**    | If you don't stop running, you will fall and break your legs.             | 61    |
-| **MinEnglish** | if u1no stop tu run, u1fol an breic tu u's 2leg.                          | 49    |
+| **MinEnglish** | if u1no stop tu run, u1fol an breic tu u's 2leg.                          | 48    |
 | **↩ Back**     | If you-now-not stop [Obj] run, you-now-fall and break [Obj] your two-leg. |       |
 
-**12. Conjunction Reduction (35.2%)**
+#### 
 
 |                | Text                                                                                          | Chars |
 | -------------- | --------------------------------------------------------------------------------------------- | ----- |
 | **English**    | Every morning I drink two cups of coffee and eat one piece of toast before work.              | 82    |
-| **MinEnglish** | *morning i*drinc 2cup cofi an \*iit 1piis toust bifor uorc.                                   | 56    |
+| **MinEnglish** | *morning i*drinc 2cup cofi an \*iit piis toust bifor uorc.                                    | 58    |
 | **↩ Back**     | Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece toast before work. |       |
 
-**13. Instructions (42.9%)**
+#### 
 
 |                | Text                                                                                 | Chars |
 | -------------- | ------------------------------------------------------------------------------------ | ----- |
@@ -813,7 +813,7 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | teic 3eg, ad 2cup flaur, an mics \*ting for 10m.                                     | 48    |
 | **↩ Back**     | Take three-egg, add two-cup flour, and mix all-thing for ten-minutes.                |       |
 
-**14. Request (32.7%)**
+#### 
 
 |                | Text                                                      | Chars |
 | -------------- | --------------------------------------------------------- | ----- |
@@ -823,176 +823,176 @@ Possess: i's, u's, h's, s', t's
 
 ### Dialogue & Description
 
-**15. Conversation (34.4%)**
+#### 
 
 |                | Text                                                             | Chars |
 | -------------- | ---------------------------------------------------------------- | ----- |
 | **English**    | "How many children do you have?" "I have two boys and one girl." | 64    |
-| **MinEnglish** | "haum ciald u hav?" "i hav 2boi an 1gerl."                       | 42    |
+| **MinEnglish** | "haum ciald u hav?" "i hav 2boi an gerl."                        | 41    |
 | **↩ Back**     | "How-many child you have?" "I have two-boy and one-girl."        |       |
 
-**16. Narrative (30.6%)**
+#### 
 
 |                | Text                                                                                                                                         | Chars |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
 | **English**    | Last year, she traveled to five different countries and learned three new languages because she wanted to understand the world better.       | 134   |
-| **MinEnglish** | s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s-1Y uant understand 1uerld mor gud.                                                | 93    |
+| **MinEnglish** | s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s-1Y uant understand uerld mor gud.                                                 | 92    |
 | **↩ Back**     | She one-year-ago travel to five-country different and learn three-language new because she one-year-ago want understand one-world more good. |       |
 
-**17. Emotions & Probabilities (41.0%)**
+#### 
 
 |                | Text                                                                              | Chars |
 | -------------- | --------------------------------------------------------------------------------- | ----- |
 | **English**    | I might go to the party, but she loves him and he does not love her.              | 69    |
-| **MinEnglish** | i+1d ~can gou tu 1parti, but s1luv h an !h 1no luv s.                             | 55    |
+| **MinEnglish** | i+1d ~can gou tu parti, but s1luv h an !h no luv s.                               | 51    |
 | **↩ Back**     | I in-future might go to one-party, but she-now-love he and focus-he not love she. |       |
 
-**18. Family Description (8.5%)**
+#### 
 
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
 | **English**    | My brother works at a hospital and my sister studies at the university.        | 71    |
-| **MinEnglish** | i's bruder *uorc @ 1hospital an i's sister *studi @ 1iuniversiti.              | 65    |
+| **MinEnglish** | i's bruder *uorc @ hospital an i's sister *studi @ iuniversiti.                | 63    |
 | **↩ Back**     | My brother any-work at one-hospital and my sister any-study at one-university. |       |
 
 > _Low compression — long Latin words maintain their length._
 
-**19. Weather & Time (27.1%)**
+#### 
 
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
 | **English**    | The children were playing in the park when it started raining heavily.         | 70    |
-| **MinEnglish** | \*ciald -0s 1in 1parc uen t-0s start rein >hevi.                               | 49    |
+| **MinEnglish** | \*ciald 1in parc uen t-0s start rein >hevi.                                    | 43    |
 | **↩ Back**     | Any-child just-now in(verb) one-park when it-just-now start rain very-heavily. |       |
 
-**20. Price & Comparison (21.4%)**
+#### 
 
 |                | Text                                                              | Chars |
 | -------------- | ----------------------------------------------------------------- | ----- |
 | **English**    | How much does this car cost? It is too expensive for me.          | 56    |
-| **MinEnglish** | ?haum dis car cost? t bi >>ecspensiv for i.                       | 44    |
+| **MinEnglish** | ?haum dis car cost? t bi >>ecspensiv for i.                       | 43    |
 | **↩ Back**     | Question-how-much this car cost? It be extremely-expensive for I. |       |
 
 ### Advanced Domains (Sci-Fi, Philosophy, Business)
 
-**21. Science Fiction (35.6%)**
+#### 
 
 |                | Text                                                                       | Chars |
 | -------------- | -------------------------------------------------------------------------- | ----- |
 | **English**    | The spaceship launched into orbit after the countdown reached zero.        | 67    |
-| **MinEnglish** | 1ship-speis -0s lonci in 1orbit after 1caunt-daun hic 0.                   | 43    |
+| **MinEnglish** | ship-speis lonci in orbit after caunt-daun hic 0.                          | 49    |
 | **↩ Back**     | One-ship-space just-now launch in one-orbit after one-count-down hit zero. |       |
 
-**22. Philosophy (25.0%)**
+#### 
 
 |                | Text                                                                     | Chars |
 | -------------- | ------------------------------------------------------------------------ | ----- |
 | **English**    | To be or not to be, that is the question we must all answer eventually.  | 71    |
-| **MinEnglish** | bi or no bi, dat bi 1cuesciun \*i must anser in +taim.                   | 53    |
+| **MinEnglish** | bi or no bi, dat bi cuesciun \*i must anser in +taim.                    | 53    |
 | **↩ Back**     | Be or not be, that be one-question all-of-us must answer in future-time. |       |
 
-**23. Business Strategy (28.7%)**
+#### 
 
 |                | Text                                                                                                 | Chars |
 | -------------- | ---------------------------------------------------------------------------------------------------- | ----- |
 | **English**    | Our company needs to optimize its supply chain to maximize profit margins next year.                 | 83    |
-| **MinEnglish** | *i's compani niid optimaiz t's cein-suplai tu macsimaiz *marjin-profit +1Y.                          | 59    |
+| **MinEnglish** | *i's compani niid optimaiz t's cein-suplai tu macsimaiz *marjin-profit +1Y.                          | 75    |
 | **↩ Back**     | All-of-us-possessive company need optimize its chain-supply to maximize any-margin-profit next-year. |       |
 
-**24. Politics (29.5%)**
+#### 
 
 |                | Text                                                                                              | Chars |
 | -------------- | ------------------------------------------------------------------------------------------------- | ----- |
 | **English**    | The president announced a new tax policy that will affect middle class families.                  | 78    |
-| **MinEnglish** | 1prezident -0s anauns 1nolisi-tacs niu dat +1d apect \*pamili clas-midl.                          | 55    |
+| **MinEnglish** | prezident anauns nolisi-tacs niu dat +1d apect \*pamili clas-midl.                                | 66    |
 | **↩ Back**     | One-president just-now announce one-policy-tax new that in-future affect any-family class-middle. |       |
 
-**25. Medicine (36.9%)**
+#### 
 
 |                | Text                                                                                                                 | Chars |
 | -------------- | -------------------------------------------------------------------------------------------------------------------- | ----- |
 | **English**    | The doctor prescribed antibiotics to treat the patient's severe bacterial infection.                                 | 84    |
-| **MinEnglish** | 1doctor -0s prescraib tu \*bac-med tu triit 1bac-sic >siirius 1peishent's.                                           | 53    |
+| **MinEnglish** | doctor prescraib tu \*bac-med tu triit bac-sic >siirius peishent's.                                                  | 67    |
 | **↩ Back**     | One-doctor just-now prescribe [Obj] any-bacteria-medicine to treat one-bacteria-sickness very-serious one-patient's. |       |
 
-**26. Real Estate (34.2%)**
+#### 
 
 |                | Text                                                                               | Chars |
 | -------------- | ---------------------------------------------------------------------------------- | ----- |
 | **English**    | The three bedroom house with a large backyard is currently on the market for rent. | 82    |
-| **MinEnglish** | 1haus 3ruum-bed uid 1iard-bac big 1in 1marcet for rent nau.                        | 54    |
+| **MinEnglish** | haus 3ruum-bed uid iard-bac big 1in marcet for rent nau.                           | 56    |
 | **↩ Back**     | One-house three-room-bed with one-yard-back big now-in one-market for rent now.    |       |
 
-**27. Programming/Tech (32.9%)**
+#### 
 
 |                | Text                                                                              | Chars |
 | -------------- | --------------------------------------------------------------------------------- | ----- |
 | **English**    | If the server crashes, the backup system will automatically restore the database. | 81    |
-| **MinEnglish** | if 1server craish, 1sistem-bacup +1d otoristor 1daatabeis.                        | 54    |
+| **MinEnglish** | if server craish, sistem-bacup +1d otoristor daatabeis.                           | 55    |
 | **↩ Back**     | If one-server crash, one-sistem-backup in-future auto-restore one-database.       |       |
 
-**28. Environment (34.0%)**
+#### 
 
 |                | Text                                                                              | Chars |
 | -------------- | --------------------------------------------------------------------------------- | ----- |
 | **English**    | Global warming is melting the polar ice caps faster than scientists predicted.    | 78    |
-| **MinEnglish** | iurm-gloubal 1melt *cap-ais poular >fast dan *saientist -1d pridiict.             | 51    |
+| **MinEnglish** | iurm-gloubal melt *cap-ais poular >fast dan *saientist -1d pridiict.              | 68    |
 | **↩ Back**     | Warm-global now-melt any-cap-ice polar more-fast than any-scientist past-predict. |       |
 
-**29. Literature / Metaphor (29.2%)**
+#### 
 
 |                | Text                                                                                             | Chars |
 | -------------- | ------------------------------------------------------------------------------------------------ | ----- |
 | **English**    | The wind whispered through the ancient trees as the silver moon rose in the sky.                 | 80    |
-| **MinEnglish** | 1uind -0s uisper tru \*trii >ould az 1muun silver -0s raiz in 1scai.                             | 56    |
+| **MinEnglish** | uind uisper tru \*trii >ould az muun silver raiz in scai.                                        | 57    |
 | **↩ Back**     | One-wind just-now whisper through any-tree very-old as one-moon silver just-now rise in one-sky. |       |
 
-**30. Logistics (43.4%)**
+#### 
 
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
 | **English**    | The delivery truck will arrive with your package between noon and two o'clock. | 78    |
-| **MinEnglish** | 1truc-diliveri +1d ariv uid u's pacij btuiin 12:00 an 14:00.                   | 44    |
+| **MinEnglish** | truc-diliveri +1d ariv uid u's pacij btuiin 12:00 an 14:00.                    | 59    |
 | **↩ Back**     | One-truck-delivery in-future arrive with your package between 12:00 and 14:00. |       |
 
-**31. Legal (23.3%)**
+#### 
 
 |                | Text                                                                                     | Chars |
 | -------------- | ---------------------------------------------------------------------------------------- | ----- |
 | **English**    | The defendant formally pleaded not guilty to all charges presented by the court.         | 80    |
-| **MinEnglish** | 1diipendant -0s formal pliid no gilti tu \*carj prizent bai tu 1cort.                    | 64    |
+| **MinEnglish** | diipendant formal pliid no gilti tu \*carj prizent bai tu cort.                          | 63    |
 | **↩ Back**     | One-defendant just-now formal plead not guilty to any-charge present by [Obj] one-court. |       |
 
-**32. Cooking/Recipe (34.3%)**
+#### 
 
 |                | Text                                                                                     | Chars |
 | -------------- | ---------------------------------------------------------------------------------------- | ----- |
 | **English**    | Boil the water, add a pinch of salt, and stir constantly until the sauce thickens.       | 82    |
-| **MinEnglish** | boil tu 1uoter, ad tu 1pinci solt, an \*ster until 1sos >tic.                            | 60    |
+| **MinEnglish** | boil tu uoter, ad tu pinci solt, an \*ster until sos >tic.                               | 58    |
 | **↩ Back**     | Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce very-thick. |       |
 
-**33. Emotional Confession (40.5%)**
+#### 
 
 |                | Text                                                                                                               | Chars |
 | -------------- | ------------------------------------------------------------------------------------------------------------------ | ----- |
 | **English**    | I have never felt this way about anyone before, you changed my entire life.                                        | 75    |
-| **MinEnglish** | i-0s -1d *no fiil dis ue abaut *person bifor, u -1d ceinj tu i's laif >hol.                                        | 70    |
+| **MinEnglish** | -1d *no fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.                                                | 70    |
 | **↩ Back**     | I-just-now-yesterday any-not feel this way about any-person before, you yesterday change [Obj] my life very-whole. |       |
 
-**34. Travel/Directions (38.8%)**
+#### 
 
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
 | **English**    | Go straight for two miles, then turn left at the second traffic light you see. | 78    |
-| **MinEnglish** | gou streit for 2mail, den tern left @ 1lait-trapic tuu u1sii.                  | 46    |
+| **MinEnglish** | gou streit for 2mail, den tern left @ lait-trapic tuu u1sii.                   | 60    |
 | **↩ Back**     | Go straight for two-mile, then turn left at one-light-traffic two you-now-see. |       |
 
-**35. Abstract Economics (33.3%)**
+#### 
 
 |                | Text                                                                                                 | Chars |
 | -------------- | ---------------------------------------------------------------------------------------------------- | ----- |
 | **English**    | Hyperinflation destroys purchasing power and severely halts economic development.                    | 81    |
-| **MinEnglish** | >>rap-mun 1distroi tu pauer-bai an >siirius holt tu divelopment-mun.                                 | 54    |
+| **MinEnglish** | >>rap-mun distroi tu pauer-bai an >siirius holt tu divelopment-mun.                                  | 67    |
 | **↩ Back**     | Extremely-rapid-economy now-destroy [Obj] power-buy and very-serious halt [Obj] development-economy. |       |
 
 ---

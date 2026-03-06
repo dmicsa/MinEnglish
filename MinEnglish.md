@@ -1,10 +1,14 @@
-# MinEnglish Language Specification (v1.0.0)
+---
+title: "MinEnglish Language Specification"
+subtitle: "Uat u spic is uat u spel."
+author:
+  - "Dan Micsa, PhD (dmicsa@gmail.com)"
+  - "Repository: https://github.com/dmicsa/MinEnglish"
+  - "License: MIT (see Appendix)"
+date: "Version 1.0.0 — March 2026"
+---
 
-> _Uat u spic is uat u spel._
-
-**Author:** Dan Micsa, PhD (<<dmicsa@gmail.com>>) | **Repository:**
-[GitHub](https://github.com/dmicsa/MinEnglish) | **License:** MIT (see Appendix)
-| **Version:** 1.0.0 — March 2026
+\newpage
 
 > **Versioning:** MinEnglish follows [Semantic Versioning](https://semver.org).
 > `MAJOR.MINOR.PATCH` — breaking rule changes increment MAJOR. `0.x.y` indicates
@@ -18,6 +22,8 @@
 > the human author.
 
 ---
+
+\newpage
 
 ## Abstract
 
@@ -35,6 +41,7 @@ habit.
 ---
 
 \newpage
+
 ## 1. Design Principles
 
 > **Mission:** MinEnglish simplifies, clarifies, and formalizes Modern English.
@@ -52,6 +59,7 @@ habit.
 ---
 
 \newpage
+
 ## 2. Phonology and Orthography
 
 ### 2.1 Vowels
@@ -147,6 +155,7 @@ must be algorithmically stripped.
 ---
 
 \newpage
+
 ## 3. Morphology and Syntax
 
 > **Core Constraint: Morphological Invariance.** Lexical items never undergo
@@ -547,6 +556,7 @@ Below is the strict parsing configuration for a standard declarative sentence.
 ---
 
 \newpage
+
 ## 4. Base Lexicon
 
 ### 4.1 Fundamentals
@@ -591,6 +601,7 @@ Below is the strict parsing configuration for a standard declarative sentence.
 ---
 
 \newpage
+
 ## 5. Syntactic Reference Guide
 
 ```
@@ -637,6 +648,7 @@ Possess: i's, u's, h's, s', t's
 ---
 
 \newpage
+
 ## 6. Comparative Corpus
 
 ### Simple & Truths
@@ -661,8 +673,9 @@ EN: Dogs are loyal animals that love their owners. (46)
 ME: *dog bi *animal loial dat *luv *h's ouner. (42)
 BT: Any-dog be any-animal loyal that any-love any-their owner.
 ```
- 8.7% Δ
->
+
+8.7% Δ
+
 > **Observation:** Universal deference operators (`*`) substitute complex plural
 > or aggregate noun constraints.
 
@@ -684,6 +697,7 @@ BT: I one-day-ago buy two-book and three-apple at one-store.
 > tense architectures and prepositional phrases.
 
 \newpage
+
 ## 7. Comparative Information Density Analysis
 
 The transmission efficiency (information density) of MinEnglish was modeled
@@ -712,6 +726,7 @@ byte-length (character count reduction).
 ---
 
 \newpage
+
 ## 8. Theoretical Limitations: The Human Biological Factor
 
 The structural additions of the v1.8 and preceding protocols (Literalization
@@ -760,6 +775,7 @@ adhere to the following universal formalisms:
 ---
 
 \newpage
+
 ## 9. References
 
 - Shannon, C. E. (1948). A mathematical theory of communication. _Bell System
@@ -770,14 +786,18 @@ adhere to the following universal formalisms:
 - Chomsky, N. (1957). _Syntactic Structures_. Mouton.
 - Zipf, G. K. (1949). _Human Behavior and the Principle of Least Effort_.
   Addison-Wesley.
-- Ogden, C. K. (1930). _Basic English: A General Introduction with Rules and Grammar_. Kegan Paul.
+- Ogden, C. K. (1930). _Basic English: A General Introduction with Rules and
+  Grammar_. Kegan Paul.
 - Zamenhof, L. L. (1887). _Dr. Esperanto's International Language_.
-- Pinker, S. (1994). _The Language Instinct: How the Mind Creates Language_. William Morrow.
-- Sapir, E. (1921). _Language: An Introduction to the Study of Speech_. Harcourt, Brace.
+- Pinker, S. (1994). _The Language Instinct: How the Mind Creates Language_.
+  William Morrow.
+- Sapir, E. (1921). _Language: An Introduction to the Study of Speech_.
+  Harcourt, Brace.
 
 ---
 
 \newpage
+
 ## Appendix A: Full Comparative Corpus
 
 #### Ex. 4
@@ -787,8 +807,9 @@ EN: Will you eat dinner with us tomorrow evening? (45)
 ME: u1d iit diner uid \*i? (22)
 BT: You in-one-day eat one-dinner with all-of-us?
 ```
- 51.1% Δ
->
+
+51.1% Δ
+
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -812,8 +833,9 @@ EN: The meeting was held on January fifteenth, twenty twenty-six, at two thirty 
 ME: miiting 2026-01-15 14:30 bi held. (33)
 BT: One-meeting 2026-01-15 14:30 be held.
 ```
- 64.5% Δ
->
+
+64.5% Δ
+
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -839,8 +861,9 @@ EN: We are going to the extremely new restaurant tomorrow at seven in the evenin
 ME: \*i1d gou tu restaurant >>niu @ 19:00. (38)
 BT: All-of-us in-one-day go to one-restaurant extremely-new at 19:00.
 ```
- 51.3% Δ
->
+
+51.3% Δ
+
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -864,8 +887,9 @@ EN: She must give her book to him before she can start working. (59)
 ME: s1must giv s's buc tu h bifor s1can start tu uorc. (50)
 BT: She-now-must give her book to he before she-now-can start [Object] one-work.
 ```
- 15.3% Δ
->
+
+15.3% Δ
+
 > **Observation:** General lexical optimization and phonetic spelling reduction.
 
 ### Conditionals, Logic & Commands
@@ -889,8 +913,9 @@ EN: Every morning I drink two cups of coffee and eat one piece of toast before w
 ME: *morning i*drinc 2cup cofi an \*iit piis toust bifor uorc. (58)
 BT: Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece toast before work.
 ```
- 27.5% Δ
->
+
+27.5% Δ
+
 > **Observation:** Universal deference operators (`*`) substitute complex plural
 > or aggregate noun constraints.
 
@@ -914,8 +939,9 @@ EN: Please give me two glasses of water, I am very thirsty. (55)
 ME: ~u giv i 2glas uoter, i bi >tersti. (35)
 BT: Polite-you-give I two-glass water, I be very-thirsty.
 ```
- 36.4% Δ
->
+
+36.4% Δ
+
 > **Observation:** Approximation operators (`~`) drastically reduce multi-word
 > phrasings like "about" or "approximately".
 
@@ -941,8 +967,9 @@ EN: Last year, she traveled to five different countries and learned three new la
 ME: s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s-1Y uant understand uerld mor gud. (92)
 BT: She one-year-ago travel to five-country different and learn three-language new because she one-year-ago want understand one-world more good.
 ```
- 31.3% Δ
->
+
+31.3% Δ
+
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -967,8 +994,7 @@ ME: i's bruder *uorc @ hospital an i's sister *studi @ iuniversiti. (63)
 BT: My brother any-work at one-hospital and my sister any-study at one-university.
 ```
 
-> _Low compression — long Latin words maintain their length._
- 11.3% Δ
+> _Low compression — long Latin words maintain their length._ 11.3% Δ
 >
 > **Observation:** Universal deference operators (`*`) substitute complex plural
 > or aggregate noun constraints.
@@ -993,8 +1019,9 @@ EN: How much does this car cost? It is too expensive for me. (56)
 ME: haum dis car cost? t bi >>ecspensiv for i. (43)
 BT: How-much this car cost? It be extremely-expensive for I.
 ```
- 23.2% Δ
->
+
+23.2% Δ
+
 > **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial
 > modifiers.
 
@@ -1019,8 +1046,9 @@ EN: To be or not to be, that is the question we must all answer eventually. (71)
 ME: bi or no bi, dat bi cuesciun \*i must anser in taim. (52)
 BT: Be or not be, that be one-question all-of-us must answer in future-time.
 ```
- 26.8% Δ
->
+
+26.8% Δ
+
 > **Observation:** Universal deference operators (`*`) substitute complex plural
 > or aggregate noun constraints.
 
@@ -1044,8 +1072,9 @@ EN: The president announced a new tax policy that will affect middle class famil
 ME: prezident anauns tacs-polisi niu dat 1d apect \*pamili clas-midl. (65)
 BT: One-president just-now announce one-tax-policy new that in-future affect any-family class-middle.
 ```
- 18.8% Δ
->
+
+18.8% Δ
+
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -1069,8 +1098,9 @@ EN: The three bedroom house with a large backyard is currently on the market for
 ME: haus 3bedruum uid baciard big in marcet for rent nau. (53)
 BT: One-house three-bedroom with one-backyard big now-in one-market for rent now.
 ```
- 35.4% Δ
->
+
+35.4% Δ
+
 > **Observation:** General lexical optimization and phonetic spelling reduction.
 
 #### Ex. 27
@@ -1093,8 +1123,9 @@ EN: Global warming is melting the polar ice caps faster than scientists predicte
 ME: gloubal uorming melt *cap-ais poular >fast dan *saientist -1d pridiict. (71)
 BT: Global-warming now-melt any-cap-ice polar more-fast than any-scientist past-predict.
 ```
- 9.0% Δ
->
+
+9.0% Δ
+
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -1120,8 +1151,9 @@ EN: The delivery truck will arrive with your package between noon and two o'cloc
 ME: diliveri truc 1d ariv uid u's pacij btuiin 12:00 an 14:00. (58)
 BT: One-delivery-truck in-future arrive with your package between 12:00 and 14:00.
 ```
- 25.6% Δ
->
+
+25.6% Δ
+
 > **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex
 > tense architectures and prepositional phrases.
 
@@ -1145,8 +1177,9 @@ EN: Boil the water, add a pinch of salt, and stir constantly until the sauce thi
 ME: boil tu uoter, ad tu pinci solt, an \*ster until sos >tic. (58)
 BT: Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce very-thick.
 ```
- 29.3% Δ
->
+
+29.3% Δ
+
 > **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial
 > modifiers.
 
@@ -1170,8 +1203,9 @@ EN: Go straight for two miles, then turn left at the second traffic light you se
 ME: gou streit for 2mail, den tern left @ trapic lait tuu u1sii. (60)
 BT: Go straight for two-mile, then turn left at one-traffic-light two you-now-see.
 ```
- 23.1% Δ
->
+
+23.1% Δ
+
 > **Observation:** General lexical optimization and phonetic spelling reduction.
 
 #### Ex. 35
@@ -1188,12 +1222,14 @@ BT: Extremely-hyperinflation now-destroy [Obj] power-buy and very-serious halt [
 > exact international academic vocabulary.
 
 ---
- 1.2% Δ
->
+
+1.2% Δ
+
 > **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial
 > modifiers.
 
 \newpage
+
 ## Appendix B: License
 
 ```

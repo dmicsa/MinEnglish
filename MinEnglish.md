@@ -275,20 +275,21 @@ Irregular conjugations are functionally inefficient. MinEnglish regulates time
 processing via temporal prefixing that targets an absolute mathematical
 timeline. A verb absent a modifier defaults to the continuous present.
 
-| Operator     | Temporal Value                         | Example                                         |
-| :----------- | :------------------------------------- | :---------------------------------------------- |
-| _(null)_     | Present continuous (default)           | `iit` (eating)                                  |
-| `1`          | Present discrete (attachment operator) | `i1iit` (I eat)                                 |
-| `*`          | Habitual / Universal continuity        | `*iit` (eats perpetually)                       |
-| `-0s`        | Immediate past vector (zero offset)    | `sii` (just perceived)                          |
-| `-1d`        | Past vector (one day offset)           | `-1d iit` (ate yesterday)                       |
-| `:5Y`        | Duration scalar (five years)           | `:5Y studi` (has studied spanning five years)   |
-| `+1d`        | Future vector (one day offset)         | `+1d gou` (will transit tomorrow)               |
-| `2026-12-25` | Absolute timestamp                     | `2026-12-25 gou` (transit scheduled for Dec 25) |
+| Operator     | Temporal Value                               | Example                                         |
+| :----------- | :------------------------------------------- | :---------------------------------------------- |
+| _(null)_     | Present continuous (default)                 | `iit` (eating)                                  |
+| `1`          | Present discrete (attachment operator)       | `i1iit` (I eat)                                 |
+| `*`          | Habitual / Universal continuity              | `*iit` (eats perpetually)                       |
+| `-0s`        | Immediate past vector (zero offset)          | `-0s sii` (just perceived)                      |
+| `-1d`        | Past vector (one day offset)                 | `-1d iit` (ate yesterday)                       |
+| `:5Y`        | Duration scalar (five years)                 | `:5Y studi` (has studied for five years)        |
+| `1d` / `+1d` | Future vector — `+` is accepted but optional | `1d gou` or `+1d gou` (will go tomorrow)        |
+| `2026-12-25` | Absolute timestamp                           | `2026-12-25 gou` (transit scheduled for Dec 25) |
 
-> **Vector vs Scalar Notation:** The `+`/`-` operators dictate points in time
-> (vectors). The `:` operator calculates the spanning duration of an ongoing
-> event (scalar).
+> **Direction Convention:** The `-` operator explicitly marks past vectors.
+> Future offsets are positive by default — a bare numeric offset (`1d`, `2h`,
+> `1Y`) always points forward. The `+` prefix is accepted by parsers but
+> considered redundant notation.
 
 ### 3.2.1 Temporal Stacking (Complex Timelines)
 
@@ -441,11 +442,15 @@ for a verb, prefix it with the transitive operator `tu` (acting like Esperanto's
 
 ### 3.9 Connectors, Prepositions, Tone Markers
 
-- **Logic:** `an` (and), `or` (or), `but` (but), `if` (if), `cos` (because),
-  `sou` (so), `den` (then).
+- **Logic:** `an` / `&` (and), `or` / `|` (or), `but` (but), `if` (if), `cos`
+  (because), `sou` (so), `den` (then).
 - **Shortcuts:** `@` (at), `>` (over / more than), `<` (under / less than).
 - **Tone:** `!` (focus/emphasis), `!!` (strong), `..` (hesitation), `^`
   (sarcasm).
+
+> **Symbolic Connectors:** `&` and `|` are fully equivalent to `an` and `or`
+> respectively, and are preferred in dense or technical text. In speech, both
+> forms are pronounced identically (`an`, `or`).
 
 ### 3.9.1 Interrogatives: The `?` Marker
 
@@ -467,6 +472,25 @@ close) to return to the parent set.
 
 - `man co dat dog co dat ciald luv oc -1d bait oc run auei.`
 - _Translation:_ The man [who the dog [that the child loves] bit] ran away.
+
+### 3.9.3 Arithmetic & Logical Operator Inventory
+
+MinEnglish formally adopts the six standard arithmetic/logical operators as
+first-class syntactic tokens. Each carries a fixed semantic role independent of
+domain:
+
+| Operator | Name      | Primary Role                      | Example                               |
+| :------- | :-------- | :-------------------------------- | :------------------------------------ |
+| `+`      | Plus      | Future offset (optional explicit) | `+1d gou` = will go tomorrow          |
+| `-`      | Minus     | Past offset (required for past)   | `-1d iit` = ate yesterday             |
+| `*`      | Star      | Universal / generic quantifier    | `*cat` = cats (all)                   |
+| `/`      | Slash     | Compound root separator           | `fuud/haus` = restaurant              |
+| `&`      | Ampersand | Logical AND (≡ `an`)              | `laic cat & dog` = like cats and dogs |
+| `\|`     | Pipe      | Logical OR (≡ `or`)               | `laic cat \| dog` = like cats or dogs |
+
+> All six operators are single-byte ASCII tokens. In speech, `&` is pronounced
+> `an` and `|` is pronounced `or`. Their symbolic forms are preferred in
+> technical, mathematical, and high-density written contexts.
 
 ### 3.9.1 Preposition Verbs
 

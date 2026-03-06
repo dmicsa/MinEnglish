@@ -240,10 +240,10 @@ When the subject is first-person singular and the sentence structure is
 declarative, the pronoun `i` may be omitted. The parser defaults to `i` when no
 subject precedes the verb block.
 
-| Explicit           | Implicit          | Meaning             |
-| :----------------- | :---------------- | :------------------ |
-| `i1laic cat`       | `laic cat`        | I like a cat        |
-| `i-1d gou tu stor` | `-1d gou tu stor` | I went to the store |
+| Explicit           | Implicit          | Meaning                       |
+| :----------------- | :---------------- | :---------------------------- |
+| `i1laic cat`       | `laic cat`        | I like a cat                  |
+| `i-1d gou tu stor` | `-1d gou tu stor` | I went to the store yesterday |
 
 > **Disambiguation:** If a third-person pronoun or noun immediately precedes the
 > verb, `i` is not assumed. The implicit-I rule only fires when the verb begins

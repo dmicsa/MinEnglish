@@ -6,6 +6,8 @@ author:
   - "Repository: https://github.com/dmicsa/MinEnglish"
   - "License: MIT (see Appendix)"
 date: "Version 1.0.0 — March 2026"
+mainfont: "Times New Roman"
+monofont: "Consolas"
 ---
 
 \newpage

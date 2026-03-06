@@ -1,4 +1,4 @@
-# MinEnglish Language Specification (v2.0)
+# MinEnglish Language Specification (v0.9.0)
 
 > _Uat u spic is uat u spel._
 
@@ -227,26 +227,7 @@ objects or abstract metrics.
   apel) = Three-quarters of an apple.
 - **Decimals:** `0.5` (ziro point faiv). `99.9` (nain nain point nain).
 
-### 3.1.5 Mathematical Notation: LaTeX Standardization
-
-For formal mathematical expressions, MinEnglish adopts LaTeX inline notation
-directly as a first-class citizen. Mathematical tokens enclosed in `$...$` are
-parsed as LaTeX and carry their standard semantics without phonetic
-transcription.
-
-**Rule:** Any token beginning and ending with `$` is treated as a mathematical
-literal and is exempt from MinEnglish phonetic rules.
-
-- `$\frac{1}{2}$` = One-half (rendered expression)
-- `$E = mc^2$` = Einstein mass-energy equivalence
-- `$\int_0^\infty f(x)\,dx$` = Integral of f(x) from zero to infinity
-- `$\nabla \cdot E = \frac{\rho}{\varepsilon_0}$` = Gauss's law
-
-In speech, the entire LaTeX expression is read naturally in English
-pronunciation. Written MinEnglish and spoken MinEnglish diverge only at
-mathematical literal boundaries.
-
-### 3.1.6 Token Optionality Rules (v0.2.0)
+### 3.1.5 Token Optionality Rules (v0.2.0)
 
 Three categories of token may be omitted when their value is recoverable from
 context. **Parsers must implement the following defaults when a token is
@@ -361,9 +342,8 @@ canonical nouns.
 | **s**    | Third-person feminine  | `21s`        | Feminine demographic (n=21) |
 | **t**    | Third-person inanimate | `*t`         | Inanimate collective        |
 
-> **Genitive Case Marking:** Possession is indicated via the `'s` suffix. To
-> avoid redundant frication, the feminine `s` assumes the genitive as `s'`.
-> (e.g., `i's`, `u's`, `h's`, `s'`, `t's`).
+> **Genitive Case Marking:** Possession is indicated universally via the `'s`
+> suffix with no exceptions. (e.g., `i's`, `u's`, `h's`, `s's`, `t's`).
 
 ### 3.4.1 Syntactic Agglutination (Attachment)
 
@@ -523,7 +503,7 @@ by attaching a time prefix to them.
 - `haus in siti` = The house is in a city (`in` acts as the verb "to be in").
 - `cat -1d on mat` = The cat was on a mat yesterday.
 
-### 3.11 Abjad Mode (Extreme Shorthand)
+### 3.10 Abjad Mode (Extreme Shorthand)
 
 For ultra-fast texting or constrained bandwidth, MinEnglish formally defines
 "Abjad Mode". **Rule:** Drop all vowels _unless_ the word starts with a vowel or
@@ -532,7 +512,7 @@ doing so breaks a core operator.
 - Standard: `tinc u bi >liit`
 - Abjad Mode: `tnc u b >lt`
 
-### 3.12 Semantic Idiom Standardization
+### 3.11 Semantic Idiom Standardization
 
 English relies on illogical phrasal verbs ("Look out!" = beware; "Give up" =
 surrender). MinEnglish rejects phrasal idioms entirely. A direct translation of
@@ -542,7 +522,7 @@ Idioms must be translated to their literal action equivalent.
 - "Look out!" → `!!uac` (Watch intensely!)
 - "Give up" → `stop tu trai` (Stop to try)
 
-### 3.13 Derivational Morphology Engine (Suffixes)
+### 3.12 Derivational Morphology Engine (Suffixes)
 
 Long, un-compressable Latinate words (like "antibiotic") destroy MinEnglish's
 efficiency. Latinate words are compressed using a standardized suffix engine
@@ -553,18 +533,18 @@ applied to MinEnglish roots.
 - `-med` (Medicine for): `bac-med` (Antibiotics, medicine against bacteria)
 - `-mun` (Economics of): `rap-mun` (Hyperinflation, rapid economics)
 
-### 3.14 Orthographic Stress Engine
+### 3.13 Orthographic Stress Engine
 
 To solve the ambiguity of spoken MinEnglish without relying on the optional `'`
-marker, v1.5 standardizes default pronunciation logic for parsers and speakers.
-**Rule:** Always stress the **first vowel** of a root word _unless_ it is a
-recognized prefix-suffix. In compound words, stress the first syllable of the
-primary noun.
+marker, v0.9.0 standardizes default pronunciation logic for parsers and
+speakers. **Rule:** Always stress the **first vowel** of a root word _unless_ it
+is a recognized prefix-suffix. In compound words, stress the first syllable of
+the primary noun.
 
 - `c'ompiuuter` (Stress the O)
 - `b'ioloji` (Stress the I)
 
-### 3.15 Echo-Tagging (Aviation/Noisy Protocol)
+### 3.14 Echo-Tagging (Aviation/Noisy Protocol)
 
 Claude Shannon's Information Theory proves that "noise" requires "redundancy" to
 fix. MinEnglish's maximum data density strips all redundancy (`3boi uoc` marks
@@ -576,7 +556,7 @@ transmissions, a speaker may artificially inflate Shannon redundancy to 100% by
 - Standard: `3boi uoc` (Three boys are walking)
 - Echo-Tagged: `3boi trii uoc nau` (Three boys three are-walking now)
 
-### 3.16 Formal Syntax (Backus-Naur Form)
+### 3.15 Formal Syntax (Backus-Naur Form)
 
 The absolute regularity of MinEnglish allows it to be algorithmically validated.
 Below is the strict parsing configuration for a standard declarative sentence.
@@ -600,7 +580,7 @@ Below is the strict parsing configuration for a standard declarative sentence.
 
 ## 4. Base Lexicon
 
-### 1. Fundamentals
+### 4.1 Fundamentals
 
 | English     | MinEnglish          | English    | MinEnglish          |
 | ----------- | ------------------- | ---------- | ------------------- |
@@ -612,7 +592,7 @@ Below is the strict parsing configuration for a standard declarative sentence.
 | think       | **tinc**            | say / tell | **sei** / **tel**   |
 | want / need | **uant** / **niid** | use / find | **iuz** / **faind** |
 
-### 2. Time, Numbers, Nature
+### 4.2 Time, Numbers, Nature
 
 | English       | MinEnglish                   | English      | MinEnglish          |
 | ------------- | ---------------------------- | ------------ | ------------------- |
@@ -621,7 +601,7 @@ Below is the strict parsing configuration for a standard declarative sentence.
 | 10, 100, 1k   | ten, hundrid, tauzund        | sun / moon   | **sun** / **muun**  |
 | time          | **taim**                     | rain / snow  | **rein** / **snou** |
 
-### 3. People & Body
+### 4.3 People & Body
 
 | English        | MinEnglish             | English     | MinEnglish         |
 | -------------- | ---------------------- | ----------- | ------------------ |
@@ -630,7 +610,7 @@ Below is the strict parsing configuration for a standard declarative sentence.
 | mother-father  | **muder** / **fader**  | arm / leg   | **arm** / **leg**  |
 | friend         | **frend**              | hand / foot | **hand** / **fut** |
 
-### 4. Basic Adjectives & Colors
+### 4.4 Basic Adjectives & Colors
 
 | English     | MinEnglish         | English       | MinEnglish           |
 | ----------- | ------------------ | ------------- | -------------------- |
@@ -641,7 +621,7 @@ Below is the strict parsing configuration for a standard declarative sentence.
 
 ---
 
-## 6. Syntactic Reference Guide
+## 5. Syntactic Reference Guide
 
 ```
 NOUN:       <count><noun>         3cat, *dog, ~10person, 0eror
@@ -687,7 +667,7 @@ Possess: i's, u's, h's, s', t's
 
 ---
 
-## 7. Comparative Corpus
+## 6. Comparative Corpus
 
 ### Simple & Truths
 
@@ -695,551 +675,55 @@ Possess: i's, u's, h's, s', t's
 
 |                | Text                                           | Chars |
 | -------------- | ---------------------------------------------- | ----- |
-| **English**    | The three cats are sitting on the big red mat. | 46    |
-| **MinEnglish** | 3cat sit on mat big red.                       | 24    |
+| **English**    | The three cats are sitting on the big red mat. | 46  |
+| **MinEnglish** | 3cat sit on mat big red.                       | 24  |
 | **↩ Back**     | Three-cat sit on one-mat big red.              |       |
 
-#### Ex. 1
+> **Compression:** 47.8% Δ **Observation:** High compression achieved via
+> removal of articles, auxiliary verbs, and phonetic normalization.
+
+
+> **Compression:** 47.8% Δ
+>
+> **Observation:** High compression achieved via removal of definite articles, auxiliary verbs, and strict phonetic normalization.
+
+#### Ex. 2
 
 |                | Text                                                       | Chars |
 | -------------- | ---------------------------------------------------------- | ----- |
-| **English**    | Dogs are loyal animals that love their owners.             | 46    |
-| **MinEnglish** | *dog bi *animal loial dat *luv *h's ouner.                 | 42    |
+| **English**    | Dogs are loyal animals that love their owners.             | 46  |
+| **MinEnglish** | *dog bi *animal loial dat *luv *h's ouner.                 | 42  |
 | **↩ Back**     | Any-dog be any-animal loyal that any-love any-their owner. |       |
+
+> **Compression:** 8.7% Δ **Observation:** Universal deference operators
+> substitute complex plural or aggregate nouns.
+
+
+> **Compression:** 8.7% Δ
+>
+> **Observation:** Universal deference operators (`*`) substitute complex plural or aggregate noun constraints.
 
 ### Relatives & Times
 
-#### Ex. 1
+#### Ex. 3
 
 |                | Text                                                        | Chars |
 | -------------- | ----------------------------------------------------------- | ----- |
-| **English**    | Yesterday I bought two books and three apples at the store. | 59    |
-| **MinEnglish** | -1d bai 2buc an 3apel @ stor.                               | 29    |
+| **English**    | Yesterday I bought two books and three apples at the store. | 59  |
+| **MinEnglish** | -1d bai 2buc an 3apel @ stor.                               | 29  |
 | **↩ Back**     | I one-day-ago buy two-book and three-apple at one-store.    |       |
 
-#### Ex. 1
-
-|                | Text                                          | Chars |
-| -------------- | --------------------------------------------- | ----- |
-| **English**    | Will you eat dinner with us tomorrow evening? | 45    |
-| **MinEnglish** | u1d iit diner uid \*i?                        | 23    |
-| **↩ Back**     | You in-one-day eat one-dinner with all-of-us? |       |
-
-#### Ex. 1
-
-|                | Text                                                       | Chars |
-| -------------- | ---------------------------------------------------------- | ----- |
-| **English**    | About fifty people arrived at approximately three o'clock. | 58    |
-| **MinEnglish** | ~50person ariv @ ~15:00.                                   | 24    |
-| **↩ Back**     | Approximately-fifty-person arrive at approximately-15:00.  |       |
-
-#### Ex. 1
-
-|                | Text                                                                                          | Chars |
-| -------------- | --------------------------------------------------------------------------------------------- | ----- |
-| **English**    | The meeting was held on January fifteenth, twenty twenty-six, at two thirty in the afternoon. | 93    |
-| **MinEnglish** | miiting 2026-01-15 14:30 bi held.                                                             | 33    |
-| **↩ Back**     | One-meeting 2026-01-15 14:30 be held.                                                         |       |
-
-#### Ex. 1
-
-|                | Text                                                                           | Chars |
-| -------------- | ------------------------------------------------------------------------------ | ----- |
-| **English**    | I have been studying English for five years but I still cannot speak fluently. | 78    |
-| **MinEnglish** | :5Y studi inglish but i no can spiic fluuent.                                  | 46    |
-| **↩ Back**     | For-five-years study English but I not can speak fluent.                       |       |
-
-### Complex Modifiers & Voice
-
-#### Ex. 1
-
-|                | Text                                                                           | Chars |
-| -------------- | ------------------------------------------------------------------------------ | ----- |
-| **English**    | We are going to the extremely new restaurant tomorrow at seven in the evening. | 78    |
-| **MinEnglish** | \*i1d gou tu fuud-haus >>niu @ 19:00.                                          | 38    |
-| **↩ Back**     | All-of-us in-one-day go to one-food-house extremely-new at 19:00.              |       |
-
-#### Ex. 1
-
-|                | Text                                                               | Chars |
-| -------------- | ------------------------------------------------------------------ | ----- |
-| **English**    | Look out! The glass window was just broken by the angry man.       | 60    |
-| **MinEnglish** | !!uac! uindou glas breic bai man angri.                            | 39    |
-| **↩ Back**     | Watch-intensely! One-window glass just-now break by one-man angry. |       |
-
-#### Ex. 1
-
-|                | Text                                                                         | Chars |
-| -------------- | ---------------------------------------------------------------------------- | ----- |
-| **English**    | She must give her book to him before she can start working.                  | 61    |
-| **MinEnglish** | s1must giv s' buc tu h bifor s1can start tu uorc.                            | 49    |
-| **↩ Back**     | She-now-must give her book to he before she-now-can start [Object] one-work. |       |
-
-### Conditionals, Logic & Commands
-
-#### Ex. 1
-
-|                | Text                                                                      | Chars |
-| -------------- | ------------------------------------------------------------------------- | ----- |
-| **English**    | If you don't stop running, you will fall and break your legs.             | 61    |
-| **MinEnglish** | if u1no stop tu run, u1fol an breic tu u's 2leg.                          | 48    |
-| **↩ Back**     | If you-now-not stop [Obj] run, you-now-fall and break [Obj] your two-leg. |       |
-
-#### Ex. 1
-
-|                | Text                                                                                          | Chars |
-| -------------- | --------------------------------------------------------------------------------------------- | ----- |
-| **English**    | Every morning I drink two cups of coffee and eat one piece of toast before work.              | 82    |
-| **MinEnglish** | *morning i*drinc 2cup cofi an \*iit piis toust bifor uorc.                                    | 58    |
-| **↩ Back**     | Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece toast before work. |       |
-
-#### Ex. 1
-
-|                | Text                                                                                 | Chars |
-| -------------- | ------------------------------------------------------------------------------------ | ----- |
-| **English**    | Take three eggs, add two cups of flour, and mix everything together for ten minutes. | 84    |
-| **MinEnglish** | teic 3eg, ad 2cup flaur, an mics \*ting for 10m.                                     | 48    |
-| **↩ Back**     | Take three-egg, add two-cup flour, and mix all-thing for ten-minutes.                |       |
-
-#### Ex. 1
-
-|                | Text                                                      | Chars |
-| -------------- | --------------------------------------------------------- | ----- |
-| **English**    | Please give me two glasses of water, I am very thirsty.   | 55    |
-| **MinEnglish** | ~u1giv i 2glas uoter, i bi >tersti.                       | 35    |
-| **↩ Back**     | Polite-you-now-give I two-glass water, I be very-thirsty. |       |
-
-### Dialogue & Description
-
-#### Ex. 1
-
-|                | Text                                                             | Chars |
-| -------------- | ---------------------------------------------------------------- | ----- |
-| **English**    | "How many children do you have?" "I have two boys and one girl." | 64    |
-| **MinEnglish** | "haum ciald u hav?" "i hav 2boi an gerl."                        | 41    |
-| **↩ Back**     | "How-many child you have?" "I have two-boy and one-girl."        |       |
-
-#### Ex. 1
-
-|                | Text                                                                                                                                         | Chars |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **English**    | Last year, she traveled to five different countries and learned three new languages because she wanted to understand the world better.       | 134   |
-| **MinEnglish** | s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s-1Y uant understand uerld mor gud.                                                 | 92    |
-| **↩ Back**     | She one-year-ago travel to five-country different and learn three-language new because she one-year-ago want understand one-world more good. |       |
-
-#### Ex. 1
-
-|                | Text                                                                              | Chars |
-| -------------- | --------------------------------------------------------------------------------- | ----- |
-| **English**    | I might go to the party, but she loves him and he does not love her.              | 69    |
-| **MinEnglish** | i1d ~can gou tu parti, but s1luv h an !h no luv s.                                | 51    |
-| **↩ Back**     | I in-future might go to one-party, but she-now-love he and focus-he not love she. |       |
-
-#### Ex. 1
-
-|                | Text                                                                           | Chars |
-| -------------- | ------------------------------------------------------------------------------ | ----- |
-| **English**    | My brother works at a hospital and my sister studies at the university.        | 71    |
-| **MinEnglish** | i's bruder *uorc @ hospital an i's sister *studi @ iuniversiti.                | 63    |
-| **↩ Back**     | My brother any-work at one-hospital and my sister any-study at one-university. |       |
-
-> _Low compression — long Latin words maintain their length._
-
-#### Ex. 1
-
-|                | Text                                                                           | Chars |
-| -------------- | ------------------------------------------------------------------------------ | ----- |
-| **English**    | The children were playing in the park when it started raining heavily.         | 70    |
-| **MinEnglish** | \*ciald in parc uen t-0s start rein >hevi.                                     | 43    |
-| **↩ Back**     | Any-child just-now in(verb) one-park when it-just-now start rain very-heavily. |       |
-
-#### Ex. 1
-
-|                | Text                                                              | Chars |
-| -------------- | ----------------------------------------------------------------- | ----- |
-| **English**    | How much does this car cost? It is too expensive for me.          | 56    |
-| **MinEnglish** | ?haum dis car cost? t bi >>ecspensiv for i.                       | 43    |
-| **↩ Back**     | Question-how-much this car cost? It be extremely-expensive for I. |       |
-
-### Advanced Domains (Sci-Fi, Philosophy, Business)
-
-#### Ex. 1
-
-|                | Text                                                                       | Chars |
-| -------------- | -------------------------------------------------------------------------- | ----- |
-| **English**    | The spaceship launched into orbit after the countdown reached zero.        | 67    |
-| **MinEnglish** | ship-speis lonci in orbit after caunt-daun hic 0.                          | 49    |
-| **↩ Back**     | One-ship-space just-now launch in one-orbit after one-count-down hit zero. |       |
-
-#### Ex. 1
-
-|                | Text                                                                     | Chars |
-| -------------- | ------------------------------------------------------------------------ | ----- |
-| **English**    | To be or not to be, that is the question we must all answer eventually.  | 71    |
-| **MinEnglish** | bi or no bi, dat bi cuesciun \*i must anser in taim.                     | 53    |
-| **↩ Back**     | Be or not be, that be one-question all-of-us must answer in future-time. |       |
-
-#### Ex. 1
-
-|                | Text                                                                                                 | Chars |
-| -------------- | ---------------------------------------------------------------------------------------------------- | ----- |
-| **English**    | Our company needs to optimize its supply chain to maximize profit margins next year.                 | 83    |
-| **MinEnglish** | *i's compani niid optimaiz t's cein-suplai tu macsimaiz *marjin-profit 1Y.                           | 75    |
-| **↩ Back**     | All-of-us-possessive company need optimize its chain-supply to maximize any-margin-profit next-year. |       |
-
-#### Ex. 1
-
-|                | Text                                                                                              | Chars |
-| -------------- | ------------------------------------------------------------------------------------------------- | ----- |
-| **English**    | The president announced a new tax policy that will affect middle class families.                  | 78    |
-| **MinEnglish** | prezident anauns nolisi-tacs niu dat 1d apect \*pamili clas-midl.                                 | 66    |
-| **↩ Back**     | One-president just-now announce one-policy-tax new that in-future affect any-family class-middle. |       |
-
-#### Ex. 1
-
-|                | Text                                                                                                                 | Chars |
-| -------------- | -------------------------------------------------------------------------------------------------------------------- | ----- |
-| **English**    | The doctor prescribed antibiotics to treat the patient's severe bacterial infection.                                 | 84    |
-| **MinEnglish** | doctor prescraib tu \*bac-med tu triit bac-sic >siirius peishent's.                                                  | 67    |
-| **↩ Back**     | One-doctor just-now prescribe [Obj] any-bacteria-medicine to treat one-bacteria-sickness very-serious one-patient's. |       |
-
-#### Ex. 1
-
-|                | Text                                                                               | Chars |
-| -------------- | ---------------------------------------------------------------------------------- | ----- |
-| **English**    | The three bedroom house with a large backyard is currently on the market for rent. | 82    |
-| **MinEnglish** | haus 3ruum-bed uid iard-bac big in marcet for rent nau.                            | 56    |
-| **↩ Back**     | One-house three-room-bed with one-yard-back big now-in one-market for rent now.    |       |
-
-#### Ex. 1
-
-|                | Text                                                                              | Chars |
-| -------------- | --------------------------------------------------------------------------------- | ----- |
-| **English**    | If the server crashes, the backup system will automatically restore the database. | 81    |
-| **MinEnglish** | if server craish, sistem-bacup 1d otoristor daatabeis.                            | 55    |
-| **↩ Back**     | If one-server crash, one-sistem-backup in-future auto-restore one-database.       |       |
-
-#### Ex. 1
-
-|                | Text                                                                              | Chars |
-| -------------- | --------------------------------------------------------------------------------- | ----- |
-| **English**    | Global warming is melting the polar ice caps faster than scientists predicted.    | 78    |
-| **MinEnglish** | gloubal-iurm melt *cap-ais poular >fast dan *saientist -1d pridiict.              | 68    |
-| **↩ Back**     | Warm-global now-melt any-cap-ice polar more-fast than any-scientist past-predict. |       |
-
-#### Nature & Poetry (Imagery)
-
-|                | Text                                                                                             | Chars |
-| -------------- | ------------------------------------------------------------------------------------------------ | ----- |
-| **English**    | The wind whispered through the ancient trees as the silver moon rose in the sky.                 | 80    |
-| **MinEnglish** | uind uisper tru \*trii >ould az muun silver raiz in scai.                                        | 57    |
-| **↩ Back**     | One-wind just-now whisper through any-tree very-old as one-moon silver just-now rise in one-sky. |       |
-
-#### Logistics
-
-|                | Text                                                                           | Chars |
-| -------------- | ------------------------------------------------------------------------------ | ----- |
-| **English**    | The delivery truck will arrive with your package between noon and two o'clock. | 78    |
-| **MinEnglish** | truc-diliveri 1d ariv uid u's pacij btuiin 12:00 an 14:00.                     | 59    |
-| **↩ Back**     | One-truck-delivery in-future arrive with your package between 12:00 and 14:00. |       |
-
-#### Legal
-
-|                | Text                                                                                     | Chars |
-| -------------- | ---------------------------------------------------------------------------------------- | ----- |
-| **English**    | The defendant formally pleaded not guilty to all charges presented by the court.         | 80    |
-| **MinEnglish** | diipendant formal pliid no gilti tu \*carj prizent bai tu cort.                          | 63    |
-| **↩ Back**     | One-defendant just-now formal plead not guilty to any-charge present by [Obj] one-court. |       |
-
-#### Ex. 1
-
-|                | Text                                                                                     | Chars |
-| -------------- | ---------------------------------------------------------------------------------------- | ----- |
-| **English**    | Boil the water, add a pinch of salt, and stir constantly until the sauce thickens.       | 82    |
-| **MinEnglish** | boil tu uoter, ad tu pinci solt, an \*ster until sos >tic.                               | 58    |
-| **↩ Back**     | Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce very-thick. |       |
-
-#### Ex. 1
-
-|                | Text                                                                                                               | Chars |
-| -------------- | ------------------------------------------------------------------------------------------------------------------ | ----- |
-| **English**    | I have never felt this way about anyone before, you changed my entire life.                                        | 75    |
-| **MinEnglish** | -1d *no fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.                                                | 70    |
-| **↩ Back**     | I-just-now-yesterday any-not feel this way about any-person before, you yesterday change [Obj] my life very-whole. |       |
-
-#### Ex. 1
-
-|                | Text                                                                           | Chars |
-| -------------- | ------------------------------------------------------------------------------ | ----- |
-| **English**    | Go straight for two miles, then turn left at the second traffic light you see. | 78    |
-| **MinEnglish** | gou streit for 2mail, den tern left @ lait-trapic tuu u1sii.                   | 60    |
-| **↩ Back**     | Go straight for two-mile, then turn left at one-light-traffic two you-now-see. |       |
-
-#### Ex. 1
-
-|                | Text                                                                                                 | Chars |
-| -------------- | ---------------------------------------------------------------------------------------------------- | ----- |
-| **English**    | Hyperinflation destroys purchasing power and severely halts economic development.                    | 81    |
-| **MinEnglish** | >>rap-mun distroi tu pauer-bai an >siirius holt tu divelopment-mun.                                  | 67    |
-| **↩ Back**     | Extremely-rapid-economy now-destroy [Obj] power-buy and very-serious halt [Obj] development-economy. |       |
-
 ---
 
-## 8. Technical Domain Corpus
+> **Compression:** 50.8% Δ **Observation:** High compression achieved via
+> removal of articles, auxiliary verbs, and phonetic normalization.
 
-The following examples demonstrate MinEnglish applied to formal technical
-disciplines, using the optionality rules of v2.0 (implicit singular, implicit
-`i`, implicit present tense) and LaTeX math notation where appropriate.
-Back-translations are omitted where the logical derivation is self-evident.
 
-### 8.1 Mathematics
+> **Compression:** 50.8% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
 
-**M1 — The Pythagorean Theorem:**
-
-> In a right triangle, the square of the hypotenuse equals the sum of the
-> squares of the other two sides.
-
-```minenglish
-in triangle-rait, $a^2 + b^2 = c^2$, uen c bi said-hipoteniuz.
-```
-
-_Math literal `$a^2 + b^2 = c^2$` is exempt from phonetic rules. Compression:
-~51%._
-
-**M2 — Derivative Definition:**
-
-> The derivative of f(x) is the limit of the difference quotient as h approaches
-> zero.
-
-```minenglish
-$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$
-```
-
-_Pure LaTeX literal. No MinEnglish wrapping required for isolated mathematical
-definitions._
-
-**M3 — Quadratic Formula:**
-
-> Solve for x using the quadratic formula given coefficients a, b, and c.
-
-```minenglish
-solv for x, $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$, given a, b, c.
-```
-
-**M4 — Probability Statement:**
-
-> The probability that two independent events both occur equals the product of
-> their individual probabilities.
-
-```minenglish
-$P(A \cap B) = P(A) \cdot P(B)$ if A, B bi independent.
-```
-
-**M5 — Matrix Multiplication:**
-
-> The element at row i, column j of the product matrix equals the dot product of
-> row i of A and column j of B.
-
-```minenglish
-$(AB)_{ij} = \sum_k A_{ik} B_{kj}$
-```
-
----
-
-### 8.2 Physics
-
-**P1 — Newton's Second Law:**
-
-> Force equals mass times acceleration.
-
-```minenglish
-$F = ma$ — fors bi mas * akselireshun.
-```
-
-**P2 — Mass-Energy Equivalence:**
-
-> Energy equals mass times the speed of light squared. This implies that a small
-> amount of mass converts to an enormous quantity of energy.
-
-```minenglish
-$E = mc^2$ — smol mas convert tu >uan-mun eneri.
-```
-
-**P3 — Gauss's Law (Electrostatics):**
-
-> The electric flux through a closed surface equals the enclosed charge divided
-> by the permittivity of free space.
-
-```minenglish
-$\oint \vec{E} \cdot d\vec{A} = \frac{Q_{enc}}{\varepsilon_0}$ — Gauss lau for field-elec.
-```
-
-**P4 — Uncertainty Principle:**
-
-> The product of the uncertainty in position and the uncertainty in momentum is
-> always greater than or equal to ħ/2.
-
-```minenglish
-$\Delta x \cdot \Delta p \geq \frac{\hbar}{2}$ — Heisenberg constrains *mesurment-cuantum.
-```
-
-**P5 — Wave Equation:**
-
-> The wave speed equals frequency times wavelength.
-
-```minenglish
-$v = f\lambda$ — spid-uav bi frekuensi * lent-uav.
-```
-
----
-
-### 8.3 Chemistry
-
-**C1 — Ideal Gas Law:**
-
-> Pressure times volume equals the number of moles times the gas constant times
-> temperature.
-
-```minenglish
-$PV = nRT$ — presur * volium bi mol-n * R * temperatur.
-```
-
-**C2 — Reaction Rate:**
-
-> The combustion of methane with oxygen produces carbon dioxide, water, and
-> heat.
-
-```minenglish
-$\text{CH}_4 + 2\text{O}_2 \to \text{CO}_2 + 2\text{H}_2\text{O}$ + eneri-hit.
-```
-
-**C3 — pH Definition:**
-
-> The pH of a solution is the negative logarithm base 10 of the hydrogen ion
-> concentration.
-
-```minenglish
-$\text{pH} = -\log_{10}[\text{H}^+]$ — mesur asiditi-solushun.
-```
-
-**C4 — Avogadro's Number:**
-
-> One mole of any substance contains approximately 6.022 times 10 to the power
-> of 23 entities.
-
-```minenglish
-mol *substans contain $6.022 \times 10^{23}$ entiti.
-```
-
----
-
-### 8.4 Engineering
-
-**E1 — Ohm's Law:**
-
-> Voltage equals current times resistance.
-
-```minenglish
-$V = IR$ — volteij bi curent * rezistans.
-```
-
-**E2 — Structural Load (Stress):**
-
-> The stress in a material equals the applied force divided by the
-> cross-sectional area.
-
-```minenglish
-$\sigma = \frac{F}{A}$ — stres in material bi fors / area-cross.
-```
-
-**E3 — Signal-to-Noise Ratio:**
-
-> The SNR in decibels equals ten times the log base 10 of the signal power
-> divided by noise power.
-
-```minenglish
-$\text{SNR}_{dB} = 10\log_{10}\!\left(\frac{P_s}{P_n}\right)$ — mesur cuoliti-signal.
-```
-
-**E4 — Control Systems (Transfer Function):**
-
-> A PID controller adjusts output based on proportional, integral, and
-> derivative error terms.
-
-```minenglish
-$u(t) = K_p e(t) + K_i\int e\,dt + K_d\frac{de}{dt}$ — PID control output.
-```
-
-**E5 — Thermal Efficiency:**
-
-> The Carnot efficiency of a heat engine operating between temperatures T_hot
-> and T_cold is 1 minus T_cold over T_hot.
-
-```minenglish
-$\eta = 1 - \frac{T_c}{T_h}$ — macsimaum eficiensi-hit. T_h bi hot, T_c bi could.
-```
-
----
-
-### 8.5 Investment & Financial Markets
-
-**I1 — Compound Interest:**
-
-> An initial investment of $10,000 at an annual rate of 7% compounded monthly
-> for 10 years yields a final value.
-
-```minenglish
-$A = P\!\left(1+\frac{r}{n}\right)^{nt}$ — $10000 @ 7%/iir compound-munt for 10iir.
-```
-
-**I2 — Sharpe Ratio:**
-
-> The Sharpe ratio measures risk-adjusted return: expected return minus
-> risk-free rate, divided by portfolio standard deviation.
-
-```minenglish
-$S = \frac{E[R] - R_f}{\sigma}$ — mesur return-risk-ajust portfolio.
-```
-
-**I3 — Portfolio Diversification:**
-
-> Allocate 60% to equities and 40% to fixed income to balance growth and
-> stability.
-
-```minenglish
-aloc 60% tu aset-ekuiti an 40% tu aset-bond, for balans grout-stabiliti.
-```
-
-**I4 — Options Pricing (Black-Scholes):**
-
-> The Black-Scholes model prices a European call option given the underlying
-> price, strike, volatility, time to expiry, and risk-free rate.
-
-```minenglish
-$C = S_0 N(d_1) - Ke^{-rT}N(d_2)$ — Black-Scholes prai *opsion-col European.
-```
-
-**I5 — Market Signal:**
-
-> The 50-day moving average crossing above the 200-day moving average is a
-> bullish signal, historically associated with trend continuation.
-
-```minenglish
-MA-50d cross > MA-200d bi signal-bulis. *histori asocieit uid trend-continue.
-```
-
-**I6 — Inflation-Adjusted Return:**
-
-> The real return equals the nominal return minus the inflation rate.
-
-```minenglish
-return-real bi return-nominal - ret-infleshun.
-$r_{real} \approx r_{nominal} - \pi$
-```
-
----
-
-## 9. Comparative Information Density Analysis
+## 7. Comparative Information Density Analysis
 
 The transmission efficiency (information density) of MinEnglish was modeled
 against a 35-sentence standard English corpus. Efficiency is measured locally in
@@ -1266,7 +750,7 @@ byte-length (character count reduction).
 
 ---
 
-## 9. Theoretical Limitations: The Human Biological Factor
+## 8. Theoretical Limitations: The Human Biological Factor
 
 The structural additions of the v1.8 and preceding protocols (Literalization
 `_`, Clause Anchors `co`/`oc`, and Echo-Tagging) establish MinEnglish as a
@@ -1280,7 +764,7 @@ standard linguistic inefficiencies:
 3. **Transmission Integrity:** Echo-Tagging permits dynamic redundancy scaling
    to guarantee fidelity in high-loss environments (Shannon's Theorem).
 
-### 9.1 Psychological Friction
+### 8.1 Psychological Friction
 
 The primary identified limitation of MinEnglish exists externally to its
 syntactic structure; the limitation is biological. Mammalian communicative
@@ -1295,9 +779,27 @@ would likely prompt measurable psychological resistance, as the protocol
 disables the linguistic mechanisms humans rely on to process and mitigate
 sociological complexity.
 
+### 8.2 Global Formalization Standards
+
+As MinEnglish is designed to be a mathematically and informationally optimized
+transmission system, it inherently relies on existing, globally accepted
+objective standards to eliminate ambiguity. We strongly recommend that all
+implementations, translations, and corpus generations of MinEnglish strictly
+adhere to the following universal formalisms:
+
+1. **Chronometry:** All temporal references should default to Universal
+   Coordinated Time (UTC) or Universal Standard Time (UST) representations
+   (e.g., `14:30Z`).
+2. **Measurement:** Only the International System of Units (SI / Metric System)
+   should be utilized for weights, measures, distances, and volumes.
+3. **Mathematics:** Equations, variable definitions, and complex mathematical
+   relationships should be expressed natively in LaTeX syntax to avoid ad-hoc
+   lexical transcriptions.
+4. **Dates:** Adherence strictly to the ISO 8601 standard (`YYYY-MM-DD`).
+
 ---
 
-## 10. References
+## 9. References
 
 - Shannon, C. E. (1948). A mathematical theory of communication. _Bell System
   Technical Journal_, 27(3), 379–423.
@@ -1310,7 +812,537 @@ sociological complexity.
 
 ---
 
-## Appendix: License
+## Appendix A: Full Comparative Corpus
+
+#### Ex. 4
+
+|                | Text                                          | Chars |
+| -------------- | --------------------------------------------- | ----- |
+| **English**    | Will you eat dinner with us tomorrow evening? | 45  |
+| **MinEnglish** | u1d iit diner uid \*i?                        | 22  |
+| **↩ Back**     | You in-one-day eat one-dinner with all-of-us? |       |
+
+> **Compression:** 51.1% Δ **Observation:** Universal deference operators
+> substitute complex plural or aggregate nouns.
+
+
+> **Compression:** 51.1% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+#### Ex. 5
+
+|                | Text                                                       | Chars |
+| -------------- | ---------------------------------------------------------- | ----- |
+| **English**    | About fifty people arrived at approximately three o'clock. | 58  |
+| **MinEnglish** | ~50person ariv @ ~15:00.                                   | 24  |
+| **↩ Back**     | Approximately-fifty-person arrive at approximately-15:00.  |       |
+
+> **Compression:** 58.6% Δ **Observation:** Approximation operators drastically
+> reduce multi-word phrasings.
+
+
+> **Compression:** 58.6% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+#### Ex. 6
+
+|                | Text                                                                                          | Chars |
+| -------------- | --------------------------------------------------------------------------------------------- | ----- |
+| **English**    | The meeting was held on January fifteenth, twenty twenty-six, at two thirty in the afternoon. | 93  |
+| **MinEnglish** | miiting 2026-01-15 14:30 bi held.                                                             | 33  |
+| **↩ Back**     | One-meeting 2026-01-15 14:30 be held.                                                         |       |
+
+> **Compression:** 64.5% Δ **Observation:** High compression achieved via
+> removal of articles, auxiliary verbs, and phonetic normalization.
+
+
+> **Compression:** 64.5% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+#### Ex. 7
+
+|                | Text                                                                           | Chars |
+| -------------- | ------------------------------------------------------------------------------ | ----- |
+| **English**    | I have been studying English for five years but I still cannot speak fluently. | 78  |
+| **MinEnglish** | :5Y studi inglish but i no can spiic fluuent.                                  | 45  |
+| **↩ Back**     | For-five-years study English but I not can speak fluent.                       |       |
+
+> **Compression:** 42.3% Δ **Observation:** High compression achieved via
+> removal of articles, auxiliary verbs, and phonetic normalization.
+
+
+> **Compression:** 42.3% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+### Complex Modifiers & Voice
+
+#### Ex. 8
+
+|                | Text                                                                           | Chars |
+| -------------- | ------------------------------------------------------------------------------ | ----- |
+| **English**    | We are going to the extremely new restaurant tomorrow at seven in the evening. | 78  |
+| **MinEnglish** | \*i1d gou tu restaurant >>niu @ 19:00.                                         | 38  |
+| **↩ Back**     | All-of-us in-one-day go to one-restaurant extremely-new at 19:00.              |       |
+
+> **Compression:** 51.3% Δ **Observation:** Intensity operators eliminate
+> adverbial modifiers.
+
+
+> **Compression:** 51.3% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+#### Ex. 9
+
+|                | Text                                                               | Chars |
+| -------------- | ------------------------------------------------------------------ | ----- |
+| **English**    | Look out! The glass window was just broken by the angry man.       | 60  |
+| **MinEnglish** | !!uac! uindou glas breic bai man angri.                            | 39  |
+| **↩ Back**     | Watch-intensely! One-window glass just-now break by one-man angry. |       |
+
+> **Compression:** 35.0% Δ **Observation:** General lexical optimization and
+> phonetic spelling reduction.
+
+
+> **Compression:** 35.0% Δ
+>
+> **Observation:** Exclamatory prefixes (`!!`) enforce immediate semantic parsing, bypassing syntactic buildup.
+
+#### Ex. 10
+
+|                | Text                                                                         | Chars |
+| -------------- | ---------------------------------------------------------------------------- | ----- |
+| **English**    | She must give her book to him before she can start working.                  | 59  |
+| **MinEnglish** | s1must giv s's buc tu h bifor s1can start tu uorc.                           | 50  |
+| **↩ Back**     | She-now-must give her book to he before she-now-can start [Object] one-work. |       |
+
+> **Compression:** 15.3% Δ **Observation:** General lexical optimization and
+> phonetic spelling reduction.
+
+
+> **Compression:** 15.3% Δ
+>
+> **Observation:** General lexical optimization and phonetic spelling reduction.
+
+### Conditionals, Logic & Commands
+
+#### Ex. 11
+
+|                | Text                                                                      | Chars |
+| -------------- | ------------------------------------------------------------------------- | ----- |
+| **English**    | If you don't stop running, you will fall and break your legs.             | 61  |
+| **MinEnglish** | if u1no stop tu run, u1fol an breic tu u's 2leg.                          | 48  |
+| **↩ Back**     | If you-now-not stop [Obj] run, you-now-fall and break [Obj] your two-leg. |       |
+
+> **Compression:** 21.3% Δ **Observation:** General lexical optimization and
+> phonetic spelling reduction.
+
+
+> **Compression:** 21.3% Δ
+>
+> **Observation:** General lexical optimization and phonetic spelling reduction.
+
+#### Ex. 12
+
+|                | Text                                                                                          | Chars |
+| -------------- | --------------------------------------------------------------------------------------------- | ----- |
+| **English**    | Every morning I drink two cups of coffee and eat one piece of toast before work.              | 80  |
+| **MinEnglish** | *morning i*drinc 2cup cofi an \*iit piis toust bifor uorc.                                    | 58  |
+| **↩ Back**     | Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece toast before work. |       |
+
+> **Compression:** 27.5% Δ **Observation:** Universal deference operators
+> substitute complex plural or aggregate nouns.
+
+
+> **Compression:** 27.5% Δ
+>
+> **Observation:** Universal deference operators (`*`) substitute complex plural or aggregate noun constraints.
+
+#### Ex. 13
+
+|                | Text                                                                                 | Chars |
+| -------------- | ------------------------------------------------------------------------------------ | ----- |
+| **English**    | Take three eggs, add two cups of flour, and mix everything together for ten minutes. | 84  |
+| **MinEnglish** | teic 3eg, ad 2cup flaur, an mics \*ting for 10m.                                     | 48  |
+| **↩ Back**     | Take three-egg, add two-cup flour, and mix all-thing for ten-minutes.                |       |
+
+> **Compression:** 42.9% Δ **Observation:** Universal deference operators
+> substitute complex plural or aggregate nouns.
+
+
+> **Compression:** 42.9% Δ
+>
+> **Observation:** Universal deference operators (`*`) substitute complex plural or aggregate noun constraints.
+
+#### Ex. 14
+
+|                | Text                                                    | Chars |
+| -------------- | ------------------------------------------------------- | ----- |
+| **English**    | Please give me two glasses of water, I am very thirsty. | 55  |
+| **MinEnglish** | ~u giv i 2glas uoter, i bi >tersti.                     | 35  |
+| **↩ Back**     | Polite-you-give I two-glass water, I be very-thirsty.   |       |
+
+> **Compression:** 36.4% Δ **Observation:** Approximation operators drastically
+> reduce multi-word phrasings.
+
+
+> **Compression:** 36.4% Δ
+>
+> **Observation:** Approximation operators (`~`) drastically reduce multi-word phrasings like "about" or "approximately".
+
+### Dialogue & Description
+
+#### Ex. 15
+
+|                | Text                                                             | Chars |
+| -------------- | ---------------------------------------------------------------- | ----- |
+| **English**    | "How many children do you have?" "I have two boys and one girl." | 64  |
+| **MinEnglish** | "haum ciald u hav?" "i hav 2boi an gerl."                        | 41  |
+| **↩ Back**     | "How-many child you have?" "I have two-boy and one-girl."        |       |
+
+> **Compression:** 35.9% Δ **Observation:** Interrogative prefixes condense
+> investigative clauses.
+
+
+> **Compression:** 35.9% Δ
+>
+> **Observation:** Interrogative prefixes condense investigative clauses into single tokens.
+
+#### Ex. 16
+
+|                | Text                                                                                                                                         | Chars |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **English**    | Last year, she traveled to five different countries and learned three new languages because she wanted to understand the world better.       | 134 |
+| **MinEnglish** | s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s-1Y uant understand uerld mor gud.                                                 | 92  |
+| **↩ Back**     | She one-year-ago travel to five-country different and learn three-language new because she one-year-ago want understand one-world more good. |       |
+
+> **Compression:** 31.3% Δ **Observation:** General lexical optimization and
+> phonetic spelling reduction.
+
+
+> **Compression:** 31.3% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+#### Ex. 17
+
+|                | Text                                                                              | Chars |
+| -------------- | --------------------------------------------------------------------------------- | ----- |
+| **English**    | I might go to the party, but she loves him and he does not love her.              | 68  |
+| **MinEnglish** | i1d ~can gou tu parti, but s1luv h an !h no luv s.                                | 50  |
+| **↩ Back**     | I in-future might go to one-party, but she-now-love he and focus-he not love she. |       |
+
+> **Compression:** 26.5% Δ **Observation:** Approximation operators drastically
+> reduce multi-word phrasings.
+
+
+> **Compression:** 26.5% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+#### Ex. 18
+
+|                | Text                                                                           | Chars |
+| -------------- | ------------------------------------------------------------------------------ | ----- |
+| **English**    | My brother works at a hospital and my sister studies at the university.        | 71  |
+| **MinEnglish** | i's bruder *uorc @ hospital an i's sister *studi @ iuniversiti.                | 63  |
+| **↩ Back**     | My brother any-work at one-hospital and my sister any-study at one-university. |       |
+
+> _Low compression — long Latin words maintain their length._
+
+> **Compression:** 11.3% Δ **Observation:** Universal deference operators
+> substitute complex plural or aggregate nouns.
+
+
+> **Compression:** 11.3% Δ
+>
+> **Observation:** Universal deference operators (`*`) substitute complex plural or aggregate noun constraints.
+
+#### Ex. 19
+
+|                | Text                                                                           | Chars |
+| -------------- | ------------------------------------------------------------------------------ | ----- |
+| **English**    | The children were playing in the park when it started raining heavily.         | 70  |
+| **MinEnglish** | \*ciald in parc uen t-0s start rein >hevi.                                     | 42  |
+| **↩ Back**     | Any-child just-now in(verb) one-park when it-just-now start rain very-heavily. |       |
+
+> **Compression:** 40.0% Δ **Observation:** Intensity operators eliminate
+> adverbial modifiers.
+
+
+> **Compression:** 40.0% Δ
+>
+> **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial modifiers.
+
+#### Ex. 20
+
+|                | Text                                                              | Chars |
+| -------------- | ----------------------------------------------------------------- | ----- |
+| **English**    | How much does this car cost? It is too expensive for me.          | 56  |
+| **MinEnglish** | ?haum dis car cost? t bi >>ecspensiv for i.                       | 43  |
+| **↩ Back**     | Question-how-much this car cost? It be extremely-expensive for I. |       |
+
+> **Compression:** 23.2% Δ **Observation:** Intensity operators eliminate
+> adverbial modifiers.
+
+
+> **Compression:** 23.2% Δ
+>
+> **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial modifiers.
+
+### Advanced Domains (Sci-Fi, Philosophy, Business)
+
+#### Ex. 21
+
+|                | Text                                                                      | Chars |
+| -------------- | ------------------------------------------------------------------------- | ----- |
+| **English**    | The spaceship launched into orbit after the countdown reached zero.       | 67  |
+| **MinEnglish** | speisship lonci in orbit after caunt-daun hic 0.                          | 48  |
+| **↩ Back**     | One-spaceship just-now launch in one-orbit after one-count-down hit zero. |       |
+
+> **Compression:** 28.4% Δ **Observation:** General lexical optimization and
+> phonetic spelling reduction.
+
+
+> **Compression:** 28.4% Δ
+>
+> **Observation:** General lexical optimization and phonetic spelling reduction.
+
+#### Ex. 22
+
+|                | Text                                                                     | Chars |
+| -------------- | ------------------------------------------------------------------------ | ----- |
+| **English**    | To be or not to be, that is the question we must all answer eventually.  | 71  |
+| **MinEnglish** | bi or no bi, dat bi cuesciun \*i must anser in taim.                     | 52  |
+| **↩ Back**     | Be or not be, that be one-question all-of-us must answer in future-time. |       |
+
+> **Compression:** 26.8% Δ **Observation:** Universal deference operators
+> substitute complex plural or aggregate nouns.
+
+
+> **Compression:** 26.8% Δ
+>
+> **Observation:** Universal deference operators (`*`) substitute complex plural or aggregate noun constraints.
+
+#### Ex. 23
+
+|                | Text                                                                                                 | Chars |
+| -------------- | ---------------------------------------------------------------------------------------------------- | ----- |
+| **English**    | Our company needs to optimize its supply chain to maximize profit margins next year.                 | 84  |
+| **MinEnglish** | *i's compani niid optimaiz t's suplai-cein tu macsimaiz *marjin-profit 1Y.                           | 74  |
+| **↩ Back**     | All-of-us-possessive company need optimize its supply-chain to maximize any-margin-profit next-year. |       |
+
+> **Compression:** 11.9% Δ **Observation:** Universal deference operators
+> substitute complex plural or aggregate nouns.
+
+
+> **Compression:** 11.9% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+#### Ex. 24
+
+|                | Text                                                                                              | Chars |
+| -------------- | ------------------------------------------------------------------------------------------------- | ----- |
+| **English**    | The president announced a new tax policy that will affect middle class families.                  | 80  |
+| **MinEnglish** | prezident anauns tacs-polisi niu dat 1d apect \*pamili clas-midl.                                 | 65  |
+| **↩ Back**     | One-president just-now announce one-tax-policy new that in-future affect any-family class-middle. |       |
+
+> **Compression:** 18.8% Δ **Observation:** Universal deference operators
+> substitute complex plural or aggregate nouns.
+
+
+> **Compression:** 18.8% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+#### Ex. 25
+
+|                | Text                                                                                                            | Chars |
+| -------------- | --------------------------------------------------------------------------------------------------------------- | ----- |
+| **English**    | The doctor prescribed antibiotics to treat the patient's severe bacterial infection.                            | 84  |
+| **MinEnglish** | doctor prescraib tu antibiotik tu triit bacteriel infecshun >siirius peishent's.                                | 80  |
+| **↩ Back**     | One-doctor just-now prescribe [Obj] one-antibiotic to treat one-bacterial-infection very-serious one-patient's. |       |
+
+> **Compression:** 4.8% Δ **Observation:** Intensity operators eliminate
+> adverbial modifiers.
+
+
+> **Compression:** 4.8% Δ
+>
+> **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial modifiers.
+
+#### Ex. 26
+
+|                | Text                                                                               | Chars |
+| -------------- | ---------------------------------------------------------------------------------- | ----- |
+| **English**    | The three bedroom house with a large backyard is currently on the market for rent. | 82  |
+| **MinEnglish** | haus 3bedruum uid baciard big in marcet for rent nau.                              | 53  |
+| **↩ Back**     | One-house three-bedroom with one-backyard big now-in one-market for rent now.      |       |
+
+> **Compression:** 35.4% Δ **Observation:** General lexical optimization and
+> phonetic spelling reduction.
+
+
+> **Compression:** 35.4% Δ
+>
+> **Observation:** General lexical optimization and phonetic spelling reduction.
+
+#### Ex. 27
+
+|                | Text                                                                              | Chars |
+| -------------- | --------------------------------------------------------------------------------- | ----- |
+| **English**    | If the server crashes, the backup system will automatically restore the database. | 81  |
+| **MinEnglish** | if server craish, backup sistem 1d otoristor daatabeis.                           | 55  |
+| **↩ Back**     | If one-server crash, one-backup-system in-future auto-restore one-database.       |       |
+
+> **Compression:** 32.1% Δ **Observation:** General lexical optimization and
+> phonetic spelling reduction.
+
+
+> **Compression:** 32.1% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+#### Ex. 28
+
+|                | Text                                                                                 | Chars |
+| -------------- | ------------------------------------------------------------------------------------ | ----- |
+| **English**    | Global warming is melting the polar ice caps faster than scientists predicted.       | 78  |
+| **MinEnglish** | gloubal uorming melt *cap-ais poular >fast dan *saientist -1d pridiict.              | 71  |
+| **↩ Back**     | Global-warming now-melt any-cap-ice polar more-fast than any-scientist past-predict. |       |
+
+> **Compression:** 9.0% Δ **Observation:** Intensity operators eliminate
+> adverbial modifiers.
+
+
+> **Compression:** 9.0% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+#### Ex. 29
+
+|                | Text                                                                                             | Chars |
+| -------------- | ------------------------------------------------------------------------------------------------ | ----- |
+| **English**    | The wind whispered through the ancient trees as the silver moon rose in the sky.                 | 80  |
+| **MinEnglish** | uind uisper tru \*trii >ould az muun silver raiz in scai.                                        | 57  |
+| **↩ Back**     | One-wind just-now whisper through any-tree very-old as one-moon silver just-now rise in one-sky. |       |
+
+> **Compression:** 28.7% Δ **Observation:** Intensity operators eliminate
+> adverbial modifiers.
+
+
+> **Compression:** 28.7% Δ
+>
+> **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial modifiers.
+
+#### Logistics
+
+#### Ex. 30
+
+|                | Text                                                                           | Chars |
+| -------------- | ------------------------------------------------------------------------------ | ----- |
+| **English**    | The delivery truck will arrive with your package between noon and two o'clock. | 78  |
+| **MinEnglish** | diliveri truc 1d ariv uid u's pacij btuiin 12:00 an 14:00.                     | 58  |
+| **↩ Back**     | One-delivery-truck in-future arrive with your package between 12:00 and 14:00. |       |
+
+> **Compression:** 25.6% Δ **Observation:** General lexical optimization and
+> phonetic spelling reduction.
+
+
+> **Compression:** 25.6% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+#### Ex. 31
+
+|                | Text                                                                                     | Chars |
+| -------------- | ---------------------------------------------------------------------------------------- | ----- |
+| **English**    | The defendant formally pleaded not guilty to all charges presented by the court.         | 80  |
+| **MinEnglish** | diipendant formal pliid no gilti tu \*carj prizent bai tu cort.                          | 63  |
+| **↩ Back**     | One-defendant just-now formal plead not guilty to any-charge present by [Obj] one-court. |       |
+
+> **Compression:** 21.3% Δ **Observation:** Universal deference operators
+> substitute complex plural or aggregate nouns.
+
+
+> **Compression:** 21.3% Δ
+>
+> **Observation:** Universal deference operators (`*`) substitute complex plural or aggregate noun constraints.
+
+#### Ex. 32
+
+|                | Text                                                                                     | Chars |
+| -------------- | ---------------------------------------------------------------------------------------- | ----- |
+| **English**    | Boil the water, add a pinch of salt, and stir constantly until the sauce thickens.       | 82  |
+| **MinEnglish** | boil tu uoter, ad tu pinci solt, an \*ster until sos >tic.                               | 58  |
+| **↩ Back**     | Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce very-thick. |       |
+
+> **Compression:** 29.3% Δ **Observation:** Intensity operators eliminate
+> adverbial modifiers.
+
+
+> **Compression:** 29.3% Δ
+>
+> **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial modifiers.
+
+#### Ex. 33
+
+|                | Text                                                                                                               | Chars |
+| -------------- | ------------------------------------------------------------------------------------------------------------------ | ----- |
+| **English**    | I have never felt this way about anyone before, you changed my entire life.                                        | 75  |
+| **MinEnglish** | -1d *no fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.                                                | 67  |
+| **↩ Back**     | I-just-now-yesterday any-not feel this way about any-person before, you yesterday change [Obj] my life very-whole. |       |
+
+> **Compression:** 10.7% Δ **Observation:** Intensity operators eliminate
+> adverbial modifiers.
+
+
+> **Compression:** 10.7% Δ
+>
+> **Observation:** Temporal operators (`-1d`, `1d`, `:5Y`) collapse complex tense architectures and prepositional phrases.
+
+#### Ex. 34
+
+|                | Text                                                                           | Chars |
+| -------------- | ------------------------------------------------------------------------------ | ----- |
+| **English**    | Go straight for two miles, then turn left at the second traffic light you see. | 78  |
+| **MinEnglish** | gou streit for 2mail, den tern left @ trapic lait tuu u1sii.                   | 60  |
+| **↩ Back**     | Go straight for two-mile, then turn left at one-traffic-light two you-now-see. |       |
+
+> **Compression:** 23.1% Δ **Observation:** General lexical optimization and
+> phonetic spelling reduction.
+
+
+> **Compression:** 23.1% Δ
+>
+> **Observation:** General lexical optimization and phonetic spelling reduction.
+
+#### Ex. 35
+
+|                | Text                                                                                                   | Chars |
+| -------------- | ------------------------------------------------------------------------------------------------------ | ----- |
+| **English**    | Hyperinflation destroys purchasing power and severely halts economic development.                      | 81  |
+| **MinEnglish** | >>haiperinflashun distroi tu pauer-bai an >siirius holt tu divelopment economik.                       | 80  |
+| **↩ Back**     | Extremely-hyperinflation now-destroy [Obj] power-buy and very-serious halt [Obj] development economic. |       |
+
+---
+
+> **Compression:** 1.2% Δ **Observation:** Low compression due to retention of
+> exact international academic vocabulary.
+
+---
+
+
+> **Compression:** 1.2% Δ
+>
+> **Observation:** Intensity operators (`>`, `>>`) eliminate lengthy adverbial modifiers.
+
+## Appendix B: License
 
 ```
 MIT License

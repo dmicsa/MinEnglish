@@ -638,50 +638,52 @@ Below is the strict parsing configuration for a standard declarative sentence.
 | new / old   | **niu** / **ould** | quick / slow  | **cuic** / **slou**  |
 | red / blue  | **red** / **bluu** | green / black | **griin** / **blac** |
 
-### 5. Academic & Computational Data Lexicon
+### 5. Academic & Computational Lexicon
 
-MinEnglish is engineered for high-density theoretical and technical discourse.
-To define complex systems, literal conceptual building blocks are used. The
-following entries represent a representative sample across four core domains.
+Technical terms are translated using standard MinEnglish phonetic rules applied
+to the English word. No compound invention required — the phonetic form is the
+MinEnglish word.
 
 #### Science & Biology
 
-| English    | MinEnglish Compound | Literal Roots  |
-| :--------- | :------------------ | :------------- |
-| Hypothesis | **aidia-test**      | Idea-test      |
-| Algorithm  | **rul-mat**         | Rule-math      |
-| Cell (Bio) | **bocs-laif**       | Box-life       |
-| Evolution  | **ceinj-taim**      | Change-time    |
-| Energy     | **pauer-mun**       | Power-movement |
-| Gravity    | **pul-erd**         | Pull-earth     |
+| English    | MinEnglish    |
+| :--------- | :------------ |
+| Hypothesis | **hipotesis** |
+| Algorithm  | **algoritm**  |
+| Cell (Bio) | **sel**       |
+| Evolution  | **evolushun** |
+| Energy     | **enerji**    |
+| Gravity    | **graviti**   |
 
 #### Computing & Data
 
-| English  | MinEnglish Compound | Literal Roots                 |
-| :------- | :------------------ | :---------------------------- |
-| Database | **daatabeis**       | Canonical adaptation          |
-| Variable | **ting-ceinj**      | Thing-change                  |
-| Equation | **balans-mat**      | Balance-math                  |
-| System   | **net-ting**        | Net-thing / Network of things |
-| Memory   | **haus-daata**      | House-data                    |
-| Network  | **net-lain**        | Net-line                      |
+| English  | MinEnglish    |
+| :------- | :------------ |
+| Database | **daatabeis** |
+| Variable | **variabl**   |
+| Equation | **icueishun** |
+| System   | **sistem**    |
+| Memory   | **memori**    |
+| Network  | **netuork**   |
 
 #### Economics & Law
 
-| English   | MinEnglish Compound | Literal Roots        |
-| :-------- | :------------------ | :------------------- |
-| Inflation | **rap-mun**         | Rapid-money          |
-| Contract  | **rul-peper**       | Rule-paper           |
-| Tax       | **tacs**            | Canonical adaptation |
+| English   | MinEnglish    |
+| :-------- | :------------ |
+| Inflation | **inflashun** |
+| Contract  | **contrakt**  |
+| Tax       | **tacs**      |
+| Market    | **marcet**    |
 
 #### Medicine
 
-| English    | MinEnglish Compound | Literal Roots     |
-| :--------- | :------------------ | :---------------- |
-| Antibiotic | **bac-med**         | Bacteria-medicine |
-| Diagnosis  | **faind-sic**       | Find-sickness     |
-| Surgery    | **cut-laif**        | Cut-life          |
-| Pharmacy   | **farmasi**         | Phonetic adapt.   |
+| English    | MinEnglish     |
+| :--------- | :------------- |
+| Antibiotic | **antibiotik** |
+| Diagnosis  | **daienousis** |
+| Surgery    | **surjeri**    |
+| Hospital   | **hospital**   |
+| Pharmacy   | **farmasi**    |
 
 ---
 

@@ -20,7 +20,7 @@
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={MinEnglish Language Specification v2.0},
+    pdftitle={MinEnglish Language Specification v0.9.0},
     pdfauthor={Dan Micsa, PhD},
 }
 
@@ -34,14 +34,10 @@
 }
 
 \newcommand{\me}[1]{\texttt{#1}}
-\newcommand{\exrow}[4]{%
-  \hline
-  \textit{English} & #1 & #2 \\
-  \textit{MinEnglish} & #3 & #4 \\
-}
 
-\title{\Huge\textbf{MinEnglish Language Specification (v2.0)}\\[0.3em]
-\LARGE A Zero-Redundancy Phonetic Communication Protocol}
+\title{\Huge\textbf{MinEnglish Language Specification}\\[0.2em]
+\LARGE\textit{v0.9.0 --- Pre-Release (targeting v1.0.0)}\\[0.3em]
+\large A Zero-Redundancy Phonetic Communication Protocol}
 \author{\textbf{Dan Micsa, PhD}\\
 \small MIT License (see Appendix)}
 \date{March 2026}
@@ -50,34 +46,60 @@
 
 \maketitle
 
+%--- AI ATTRIBUTION
+\begin{quote}
+\small\textit{AI Attribution: This specification was developed with extensive
+assistance from large language models. \textbf{Claude Opus} (Anthropic),
+\textbf{Gemini 2.5 Pro} (Google DeepMind), and \textbf{Antigravity} (Google
+DeepMind) contributed to the drafting, formalization, revision, and example
+generation documented herein. The intellectual framework, design decisions,
+and authorship remain those of the human author.}
+\end{quote}
+
 \begin{abstract}
-MinEnglish is a formal communication protocol engineered to maximize Shannon information density while minimizing cognitive load and parser ambiguity. By systematically eliminating morphological irregularities and orthographic redundancies inherent in natural languages, MinEnglish achieves consistent computational predictability. This specification defines the phonological, morphological, and syntactic architecture of version 2.0, documents a 35-sentence comparative corpus demonstrating an average 35.0\% character reduction over standard American English, and addresses the primary theoretical limitation of the system: biological adoption friction.
+MinEnglish is a formal communication protocol engineered to maximize Shannon
+information density$^{[1]}$ while minimizing cognitive load and parser
+ambiguity. By systematically eliminating morphological irregularities and
+orthographic redundancies inherent in natural languages, MinEnglish achieves
+consistent computational predictability. This specification (v0.9.0) defines
+the phonological, morphological, and syntactic architecture targeting the
+v1.0.0 stable release, documents a 35-sentence comparative corpus
+demonstrating an average 35.0\% character reduction over standard American
+English, and addresses the primary theoretical limitation of the system:
+biological adoption friction.
 \end{abstract}
 
 %---
-\section{Design Principles and Underlying Rationale}
+\section{Introduction: Design Principles}
 
-To optimize human-to-human and human-to-machine transmission, MinEnglish operates on five absolute constraints:
+MinEnglish is governed by five absolute constraints, each eliminating a
+specific failure mode of natural language:
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Phonetic Isomorphism:} 1-to-1 grapheme-phoneme correspondence eliminates the cognitive overhead of orthographic memorization and provides predictable tokenization for machine parsers.
-    \item \textbf{Morphological Parsimony:} Pluralization, verb conjugation, and declension are replaced by explicit numerical and temporal prefixes, removing ambiguity in morphological boundaries.
-    \item \textbf{ASCII Strictness:} Operates exclusively within the standard US keyboard namespace without diacritics. The letters \textit{q}, \textit{w}, and \textit{y} are omitted to balance acoustic distinctness with key space economy.
-    \item \textbf{Operator Integration:} Mathematical symbols (\me{*}, \me{\~{}}, \me{>}, \me{<}, \me{:}) function as first-class syntactic tokens, compressing complex semantic modifiers into single-byte representations.
-    \item \textbf{Absolute Regularity:} A zero-exception framework guarantees that programmatic rules apply universally, ensuring high predictability for both human acquisition and natural language processing systems.
+    \item \textbf{Phonetic Isomorphism:} 1-to-1 grapheme-phoneme correspondence eliminates orthographic memorization overhead and provides predictable tokenization for machine parsers.
+    \item \textbf{Morphological Parsimony:} Pluralization, conjugation, and declension are replaced by explicit numerical and temporal prefixes, removing morphological boundary ambiguity.
+    \item \textbf{ASCII Strictness:} Operates exclusively within the standard US keyboard namespace without diacritics. Letters \textit{q}, \textit{w}, and \textit{y} are omitted to balance acoustic distinctness with key-space economy.
+    \item \textbf{Operator Integration:} Symbolic tokens (\me{*}, \me{\~{}}, \me{>}, \me{<}, \me{:}, \me{\&}, \me{|}) function as first-class syntactic elements, compressing multi-word constructs into single-byte representations.
+    \item \textbf{Absolute Regularity:} A zero-exception framework guarantees programmatic rules apply universally, ensuring high predictability for both human acquisition and NLP models$^{[2]}$.
 \end{itemize}
+
+\textbf{Versioning:} MinEnglish follows Semantic Versioning (SemVer):
+\texttt{MAJOR.MINOR.PATCH}. Breaking rule changes increment MAJOR.
+\texttt{0.x.y} indicates pre-stable development; \texttt{1.0.0} marks the
+first frozen specification.
 
 %---
 \section{Phonology and Orthography}
 
 \subsection{Vowels}
-The vowel space is constrained to five cardinal points to ensure acoustic discernibility.
+The vowel space is constrained to five cardinal points for acoustic
+discernibility across diverse linguistic backgrounds.
 
 \begin{table}[h!]
 \centering\small
-\begin{tabularx}{\linewidth}{llXl}
+\begin{tabularx}{\linewidth}{lllX}
 \toprule
-\textbf{Graph.} & \textbf{Sound} & \textbf{Example} & \textbf{MinEnglish} \\
+\textbf{Graph.} & \textbf{Sound} & \textbf{English} & \textbf{MinEnglish} \\
 \midrule
 \textbf{a} & as in c\textit{a}t & cat & cat \\
 \textbf{e} & as in b\textit{e}d & bed & bed \\
@@ -90,7 +112,10 @@ The vowel space is constrained to five cardinal points to ensure acoustic discer
 \end{table}
 
 \subsection{Long Vowels and Diphthongs}
-Diphthongs are encoded as contiguous grapheme pairs, preserving the 1-to-1 spelling mapping without macron diacritics: \me{ei} (day), \me{ii} (see), \me{ai} (like), \me{ou} (go), \me{uu} (food), \me{au} (how), \me{oi} (boy).
+Diphthongs are encoded as contiguous grapheme pairs, preserving the 1-to-1
+mapping without macron diacritics: \me{ei}~(day), \me{ii}~(see),
+\me{ai}~(like), \me{ou}~(go), \me{uu}~(food), \me{au}~(how),
+\me{oi}~(boy), \me{ar}~(car), \me{or}~(for), \me{er}~(her).
 
 \subsection{Consonants}
 
@@ -98,32 +123,38 @@ Diphthongs are encoded as contiguous grapheme pairs, preserving the 1-to-1 spell
 \centering\small
 \begin{tabularx}{\linewidth}{llX}
 \toprule
-\textbf{Graph.} & \textbf{Sound} & \textbf{Application Rule} \\
+\textbf{Graph.} & \textbf{Sound} & \textbf{Rule / Example} \\
 \midrule
-\textbf{c}  & /k/ unaspirated & Soft velar plosive: cat, cum, bac \\
-\textbf{k}  & /k/ aspirated   & Hard velar plosive: king, kiip, kic \\
-\textbf{ci} & /ch/            & Affricate (as in church): ciald \\
-\textbf{u}  & /w/             & Semivowel substitution for \textit{w}: uoter \\
-\textbf{i}  & /y/             & Semivowel substitution for \textit{y}: ies \\
-\textbf{sh} & /sh/            & As in ship, cash \\
-\textbf{zh} & /zh/            & As in vision: vizhun \\
+\textbf{c}  & /k/ soft      & Unaspirated velar: cat, cum, bac \\
+\textbf{k}  & /k/ hard      & Aspirated velar: king, kiip, kic \\
+\textbf{ci} & /ch/          & Affricate (church): ciald, muci \\
+\textbf{u}  & /w/           & Semivowel for \textit{w}: uoter \\
+\textbf{i}  & /y/           & Semivowel for \textit{y}: ies, iir \\
+\textbf{sh} & /sh/          & As in ship, cash \\
+\textbf{zh} & /zh/          & As in vision: vizhun \\
 \bottomrule
 \end{tabularx}
 \caption{Non-standard Consonant Mappings}
 \end{table}
 
-\textbf{Aspiration (\me{k} vs \me{c}):} The aspirated /k\textsuperscript{h}/ uses \me{k}; unaspirated uses \me{c}. Following sibilants, \me{c} is mandated (\me{scan}, \me{scip}).
+\textbf{Aspiration (\me{k} vs \me{c}):} Aspirated /k\textsuperscript{h}/
+uses \me{k}; unaspirated uses \me{c}. Following sibilants, \me{c} is
+mandated (e.g., \me{scan}, \me{scip}).
 
 \subsection{Orthographic Normalization}
-Historical orthographic artifacts are removed by rule: silent vowels are nullified, \me{-tion} becomes \me{-shun}, \me{ck} resolves by aspiration, \me{x} decomposes to \me{cs}, and double consonants are collapsed.
+Historical artifacts are removed algorithmically: silent letters nullified,
+\me{-tion}\,$\to$\,\me{-shun}, \me{ck} resolved by aspiration,
+\me{x}\,$\to$\,\me{cs}, double consonants collapsed, soft \me{c}\,$\to$\,\me{s}.
 
 %---
 \section{Morphology and Syntax}
 
-\textbf{Core Constraint:} Lexical items never undergo morphological inflection. Grammatical relationships are managed exclusively through operators.
+\textbf{Core Constraint:} Lexical items never undergo morphological inflection.
+Grammatical relationships are managed exclusively through operators and
+rigid syntactic ordering.
 
 \subsection{Nouns and Quantitative Prefixes}
-Morphological plurals are abolished. Quantity is mandated explicitly.
+Morphological plurals are abolished. Quantity is mandated explicitly:
 
 \begin{table}[h!]
 \centering\small
@@ -131,21 +162,54 @@ Morphological plurals are abolished. Quantity is mandated explicitly.
 \toprule
 \textbf{Prefix} & \textbf{Semantic Value} & \textbf{Example} \\
 \midrule
-\me{1}  & Singular / Unitary  & \me{1cat} \\
-\me{3}  & Exact enumeration   & \me{3cat} \\
-\me{*}  & Universal / Generic & \me{*cat} \\
-\me{\~{}5} & Approximate    & \me{\~{}5cat} \\
-\me{0}  & Null set            & \me{0cat} \\
+\me{1}     & Singular / Unitary  & \me{1cat} \\
+\me{3}     & Exact enumeration   & \me{3cat} \\
+\me{*}     & Universal / Generic & \me{*cat} (all cats) \\
+\me{\~{}5} & Approximate         & \me{\~{}5cat} \\
+\me{0}     & Null set            & \me{0cat} \\
 \bottomrule
 \end{tabularx}
 \caption{Quantitative Prefix System}
 \end{table}
 
-\textbf{The Literalization Operator (\me{\_}):} Hyphens (\me{-}) denote culturally unified compounds (\me{haus-fuud} = restaurant). Underscores (\me{\_}) force compositional literal meaning (\me{haus\_fuud} = a house built from food). This arrests lexicalization and semantic drift.
+\subsubsection{Token Optionality Rules (v0.2.0)}
+Three token classes may be omitted when recoverable from context:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Rule A --- Implicit Singular:} Bare noun without prefix defaults to singular. \me{cat sit on mat} = \textit{A cat sits on a mat.}
+    \item \textbf{Rule B --- Implicit First Person:} When no subject precedes the verb, parser defaults to \me{i}. \me{laic cat} = \textit{I like a cat.}
+    \item \textbf{Rule C --- Implicit Present:} A bare verb with no temporal prefix is present continuous. \me{h laic cat} = \textit{He likes a cat.}
+\end{itemize}
 
-\textbf{Proper Noun Encapsulation:} Proper nouns retain canonical native orthography. Initial capitalization acts as an escape character suspending local phonetic rules: \me{1person Isabella}, \me{1cuntri France}.
+\subsection{Compound Word Operators (\me{-} and \me{\_})}
 
-\textbf{Fractions and Decimals:} The \me{/} (slais) and \me{.} (point) operators standardize spoken mathematics: \me{1/2apel} (half an apple), \me{0.5} (zero point five).
+\textbf{Hyphen \me{-} --- directional ``of/for'' binder:}
+Left-to-right ``X for/of Y'' reading.
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item \me{haus-fuud} = house \textit{for} food (restaurant)
+    \item \me{haus-sic} = house \textit{of} the sick (hospital)
+    \item \me{farmasi} = pharmacy (canonical phonetic adaptation)
+\end{itemize}
+
+\textbf{Disambiguation:} When \me{-} precedes a digit or \me{0s}, it is a
+temporal operator. When it binds two noun roots, it is a compound operator.
+
+\textbf{Underscore \me{\_} --- literalization:} Forces strict compositional
+reading. \me{haus\_fuud} = a house built from food (gingerbread house),
+vs.\ \me{haus-fuud} = restaurant (cultural abstraction).
+
+\textbf{Note:} The \me{/} character is reserved exclusively for fractions
+and mathematical division (\me{1/2}, \me{3/4}). It is not a compound operator.
+
+\subsection{Proper Noun Encapsulation}
+Proper nouns retain canonical native orthography. Initial capitalization acts
+as an escape character suspending local phonetic rules: \me{person Isabella},
+\me{cuntri France}.
+
+\subsection{Mathematical Notation}
+MinEnglish adopts LaTeX inline notation as a first-class citizen. Tokens
+enclosed in \texttt{\$...\$} are parsed as LaTeX and are exempt from phonetic
+rules: \texttt{\$E = mc\^{}2\$}, \texttt{\$\textbackslash frac\{1\}\{2\}\$}.
+Spoken form is conventional English pronunciation.
 
 \subsection{Verbs and Temporal Mechanics}
 
@@ -153,50 +217,101 @@ Morphological plurals are abolished. Quantity is mandated explicitly.
 \centering\small
 \begin{tabularx}{\linewidth}{lX}
 \toprule
-\textbf{Operator} & \textbf{Temporal Value} \\
+\textbf{Operator} & \textbf{Temporal Value / Example} \\
 \midrule
-\textit{(null)} & Present continuous (\me{iit}) \\
-\me{1} & Present discrete (\me{i1iit}) \\
-\me{*} & Habitual / Universal (\me{*iit}) \\
-\me{-0s} & Immediate past (\me{-0s sii}) \\
-\me{-1d} & Past offset, one day (\me{-1d iit}) \\
-\me{:5Y} & Duration, 5 years (\me{:5Y studi}) \\
-\me{+1d} & Future offset, one day (\me{+1d gou}) \\
+\textit{(null)} & Present continuous: \me{iit} (eating) \\
+\me{1}          & Present discrete: \me{i1iit} (I eat) \\
+\me{*}          & Habitual/Universal: \me{*iit} (eats always) \\
+\me{-0s}        & Immediate past: \me{-0s sii} (just saw) \\
+\me{-1d}        & Past offset: \me{-1d iit} (ate yesterday) \\
+\me{:5Y}        & Duration scalar: \me{:5Y studi} (studied for 5 yrs) \\
+\me{1d}         & Future offset (\me{+} optional): \me{1d gou} (will go) \\
 \me{2026-12-25} & Absolute timestamp \\
 \bottomrule
 \end{tabularx}
-\caption{Temporal Prefix System}
+\caption{Temporal Prefix System (v0.9.0)}
 \end{table}
 
-\textbf{Temporal Stacking:} Left-to-right operator chaining enables algebraic timeline construction: \me{i-0s -1d iit} = ``I had already eaten yesterday.''
+\textbf{Direction Convention:} The \me{-} prefix marks past vectors
+(required). Future offsets are positive by default --- a bare numeric offset
+(\me{1d}, \me{2h}, \me{1Y}) always points forward. The \me{+} prefix is
+accepted by parsers but considered redundant.
+
+\textbf{Temporal Stacking:} Left-to-right chaining enables algebraic
+timeline construction: \me{-0s -1d iit} = ``I had already eaten by
+yesterday's timeline.''
+
+\subsection{Symbolic Operator Inventory}
+
+\begin{table}[h!]
+\centering\small
+\begin{tabularx}{\linewidth}{llX}
+\toprule
+\textbf{Op.} & \textbf{Name} & \textbf{Role / Example} \\
+\midrule
+\me{+}  & Plus      & Future offset (optional): \me{1d gou} \\
+\me{-}  & Minus     & Past offset / compound binder: \me{-1d}, \me{haus-fuud} \\
+\me{*}  & Star      & Universal quantifier: \me{*cat} \\
+\me{\&} & Ampersand & Logical AND ($\equiv$ \me{an}): \me{cat \& dog} \\
+\me{|}  & Pipe      & Logical OR ($\equiv$ \me{or}): \me{cat | dog} \\
+\bottomrule
+\end{tabularx}
+\caption{Symbolic Operators (all single-byte ASCII)}
+\end{table}
+
+Note: \me{*i} = ``all of us'' (universal quantifier on pronoun), not
+habitual verb. Parsers resolve by token class.
 
 \subsection{Scalar Intensity}
-Adjectives post-modify nouns. Intensity is modified via combinators: \me{>big} (very big), \me{>>big} (extremely big), \me{<hot} (slightly hot).
+Adjectives post-modify nouns. Intensity uses \me{>} and \me{<} combinators:
+\me{>big} (very big), \me{>>big} (extremely big), \me{<hot} (slightly hot).
 
 \subsection{Pronominal Indexing}
-Single-character spatial indices: \me{i} (I), \me{u} (you), \me{h} (he), \me{s} (she), \me{t} (it). Plurality inherits the quantitative prefix system (\me{5i} = we five). The pronominal index agglutinates directly to the temporal operator: \me{h1laic}, \me{u:2h uorc}.
+Single-character spatial indices: \me{i}~(I), \me{u}~(you), \me{h}~(he),
+\me{s}~(she), \me{t}~(it). Plurality inherits the quantitative prefix system
+(\me{5i} = we five, \me{*i} = all of us). Pronominal index agglutinates to
+the temporal operator: \me{h1laic}, \me{s-1d gou}, \me{u:2h uorc}.
+
+Possession via \me{'s} suffix: \me{i's} (my), \me{h's} (his), \me{s'} (her).
 
 \subsection{Negation}
-Negation is expressed by the invariant prefix \me{no} prepended to the verb:
-\me{i1no laic 1cat} (I do not like the cat).
+Invariant prefix \me{no} prepended to the verb: \me{no laic cat} (I don't
+like the cat). The Focus Operator \me{!} targets scope: \me{no laic !3cat}
+(not \textit{three} cats; I like four).
+
+\subsection{Modality}
+\me{can} (ability), \me{must} (obligation), \me{shud} (advice),
+\me{\~{}can} (probability). Attach to temporal block: \me{u 1d must cum}
+(you must come tomorrow), \me{i 1d \~{}can gou} (I might go tomorrow).
+
+\subsection{Passive Voice}
+Object fronted, verb followed by \me{bai}: \me{bol kic bai boi} (ball
+kicked by boy).
+
+\subsection{Connectors}
+\me{an}/\me{\&}~(and), \me{or}/\me{|}~(or), \me{but}, \me{if}, \me{cos}
+(because), \me{sou}~(so), \me{den}~(then). Deference: \me{\~{}u giv}
+= ``could you please give.''
 
 \subsection{Clause Anchors (\me{co} / \me{oc})}
-When nesting two or more clauses, \me{co} (clause open) and \me{oc} (clause close) act as explicit stack managers for the human phonological loop, preventing center-embedding failures.
+When nesting 2+ clauses, \me{co} (clause open) and \me{oc} (clause close)
+act as explicit stack managers, preventing center-embedding overload of
+the human phonological loop$^{[3]}$:\\
+\me{man co dat dog co dat ciald luv oc -1d bait oc run auei.}
 
 \subsection{Echo-Tagging (Noisy Protocol)}
-Per Shannon's Theorem$^{[1]}$, redundancy may be artificially inflated to 100\% by echoing the quantitative prefix as a full word after the root: \me{3boi trii 1uoc nau}.
+Per Shannon's Theorem$^{[1]}$, redundancy may be inflated to 100\% for
+critical transmissions by echoing prefixes as full words: \me{3boi trii uoc nau}.
 
-\subsection{Formal Syntax (Backus-Naur Form)}
-The absolute regularity of MinEnglish permits algorithmic validation:
+\subsection{Formal Syntax (EBNF)}
 
 \begin{lstlisting}[language=SQL]
 <sentence> ::= [<subj>] <verb_block> [<obj>]
-<subj>  ::= <noun_phrase> | <pronoun>
-<obj>   ::= <noun_phrase> | <pronoun>
-<noun_phrase> ::= <qty> <root> [<adjective>]
-<verb_block>  ::= [<temporal>] <root>
-<temporal>    ::= <time> | <duration> | <unix>
-<clause>      ::= "co" <connect> <sentence> "oc"
+<subj>     ::= <noun_phrase> | <pronoun>
+<noun_phrase> ::= <qty> <root> [<adj>]
+<verb_block>  ::= [<temporal>] [<modal>] <root>
+<temporal>    ::= <offset> | <duration> | <timestamp>
+<clause>      ::= "co" <sentence> "oc"
 \end{lstlisting}
 
 %---
@@ -208,175 +323,176 @@ The absolute regularity of MinEnglish permits algorithmic validation:
 \toprule
 \textbf{English} & \textbf{MinEnglish} & \textbf{English} & \textbf{MinEnglish} \\
 \midrule
-be / is & \me{bi}   & have   & \me{hav}   \\
-do      & \me{du}   & go     & \me{gou}   \\
-come    & \me{cum}  & make   & \me{meic}  \\
-think   & \me{tinc} & say    & \me{sei}   \\
-want    & \me{uant} & need   & \me{niid}  \\
+be / is     & \me{bi}   & have       & \me{hav}   \\
+do          & \me{du}   & go         & \me{gou}   \\
+come        & \me{cum}  & make       & \me{meic}  \\
+think       & \me{tinc} & say        & \me{sei}   \\
+want        & \me{uant} & need       & \me{niid}  \\
+see         & \me{sii}  & know       & \me{nou}   \\
+like        & \me{laic} & give       & \me{giv}   \\
+eat         & \me{iit}  & run        & \me{run}   \\
 \bottomrule
 \end{tabularx}
 \caption{Core Fundamentals}
 \end{table}
 
-\subsection{Academic \& Computational Data Lexicon}
-
-Where Latinate terms resist compression, MinEnglish employs semantic compounding from root primitives.
+\subsection{Academic \& Computational Lexicon}
 
 \begin{table}[h!]
 \centering\small
-\begin{tabularx}{\linewidth}{lXl}
+\begin{tabularx}{\linewidth}{llX}
 \toprule
-\textbf{Domain} & \textbf{English} & \textbf{MinEnglish} \\
+\textbf{Domain} & \textbf{English} & \textbf{MinEnglish (Roots)} \\
 \midrule
-\textit{Science}    & Hypothesis  & \me{aidia-test}  \\
-                    & Algorithm   & \me{rul-mat}     \\
-                    & Cell (Bio)  & \me{bocs-laif}   \\
-                    & Evolution   & \me{ceinj-taim}  \\
-                    & Gravity     & \me{pul-erd}     \\
+\textit{Science}    & Hypothesis  & \me{aidia-test} (idea-test) \\
+                    & Algorithm   & \me{rul-mat} (rule-math) \\
+                    & Evolution   & \me{ceinj-taim} (change-time) \\
+                    & Gravity     & \me{pul-erd} (pull-earth) \\
 \midrule
-\textit{Computing}  & Database    & \me{daatabeis}   \\
-                    & Variable    & \me{ting-ceinj}  \\
-                    & System      & \me{net-ting}    \\
-                    & Memory      & \me{haus-daata}  \\
-                    & Network     & \me{net-lain}    \\
+\textit{Computing}  & Database    & \me{daatabeis} (phonetic) \\
+                    & Variable    & \me{ting-ceinj} (thing-change) \\
+                    & Memory      & \me{haus-daata} (house-data) \\
+                    & Network     & \me{net-lain} (net-line) \\
 \midrule
-\textit{Economics}  & Inflation   & \me{rap-mun}     \\
-                    & Contract    & \me{rul-peper}   \\
+\textit{Economics}  & Inflation   & \me{rap-mun} (rapid-money) \\
+                    & Contract    & \me{rul-peper} (rule-paper) \\
+                    & Tax         & \me{tacs} (phonetic) \\
 \midrule
-\textit{Medicine}   & Antibiotic  & \me{bac-med}     \\
-                    & Diagnosis   & \me{faind-sic}   \\
-                    & Surgery     & \me{cut-laif}    \\
+\textit{Medicine}   & Antibiotic  & \me{bac-med} (bacteria-medicine) \\
+                    & Diagnosis   & \me{faind-sic} (find-sick) \\
+                    & Hospital    & \me{haus-sic} (house-of-sick) \\
+                    & Pharmacy    & \me{farmasi} (phonetic adapt.) \\
 \bottomrule
 \end{tabularx}
 \caption{Academic Domain Lexicon (Representative Sample)}
 \end{table}
 
 %---
-\section{Comparative Corpus}
+\section{Comparative Corpus (n=35)}
 
-The following 35 examples demonstrate MinEnglish performance across diverse linguistic domains. For each example, a back-translation reconstructs compositional root logic. Compression is measured as character count reduction relative to standard English.
+The following 35 examples demonstrate MinEnglish performance across diverse
+linguistic domains. Back-translations reconstruct compositional logic.
+Compression = character count reduction vs. standard English.
 
 \subsection{Simple Statements \& Universal Truths}
 
-\textbf{Ex. 1 --- Simple Statement (45.7\%):} The three-part English determiner + progressive construction collapses to a single quantitative prefix and present-tense default.\\
-\me{3cat sit on 1mat big red.} \textit{(25 chars vs. 46)}
+\textbf{Ex.~1 --- Simple (45.7\%):} Three-part English determiner + progressive collapses to a single quantitative prefix plus present-tense default.\\
+\me{3cat sit on mat big red.} \textit{(25 chars vs.\ 46)}
 
-\textbf{Ex. 2 --- General Truth (8.7\%):} The universal quantifier \me{*} and generic habitual verb removes the need for ``is'' and ``that''. Low compression due to Latinate nouns.\\
-\me{*dog bi *animal loial dat *luv *h's ouner.} \textit{(42 chars vs. 46)}
+\textbf{Ex.~2 --- General Truth (8.7\%):} Universal \me{*} and habitual verb removes ``is'' and ``that.'' Low compression: Latinate nouns resist optimization.\\
+\me{*dog bi *animal loial dat *luv *h's ouner.} \textit{(42 chars vs.\ 46)}
 
 \subsection{Past Events, Times, and Futures}
 
-\textbf{Ex. 3 --- Past Event (47.5\%):} The temporal vector \me{-1d} replaces ``Yesterday I...'' in two characters. Number-nouns \me{2buc}, \me{3apel} require no articles.\\
-\me{i-1d bai 2buc an 3apel @ 1stor.} \textit{(31 chars vs. 59)}
+\textbf{Ex.~3 --- Past Event (47.5\%):} The vector \me{-1d} replaces ``Yesterday I'' in two chars. Number-nouns need no articles.\\
+\me{-1d bai 2buc an 3apel @ stor.} \textit{(29 chars vs.\ 59)}
 
-\textbf{Ex. 4 --- Future + Question (48.9\%):} The \me{+1d} prefix replaces the future tense auxiliary ``will''. The bare \me{?} appended at end marks the entire sentence as interrogative.\\
-\me{u+1d iit 1diner uid *i?} \textit{(23 chars vs. 45)}
+\textbf{Ex.~4 --- Future + Question (48.9\%):} Bare numeric future \me{1d} replaces ``will you.'' The bare \me{?} at the end marks interrogative.\\
+\me{u 1d iit diner uid *i?} \textit{(23 chars vs.\ 45)}
 
-\textbf{Ex. 5 --- Approximation (58.6\%):} The \me{\~{}} operator replaces the multi-word phrase ``About fifty'' with two characters. Absolute 24-hour time avoids ``three o'clock in the afternoon.''\\
-\me{\~{}50person ariv @ \~{}15:00.} \textit{(24 chars vs. 58)}
+\textbf{Ex.~5 --- Approximation (58.6\%):} \me{\~{}} replaces ``About fifty'' with two chars. ISO 24hr time avoids ``three o'clock in the afternoon.''\\
+\me{\~{}50person ariv @ \~{}15:00.} \textit{(24 chars vs.\ 58)}
 
-\textbf{Ex. 6 --- Specific DateTime (63.4\%):} The highest compression example. The ISO 8601 timestamp \me{2026-01-15 14:30} replaces 59 English characters describing dates and times conversationally.\\
-\me{1miiting 2026-01-15 14:30 bi held.} \textit{(34 chars vs. 93)}
+\textbf{Ex.~6 --- Specific DateTime (63.4\%):} Highest compression. ISO~8601 timestamp replaces 59 English chars.\\
+\me{miiting 2026-01-15 14:30 bi held.} \textit{(33 chars vs.\ 93)}
 
-\textbf{Ex. 7 --- Duration + Contrast (38.5\%):} The \me{:5Y} duration scalar replaces the English perfect ``have been ... for five years''. The modal \me{can} precedes the verb directly.\\
-\me{i:5Y studi inglish but i no can spiic fluuent.} \textit{(48 chars vs. 78)}
+\textbf{Ex.~7 --- Duration + Contrast (38.5\%):} The \me{:5Y} duration scalar replaces ``have been studying for five years.''\\
+\me{:5Y studi inglish but no can spiic fluuent.} \textit{(44 chars vs.\ 78)}
 
 \subsection{Complex Modifiers \& Voice}
 
-\textbf{Ex. 8 --- Intensity \& Compound Words (47.1\%):} Double-combinator \me{>>niu} expresses ``extremely new''. Slash compound \me{fuud/haus} replaces ``restaurant'' (10 chars) with 8.\\
-\me{*i+1d gou tu 1fuud/haus >>niu @ 19:00.} \textit{(38 chars vs. 78)}
+\textbf{Ex.~8 --- Intensity \& Compound (47.1\%):} Double combinator \me{>>niu} = ``extremely new.'' Compound \me{fuud-haus} = restaurant.\\
+\me{*i 1d gou tu fuud-haus >>niu @ 19:00.} \textit{(38 chars vs.\ 78)}
 
-\textbf{Ex. 9 --- Passive Voice (47.5\%):} Emphatic double-exclamation \me{!!uac} collapses ``Look out!'' The passive is formed by fronting the object: \me{1uindou...bai 1man}.\\
-\me{!!uac! 1uindou glas -0s breic bai 1man angri.} \textit{(31 chars vs. 60)}
+\textbf{Ex.~9 --- Passive Voice (47.5\%):} Emphatic \me{!!uac} collapses ``Look out!'' Passive formed by fronting object before verb.\\
+\me{!!uac! uindou glas breic bai man angri.} \textit{(39 chars vs.\ 60)}
 
-\textbf{Ex. 10 --- Modality \& Possessive (29.2\%):} The modal \me{must} and \me{can} attach directly to the pronominal temporal operator. Genitive \me{s'} for feminine avoids double sibilant.\\
-\me{s1must giv s' buc tu h bifor s1can start 1uorc.} \textit{(50 chars vs. 61)}
+\textbf{Ex.~10 --- Modality \& Possessive (29.2\%):} Modals \me{must} and \me{can} attach to pronominal temporal block. Genitive \me{s'} avoids double sibilant.\\
+\me{s1must giv s' buc tu h bifor s1can start tu uorc.} \textit{(49 chars vs.\ 61)}
 
 \subsection{Conditionals, Logic \& Commands}
 
-\textbf{Ex. 11 --- Complex Conditional (31.1\%):} The conditional \me{if} directly precedes the clause. Negation \me{no} and the object marker \me{tu} prevent syntactic ambiguity.\\
-\me{if u1no stop tu run, u1fol an breic tu u's 2leg.} \textit{(49 chars vs. 61)}
+\textbf{Ex.~11 --- Conditional (31.1\%):} \me{if} precedes clause directly. Negation \me{no} and object marker \me{tu} prevent ambiguity.\\
+\me{if u1no stop tu run, u1fol an breic tu u's 2leg.} \textit{(48 chars vs.\ 61)}
 
-\textbf{Ex. 12 --- Conjunction Reduction (35.2\%):} Conjunction Reduction drops the subject after \me{an}. The habitual \me{*iit} replaces ``eat one piece of toast''.\\
-\me{*morning i*drinc 2cup cofi an *iit 1piis toust bifor uorc.} \textit{(56 chars vs. 82)}
+\textbf{Ex.~12 --- Conjunction Reduction (35.2\%):} Subject dropped after \me{an}. Habitual \me{*iit} replaces ``eat one piece of toast.''\\
+\me{*morning i*drinc 2cup cofi an *iit piis toust bifor uorc.} \textit{(58 chars vs.\ 82)}
 
-\textbf{Ex. 13 --- Instructions (42.9\%):} Recipe-style commands use bare verbs. The universal \me{*ting} replaces ``everything'' in 5 characters.\\
-\me{teic 3eg, ad 2cup flaur, an mics *ting for 10m.} \textit{(48 chars vs. 84)}
+\textbf{Ex.~13 --- Instructions (42.9\%):} Bare imperatives. Universal \me{*ting} (everything) in 5 chars.\\
+\me{teic 3eg, ad 2cup flaur, an mics *ting for 10m.} \textit{(48 chars vs.\ 84)}
 
-\textbf{Ex. 14 --- Polite Request (32.7\%):} The deference operator \me{\~{}} prepended to the pronoun encodes politeness without auxiliary verbs: \me{\~{}u1giv} = ``Could you please give''.\\
-\me{\~{}u1giv i 2glas uoter, i bi >tersti.} \textit{(35 chars vs. 55)}
+\textbf{Ex.~14 --- Polite Request (32.7\%):} Deference operator \me{\~{}} on pronoun: \me{\~{}u giv} = ``Could you please give.''\\
+\me{\~{}u giv i 2glas uoter, bi >tersti.} \textit{(35 chars vs.\ 55)}
 
 \subsection{Dialogue \& Description}
 
-\textbf{Ex. 15 --- Conversation (34.4\%):} The interrogative prefix \me{haum} replaces ``how many''. Direct number-nouns \me{2boi}, \me{1gerl} need no articles or pluralization morphemes.\\
-\me{"haum ciald u hav?" "i hav 2boi an 1gerl."} \textit{(42 chars vs. 64)}
+\textbf{Ex.~15 --- Conversation (34.4\%):} Interrogative \me{?haum} replaces ``how many.'' Number-nouns need no articles or pluralization morphemes.\\
+\me{"?haum ciald u hav?" "hav 2boi an gerl."} \textit{(41 chars vs.\ 64)}
 
-\textbf{Ex. 16 --- Narrative (30.6\%):} Temporal vector \me{-1Y} handles ``Last year''. The \me{cos} replaces ``because she wanted to understand''. Compression limited by Latinate nouns.\\
-\me{s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s uant understand 1uerld mor gud.} \textit{(93 chars vs. 134)}
+\textbf{Ex.~16 --- Narrative (30.6\%):} Vector \me{-1Y} = ``Last year.'' \me{cos} = ``because she wanted to understand.'' Compression limited by Latinate nouns.\\
+\me{s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s uant understand uerld mor gud.} \textit{(92 chars vs.\ 134)}
 
-\textbf{Ex. 17 --- Emotions \& Probability (41.0\%):} The combined modal \me{\~{}can} expresses probabilistic future action. Focus operator \me{!} before \me{h} specifies that the negation targets the subject.\\
-\me{i+1d \~{}can gou tu 1parti, but s1luv h an !h 1no luv s.} \textit{(55 chars vs. 69)}
+\textbf{Ex.~17 --- Probability (41.0\%):} Combined modal \me{\~{}can} = probabilistic future. Focus \me{!} targets negation scope.\\
+\me{i 1d \~{}can gou tu parti, but s1luv h an !h no luv s.} \textit{(51 chars vs.\ 69)}
 
-\textbf{Ex. 18 --- Family Description (8.5\%):} Lowest compression example. The Latinate words \me{hospital} and \me{iuniversiti} maintain protracted phonetic transcriptions that resist operator optimization.\\
-\me{i's bruder *uorc @ 1hospital an i's sister *studi @ 1iuniversiti.} \textit{(65 chars vs. 71)}
+\textbf{Ex.~18 --- Family Description (8.5\%):} Lowest compression. Latinate nouns \me{hospital}, \me{iuniversiti} maintain protracted transcriptions.\\
+\me{i's bruder *uorc @ hospital an i's sister *studi @ iuniversiti.} \textit{(63 chars vs.\ 71)}
 
-\textbf{Ex. 19 --- Weather (27.1\%):} Prepositional verb \me{1in 1parc} avoids ``be in''. Temporal stacking \me{-0s start} encodes ``when it started'' in four characters.\\
-\me{*ciald -0s 1in 1parc uen t-0s start rein >hevi.} \textit{(49 chars vs. 70)}
+\textbf{Ex.~19 --- Weather (27.1\%):} Preposition-verb \me{in parc} avoids ``be in.'' Temporal stacking \me{-0s start} = ``when it started.''\\
+\me{*ciald in parc uen t-0s start rein >hevi.} \textit{(43 chars vs.\ 70)}
 
-\textbf{Ex. 20 --- Price Comparison (21.4\%):} Interrogative marker \me{?haum} fronted on the sentence. Double combinator \me{>>ecspensiv} replaces ``too expensive''.\\
-\me{?haum dis car cost? t bi >>ecspensiv for i.} \textit{(44 chars vs. 56)}
+\textbf{Ex.~20 --- Price Comparison (21.4\%):} Fronted \me{?haum}. Double combinator \me{>>ecspensiv} = ``too expensive.''\\
+\me{?haum dis car cost? t bi >>ecspensiv for i.} \textit{(43 chars vs.\ 56)}
 
 \subsection{Advanced Domains}
 
-\textbf{Ex. 21 --- Science Fiction (35.6\%):} Slash compound \me{ship-speis} (spaceship). Immediate past \me{-0s} encodes ``launched''. Hyphen compound \me{caunt-daun} (countdown).\\
-\me{1ship-speis -0s lonci in 1orbit after 1caunt-daun hic 0.} \textit{(43 chars vs. 67)}
+\textbf{Ex.~21 --- Science Fiction (35.6\%):} Compound \me{ship-speis} (spaceship). Compound \me{caunt-daun} (countdown). Immediate past \me{-0s} = ``launched.''\\
+\me{ship-speis -0s lonci in orbit after caunt-daun hic 0.} \textit{(49 chars vs.\ 67)}
 
-\textbf{Ex. 22 --- Philosophy (25.0\%):} The bare infinitive \me{bi} replaces the English ``to be''. The future-time token \me{+taim} generalizes ``eventually''.\\
-\me{bi or no bi, dat bi 1cuesciun *i must anser in +taim.} \textit{(53 chars vs. 71)}
+\textbf{Ex.~22 --- Philosophy (25.0\%):} Bare infinitive \me{bi} = ``to be.'' Future-time token \me{taim} (future time) generalizes ``eventually.''\\
+\me{bi or no bi, dat bi cuesciun *i must anser in taim.} \textit{(53 chars vs.\ 71)}
 
-\textbf{Ex. 23 --- Business Strategy (28.7\%):} Possessive \me{*i's compani} (our company). Compound \me{cein-suplai} (supply chain). Future vector \me{+1Y} replaces ``next year''.\\
-\me{*i's compani niid optimaiz t's cein-suplai tu macsimaiz *marjin-profit +1Y.} \textit{(59 chars vs. 83)}
+\textbf{Ex.~23 --- Business (28.7\%):} Possessive \me{*i's compani} (our company). Compound \me{cein-suplai} (supply chain). Future \me{1Y} = next year.\\
+\me{*i's compani niid optimaiz t's cein-suplai tu macsimaiz *marjin-profit 1Y.} \textit{(74 chars vs.\ 83)}
 
-\textbf{Ex. 24 --- Politics (29.5\%):} Immediate past \me{-0s} reduces ``announced'' to two chars. Relative clause \me{dat +1d apect} avoids the ``that will affect'' construction.\\
-\me{1prezident -0s anauns 1nolisi-tacs niu dat +1d apect *pamili clas-midl.} \textit{(55 chars vs. 78)}
+\textbf{Ex.~24 --- Politics (29.5\%):} Immediate past \me{-0s} compresses ``announced'' to two chars. Relative \me{dat 1d apect} avoids ``that will affect.''\\
+\me{prezident anauns nolisi-tacs niu dat 1d apect *pamili clas-midl.} \textit{(65 chars vs.\ 78)}
 
-\textbf{Ex. 25 --- Medicine (36.9\%):} Compound-derived root \me{bac-med} (antibiotics). Compound \me{bac-sic} (bacterial infection). Intensity \me{>siirius} (severe).\\
-\me{1doctor -0s prescraib tu *bac-med tu triit 1bac-sic >siirius 1peishent's.} \textit{(53 chars vs. 84)}
+\textbf{Ex.~25 --- Medicine (36.9\%):} Root compound \me{bac-med} (antibiotics). Compound \me{bac-sic} (bacterial infection).\\
+\me{doctor prescraib tu *bac-med tu triit bac-sic >siirius peishent's.} \textit{(67 chars vs.\ 84)}
 
-\textbf{Ex. 26 --- Real Estate (34.2\%):} Compound \me{ruum-bed} (bedroom). Compound \me{iard-bac} (backyard). Present context marker \me{nau} replaces ``currently''.\\
-\me{1haus 3ruum-bed uid 1iard-bac big 1in 1marcet for rent nau.} \textit{(54 chars vs. 82)}
+\textbf{Ex.~26 --- Real Estate (34.2\%):} Compound \me{ruum-bed} (bedroom). Compound \me{iard-bac} (backyard). \me{nau} = ``currently.''\\
+\me{haus 3ruum-bed uid iard-bac big in marcet for rent nau.} \textit{(54 chars vs.\ 82)}
 
-\textbf{Ex. 27 --- Programming (32.9\%):} Compound \me{sistem-bacup} (backup system). The operator \me{otoristor} is a root-compression of ``automatically restore''.\\
-\me{if 1server craish, 1sistem-bacup +1d otoristor 1daatabeis.} \textit{(54 chars vs. 81)}
+\textbf{Ex.~27 --- Programming (32.9\%):} Compound \me{sistem-bacup}. Root-compressed \me{otoristor} (auto-restore).\\
+\me{if server craish, sistem-bacup 1d otoristor daatabeis.} \textit{(55 chars vs.\ 81)}
 
-\textbf{Ex. 28 --- Environment (34.0\%):} Inverted compound \me{iurm-gloubal} (global warming) reorders to verb-first. Comparative \me{>fast dan} replaces ``faster than''.\\
-\me{iurm-gloubal 1melt *cap-ais poular >fast dan *saientist -1d pridiict.} \textit{(51 chars vs. 78)}
+\textbf{Ex.~28 --- Environment (34.0\%):} Ordered compound \me{gloubal-iurm} (global warming). Comparative \me{>fast dan} = ``faster than.''\\
+\me{gloubal-iurm melt *cap-ais poular >fast dan *saientist -1d pridiict.} \textit{(68 chars vs.\ 78)}
 
-\textbf{Ex. 29 --- Literature / Metaphor (29.2\%):} The immediate past \me{-0s} applies to both verbs (\me{uisper}, \me{raiz}) simultaneously. Adjective post-modifier \me{silver} needs no comma.\\
-\me{1uind -0s uisper tru *trii >ould az 1muun silver -0s raiz in 1scai.} \textit{(56 chars vs. 80)}
+\textbf{Ex.~29 --- Literature (29.2\%):} Immediate past \me{-0s} applies to both verbs simultaneously. Adjective post-modifier requires no comma.\\
+\me{uind uisper tru *trii >ould az muun silver raiz in scai.} \textit{(57 chars vs.\ 80)}
 
-\textbf{Ex. 30 --- Logistics (43.4\%):} The compound \me{truc-diliveri} (delivery truck). The preposition \me{btuiin} handles exact time ranges without ``o'clock''.\\
-\me{1truc-diliveri +1d ariv uid u's pacij btuiin 12:00 an 14:00.} \textit{(44 chars vs. 78)}
+\textbf{Ex.~30 --- Logistics (43.4\%):} Compound \me{truc-diliveri}. Preposition \me{btuiin} handles time ranges without ``o'clock.''\\
+\me{truc-diliveri 1d ariv uid u's pacij btuiin 12:00 an 14:00.} \textit{(59 chars vs.\ 78)}
 
-\textbf{Ex. 31 --- Legal (23.3\%):} Domain-specific transliterations (\me{diipendant}, \me{carj}) resist operator optimization. Second-lowest compression in the corpus.\\
-\me{1diipendant -0s formal pliid no gilti tu *carj prizent bai 1cort.} \textit{(64 chars vs. 80)}
+\textbf{Ex.~31 --- Legal (23.3\%):} Transliterations (\me{diipendant}, \me{carj}) resist optimization. Second-lowest compression.\\
+\me{diipendant formal pliid no gilti tu *carj prizent bai tu cort.} \textit{(63 chars vs.\ 80)}
 
-\textbf{Ex. 32 --- Cooking (34.3\%):} Bare imperative commands. Object marker \me{tu} required before \me{1uoter} to prevent ambiguity with the directive. Generic \me{*ster} (stir continuously).\\
-\me{boil tu 1uoter, ad tu 1pinci solt, an *ster until 1sos >tic.} \textit{(60 chars vs. 82)}
+\textbf{Ex.~32 --- Cooking (34.3\%):} Bare imperatives. Object marker \me{tu} prevents ambiguity. Generic \me{*ster} = stir continuously.\\
+\me{boil tu uoter, ad tu pinci solt, an *ster until sos >tic.} \textit{(58 chars vs.\ 82)}
 
-\textbf{Ex. 33 --- Emotional Confession (40.5\%):} Temporal stacking \me{-0s -1d} encodes ``have never before''. Universal negation \me{*no fiil} handles ``never felt''.\\
-\me{i-0s -1d *no fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.} \textit{(70 chars vs. 75)}
+\textbf{Ex.~33 --- Emotion (40.5\%):} Temporal stacking \me{-0s -1d} = ``have never before.'' Universal negation \me{*no fiil} = ``never felt.''\\
+\me{-1d *no fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.} \textit{(69 chars vs.\ 75)}
 
-\textbf{Ex. 34 --- Navigation (38.8\%):} Ordinal \me{tuu} in place of ``second'' (traffic light). The interrogative relative \me{u1sii} resolves the trailing ``you see'' reference.\\
-\me{gou streit for 2mail, den tern left @ 1lait-trapic tuu u1sii.} \textit{(46 chars vs. 78)}
+\textbf{Ex.~34 --- Navigation (38.8\%):} Ordinal \me{tuu} for ``second'' traffic light. Interrogative-relative \me{u sii} resolves trailing reference.\\
+\me{gou streit for 2mail, den tern left @ lait-trapic tuu u sii.} \textit{(61 chars vs.\ 78)}
 
-\textbf{Ex. 35 --- Abstract Economics (33.3\%):} The compound \me{rap-mun} collapses ``hyperinflation'' (14 chars) to 7. Double combinator \me{>>} expresses ``hyper-'' intensity.\\
-\me{>>rap-mun 1distroi tu pauer-bai an >siirius holt tu divelopment-mun.} \textit{(54 chars vs. 81)}
+\textbf{Ex.~35 --- Abstract Economics (33.3\%):} Compound \me{rap-mun} collapses ``hyperinflation'' from 14 chars to 7. Double combinator expresses ``hyper-'' intensity.\\
+\me{>>rap-mun distroi tu pauer-bai an >siirius holt tu divelopment-mun.} \textit{(67 chars vs.\ 81)}
 
 %---
-\section{Comparative Information Density Analysis}
-
-Transmission efficiency was modeled against the 35-sentence corpus above. Efficiency is measured as character count reduction.
+\section{Information Density Analysis}
 
 \begin{table}[h!]
 \centering\small
@@ -384,36 +500,49 @@ Transmission efficiency was modeled against the 35-sentence corpus above. Effici
 \toprule
 \textbf{Example} & \textbf{Reduction} & \textbf{Key Mechanism} \\
 \midrule
-Ex. 6: Timestamp    & 63.4\% & ISO 8601 collapses 59 chars \\
-Ex. 5: Approximation & 58.6\% & \me{\~{}50person} vs. ``About fifty people'' \\
-Ex. 4: Future Q     & 48.9\% & \me{+1d} eliminates ``will'' chain \\
+Ex.~6: Timestamp     & 63.4\% & ISO 8601 replaces 59 chars \\
+Ex.~5: Approximation & 58.6\% & \me{\~{}50person} vs.\ ``About fifty people'' \\
+Ex.~4: Future Q      & 48.9\% & \me{1d} eliminates ``will'' auxiliary \\
 \midrule
-Ex. 18: Family      & 8.5\%  & Latinate nouns resist compression \\
-Ex. 31: Legal       & 23.3\% & Domain transliterations are long \\
+Ex.~18: Family       &  8.5\% & Latinate nouns resist compression \\
+Ex.~31: Legal        & 23.3\% & Domain transliterations are long \\
 \bottomrule
 \end{tabularx}
-\caption{Top and Bottom Compression Vectors}
+\caption{Compression Extremes (n=35 corpus)}
 \end{table}
 
-\textbf{Corpus Density Metric (n=35):}
-\begin{itemize}[leftmargin=*]
-    \item Total English characters: \textbf{2633}
-    \item Total MinEnglish characters: \textbf{1711}
+\textbf{Corpus Density Metric:}
+\begin{itemize}[leftmargin=*,noitemsep]
+    \item Total English characters: \textbf{2,633}
+    \item Total MinEnglish characters: \textbf{1,711}
     \item \textbf{Average reduction: 35.0\%}
 \end{itemize}
+
+The maximum gains occur where English relies on auxiliary verb chains and
+prepositional phrases. Minimum gains occur with Latinate terminology that
+resists phonetic compression.
 
 %---
 \section{Theoretical Limitations: The Human Biological Factor}
 
-The structural additions of v2.0 (Literalization \me{\_}, Clause Anchors \me{co}/\me{oc}, Echo-Tagging) address standard linguistic inefficiencies. However, the primary limitation of MinEnglish is not structural but biological.
+The structural additions of v0.9.0 (Literalization \me{\_}, Clause Anchors
+\me{co}/\me{oc}, Echo-Tagging) address standard linguistic inefficiencies.
+However, the primary limitation of MinEnglish is not structural but biological.
 
-Mammalian communicative pathways evolved to facilitate social cohesion, hierarchical navigation, and emotional subtext through productive ambiguity$^{[2]}$. MinEnglish enforces an objective, algebraic paradigm. The absolute requirement for temporal precision, numerical exactness, and the prohibition of metaphorical obfuscation inherently conflicts with natural human cognitive behavior. Widespread adoption would likely prompt measurable psychological resistance, as the protocol disables the linguistic mechanisms humans rely on to manage sociological complexity.
+Mammalian communicative pathways evolved to facilitate social cohesion,
+hierarchical navigation, and emotional subtext through productive
+ambiguity$^{[2]}$. MinEnglish enforces an objective, algebraic paradigm.
+The absolute requirement for temporal precision, numerical exactness, and
+the prohibition of metaphorical obfuscation inherently conflicts with natural
+human cognitive behavior$^{[3]}$. Widespread adoption would likely prompt
+measurable psychological resistance, as the protocol disables the linguistic
+mechanisms humans rely on to manage sociological complexity.
 
 %---
 \section*{References}
 \begin{enumerate}
 \item Shannon, C. E. (1948). A mathematical theory of communication. \textit{Bell System Technical Journal}, 27(3), 379--423.
-\item Miller, G. A. (1956). The magical number seven, plus or minus two: Some limits on our capacity for processing information. \textit{Psychological Review}, 63(2), 81--97.
+\item Miller, G. A. (1956). The magical number seven, plus or minus two. \textit{Psychological Review}, 63(2), 81--97.
 \item Chomsky, N. (1957). \textit{Syntactic Structures}. Mouton.
 \item Zipf, G. K. (1949). \textit{Human Behavior and the Principle of Least Effort}. Addison-Wesley.
 \end{enumerate}
@@ -426,25 +555,21 @@ Mammalian communicative pathways evolved to facilitate social cohesion, hierarch
 \begin{lstlisting}
 Copyright (c) 2026 Dan Micsa, PhD
 
-Permission is hereby granted, free of charge,
-to any person obtaining a copy of this language
-specification and associated documentation files
-(the "Specification"), to deal in the Specification
-without restriction, including without limitation
-the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the
-Specification, and to permit persons to whom the
-Specification is furnished to do so, subject to
-the following conditions:
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this language specification and associated
+documentation files (the "Specification"), to deal in the
+Specification without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute,
+sublicense, and/or sell copies of the Specification, and to
+permit persons to whom the Specification is furnished to do so,
+subject to the following conditions:
 
-The above copyright notice and this permission
-notice shall be included in all copies or
-substantial portions of the Specification.
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Specification.
 
-THE SPECIFICATION IS PROVIDED "AS IS", WITHOUT
-WARRANTY OF ANY KIND. IN NO EVENT SHALL THE AUTHORS
-BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY HOWEVER CAUSED.
+THE SPECIFICATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+KIND. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY HOWEVER CAUSED.
 \end{lstlisting}
 
 \end{appendices}

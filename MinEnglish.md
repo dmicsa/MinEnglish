@@ -34,8 +34,8 @@ aim is to **remove** the inconsistencies, redundancies, and irregularities that
 burden English — not to replace it with something foreign. The result is a
 leaner, fully regular version of English: same vocabulary, same phonemes, same
 word order — but with predictable spelling, explicit quantities, and precise
-time operators. This specification (v1.0.0) documents the phonological,
-morphological, and syntactic rules targeting the v1.0.0 stable release,
+time operators. This specification documents the phonological,
+morphological, and syntactic rules targeting the stable release,
 demonstrates a 35.0% average character reduction over standard English across a
 35-sentence corpus, and acknowledges the primary adoption challenge: human
 habit.
@@ -214,7 +214,7 @@ objects or abstract metrics.
   apel) = Three-quarters of an apple.
 - **Decimals:** `0.5` (ziro point faiv). `99.9` (nain nain point nain).
 
-### 3.1.4 Token Optionality Rules (v0.2.0)
+### 3.1.4 Token Optionality Rules
 
 Three categories of token may be omitted when their value is recoverable from
 context. **Parsers must implement the following defaults when a token is
@@ -228,8 +228,8 @@ preceding plural context is necessary.
 
 | Explicit            | Implicit          | Meaning              |
 | :------------------ | :---------------- | :------------------- |
-| `1cat sit on 1mat`  | `cat sit on mat`  | A cat sits on a mat  |
-| `1dog run in 1parc` | `dog run in parc` | A dog runs in a park |
+| `1cat sit on 1mat`  | `Cat sit on mat`  | A cat sits on a mat  |
+| `1dog run in 1parc` | `Dog run in parc` | A dog runs in a park |
 
 > **Note:** If the previous noun was plural, explicit `1` is required to
 > re-establish singular: `3cat run, den 1cat stop.`
@@ -242,7 +242,7 @@ subject precedes the verb block.
 
 | Explicit           | Implicit          | Meaning                       |
 | :----------------- | :---------------- | :---------------------------- |
-| `i1laic cat`       | `laic cat`        | I like a cat                  |
+| `i1laic cat`       | `Laic cat`        | I like a cat                  |
 | `i-1d gou tu stor` | `-1d gou tu stor` | I went to the store yesterday |
 
 > **Disambiguation:** If a third-person pronoun or noun immediately precedes the
@@ -312,8 +312,8 @@ inappropriate syntactic mapping can yield semantic anomalies. The universal
 predicators `du` (experiential interaction) and `meic` (generative action) serve
 as formal verbalizers for noun-class tokens.
 
-- `du parc` = I interact with the park (replaces the ambiguous `parc`).
-- `s-1d meic fuud` = She generated food (replaces the anomalous `s-1d fuud`).
+- `Du parc` = I interact with the park (replaces the ambiguous `parc`).
+- `S-1d meic fuud` = She generated food (replaces the anomalous `s-1d fuud`).
 
 ### 3.4 Pronominal Indexing
 
@@ -362,7 +362,7 @@ By default, the syntactic structure is declarative and absolute. To inject
 social deference or epistemological uncertainty, the approximation operator `~`
 is bound to the pronoun.
 
-- `u giv` = Absolute directive (You give).
+- `U giv` = Absolute directive (You give).
 - `~u giv` = Deferred directive (Could you please give).
 - `~tinc` = Epistemological deferment (It seems to me).
 
@@ -371,9 +371,9 @@ is bound to the pronoun.
 Negation is expressed by prepending `no` immediately before the verb. The `no`
 token is invariant and does not conjugate.
 
-- `no laic cat` = I do not like the cat.
-- `u1d no cum` = You will not come tomorrow.
-- `*h no can spiic` = None of them can speak.
+- `No laic cat` = I do not like the cat.
+- `U1d no cum` = You will not come tomorrow.
+- `*H no can spiic` = None of them can speak.
 
 ### 3.6 Sentence Structure & Conjunction Reduction
 
@@ -389,8 +389,8 @@ laic cat >big.            → I like a very big cat.
 If multiple actions share the same subject, you can drop the subject after `an`
 or `or` (Conjunction Reduction):
 
-- `iit an drinc` = I eat and (I) drink.
-- `iit an h1drinc` = I eat and he drinks.
+- `Iit an drinc` = I eat and (I) drink.
+- `Iit an h1drinc` = I eat and he drinks.
 
 ### 3.7 Modality (can, must, should)
 
@@ -421,8 +421,8 @@ chained verb and a direct object noun. **Rule:** When a noun could be mistaken
 for a verb, prefix it with the transitive operator `tu` (acting like Esperanto's
 -n accusative).
 
-- `laic tu cat` = I like the cat (Prevents reading as "I like and I cat").
-- `s1giv tu h buc` = She gives him a book.
+- `Laic tu cat` = I like the cat (Prevents reading as "I like and I cat").
+- `S1giv tu h buc` = She gives him a book.
 
 ### 3.9 Connectors, Prepositions, Tone Markers
 
@@ -448,9 +448,9 @@ However, the `!` symbol has a dual function depending on whitespace spacing:
 - **Negation Prefix (Attached):** When attached directly to the front of a word
   with _no space_, it acts as the logical NOT operator.
 
-- `uen u1gou?` = **When** do you go?
-- `uac!` = Watch out! (Exclamation)
-- `i !laic cat.` = I do **not** like cats. (Negation)
+- `Uen u1gou?` = **When** do you go?
+- `Uac!` = Watch out! (Exclamation)
+- `I !laic cat.` = I do **not** like cats. (Negation)
 - `!gud` = Not good.
 - `huu`, `uat`, `uai`, `haum` (who, what, why, how much-many).
 
@@ -488,8 +488,8 @@ compound word operator.
 To avoid repeating the verb "to be" (`bi`), prepositions can act as verbs simply
 by attaching a time prefix to them.
 
-- `haus in siti` = The house is in a city (`in` acts as the verb "to be in").
-- `cat -1d on mat` = The cat was on a mat yesterday.
+- `Haus in siti` = The house is in a city (`in` acts as the verb "to be in").
+- `Cat -1d on mat` = The cat was on a mat yesterday.
 
 ### 3.10 Abjad Mode (Extreme Shorthand)
 
@@ -507,24 +507,13 @@ surrender). MinEnglish rejects phrasal idioms entirely. A direct translation of
 "Look out" (`luc aut`) is strictly literal: point your eyes outside. **Rule:**
 Idioms must be translated to their literal action equivalent.
 
-- "Look out!" → `!!uac` (Watch intensely!)
+- "Look out!" → `Uac!!` (Watch intensely!)
 - "Give up" → `stop tu trai` (Stop to try)
 
-### 3.12 Derivational Morphology Engine (Suffixes)
-
-Long, un-compressable Latinate words (like "antibiotic") destroy MinEnglish's
-efficiency. Latinate words are compressed using a standardized suffix engine
-applied to MinEnglish roots.
-
-- `-er` (Doer/Tool): `scritciu-er` (Screwdriver, tool that screws)
-- `-ic` (Pertaining to): `saient-ic` (Scientific)
-- `-med` (Medicine for): `bac-med` (Antibiotics, medicine against bacteria)
-- `-mun` (Economics of): `rap-mun` (Hyperinflation, rapid economics)
-
-### 3.13 Orthographic Stress Engine
+### 3.12 Orthographic Stress Engine
 
 To solve the ambiguity of spoken MinEnglish without relying on the optional `'`
-marker, v0.9.0 standardizes default pronunciation logic for parsers and
+marker, standardizes default pronunciation logic for parsers and
 speakers. **Rule:** Always stress the **first vowel** of a root word _unless_ it
 is a recognized prefix-suffix. In compound words, stress the first syllable of
 the primary noun.
@@ -532,7 +521,7 @@ the primary noun.
 - `c'ompiuuter` (Stress the O)
 - `b'ioloji` (Stress the I)
 
-### 3.14 Echo-Tagging (Aviation/Noisy Protocol)
+### 3.13 Echo-Tagging (Aviation/Noisy Protocol)
 
 Claude Shannon's Information Theory proves that "noise" requires "redundancy" to
 fix. MinEnglish's maximum data density strips all redundancy (`3boi uoc` marks
@@ -544,7 +533,7 @@ transmissions, a speaker may artificially inflate Shannon redundancy to 100% by
 - Standard: `3boi uoc` (Three boys are walking)
 - Echo-Tagged: `3boi trii uoc nau` (Three boys three are-walking now)
 
-### 3.15 Formal Syntax (Backus-Naur Form)
+### 3.14 Formal Syntax (Backus-Naur Form)
 
 The absolute regularity of MinEnglish allows it to be algorithmically validated.
 Below is the strict parsing configuration for a standard declarative sentence.
@@ -740,7 +729,7 @@ byte-length (character count reduction).
 
 ## 8. Theoretical Limitations: The Human Biological Factor
 
-The structural additions of the v1.8 and preceding protocols (Literalization
+The structural additions of previous linguistic protocols (Literalization
 `_`, Clause Anchors `co`/`oc`, and Echo-Tagging) establish MinEnglish as a
 mathematically and informationally optimized transmission system. It addresses
 standard linguistic inefficiencies:

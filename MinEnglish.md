@@ -166,10 +166,9 @@ different level of semantic precision:
 **Slash `/` — loose root combination** (either element could logically satisfy
 the meaning):
 
-- `fuud/haus` = restaurant (food-house, either reading works)
+- `fuud/haus` = restaurant (food-house)
 - `sun/lait` = sunlight
 - `rein/cout` = raincoat
-- `medisin/haus` = hospital or pharmacy
 
 **Hyphen `-` — directional "of/for" binder** (creates a tight, precise
 relational compound; reads left-to-right as "X for/of Y"):
@@ -177,6 +176,7 @@ relational compound; reads left-to-right as "X for/of Y"):
 - `haus-fuud` = house _for_ food (restaurant / dining area)
 - `haus-sel-fuud` = house that _sells_ food (grocery/market)
 - `haus-sic` = house _of_ the sick (hospital)
+- `farmasi` = pharmacy (canonical adapted form)
 
 **Underscore `_` — literalization** (suspends cultural abstraction; forces the
 parser to read the strict physical composition of roots):

@@ -2,8 +2,19 @@
 
 > _Uat u spic is uat u spel._
 
-**Author:** Dan Micsa, PhD | **License:** MIT (see Appendix) | **Version:** 2.0
-— March 2026
+**Author:** Dan Micsa, PhD | **License:** MIT (see Appendix) | **Version:**
+0.9.0 — March 2026
+
+> **Versioning:** MinEnglish follows [Semantic Versioning](https://semver.org).
+> `MAJOR.MINOR.PATCH` — breaking rule changes increment MAJOR. `0.x.y` indicates
+> active pre-stable development; `1.0.0` marks the first frozen specification.
+
+> **AI Attribution:** This specification was developed with extensive assistance
+> from large language models. **Claude Opus** (Anthropic), **Gemini 2.5 Pro**
+> (Google DeepMind), and **Antigravity** (Google DeepMind) contributed to the
+> drafting, formalization, revision, and example generation documented herein.
+> The intellectual framework, design decisions, and authorship remain those of
+> the human author.
 
 ---
 
@@ -13,21 +24,19 @@ MinEnglish is a formal communication protocol engineered to maximize Shannon
 information density while minimizing cognitive load and parser ambiguity. By
 systematically eliminating morphological irregularities and orthographic
 redundancies inherent in natural languages, MinEnglish achieves consistent
-computational predictability. This specification defines the phonological,
-morphological, and syntactic architecture of version 2.0, documents a
-35-sentence comparative corpus demonstrating an average 35.0% character
-reduction over standard American English, and addresses the primary theoretical
-limitation of the system: biological adoption friction.
+computational predictability. This specification (v0.9.0) defines the
+phonological, morphological, and syntactic architecture targeting the v1.0.0
+stable release, documents a 35-sentence comparative corpus demonstrating an
+average 35.0% character reduction over standard American English, and addresses
+the primary theoretical limitation of the system: biological adoption friction.
 
 ---
 
 ## 1. Design Principles and Underlying Rationale
 
-The MinEnglish language is a formal communication protocol engineered to
-maximize Shannon information density while minimizing cognitive load and parser
-ambiguity. By systematically eliminating morphological irregularities and
-orthographic redundancies inherent in natural languages, MinEnglish achieves
-high computational consistency.
+This section defines the engineering constraints that govern every structural
+decision in MinEnglish. Each principle exists to eliminate a specific failure
+mode found in natural language.
 
 | Principle                   | Rationale and Implementation                                                                                                                                                          |
 | :-------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -75,7 +84,7 @@ preserving the 1-to-1 spelling mapping without requiring macron diacritics.
 ### 2.3 Consonants
 
 Consonantal mappings prioritize acoustic clarity while resolving historical
-orthographic collisions (such as the hard/soft _c_ boundary).
+orthographic collisions (such as the hard-soft _c_ boundary).
 
 | Grapheme | Phoneme    | Application Rule                                                                   | Example            |
 | :------- | :--------- | :--------------------------------------------------------------------------------- | :----------------- |
@@ -158,35 +167,33 @@ plurals are abolished.**
 > the indefinite article. Definiteness is established contextually or via
 > demonstrative pronouns.
 
-### 3.1.1 Compound Word Operators (`/`, `-`, `_`)
+### 3.1.1 Compound Word Operators (`-`, `_`)
 
-MinEnglish provides three operators for building compound words, each encoding a
-different level of semantic precision:
+MinEnglish provides two operators for building compound words. The `/` character
+is reserved exclusively for fractions and mathematical division (see 3.1.4).
 
-**Slash `/` — loose root combination** (either element could logically satisfy
-the meaning):
+**Hyphen `-` — directional "of/for" binder** (reads left-to-right as "X for/of
+Y"):
 
-- `fuud/haus` = restaurant (food-house)
-- `sun/lait` = sunlight
-- `rein/cout` = raincoat
-
-**Hyphen `-` — directional "of/for" binder** (creates a tight, precise
-relational compound; reads left-to-right as "X for/of Y"):
-
-- `haus-fuud` = house _for_ food (restaurant / dining area)
+- `haus-fuud` = house _for_ food (restaurant)
 - `haus-sel-fuud` = house that _sells_ food (grocery/market)
 - `haus-sic` = house _of_ the sick (hospital)
-- `farmasi` = pharmacy (canonical adapted form)
+- `sun-lait` = sunlight
+- `rein-cout` = raincoat
+
+> **Disambiguation — `-` as compound vs. temporal:** When `-` precedes a digit
+> or `0s`, it is a past temporal operator (`-1d`, `-0s`). When it binds two noun
+> roots, it is a compound operator (`haus-fuud`). Parsers resolve this by
+> checking whether the right operand begins with a digit.
 
 **Underscore `_` — literalization** (suspends cultural abstraction; forces the
-parser to read the strict physical composition of roots):
+parser to compute strict compositional meaning):
 
-- `haus-fuud` = The cultural concept of a restaurant (hyphen = abstract)
-- `haus_fuud` = A house literally built from food (gingerbread house)
+- `haus-fuud` = restaurant (cultural concept; hyphen = abstract)
+- `haus_fuud` = a house literally built from food (gingerbread house)
 
-> **Semantic Drift Arrest:** Natural languages undergo lexicalization, where
-> compounds fuse into opaque monolithic words. The `_` operator prevents this by
-> permanently flagging compositional intent.
+> **Semantic Drift Arrest:** The `_` operator permanently flags compositional
+> intent, preventing lexicalization (where compounds fuse into opaque units).
 
 ### 3.1.2 Numerical Processing Efficiency
 
@@ -238,7 +245,7 @@ In speech, the entire LaTeX expression is read naturally in English
 pronunciation. Written MinEnglish and spoken MinEnglish diverge only at
 mathematical literal boundaries.
 
-### 3.1.6 Token Optionality Rules (v2.0)
+### 3.1.6 Token Optionality Rules (v0.2.0)
 
 Three categories of token may be omitted when their value is recoverable from
 context. **Parsers must implement the following defaults when a token is
@@ -285,25 +292,27 @@ is required only for disambiguation or emphasis.
 | `h1laic 1cat` | `h laic cat` | He likes a cat |
 | `i1run fast`  | `run fast`   | I run fast     |
 
+### 3.2 Verbs — Temporal Mechanics
+
 Irregular conjugations are functionally inefficient. MinEnglish regulates time
-processing via temporal prefixing that targets an absolute mathematical
-timeline. A verb absent a modifier defaults to the continuous present.
+via temporal operators that target an absolute mathematical timeline. A verb
+without a temporal operator defaults to present continuous.
 
-| Operator     | Temporal Value                               | Example                                         |
-| :----------- | :------------------------------------------- | :---------------------------------------------- |
-| _(null)_     | Present continuous (default)                 | `iit` (eating)                                  |
-| `1`          | Present discrete (attachment operator)       | `i1iit` (I eat)                                 |
-| `*`          | Habitual / Universal continuity              | `*iit` (eats perpetually)                       |
-| `-0s`        | Immediate past vector (zero offset)          | `-0s sii` (just perceived)                      |
-| `-1d`        | Past vector (one day offset)                 | `-1d iit` (ate yesterday)                       |
-| `:5Y`        | Duration scalar (five years)                 | `:5Y studi` (has studied for five years)        |
-| `1d` / `+1d` | Future vector — `+` is accepted but optional | `1d gou` or `+1d gou` (will go tomorrow)        |
-| `2026-12-25` | Absolute timestamp                           | `2026-12-25 gou` (transit scheduled for Dec 25) |
+| Operator     | Temporal Value                            | Example                                         |
+| :----------- | :---------------------------------------- | :---------------------------------------------- |
+| _(null)_     | Present continuous (default)              | `iit` (eating)                                  |
+| `1`          | Present discrete (attachment operator)    | `i1iit` (I eat)                                 |
+| `*`          | Habitual / Universal continuity           | `*iit` (eats perpetually)                       |
+| `-0s`        | Immediate past vector (zero offset)       | `-0s sii` (just perceived)                      |
+| `-1d`        | Past vector (one day offset)              | `-1d iit` (ate yesterday)                       |
+| `:5Y`        | Duration scalar (five years)              | `:5Y studi` (has studied for five years)        |
+| `1d`         | Future vector (`+` accepted but optional) | `1d gou` (will go tomorrow)                     |
+| `2026-12-25` | Absolute timestamp                        | `2026-12-25 gou` (transit scheduled for Dec 25) |
 
-> **Direction Convention:** The `-` operator explicitly marks past vectors.
-> Future offsets are positive by default — a bare numeric offset (`1d`, `2h`,
-> `1Y`) always points forward. The `+` prefix is accepted by parsers but
-> considered redundant notation.
+> **Direction Convention:** The `-` prefix marks past vectors (required). Future
+> offsets default to positive — a bare numeric offset (`1d`, `2h`, `1Y`) always
+> points forward. The `:` operator spans a duration rather than pointing to a
+> discrete moment.
 
 ### 3.2.1 Temporal Stacking (Complex Timelines)
 
@@ -314,7 +323,7 @@ algebraic timeline construction.
 
 - `-0s -1d iit` = I just-now yesterday ate (I had already eaten by yesterday's
   timeline).
-- `-1d +2h iit` = Yesterday, offset by +2 hours, I ate.
+- `-1d 2h iit` = Yesterday, offset by +2 hours, I ate.
 
 ### 3.3 Modifiers and Scalar Intensity
 
@@ -385,9 +394,9 @@ By default, the syntactic structure is declarative and absolute. To inject
 social deference or epistemological uncertainty, the approximation operator `~`
 is bound to the pronoun.
 
-- `u1giv` = Absolute directive (You give).
-- `~u1giv` = Deferred directive (Could you please give).
-- `~i1tinc` = Epistemological deferment (It seems to me).
+- `u giv` = Absolute directive (You give).
+- `~u giv` = Deferred directive (Could you please give).
+- `~tinc` = Epistemological deferment (It seems to me).
 
 ### 3.5 Negation
 
@@ -395,7 +404,7 @@ Negation is expressed by prepending `no` immediately before the verb. The `no`
 token is invariant and does not conjugate.
 
 - `no laic cat` = I do not like the cat.
-- `u+1d no cum` = You will not come tomorrow.
+- `u1d no cum` = You will not come tomorrow.
 - `*h no can spiic` = None of them can speak.
 
 ### 3.6 Sentence Structure & Conjunction Reduction
@@ -410,7 +419,7 @@ laic cat >big.            → I like a very big cat.
 ### 3.6.1 The Focus Operator `!`
 
 To disambiguate negation or questions, the emphasis tone `!` acts as a Focus
-Operator to target exactly what is being negated/questioned.
+Operator to target exactly what is being negated-questioned.
 
 - `no laic !3cat` = It's not _three_ cats that I like (I like four).
 - `no laic 3!cat` = It's not _cats_ that I like three of (I like 3 dogs).
@@ -426,12 +435,12 @@ or `or` (Conjunction Reduction):
 
 Modality verbs follow the time prefix, creating a composite verb phrase:
 
-| Modal    | Meaning                | Example                                  |
-| -------- | ---------------------- | ---------------------------------------- |
-| **can**  | ability / permission   | `can iit` = I can eat                    |
-| **must** | necessity / obligation | `u+1d must cum` = You must come tomorrow |
-| **shud** | advice / should        | `*h shud lern` = They should learn       |
-| **~can** | probability / might    | `i+1d ~can gou` = I might go tomorrow    |
+| Modal    | Meaning                | Example                                 |
+| -------- | ---------------------- | --------------------------------------- |
+| **can**  | ability / permission   | `can iit` = I can eat                   |
+| **must** | necessity / obligation | `u1d must cum` = You must come tomorrow |
+| **shud** | advice / should        | `*h shud lern` = They should learn      |
+| **~can** | probability / might    | `i1d ~can gou` = I might go tomorrow    |
 
 ### 3.8 Passive Voice
 
@@ -445,7 +454,7 @@ Formed by moving the Object to the front, and following the verb with `bai`
 
 ### 3.8.1 The Direct Object Marker (`tu`)
 
-Because MinEnglish removes noun/verb class distinctions (any word can
+Because MinEnglish removes noun-verb class distinctions (any word can
 technically be a verb with `1`), complex sentences can blur the line between a
 chained verb and a direct object noun. **Rule:** When a noun could be mistaken
 for a verb, prefix it with the transitive operator `tu` (acting like Esperanto's
@@ -459,7 +468,7 @@ for a verb, prefix it with the transitive operator `tu` (acting like Esperanto's
 - **Logic:** `an` / `&` (and), `or` / `|` (or), `but` (but), `if` (if), `cos`
   (because), `sou` (so), `den` (then).
 - **Shortcuts:** `@` (at), `>` (over / more than), `<` (under / less than).
-- **Tone:** `!` (focus/emphasis), `!!` (strong), `..` (hesitation), `^`
+- **Tone:** `!` (focus-emphasis), `!!` (strong), `..` (hesitation), `^`
   (sarcasm).
 
 > **Symbolic Connectors:** `&` and `|` are fully equivalent to `an` and `or`
@@ -473,8 +482,8 @@ MinEnglish requires the `?` symbol attached to the front of interrogative words
 to strictly mark them as questions, preventing parser confusion.
 
 - `?uen u1gou` = **When** do you go? (Question)
-- `nou uen u1gou` = I know **when/the time that** you go. (Relative)
-- `?huu` (who?), `?uat` (what?), `?uai` (why?), `?haum` (how much/many?).
+- `nou uen u1gou` = I know **when-the time that** you go. (Relative)
+- `?huu` (who?), `?uat` (what?), `?uai` (why?), `?haum` (how much-many?).
 
 ### 3.9.2 Clause Anchors (`co` / `oc`)
 
@@ -489,24 +498,23 @@ close) to return to the parent set.
 
 ### 3.9.3 Arithmetic & Logical Operator Inventory
 
-MinEnglish formally adopts the six standard arithmetic/logical operators as
-first-class syntactic tokens. Each carries a fixed semantic role independent of
-domain:
+MinEnglish formally adopts five symbolic operators as first-class syntactic
+tokens. `/` is reserved for fractions and math (see 3.1.4) and is **not** a
+compound word operator.
 
-| Operator | Name      | Primary Role                      | Example                               |
-| :------- | :-------- | :-------------------------------- | :------------------------------------ |
-| `+`      | Plus      | Future offset (optional explicit) | `+1d gou` = will go tomorrow          |
-| `-`      | Minus     | Past offset (required for past)   | `-1d iit` = ate yesterday             |
-| `*`      | Star      | Universal / generic quantifier    | `*cat` = cats (all)                   |
-| `/`      | Slash     | Compound root separator           | `fuud/haus` = restaurant              |
-| `&`      | Ampersand | Logical AND (≡ `an`)              | `laic cat & dog` = like cats and dogs |
-| `\|`     | Pipe      | Logical OR (≡ `or`)               | `laic cat \| dog` = like cats or dogs |
+| Operator | Name      | Primary Role                               | Example                     |
+| :------- | :-------- | :----------------------------------------- | :-------------------------- |
+| `+`      | Plus      | Future offset (optional; bare N = default) | `1d gou` = will go tomorrow |
+| `-`      | Minus     | Past offset (required) / compound binder   | `-1d iit`; `haus-fuud`      |
+| `*`      | Star      | Universal / generic quantifier             | `*cat` = all cats           |
+| `&`      | Ampersand | Logical AND (≡ `an`)                       | `laic cat & dog`            |
+| `\|`     | Pipe      | Logical OR (≡ `or`)                        | `laic cat \| dog`           |
 
-> All six operators are single-byte ASCII tokens. In speech, `&` is pronounced
-> `an` and `|` is pronounced `or`. Their symbolic forms are preferred in
-> technical, mathematical, and high-density written contexts.
+> `*i` means "all of us" (universal quantifier on first-person pronoun) — not
+> habitual verb. When `*` prefixes a pronoun it quantifies it; when it prefixes
+> a verb it marks habitual action. Parsers distinguish by token class.
 
-### 3.9.1 Preposition Verbs
+### 3.9.4 Preposition Verbs
 
 To avoid repeating the verb "to be" (`bi`), prepositions can act as verbs simply
 by attaching a time prefix to them.
@@ -536,8 +544,8 @@ Idioms must be translated to their literal action equivalent.
 ### 3.13 Derivational Morphology Engine (Suffixes)
 
 Long, un-compressable Latinate words (like "antibiotic") destroy MinEnglish's
-efficiency. V1.5 introduces a formalized suffix engine to compress abstract
-concepts from base roots.
+efficiency. Latinate words are compressed using a standardized suffix engine
+applied to MinEnglish roots.
 
 - `-er` (Doer/Tool): `scritciu-er` (Screwdriver, tool that screws)
 - `-ic` (Pertaining to): `saient-ic` (Scientific)
@@ -549,7 +557,7 @@ concepts from base roots.
 To solve the ambiguity of spoken MinEnglish without relying on the optional `'`
 marker, v1.5 standardizes default pronunciation logic for parsers and speakers.
 **Rule:** Always stress the **first vowel** of a root word _unless_ it is a
-recognized prefix/suffix. In compound words, stress the first syllable of the
+recognized prefix-suffix. In compound words, stress the first syllable of the
 primary noun.
 
 - `c'ompiuuter` (Stress the O)
@@ -618,7 +626,7 @@ Below is the strict parsing configuration for a standard declarative sentence.
 | -------------- | ---------------------- | ----------- | ------------------ |
 | person / child | **person** / **ciald** | head / eye  | **hed** / **ai**   |
 | man / woman    | **man** / **uuman**    | mouth       | **maut**           |
-| mother/father  | **muder** / **fader**  | arm / leg   | **arm** / **leg**  |
+| mother-father  | **muder** / **fader**  | arm / leg   | **arm** / **leg**  |
 | friend         | **frend**              | hand / foot | **hand** / **fut** |
 
 ### 4. Basic Adjectives & Colors
@@ -673,6 +681,7 @@ following entries represent a representative sample across four core domains.
 | Antibiotic | **bac-med**         | Bacteria-medicine |
 | Diagnosis  | **faind-sic**       | Find-sickness     |
 | Surgery    | **cut-laif**        | Cut-life          |
+| Pharmacy   | **farmasi**         | Phonetic adapt.   |
 
 ---
 
@@ -685,7 +694,8 @@ MATH:       <num>/<num>, <num>.<num>  1/2apel, 0.5bol
 VERB:       (none)=present        sit, iit, run (default now)
             1 = present (attach)  h1laic, tinc
             * = any/all/habitual  *iit, *run
-            +/- = future/past     -1d iit, +2h start
+            Nd = future (+ optional)  1d gou, 2h start
+            -Nd = past            -1d iit, -2h
             : = duration          :5Y studi (studying for 5 years)
 ADJ:        <noun> <adj>          cat big, haus niu
 INTENSITY:  >/< <adj>             cat >big (very big), cat <big (slightly)
@@ -696,7 +706,7 @@ COMPARE:    mor / most <adj>      mor big, most big
 APPROX:     ~<value>              ~5, ~big
 GENERIC:    *<noun>, *<verb>      *dog *laic *fuud
 PASSIVE:    <Obj> bai <Subj>      bol kic bai i (ball kicked by me)
-COMPOUND:   <noun>/<noun>         fuud/haus, buc/haus
+COMPOUND:   <noun>-<noun>         haus-fuud, haus-sic
 ATTACH:     <pronoun><prefix>     h1laic, -1d, s1run
 ```
 
@@ -712,10 +722,10 @@ t = /t/ (tinc, trii)              d = /d/ (de, dat)
 ### Pronouns
 
 ```
-i = I/me       u = you        h = he/him
-s = she/her    t = it         dis = this      dat = that
+i = I/me       u = you        h = he-him
+s = she-her    t = it         dis = this      dat = that
 
-Plural: 5i = we five, *u = you all, 3h = 3 males, *s = they/females, *t = they/things
+Plural: 5i = we five, *u = you all, 3h = 3 males, *s = they-females, *t = they-things
 Possess: i's, u's, h's, s', t's
 ```
 
@@ -725,7 +735,7 @@ Possess: i's, u's, h's, s', t's
 
 ### Simple & Truths
 
-#### 
+#### Ex. 1
 
 |                | Text                                           | Chars |
 | -------------- | ---------------------------------------------- | ----- |
@@ -733,7 +743,7 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | 3cat sit on mat big red.                       | 24    |
 | **↩ Back**     | Three-cat sit on one-mat big red.              |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                       | Chars |
 | -------------- | ---------------------------------------------------------- | ----- |
@@ -743,7 +753,7 @@ Possess: i's, u's, h's, s', t's
 
 ### Relatives & Times
 
-#### 
+#### Ex. 1
 
 |                | Text                                                        | Chars |
 | -------------- | ----------------------------------------------------------- | ----- |
@@ -751,15 +761,15 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | -1d bai 2buc an 3apel @ stor.                               | 29    |
 | **↩ Back**     | I one-day-ago buy two-book and three-apple at one-store.    |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                          | Chars |
 | -------------- | --------------------------------------------- | ----- |
 | **English**    | Will you eat dinner with us tomorrow evening? | 45    |
-| **MinEnglish** | u+1d iit diner uid \*i?                       | 23    |
+| **MinEnglish** | u1d iit diner uid \*i?                        | 23    |
 | **↩ Back**     | You in-one-day eat one-dinner with all-of-us? |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                       | Chars |
 | -------------- | ---------------------------------------------------------- | ----- |
@@ -767,7 +777,7 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | ~50person ariv @ ~15:00.                                   | 24    |
 | **↩ Back**     | Approximately-fifty-person arrive at approximately-15:00.  |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                                          | Chars |
 | -------------- | --------------------------------------------------------------------------------------------- | ----- |
@@ -775,25 +785,25 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | miiting 2026-01-15 14:30 bi held.                                                             | 33    |
 | **↩ Back**     | One-meeting 2026-01-15 14:30 be held.                                                         |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
 | **English**    | I have been studying English for five years but I still cannot speak fluently. | 78    |
-| **MinEnglish** | i:5Y studi inglish but i no can spiic fluuent.                                 | 46    |
-| **↩ Back**     | I for-five-years study English but I not can speak fluent.                     |       |
+| **MinEnglish** | :5Y studi inglish but i no can spiic fluuent.                                  | 46    |
+| **↩ Back**     | For-five-years study English but I not can speak fluent.                       |       |
 
 ### Complex Modifiers & Voice
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
 | **English**    | We are going to the extremely new restaurant tomorrow at seven in the evening. | 78    |
-| **MinEnglish** | \*i+1d gou tu fuud/haus >>niu @ 19:00.                                         | 38    |
-| **↩ Back**     | All-of-us in-one-day go to one-food/house extremely-new at 19:00.              |       |
+| **MinEnglish** | \*i1d gou tu fuud-haus >>niu @ 19:00.                                          | 38    |
+| **↩ Back**     | All-of-us in-one-day go to one-food-house extremely-new at 19:00.              |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                               | Chars |
 | -------------- | ------------------------------------------------------------------ | ----- |
@@ -801,7 +811,7 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | !!uac! uindou glas breic bai man angri.                            | 39    |
 | **↩ Back**     | Watch-intensely! One-window glass just-now break by one-man angry. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                         | Chars |
 | -------------- | ---------------------------------------------------------------------------- | ----- |
@@ -811,7 +821,7 @@ Possess: i's, u's, h's, s', t's
 
 ### Conditionals, Logic & Commands
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                      | Chars |
 | -------------- | ------------------------------------------------------------------------- | ----- |
@@ -819,7 +829,7 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | if u1no stop tu run, u1fol an breic tu u's 2leg.                          | 48    |
 | **↩ Back**     | If you-now-not stop [Obj] run, you-now-fall and break [Obj] your two-leg. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                                          | Chars |
 | -------------- | --------------------------------------------------------------------------------------------- | ----- |
@@ -827,7 +837,7 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | *morning i*drinc 2cup cofi an \*iit piis toust bifor uorc.                                    | 58    |
 | **↩ Back**     | Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece toast before work. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                                 | Chars |
 | -------------- | ------------------------------------------------------------------------------------ | ----- |
@@ -835,7 +845,7 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | teic 3eg, ad 2cup flaur, an mics \*ting for 10m.                                     | 48    |
 | **↩ Back**     | Take three-egg, add two-cup flour, and mix all-thing for ten-minutes.                |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                      | Chars |
 | -------------- | --------------------------------------------------------- | ----- |
@@ -845,7 +855,7 @@ Possess: i's, u's, h's, s', t's
 
 ### Dialogue & Description
 
-#### 
+#### Ex. 1
 
 |                | Text                                                             | Chars |
 | -------------- | ---------------------------------------------------------------- | ----- |
@@ -853,7 +863,7 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | "haum ciald u hav?" "i hav 2boi an gerl."                        | 41    |
 | **↩ Back**     | "How-many child you have?" "I have two-boy and one-girl."        |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                                                                                         | Chars |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
@@ -861,15 +871,15 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s-1Y uant understand uerld mor gud.                                                 | 92    |
 | **↩ Back**     | She one-year-ago travel to five-country different and learn three-language new because she one-year-ago want understand one-world more good. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                              | Chars |
 | -------------- | --------------------------------------------------------------------------------- | ----- |
 | **English**    | I might go to the party, but she loves him and he does not love her.              | 69    |
-| **MinEnglish** | i+1d ~can gou tu parti, but s1luv h an !h no luv s.                               | 51    |
+| **MinEnglish** | i1d ~can gou tu parti, but s1luv h an !h no luv s.                                | 51    |
 | **↩ Back**     | I in-future might go to one-party, but she-now-love he and focus-he not love she. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
@@ -879,15 +889,15 @@ Possess: i's, u's, h's, s', t's
 
 > _Low compression — long Latin words maintain their length._
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
 | **English**    | The children were playing in the park when it started raining heavily.         | 70    |
-| **MinEnglish** | \*ciald 1in parc uen t-0s start rein >hevi.                                    | 43    |
+| **MinEnglish** | \*ciald in parc uen t-0s start rein >hevi.                                     | 43    |
 | **↩ Back**     | Any-child just-now in(verb) one-park when it-just-now start rain very-heavily. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                              | Chars |
 | -------------- | ----------------------------------------------------------------- | ----- |
@@ -897,7 +907,7 @@ Possess: i's, u's, h's, s', t's
 
 ### Advanced Domains (Sci-Fi, Philosophy, Business)
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                       | Chars |
 | -------------- | -------------------------------------------------------------------------- | ----- |
@@ -905,31 +915,31 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | ship-speis lonci in orbit after caunt-daun hic 0.                          | 49    |
 | **↩ Back**     | One-ship-space just-now launch in one-orbit after one-count-down hit zero. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                     | Chars |
 | -------------- | ------------------------------------------------------------------------ | ----- |
 | **English**    | To be or not to be, that is the question we must all answer eventually.  | 71    |
-| **MinEnglish** | bi or no bi, dat bi cuesciun \*i must anser in +taim.                    | 53    |
+| **MinEnglish** | bi or no bi, dat bi cuesciun \*i must anser in taim.                     | 53    |
 | **↩ Back**     | Be or not be, that be one-question all-of-us must answer in future-time. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                                                 | Chars |
 | -------------- | ---------------------------------------------------------------------------------------------------- | ----- |
 | **English**    | Our company needs to optimize its supply chain to maximize profit margins next year.                 | 83    |
-| **MinEnglish** | *i's compani niid optimaiz t's cein-suplai tu macsimaiz *marjin-profit +1Y.                          | 75    |
+| **MinEnglish** | *i's compani niid optimaiz t's cein-suplai tu macsimaiz *marjin-profit 1Y.                           | 75    |
 | **↩ Back**     | All-of-us-possessive company need optimize its chain-supply to maximize any-margin-profit next-year. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                                              | Chars |
 | -------------- | ------------------------------------------------------------------------------------------------- | ----- |
 | **English**    | The president announced a new tax policy that will affect middle class families.                  | 78    |
-| **MinEnglish** | prezident anauns nolisi-tacs niu dat +1d apect \*pamili clas-midl.                                | 66    |
+| **MinEnglish** | prezident anauns nolisi-tacs niu dat 1d apect \*pamili clas-midl.                                 | 66    |
 | **↩ Back**     | One-president just-now announce one-policy-tax new that in-future affect any-family class-middle. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                                                                 | Chars |
 | -------------- | -------------------------------------------------------------------------------------------------------------------- | ----- |
@@ -937,31 +947,31 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | doctor prescraib tu \*bac-med tu triit bac-sic >siirius peishent's.                                                  | 67    |
 | **↩ Back**     | One-doctor just-now prescribe [Obj] any-bacteria-medicine to treat one-bacteria-sickness very-serious one-patient's. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                               | Chars |
 | -------------- | ---------------------------------------------------------------------------------- | ----- |
 | **English**    | The three bedroom house with a large backyard is currently on the market for rent. | 82    |
-| **MinEnglish** | haus 3ruum-bed uid iard-bac big 1in marcet for rent nau.                           | 56    |
+| **MinEnglish** | haus 3ruum-bed uid iard-bac big in marcet for rent nau.                            | 56    |
 | **↩ Back**     | One-house three-room-bed with one-yard-back big now-in one-market for rent now.    |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                              | Chars |
 | -------------- | --------------------------------------------------------------------------------- | ----- |
 | **English**    | If the server crashes, the backup system will automatically restore the database. | 81    |
-| **MinEnglish** | if server craish, sistem-bacup +1d otoristor daatabeis.                           | 55    |
+| **MinEnglish** | if server craish, sistem-bacup 1d otoristor daatabeis.                            | 55    |
 | **↩ Back**     | If one-server crash, one-sistem-backup in-future auto-restore one-database.       |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                              | Chars |
 | -------------- | --------------------------------------------------------------------------------- | ----- |
 | **English**    | Global warming is melting the polar ice caps faster than scientists predicted.    | 78    |
-| **MinEnglish** | iurm-gloubal melt *cap-ais poular >fast dan *saientist -1d pridiict.              | 68    |
+| **MinEnglish** | gloubal-iurm melt *cap-ais poular >fast dan *saientist -1d pridiict.              | 68    |
 | **↩ Back**     | Warm-global now-melt any-cap-ice polar more-fast than any-scientist past-predict. |       |
 
-#### 
+#### Nature & Poetry (Imagery)
 
 |                | Text                                                                                             | Chars |
 | -------------- | ------------------------------------------------------------------------------------------------ | ----- |
@@ -969,15 +979,15 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | uind uisper tru \*trii >ould az muun silver raiz in scai.                                        | 57    |
 | **↩ Back**     | One-wind just-now whisper through any-tree very-old as one-moon silver just-now rise in one-sky. |       |
 
-#### 
+#### Logistics
 
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
 | **English**    | The delivery truck will arrive with your package between noon and two o'clock. | 78    |
-| **MinEnglish** | truc-diliveri +1d ariv uid u's pacij btuiin 12:00 an 14:00.                    | 59    |
+| **MinEnglish** | truc-diliveri 1d ariv uid u's pacij btuiin 12:00 an 14:00.                     | 59    |
 | **↩ Back**     | One-truck-delivery in-future arrive with your package between 12:00 and 14:00. |       |
 
-#### 
+#### Legal
 
 |                | Text                                                                                     | Chars |
 | -------------- | ---------------------------------------------------------------------------------------- | ----- |
@@ -985,7 +995,7 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | diipendant formal pliid no gilti tu \*carj prizent bai tu cort.                          | 63    |
 | **↩ Back**     | One-defendant just-now formal plead not guilty to any-charge present by [Obj] one-court. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                                     | Chars |
 | -------------- | ---------------------------------------------------------------------------------------- | ----- |
@@ -993,7 +1003,7 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | boil tu uoter, ad tu pinci solt, an \*ster until sos >tic.                               | 58    |
 | **↩ Back**     | Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce very-thick. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                                                               | Chars |
 | -------------- | ------------------------------------------------------------------------------------------------------------------ | ----- |
@@ -1001,7 +1011,7 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | -1d *no fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.                                                | 70    |
 | **↩ Back**     | I-just-now-yesterday any-not feel this way about any-person before, you yesterday change [Obj] my life very-whole. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                           | Chars |
 | -------------- | ------------------------------------------------------------------------------ | ----- |
@@ -1009,7 +1019,7 @@ Possess: i's, u's, h's, s', t's
 | **MinEnglish** | gou streit for 2mail, den tern left @ lait-trapic tuu u1sii.                   | 60    |
 | **↩ Back**     | Go straight for two-mile, then turn left at one-light-traffic two you-now-see. |       |
 
-#### 
+#### Ex. 1
 
 |                | Text                                                                                                 | Chars |
 | -------------- | ---------------------------------------------------------------------------------------------------- | ----- |
@@ -1285,7 +1295,7 @@ byte-length (character count reduction).
 | :---------------------------------- | :--------- | :---------------------------------------------------------------------------------------------- |
 | **Ex. 6:** Absolute Timestamp       | **63.4%**  | `2026-01-15 14:30` collapses 59 English alphabetical characters into absolute numeric notation. |
 | **Ex. 5:** Approximation            | **58.6%**  | `~50person` collapses multi-word approximation phrases ("About fifty people").                  |
-| **Ex. 4, 12, 30:** Modality & Tense | **~45.0%** | Prefixing operators (`+1d`, `btuiin 12:00`) computationally squash auxiliary verb chains.       |
+| **Ex. 4, 12, 30:** Modality & Tense | **~45.0%** | Prefixing operators (`1d`, `btuiin 12:00`) computationally squash auxiliary verb chains.        |
 
 | Lowest Reductions               | Char Δ    | Variable Vector                                                                                        |
 | :------------------------------ | :-------- | :----------------------------------------------------------------------------------------------------- |
@@ -1355,7 +1365,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy
 of this language specification and associated documentation files (the
 "Specification"), to deal in the Specification without restriction, including
 without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Specification, and to
+distribute, sublicense, and-or sell copies of the Specification, and to
 permit persons to whom the Specification is furnished to do so, subject to
 the following conditions:
 

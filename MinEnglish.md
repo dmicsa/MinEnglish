@@ -55,7 +55,7 @@ habit.
 | **Phonetic Spelling**   | Removes the burden of memorizing irregular spelling. Every letter has one sound, every sound one letter. (`knight` → `nait`, `enough` → `inuf`) |
 | **Explicit Quantities** | Removes ambiguous pluralization. `cats` vs `cat` is a noise-channel problem. `3cat` is unambiguous. Singular is the default — no suffix needed. |
 | **Regular Time**        | Removes 12+ irregular tense forms. One temporal operator (`-1d`, `1d`, `:5Y`) does the work of went/gone/had gone/will go/would have gone.      |
-| **Symbolic Operators**  | Replaces multi-word constructs with single tokens already familiar from math and logic (`&`, `\|`, `>`, `<`, `~`, `@`).                         |
+| **Symbolic Operators**  | Replaces multi-word constructs with single tokens already familiar from math and logic (`&`, `|`, `>`, `<`, `~`, `@`).                         |
 | **Zero Exceptions**     | Removes the entire category of irregular verbs, irregular plurals, and silent letters. What works for one word works for all words.             |
 
 ---
@@ -435,14 +435,23 @@ for a verb, prefix it with the transitive operator `tu` (acting like Esperanto's
 > respectively, and are preferred in dense or technical text. In speech, both
 > forms are pronounced identically (`an`, `or`).
 
-### 3.9.1 Terminal Punctuation (`?`, `!`)
+### 3.9.1 Terminal Punctuation & Negation (`!`, `?`)
 
 To maintain familiarity and avoid syntactic overcomplication, MinEnglish uses
 the standard English terminal punctuation marks (`?` and `!`) located at the end
 of the sentence clause.
 
+However, the `!` symbol has a dual function depending on whitespace spacing:
+
+- **Exclamation (Space/End):** When placed at the end of a sentence or separated
+  by a space, it acts natively as an exclamation.
+- **Negation Prefix (Attached):** When attached directly to the front of a word
+  with _no space_, it acts as the logical NOT operator.
+
 - `uen u1gou?` = **When** do you go?
-- `uac!` = Watch out!
+- `uac!` = Watch out! (Exclamation)
+- `i !laic cat.` = I do **not** like cats. (Negation)
+- `!gud` = Not good.
 - `huu`, `uat`, `uai`, `haum` (who, what, why, how much-many).
 
 ### 3.9.2 Clause Anchors (`co` / `oc`)
@@ -465,10 +474,10 @@ compound word operator.
 | Operator | Name      | Primary Role                               | Example                     |
 | :------- | :-------- | :----------------------------------------- | :-------------------------- |
 | `+`      | Plus      | Future offset (optional; bare N = default) | `1d gou` = will go tomorrow |
-| `-`      | Minus     | Past offset (required) / compound binder   | `-1d iit`; `haus-fuud`      |
+| `-`      | Minus     | Past offset (required)                     | `-1d iit` = ate yesterday   |
 | `*`      | Star      | Universal / generic quantifier             | `*cat` = all cats           |
 | `&`      | Ampersand | Logical AND (≡ `an`)                       | `laic cat & dog`            |
-| `\|`     | Pipe      | Logical OR (≡ `or`)                        | `laic cat \| dog`           |
+| `        | `         | Pipe                                       | Logical OR (≡ `or`)         |
 
 > `*i` means "all of us" (universal quantifier on first-person pronoun) — not
 > habitual verb. When `*` prefixes a pronoun it quantifies it; when it prefixes

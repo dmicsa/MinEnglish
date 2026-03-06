@@ -638,53 +638,6 @@ Below is the strict parsing configuration for a standard declarative sentence.
 | new / old   | **niu** / **ould** | quick / slow  | **cuic** / **slou**  |
 | red / blue  | **red** / **bluu** | green / black | **griin** / **blac** |
 
-### 5. Academic & Computational Lexicon
-
-Technical terms are translated using standard MinEnglish phonetic rules applied
-to the English word. No compound invention required — the phonetic form is the
-MinEnglish word.
-
-#### Science & Biology
-
-| English    | MinEnglish    |
-| :--------- | :------------ |
-| Hypothesis | **hipotesis** |
-| Algorithm  | **algoritm**  |
-| Cell (Bio) | **sel**       |
-| Evolution  | **evolushun** |
-| Energy     | **enerji**    |
-| Gravity    | **graviti**   |
-
-#### Computing & Data
-
-| English  | MinEnglish    |
-| :------- | :------------ |
-| Database | **daatabeis** |
-| Variable | **variabl**   |
-| Equation | **icueishun** |
-| System   | **sistem**    |
-| Memory   | **memori**    |
-| Network  | **netuork**   |
-
-#### Economics & Law
-
-| English   | MinEnglish    |
-| :-------- | :------------ |
-| Inflation | **inflashun** |
-| Contract  | **contrakt**  |
-| Tax       | **tacs**      |
-| Market    | **marcet**    |
-
-#### Medicine
-
-| English    | MinEnglish     |
-| :--------- | :------------- |
-| Antibiotic | **antibiotik** |
-| Diagnosis  | **daienousis** |
-| Surgery    | **surjeri**    |
-| Hospital   | **hospital**   |
-| Pharmacy   | **farmasi**    |
-
 ---
 
 ## 6. Syntactic Reference Guide

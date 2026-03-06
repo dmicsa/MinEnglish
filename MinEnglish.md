@@ -20,31 +20,32 @@
 
 ## Abstract
 
-MinEnglish is a formal communication protocol engineered to maximize Shannon
-information density while minimizing cognitive load and parser ambiguity. By
-systematically eliminating morphological irregularities and orthographic
-redundancies inherent in natural languages, MinEnglish achieves consistent
-computational predictability. This specification (v0.9.0) defines the
-phonological, morphological, and syntactic architecture targeting the v1.0.0
-stable release, documents a 35-sentence comparative corpus demonstrating an
-average 35.0% character reduction over standard American English, and addresses
-the primary theoretical limitation of the system: biological adoption friction.
+MinEnglish is a formal simplification and clarification of Modern English. Its
+aim is to **remove** the inconsistencies, redundancies, and irregularities that
+burden English — not to replace it with something foreign. The result is a
+leaner, fully regular version of English: same vocabulary, same phonemes, same
+word order — but with predictable spelling, explicit quantities, and precise
+time operators. This specification (v0.9.0) documents the phonological,
+morphological, and syntactic rules targeting the v1.0.0 stable release,
+demonstrates a 35.0% average character reduction over standard English across a
+35-sentence corpus, and acknowledges the primary adoption challenge: human
+habit.
 
 ---
 
-## 1. Design Principles and Underlying Rationale
+## 1. Design Principles
 
-This section defines the engineering constraints that govern every structural
-decision in MinEnglish. Each principle exists to eliminate a specific failure
-mode found in natural language.
+> **Mission:** MinEnglish simplifies, clarifies, and formalizes Modern English.
+> It removes constraints — it does not add them. Every rule below exists to
+> **eliminate** an inconsistency or ambiguity already present in English.
 
-| Principle                   | Rationale and Implementation                                                                                                                                                          |
-| :-------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Phonetic Isomorphism**    | 1-to-1 grapheme-phoneme correspondence eliminates the cognitive overhead of orthographic memorization and provides predictable tokenization for machine parsers.                      |
-| **Morphological Parsimony** | Pluralization, verb conjugation, and declension are replaced by explicit numerical and temporal prefixes, removing ambiguity in morphological boundaries.                             |
-| **ASCII Strictness**        | Operates exclusively within the standard US keyboard namespace without diacritics. The letters _q_, _w_, and _y_ are omitted to balance acoustic distinctness with key space economy. |
-| **Operator Integration**    | Mathematical symbols (`*`, `~`, `>`, `<`, `:`) function as first-class syntactic tokens, compressing complex semantic modifiers into single-byte representations.                     |
-| **Absolute Regularity**     | A zero-exception framework guarantees that programmatic rules apply universally, ensuring high predictability for human acquisition and natural language processing models.           |
+| Principle               | What it removes from English                                                                                                                    |
+| :---------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Phonetic Spelling**   | Removes the burden of memorizing irregular spelling. Every letter has one sound, every sound one letter. (`knight` → `nait`, `enough` → `inuf`) |
+| **Explicit Quantities** | Removes ambiguous pluralization. `cats` vs `cat` is a noise-channel problem. `3cat` is unambiguous. Singular is the default — no suffix needed. |
+| **Regular Time**        | Removes 12+ irregular tense forms. One temporal operator (`-1d`, `1d`, `:5Y`) does the work of went/gone/had gone/will go/would have gone.      |
+| **Symbolic Operators**  | Replaces multi-word constructs with single tokens already familiar from math and logic (`&`, `\|`, `>`, `<`, `~`, `@`).                         |
+| **Zero Exceptions**     | Removes the entire category of irregular verbs, irregular plurals, and silent letters. What works for one word works for all words.             |
 
 ---
 

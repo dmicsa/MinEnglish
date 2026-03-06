@@ -2,8 +2,22 @@
 
 > _Uat u spic is uat u spel._
 
-**Author:** Dan Micsa, PhD **License:** MIT (see Appendix) **Version:** 2.0 —
-March 2026 (Academic Protocol Revision)
+**Author:** Dan Micsa, PhD | **License:** MIT (see Appendix) | **Version:** 2.0
+— March 2026
+
+---
+
+## Abstract
+
+MinEnglish is a formal communication protocol engineered to maximize Shannon
+information density while minimizing cognitive load and parser ambiguity. By
+systematically eliminating morphological irregularities and orthographic
+redundancies inherent in natural languages, MinEnglish achieves consistent
+computational predictability. This specification defines the phonological,
+morphological, and syntactic architecture of version 2.0, documents a
+35-sentence comparative corpus demonstrating an average 35.0% character
+reduction over standard American English, and addresses the primary theoretical
+limitation of the system: biological adoption friction.
 
 ---
 
@@ -296,6 +310,15 @@ is bound to the pronoun.
 - `~u1giv` = Deferred directive (Could you please give).
 - `~i1tinc` = Epistemological deferment (It seems to me).
 
+### 3.5 Negation
+
+Negation is expressed by prepending `no` immediately before the verb. The `no`
+token is invariant and does not conjugate.
+
+- `i1no laic 1cat` = I do not like the cat.
+- `u+1d no cum` = You will not come tomorrow.
+- `*h no can spiic` = None of them can speak.
+
 ### 3.6 Sentence Structure & Conjunction Reduction
 
 **Subject + Time-Verb + Number-Object + Modifiers**
@@ -524,19 +547,46 @@ Below is the strict parsing configuration for a standard declarative sentence.
 ### 5. Academic & Computational Data Lexicon
 
 MinEnglish is engineered for high-density theoretical and technical discourse.
-To define complex systems, literal conceptual building blocks are used.
+To define complex systems, literal conceptual building blocks are used. The
+following entries represent a representative sample across four core domains.
 
-| English    | MinEnglish Compound | Literal Roots                 |
-| :--------- | :------------------ | :---------------------------- |
-| Database   | **daatabeis**       | Canonical adaptation          |
-| Variable   | **ting-ceinj**      | Thing-change                  |
-| Hypothesis | **aidia-test**      | Idea-test                     |
-| Algorithm  | **rul-mat**         | Rule-math                     |
-| Equation   | **balans-mat**      | Balance-math                  |
-| System     | **net-ting**        | Net-thing / Network of things |
-| Energy     | **pauer-mun**       | Power-movement                |
-| Cell (Bio) | **bocs-laif**       | Box-life                      |
-| Evolution  | **ceinj-taim**      | Change-time                   |
+#### Science & Biology
+
+| English    | MinEnglish Compound | Literal Roots  |
+| :--------- | :------------------ | :------------- |
+| Hypothesis | **aidia-test**      | Idea-test      |
+| Algorithm  | **rul-mat**         | Rule-math      |
+| Cell (Bio) | **bocs-laif**       | Box-life       |
+| Evolution  | **ceinj-taim**      | Change-time    |
+| Energy     | **pauer-mun**       | Power-movement |
+| Gravity    | **pul-erd**         | Pull-earth     |
+
+#### Computing & Data
+
+| English  | MinEnglish Compound | Literal Roots                 |
+| :------- | :------------------ | :---------------------------- |
+| Database | **daatabeis**       | Canonical adaptation          |
+| Variable | **ting-ceinj**      | Thing-change                  |
+| Equation | **balans-mat**      | Balance-math                  |
+| System   | **net-ting**        | Net-thing / Network of things |
+| Memory   | **haus-daata**      | House-data                    |
+| Network  | **net-lain**        | Net-line                      |
+
+#### Economics & Law
+
+| English   | MinEnglish Compound | Literal Roots        |
+| :-------- | :------------------ | :------------------- |
+| Inflation | **rap-mun**         | Rapid-money          |
+| Contract  | **rul-peper**       | Rule-paper           |
+| Tax       | **tacs**            | Canonical adaptation |
+
+#### Medicine
+
+| English    | MinEnglish Compound | Literal Roots     |
+| :--------- | :------------------ | :---------------- |
+| Antibiotic | **bac-med**         | Bacteria-medicine |
+| Diagnosis  | **faind-sic**       | Find-sickness     |
+| Surgery    | **cut-laif**        | Cut-life          |
 
 ---
 
@@ -924,7 +974,7 @@ standard linguistic inefficiencies:
 3. **Transmission Integrity:** Echo-Tagging permits dynamic redundancy scaling
    to guarantee fidelity in high-loss environments (Shannon's Theorem).
 
-### 8.1 Psychological Friction
+### 9.1 Psychological Friction
 
 The primary identified limitation of MinEnglish exists externally to its
 syntactic structure; the limitation is biological. Mammalian communicative
@@ -941,7 +991,20 @@ sociological complexity.
 
 ---
 
-## 9. License
+## 10. References
+
+- Shannon, C. E. (1948). A mathematical theory of communication. _Bell System
+  Technical Journal_, 27(3), 379–423.
+- Miller, G. A. (1956). The magical number seven, plus or minus two: Some limits
+  on our capacity for processing information. _Psychological Review_, 63(2),
+  81–97.
+- Chomsky, N. (1957). _Syntactic Structures_. Mouton.
+- Zipf, G. K. (1949). _Human Behavior and the Principle of Least Effort_.
+  Addison-Wesley.
+
+---
+
+## Appendix: License
 
 ```
 MIT License

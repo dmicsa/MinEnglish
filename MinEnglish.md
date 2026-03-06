@@ -158,21 +158,35 @@ plurals are abolished.**
 > the indefinite article. Definiteness is established contextually or via
 > demonstrative pronouns.
 
-### 3.1.1 The Literalization Operator (`_`)
+### 3.1.1 Compound Word Operators (`/`, `-`, `_`)
 
-Natural languages inevitably undergo semantic drift, where compound nouns fuse
-into monolithic lexical items separated from their root meanings
-(lexicalization). To arrest this process, the Literalization Operator (`_`) is
-introduced.
+MinEnglish provides three operators for building compound words, each encoding a
+different level of semantic precision:
 
-**Rule:** Hyphens (`-`) denote conceptual, culturally unified compounds.
-Underscores (`_`) suspend conceptual abstraction, forcing the parser to compute
-the strict compositional meaning of the roots.
+**Slash `/` — loose root combination** (either element could logically satisfy
+the meaning):
 
-- `haus-fuud` = The cultural concept of a house for food (restaurant/grocery
-  store).
-- `haus_fuud` = The literal physical architecture constructed from food (a
-  gingerbread house).
+- `fuud/haus` = restaurant (food-house, either reading works)
+- `sun/lait` = sunlight
+- `rein/cout` = raincoat
+- `medisin/haus` = hospital or pharmacy
+
+**Hyphen `-` — directional "of/for" binder** (creates a tight, precise
+relational compound; reads left-to-right as "X for/of Y"):
+
+- `haus-fuud` = house _for_ food (restaurant / dining area)
+- `haus-sel-fuud` = house that _sells_ food (grocery/market)
+- `haus-sic` = house _of_ the sick (hospital)
+
+**Underscore `_` — literalization** (suspends cultural abstraction; forces the
+parser to read the strict physical composition of roots):
+
+- `haus-fuud` = The cultural concept of a restaurant (hyphen = abstract)
+- `haus_fuud` = A house literally built from food (gingerbread house)
+
+> **Semantic Drift Arrest:** Natural languages undergo lexicalization, where
+> compounds fuse into opaque monolithic words. The `_` operator prevents this by
+> permanently flagging compositional intent.
 
 ### 3.1.2 Numerical Processing Efficiency
 
@@ -499,22 +513,6 @@ by attaching a time prefix to them.
 
 - `haus in siti` = The house is in a city (`in` acts as the verb "to be in").
 - `cat -1d on mat` = The cat was on a mat yesterday.
-
-### 3.10 Slash & Hyphen Composition (Compound Words)
-
-Create completely new concepts safely and naturally:
-
-- `fuud/haus` = restaurant
-- `sun/lait` = sunlight
-- `rein/cout` = raincoat
-- `medisin/haus` = hospital, pharmacy
-
-**Hyphen Composition (Precision Tuning)** When a slash compound is too vague,
-use `-` as a tight "of/for" binder to create highly precise micro-sentences:
-
-- `haus-fuud` = house _for_ food (restaurant / dining area)
-- `haus-sel-fuud` = house that _sells_ food (grocery/market)
-- `haus-scic` = house _of_ the sick (hospital)
 
 ### 3.11 Abjad Mode (Extreme Shorthand)
 

@@ -2,7 +2,7 @@
 
 > _Uat u spic is uat u spel._
 
-**Author:** Dan Micsa, PhD (dmicsa@gmail.com) | **Repository:**
+**Author:** Dan Micsa, PhD (<<dmicsa@gmail.com>>) | **Repository:**
 [GitHub](https://github.com/dmicsa/MinEnglish) | **License:** MIT (see Appendix)
 | **Version:** 1.0.0 — March 2026
 
@@ -398,14 +398,7 @@ laic cat >big.            → I like a very big cat.
 *h-1d bai 3buc.              → They bought 3 books yesterday.
 ```
 
-### 3.6.1 The Focus Operator `!`
-
-To disambiguate negation or questions, the emphasis tone `!` acts as a Focus
-Operator to target exactly what is being negated-questioned.
-
-- `no laic !3cat` = It's not _three_ cats that I like (I like four).
-- `no laic 3!cat` = It's not _cats_ that I like three of (I like 3 dogs).
-- `!i no laic 3cat` = It's not _me_ who likes three cats (someone else does).
+### 3.6.1 Conjunction Reduction
 
 If multiple actions share the same subject, you can drop the subject after `an`
 or `or` (Conjunction Reduction):
@@ -450,22 +443,21 @@ for a verb, prefix it with the transitive operator `tu` (acting like Esperanto's
 - **Logic:** `an` / `&` (and), `or` / `|` (or), `but` (but), `if` (if), `cos`
   (because), `sou` (so), `den` (then).
 - **Shortcuts:** `@` (at), `>` (over / more than), `<` (under / less than).
-- **Tone:** `!` (focus-emphasis), `!!` (strong), `..` (hesitation), `^`
-  (sarcasm).
+- **Tone:** `!` (emphasis), `?` (question), `..` (hesitation), `^` (sarcasm).
 
 > **Symbolic Connectors:** `&` and `|` are fully equivalent to `an` and `or`
 > respectively, and are preferred in dense or technical text. In speech, both
 > forms are pronounced identically (`an`, `or`).
 
-### 3.9.1 Interrogatives: The `?` Marker
+### 3.9.1 Terminal Punctuation (`?`, `!`)
 
-English uses words like "when" for both questions and relative clauses.
-MinEnglish requires the `?` symbol attached to the front of interrogative words
-to strictly mark them as questions, preventing parser confusion.
+To maintain familiarity and avoid syntactic overcomplication, MinEnglish uses
+the standard English terminal punctuation marks (`?` and `!`) located at the end
+of the sentence clause.
 
-- `?uen u1gou` = **When** do you go? (Question)
-- `nou uen u1gou` = I know **when-the time that** you go. (Relative)
-- `?huu` (who?), `?uat` (what?), `?uai` (why?), `?haum` (how much-many?).
+- `uen u1gou?` = **When** do you go?
+- `uac!` = Watch out!
+- `huu`, `uat`, `uai`, `haum` (who, what, why, how much-many).
 
 ### 3.9.2 Clause Anchors (`co` / `oc`)
 
@@ -878,8 +870,8 @@ adhere to the following universal formalisms:
 |                | Text                                                               | Chars |
 | -------------- | ------------------------------------------------------------------ | ----- |
 | **English**    | Look out! The glass window was just broken by the angry man.       | 60    |
-| **MinEnglish** | !!uac! uindou glas breic bai man angri.                            | 39    |
-| **↩ Back**     | Watch-intensely! One-window glass just-now break by one-man angry. |       |
+| **MinEnglish** | uac! uindou glas breic bai man angri.                            | 39    |
+| **↩ Back**     | Watch! One-window glass just-now break by one-man angry. |       |
 
 > **Compression:** 35.0% Δ
 >
@@ -984,8 +976,8 @@ adhere to the following universal formalisms:
 |                | Text                                                                              | Chars |
 | -------------- | --------------------------------------------------------------------------------- | ----- |
 | **English**    | I might go to the party, but she loves him and he does not love her.              | 68    |
-| **MinEnglish** | i1d ~can gou tu parti, but s1luv h an !h no luv s.                                | 50    |
-| **↩ Back**     | I in-future might go to one-party, but she-now-love he and focus-he not love she. |       |
+| **MinEnglish** | i1d ~can gou tu parti, but s1luv h an h no luv s.                                | 50    |
+| **↩ Back**     | I in-future might go to one-party, but she-now-love he and he not love she. |       |
 
 > **Compression:** 26.5% Δ
 >
@@ -1025,8 +1017,8 @@ adhere to the following universal formalisms:
 |                | Text                                                              | Chars |
 | -------------- | ----------------------------------------------------------------- | ----- |
 | **English**    | How much does this car cost? It is too expensive for me.          | 56    |
-| **MinEnglish** | ?haum dis car cost? t bi >>ecspensiv for i.                       | 43    |
-| **↩ Back**     | Question-how-much this car cost? It be extremely-expensive for I. |       |
+| **MinEnglish** | haum dis car cost? t bi >>ecspensiv for i.                       | 43    |
+| **↩ Back**     | How-much this car cost? It be extremely-expensive for I. |       |
 
 > **Compression:** 23.2% Δ
 >

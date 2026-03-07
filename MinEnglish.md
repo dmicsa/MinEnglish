@@ -258,7 +258,7 @@ subject precedes the verb block.
 
 | Explicit           | Implicit          | Meaning                       |
 | :----------------- | :---------------- | :---------------------------- |
-| `i1laic cat`       | `Laic cat`        | I like a cat                  |
+| `i1laic cat`       | `laic cat`        | I like a cat                  |
 | `i-1d gou tu stor` | `-1d gou tu stor` | I went to the store yesterday |
 
 > **Disambiguation:** If a third-person pronoun or noun immediately precedes the

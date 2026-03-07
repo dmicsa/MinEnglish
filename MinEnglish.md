@@ -15,7 +15,7 @@ monofont: "Consolas"
 > **Versioning:** MinEnglish follows [Semantic Versioning](https://semver.org).
 > `MAJOR.MINOR.PATCH` — breaking rule changes increment MAJOR. `0.x.y` indicates
 > active pre-stable development; `1.0.0` marks the first frozen specification.
-
+>
 > **AI Attribution:** This specification was developed with extensive assistance
 > from large language models. **Claude Opus** (Anthropic), **Gemini 2.5 Pro**
 > (Google DeepMind), and **Antigravity** (Google DeepMind) contributed to the
@@ -396,7 +396,7 @@ target word (typically the verb or adjective) without a space.
 
 ### 3.6 Sentence Structure & Conjunction Reduction
 
-**Subject + Time-Verb + Number-Object + Modifiers**
+> **Subject + Time-Verb + Number-Object + Modifiers**
 
 ```efi
 laic cat >big.            → I like a very big cat.
@@ -655,7 +655,7 @@ Below is the strict parsing configuration for a standard declarative sentence.
 
 ## 5. Syntactic Reference Guide
 
-```
+```text
 NOUN:       <count><noun>         3cat, *dog, ~10person, 0eror
 PROPER:     <count><noun> <Name>  person Isabella, cuntri Spain
 MATH:       <num>/<num>, <num>.<num>  1/2apel, 0.5bol
@@ -679,7 +679,7 @@ ATTACH:     <pronoun><prefix>     h1laic, -1d, s1run
 
 ### Consonant Key
 
-```
+```text
 c = /k/ soft (cat, cum, bac)      k = /kʰ/ hard (king, kiip, kic)
 ci / ce = /tʃ/ (ciald, cier, ceic) sh = /ʃ/   ng = /ŋ/   zh = /ʒ/
 u = /w/ (uoter, uid)              i = /j/ (ies, iir)
@@ -688,7 +688,7 @@ t = /t/ (tinc, trii)              d = /d/ (de, dat)
 
 ### Pronouns
 
-```
+```text
 i = I/me       u = you        h = he-him
 s = she-her    t = it         dis = this      dat = that
 
@@ -851,7 +851,7 @@ adhere to the following universal formalisms:
 
 ## Appendix A: Full Comparative Corpus
 
-#### Ex. 4
+### Ex. 4
 
 ```text
 EN: Will you eat dinner with us tomorrow evening? (45)
@@ -1276,7 +1276,7 @@ BT: Extremely-hyperinflation now-destroy [Obj] power-buy and very-serious halt [
 
 ## Appendix B: License
 
-```
+```text
 MIT License
 
 Copyright (c) 2026 Dan Micsa, PhD

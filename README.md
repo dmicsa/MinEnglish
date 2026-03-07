@@ -1,6 +1,6 @@
 # MinEnglish
 
-**"Uat u spic is uat u spel."**
+**"uat u spic is uat u spel."**
 
 MinEnglish is a formal simplification and clarification of Modern English. Its
 aim is to **remove** the inconsistencies, redundancies, and irregularities that

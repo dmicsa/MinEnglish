@@ -51,14 +51,16 @@ the primary adoption challenge: human habit.
 
 \newpage
 
-## 1. Design Principles
+## 1. Key Features
 
 > **Mission:** MinEnglish simplifies, clarifies, and formalizes Modern English.
 > It removes constraints — it does not add them. Every rule below exists to
 > **eliminate** an inconsistency or ambiguity already present in English.
 
-| Principle               | What it removes from English                                                                                                                    |
+| Feature                 | What it removes from English                                                                                                                    |
 | :---------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Easy to Learn**       | Removes the concept of "exceptions" entirely. There are no irregular verbs, unpredictable spellings, or confusing contextual plurals.           |
+| **Easy to Type**        | Removes excessive keystrokes and finger travel. Relies on a strict lowercase axiom and mathematical operators to prioritize digital efficiency. |
 | **Phonetic Spelling**   | Removes the burden of memorizing irregular spelling. Every letter has one sound, every sound one letter. (`knight` → `nait`, `enough` → `inuf`) |
 | **Explicit Quantities** | Removes ambiguous pluralization. `cats` vs `cat` is a noise-channel problem. `3cat` is unambiguous. Singular is the default — no suffix needed. |
 | **Regular Time**        | Removes 12+ irregular tense forms. One temporal operator (`-1d`, `1d`, `:5Y`) does the work of went/gone/had gone/will go/would have gone.      |

@@ -1,6 +1,6 @@
 ---
 title: "MinEnglish Language Specification"
-subtitle: "Uat u spic is uat u spel."
+subtitle: "uat u spic is uat u spel."
 author:
   - "Dan Micsa, PhD (dmicsa@gmail.com)"
   - "Repository: https://github.com/dmicsa/MinEnglish"

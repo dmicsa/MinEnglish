@@ -5,7 +5,7 @@ author:
   - "Dan Micsa, PhD (dmicsa@gmail.com)"
   - "Repository: https://github.com/dmicsa/MinEnglish"
   - "License: MIT (see Appendix)"
-date: "Version 1.0.0 — March 2026"
+date: "V1.0.0 — March 2026"
 mainfont: "Times New Roman"
 monofont: "Consolas"
 ---
@@ -14,7 +14,7 @@ monofont: "Consolas"
 
 > **Versioning:** MinEnglish follows [Semantic Versioning](https://semver.org).
 > `MAJOR.MINOR.PATCH` — breaking rule changes increment MAJOR. `0.x.y` indicates
-> active pre-stable development; `1.0.0` marks the first frozen specification.
+> active pre-stable development; `V1.0.0` marks the first frozen specification.
 >
 > **AI Attribution:** This specification was developed with extensive assistance
 > from large language models. **Claude Opus** (Anthropic), **Gemini 2.5 Pro**
@@ -668,7 +668,7 @@ VERB:       (none)=present        sit, iit, run (default now)
 ADJ:        <noun> <adj>          cat big, haus niu
 INTENSITY:  >/< <adj>             cat >big (very big), cat <big (slightly)
 MODAL:      <modal> <verb>        can run, shud iit, ~can cum
-NEG:        no <verb>             no laic, -1d no cum
+NEG:        ! <verb>              !laic, -1d !cum
 QUEST:      ... ?                 u laic cat?
 COMPARE:    mor / most <adj>      mor big, most big
 APPROX:     ~<value>              ~5, ~big
@@ -693,7 +693,7 @@ i = I/me       u = you        h = he-him
 s = she-her    t = it         dis = this      dat = that
 
 Plural: 5i = we five, *u = you all, 3h = 3 males, *s = they-females, *t = they-things
-Possess: i's, u's, h's, s', t's
+Possess: i's, u's, h's, s's, t's
 ```
 
 ---
@@ -909,8 +909,8 @@ BT: For-five-years study English but I negation-can speak fluent.
 
 ```text
 EN: We are going to the extremely new restaurant tomorrow at seven in the evening. (78)
-ME: *i1d gou tu restaurant >>niu @ 19:00. (38)
-BT: All-of-us in-one-day go to one-restaurant extremely-new at 19:00.
+ME: *i1d gou tu fuud-haus >>niu @ 19:00. (39)
+BT: All-of-us in-one-day go to one-food-house extremely-new at 19:00.
 ```
 
 > **Compression:** 51.3% Δ
@@ -922,7 +922,7 @@ BT: All-of-us in-one-day go to one-restaurant extremely-new at 19:00.
 
 ```text
 EN: Look out! The glass window was just broken by the angry man. (60)
-ME: uoci!! uindou glas breic bai man angri. (39)
+ME: uoci!! uindou glas -0s breic bai man angri. (44)
 BT: Watch! One-window glass just-now break by one-man angry.
 ```
 
@@ -1082,7 +1082,7 @@ BT: How-much this car cost? It be extremely-expensive for I.
 
 ```text
 EN: The spaceship launched into orbit after the countdown reached zero. (67)
-ME: speisship lonci in orbit after caunt-daun hit 0. (48)
+ME: speisship -0s lonci in orbit after caunt-daun hit 0. (52)
 BT: One-spaceship just-now launch in one-orbit after one-count-down hit zero.
 ```
 

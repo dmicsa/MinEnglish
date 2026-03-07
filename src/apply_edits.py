@@ -77,9 +77,10 @@ text = re.sub(r'(### 3\.5 Adjectives & Adverbs.*?)(?=\n### 3\.6)', r'\1\n' + amp
 text = re.sub(r'### 3\.12 Derivational Morphology Engine \(Suffixes\).*?(?=### 3\.13)', '', text, flags=re.DOTALL)
 
 
-# 5. Remove 'v0.2.0', 'v1.0.0', 'v0.9.0', 'v1.8' references embedded in the text.
-text = re.sub(r' \(v[0-9]\.[0-9]\.[0-9]\)', '', text)
-text = re.sub(r' \(v[0-9]\.[0-9]\)', '', text)
+# 5. Remove 'v0.2.0', 'v1.0.0', 'v0.9.0', 'V1.0.0', 'v1.8' references embedded in the text.
+text = re.sub(r' \([vV][0-9]\.[0-9]\.[0-9]\)', '', text)
+text = re.sub(r' \([vV][0-9]\.[0-9]\)', '', text)
+text = text.replace('V1.0.0 ', '')
 text = text.replace('v1.0.0 ', '')
 text = text.replace('v0.9.0 ', '')
 text = text.replace('the v1.8 and preceding protocols', 'previous linguistic protocols')

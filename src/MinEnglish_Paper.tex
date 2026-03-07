@@ -20,7 +20,7 @@
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={MinEnglish Language Specification v0.9.0},
+    pdftitle={MinEnglish Language Specification V1.0.0},
     pdfauthor={Dan Micsa, PhD},
 }
 
@@ -36,7 +36,7 @@
 \newcommand{\me}[1]{\texttt{#1}}
 
 \title{\Huge\textbf{MinEnglish Language Specification}\\[0.2em]
-\LARGE\textit{v0.9.0 --- Pre-Release (targeting v1.0.0)}\\[0.3em]
+\LARGE\textit{V1.0.0 --- Stable Release}\\[0.3em]
 \large A Zero-Redundancy Phonetic Communication Protocol}
 \author{\textbf{Dan Micsa, PhD}\\
 \small MIT License (see Appendix)}
@@ -61,9 +61,9 @@ MinEnglish is a formal communication protocol engineered to maximize Shannon
 information density$^{[1]}$ while minimizing cognitive load and parser
 ambiguity. By systematically eliminating morphological irregularities and
 orthographic redundancies inherent in natural languages, MinEnglish achieves
-consistent computational predictability. This specification (v0.9.0) defines
+consistent computational predictability. This specification (V1.0.0) defines
 the phonological, morphological, and syntactic architecture targeting the
-v1.0.0 stable release, documents a 35-sentence comparative corpus
+V1.0.0 stable release, documents a 35-sentence comparative corpus
 demonstrating an average 35.0\% character reduction over standard American
 English, and addresses the primary theoretical limitation of the system:
 biological adoption friction.
@@ -172,7 +172,7 @@ Morphological plurals are abolished. Quantity is mandated explicitly:
 \caption{Quantitative Prefix System}
 \end{table}
 
-\subsubsection{Token Optionality Rules (v0.2.0)}
+\subsubsection{Token Optionality Rules (V1.0.0)}
 Three token classes may be omitted when recoverable from context:
 \begin{itemize}[leftmargin=*]
     \item \textbf{Rule A --- Implicit Singular:} Bare noun without prefix defaults to singular. \me{cat sit on mat} = \textit{A cat sits on a mat.}
@@ -229,7 +229,7 @@ Spoken form is conventional English pronunciation.
 \me{2026-12-25} & Absolute timestamp \\
 \bottomrule
 \end{tabularx}
-\caption{Temporal Prefix System (v0.9.0)}
+\caption{Temporal Prefix System (V1.0.0)}
 \end{table}
 
 \textbf{Direction Convention:} The \me{-} prefix marks past vectors
@@ -397,23 +397,23 @@ Compression = character count reduction vs. standard English.
 \me{miiting 2026-01-15 14:30 bi held.} \textit{(33 chars vs.\ 93)}
 
 \textbf{Ex.~7 --- Duration + Contrast (38.5\%):} The \me{:5Y} duration scalar replaces ``have been studying for five years.''\\
-\me{:5Y studi inglish but no can spiic fluuent.} \textit{(44 chars vs.\ 78)}
+\me{:5Y studi inglish but i !can spiic fluuent.} \textit{(45 chars vs.\ 78)}
 
 \subsection{Complex Modifiers \& Voice}
 
 \textbf{Ex.~8 --- Intensity \& Compound (47.1\%):} Double combinator \me{>>niu} = ``extremely new.'' Compound \me{fuud-haus} = restaurant.\\
-\me{*i 1d gou tu fuud-haus >>niu @ 19:00.} \textit{(38 chars vs.\ 78)}
+\me{*i1d gou tu fuud-haus >>niu @ 19:00.} \textit{(39 chars vs.\ 78)}
 
-\textbf{Ex.~9 --- Passive Voice (47.5\%):} Emphatic \me{!!uac} collapses ``Look out!'' Passive formed by fronting object before verb.\\
-\me{!!uac! uindou glas breic bai man angri.} \textit{(39 chars vs.\ 60)}
+\textbf{Ex.~9 --- Passive Voice (47.5\%):} Emphatic \me{uoci!!} collapses ``Look out!'' Passive formed by fronting object before verb.\\
+\me{uoci!! uindou glas -0s breic bai man angri.} \textit{(44 chars vs.\ 60)}
 
-\textbf{Ex.~10 --- Modality \& Possessive (29.2\%):} Modals \me{must} and \me{can} attach to pronominal temporal block. Genitive \me{s'} avoids double sibilant.\\
-\me{s1must giv s' buc tu h bifor s1can start tu uorc.} \textit{(49 chars vs.\ 61)}
+\textbf{Ex.~10 --- Modality \& Possessive (29.2\%):} Modals \me{must} and \me{can} attach to pronominal temporal block. Genitive is universally \me{'s}.\\
+\me{s1must giv s's buc tu h bifor s1can start tu uorc.} \textit{(50 chars vs.\ 61)}
 
 \subsection{Conditionals, Logic \& Commands}
 
-\textbf{Ex.~11 --- Conditional (31.1\%):} \me{if} precedes clause directly. Negation \me{no} and object marker \me{tu} prevent ambiguity.\\
-\me{if u1no stop tu run, u1fol an breic tu u's 2leg.} \textit{(48 chars vs.\ 61)}
+\textbf{Ex.~11 --- Conditional (31.1\%):} \me{if} precedes clause directly. Negation \me{!} and object marker \me{tu} prevent ambiguity.\\
+\me{if u1!stop tu run, u1fol an breic tu u's 2leg.} \textit{(48 chars vs.\ 61)}
 
 \textbf{Ex.~12 --- Conjunction Reduction (35.2\%):} Subject dropped after \me{an}. Habitual \me{*iit} replaces ``eat one piece of toast.''\\
 \me{*morning i*drinc 2cup cofi an *iit piis toust bifor uorc.} \textit{(58 chars vs.\ 82)}
@@ -422,7 +422,7 @@ Compression = character count reduction vs. standard English.
 \me{teic 3eg, ad 2cup flaur, an mics *ting for 10m.} \textit{(48 chars vs.\ 84)}
 
 \textbf{Ex.~14 --- Polite Request (32.7\%):} Deference operator \me{\~{}} on pronoun: \me{\~{}u giv} = ``Could you please give.''\\
-\me{\~{}u giv i 2glas uoter, bi >tersti.} \textit{(35 chars vs.\ 55)}
+\me{\~{}u giv i 2glas uoter, i bi >tersti.} \textit{(35 chars vs.\ 55)}
 
 \subsection{Dialogue \& Description}
 
@@ -433,7 +433,7 @@ Compression = character count reduction vs. standard English.
 \me{s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s uant understand uerld mor gud.} \textit{(92 chars vs.\ 134)}
 
 \textbf{Ex.~17 --- Probability (41.0\%):} Combined modal \me{\~{}can} = probabilistic future. Focus \me{!} targets negation scope.\\
-\me{i 1d \~{}can gou tu parti, but s1luv h an !h no luv s.} \textit{(51 chars vs.\ 69)}
+\me{i1d \~{}can gou tu parti, but s1luv h an h !luv s.} \textit{(50 chars vs.\ 69)}
 
 \textbf{Ex.~18 --- Family Description (8.5\%):} Lowest compression. Latinate nouns \me{hospital}, \me{iuniversiti} maintain protracted transcriptions.\\
 \me{i's bruder *uorc @ hospital an i's sister *studi @ iuniversiti.} \textit{(63 chars vs.\ 71)}
@@ -446,11 +446,11 @@ Compression = character count reduction vs. standard English.
 
 \subsection{Advanced Domains}
 
-\textbf{Ex.~21 --- Science Fiction (35.6\%):} Compound \me{ship-speis} (spaceship). Compound \me{caunt-daun} (countdown). Immediate past \me{-0s} = ``launched.''\\
-\me{ship-speis -0s lonci in orbit after caunt-daun hic 0.} \textit{(49 chars vs.\ 67)}
+\textbf{Ex.~21 --- Science Fiction (35.6\%):} Compound \me{speisship} (spaceship). Compound \me{caunt-daun} (countdown). Immediate past \me{-0s} = ``launched.''\\
+\me{speisship -0s lonci in orbit after caunt-daun hit 0.} \textit{(52 chars vs.\ 67)}
 
 \textbf{Ex.~22 --- Philosophy (25.0\%):} Bare infinitive \me{bi} = ``to be.'' Future-time token \me{taim} (future time) generalizes ``eventually.''\\
-\me{bi or no bi, dat bi cuesciun *i must anser in taim.} \textit{(53 chars vs.\ 71)}
+\me{bi or !bi, dat bi cuesciun *i must anser in taim.} \textit{(51 chars vs.\ 71)}
 
 \textbf{Ex.~23 --- Business (28.7\%):} Possessive \me{*i's compani} (our company). Compound \me{cein-suplai} (supply chain). Future \me{1Y} = next year.\\
 \me{*i's compani niid optimaiz t's cein-suplai tu macsimaiz *marjin-profit 1Y.} \textit{(74 chars vs.\ 83)}
@@ -476,14 +476,14 @@ Compression = character count reduction vs. standard English.
 \textbf{Ex.~30 --- Logistics (43.4\%):} Compound \me{truc-diliveri}. Preposition \me{btuiin} handles time ranges without ``o'clock.''\\
 \me{truc-diliveri 1d ariv uid u's pacij btuiin 12:00 an 14:00.} \textit{(59 chars vs.\ 78)}
 
-\textbf{Ex.~31 --- Legal (23.3\%):} Transliterations (\me{diipendant}, \me{carj}) resist optimization. Second-lowest compression.\\
-\me{diipendant formal pliid no gilti tu *carj prizent bai tu cort.} \textit{(63 chars vs.\ 80)}
+\textbf{Ex.~31 --- Legal (23.3\%):} Transliterations (\me{diipendant}, \me{ciarj}) resist optimization. Second-lowest compression.\\
+\me{diipendant formal pliid !gilti tu *ciarj prizent bai cort.} \textit{(59 chars vs.\ 80)}
 
 \textbf{Ex.~32 --- Cooking (34.3\%):} Bare imperatives. Object marker \me{tu} prevents ambiguity. Generic \me{*ster} = stir continuously.\\
-\me{boil tu uoter, ad tu pinci solt, an *ster until sos >tic.} \textit{(58 chars vs.\ 82)}
+\me{boil tu uoter, ad tu pince solt, an *ster until sos >tic.} \textit{(58 chars vs.\ 82)}
 
-\textbf{Ex.~33 --- Emotion (40.5\%):} Temporal stacking \me{-0s -1d} = ``have never before.'' Universal negation \me{*no fiil} = ``never felt.''\\
-\me{-1d *no fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.} \textit{(69 chars vs.\ 75)}
+\textbf{Ex.~33 --- Emotion (40.5\%):} Temporal stacking \me{-0s -1d} = ``have never before.'' Universal negation \me{*!fiil} = ``never felt.''\\
+\me{-1d *!fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.} \textit{(67 chars vs.\ 75)}
 
 \textbf{Ex.~34 --- Navigation (38.8\%):} Ordinal \me{tuu} for ``second'' traffic light. Interrogative-relative \me{u sii} resolves trailing reference.\\
 \me{gou streit for 2mail, den tern left @ lait-trapic tuu u sii.} \textit{(61 chars vs.\ 78)}
@@ -525,7 +525,7 @@ resists phonetic compression.
 %---
 \section{Theoretical Limitations: The Human Biological Factor}
 
-The structural additions of v0.9.0 (Literalization \me{\_}, Clause Anchors
+The structural additions of V1.0.0 (Literalization \me{\_}, Clause Anchors
 \me{co}/\me{oc}, Echo-Tagging) address standard linguistic inefficiencies.
 However, the primary limitation of MinEnglish is not structural but biological.
 

@@ -1,34 +1,62 @@
 \documentclass[12pt,onecolumn,letterpaper]{article}
 
 \usepackage{geometry}
-\geometry{letterpaper, margin=0.75in}
+\geometry{letterpaper, left=0.75in, right=0.75in, bottom=0.75in, top=0.95in}
 
 \usepackage{fontspec}
 \usepackage{microtype}
+\usepackage{setspace}
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{listings}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
+\usepackage{caption}
 \usepackage{enumitem}
 \usepackage{appendix}
 \usepackage{titlesec}
+\usepackage{fancyhdr}
 \usepackage{indentfirst}
 
 \setmainfont{Cambria}
 \setmonofont{Liberation Mono}[Scale=MatchLowercase]
 \setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setstretch{1.08}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\definecolor{MEBlue}{HTML}{1E3A5F}
+\definecolor{MEGray}{HTML}{E3E8ED}
+\definecolor{MERule}{HTML}{D6DADF}
 
 \newcommand{\sectionbreak}{\clearpage}
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.65em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.55em}{0.7em}
+\titlespacing*{\subsection}{0pt}{1.15em}{0.45em}
+\titlespacing*{\subsubsection}{0pt}{0.9em}{0.35em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape MinEnglish Language Specification}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
 
 \urlstyle{same}
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=blue,
+    linkcolor=MEBlue,
+    filecolor=MEBlue,
+    urlcolor=MEBlue,
     pdftitle={MinEnglish Language Specification V1.0.0},
     pdfauthor={Dan Micsa, PhD},
 }
@@ -42,16 +70,24 @@
     commentstyle=\itshape
 }
 
+\captionsetup[table]{font=small,labelfont=bf,labelsep=period,skip=6pt,justification=raggedright,singlelinecheck=false}
+
 \newcommand{\me}[1]{\texttt{#1}}
 \newcommand{\mecode}[1]{\texttt{\detokenize{#1}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\MEtablelayout}{%
+\footnotesize
+\setlength{\tabcolsep}{6pt}%
+\renewcommand{\arraystretch}{1.12}%
+\arrayrulecolor{MERule}%
+}
 \newcommand{\corpusExample}[8]{%
 \subsubsection*{Ex.~#1}
 \begin{center}
-\small
-\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{2.45cm}X>{\raggedleft\arraybackslash}p{0.95cm}@{}}
-\toprule
+\MEtablelayout
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{2.35cm}Y>{\raggedleft\arraybackslash}p{1.1cm}@{}}
+\rowcolor{MEGray}
  & \textbf{Text} & \textbf{Chars} \\
-\midrule
 English & \mecode{#2} & #5 \\
 MinEnglish & \mecode{#3} & #6 \\
 Back & \mecode{#4} & \\
@@ -72,13 +108,14 @@ Back & \mecode{#4} & \\
 \begin{document}
 
 \maketitle
+\thispagestyle{empty}
 
 %--- AI ATTRIBUTION
 \begin{quote}
 \small\textit{AI Attribution: This specification was developed with extensive
-assistance from large language models. \textbf{Claude Opus} (Anthropic),
-\textbf{Gemini 2.5 Pro} (Google DeepMind), and \textbf{Antigravity} (Google
-DeepMind) contributed to the drafting, formalization, revision, and example
+assistance from large language models. \textbf{Claude Opus 4.6 Thinking}
+(Anthropic), \textbf{Gemini 3.1 Pro} (Google DeepMind), and \textbf{GPT-5.4}
+(OpenAI) contributed to the drafting, formalization, revision, and example
 generation documented herein. The intellectual framework, design decisions,
 and authorship remain those of the human author.}
 \end{quote}
@@ -91,7 +128,7 @@ orthographic redundancies inherent in natural languages, MinEnglish achieves
 consistent computational predictability. This specification (V1.0.0) defines
 the phonological, morphological, and syntactic architecture targeting the
 V1.0.0 stable release, documents a 35-sentence comparative corpus
-demonstrating an average 35.0\% character reduction over standard American
+demonstrating an average 28.2\% character reduction over standard American
 English, and addresses the primary theoretical limitation of the system:
 biological adoption friction.
 \end{abstract}
@@ -126,11 +163,11 @@ The vowel space is constrained to five cardinal points for acoustic
 discernibility across diverse linguistic backgrounds.
 
 \begin{table}[h!]
-\centering\small
+\centering
+\MEtablelayout
 \begin{tabularx}{\linewidth}{lllX}
-\toprule
+\rowcolor{MEGray}
 \textbf{Graph.} & \textbf{Sound} & \textbf{English} & \textbf{MinEnglish} \\
-\midrule
 \textbf{a} & as in c\textit{a}t & cat & cat \\
 \textbf{e} & as in b\textit{e}d & bed & bed \\
 \textbf{i} & as in b\textit{i}t & bit & bit \\
@@ -150,11 +187,11 @@ mapping without macron diacritics: \me{ei}~(day), \me{ii}~(see),
 \subsection{Consonants}
 
 \begin{table}[h!]
-\centering\small
+\centering
+\MEtablelayout
 \begin{tabularx}{\linewidth}{llX}
-\toprule
+\rowcolor{MEGray}
 \textbf{Graph.} & \textbf{Sound} & \textbf{Rule / Example} \\
-\midrule
 \textbf{c}  & /k/ soft      & Unaspirated velar: cat, cum, bac \\
 \textbf{k}  & /k/ hard      & Aspirated velar: king, kiip, kic \\
 \textbf{ci} & /ch/          & Affricate (church): ciald, muci \\
@@ -187,11 +224,11 @@ rigid syntactic ordering.
 Morphological plurals are abolished. Quantity is mandated explicitly:
 
 \begin{table}[h!]
-\centering\small
+\centering
+\MEtablelayout
 \begin{tabularx}{\linewidth}{lXl}
-\toprule
+\rowcolor{MEGray}
 \textbf{Prefix} & \textbf{Semantic Value} & \textbf{Example} \\
-\midrule
 \me{1}     & Singular / Unitary  & \me{1cat} \\
 \me{3}     & Exact enumeration   & \me{3cat} \\
 \me{*}     & Universal / Generic & \me{*cat} (all cats) \\
@@ -244,11 +281,11 @@ Spoken form is conventional English pronunciation.
 \subsection{Verbs and Temporal Mechanics}
 
 \begin{table}[h!]
-\centering\small
+\centering
+\MEtablelayout
 \begin{tabularx}{\linewidth}{lX}
-\toprule
+\rowcolor{MEGray}
 \textbf{Operator} & \textbf{Temporal Value / Example} \\
-\midrule
 \textit{(null)} & Present continuous: \me{iit} (eating) \\
 \me{1}          & Present discrete: \me{i1iit} (I eat) \\
 \me{*}          & Habitual/Universal: \me{*iit} (eats always) \\
@@ -274,11 +311,11 @@ yesterday's timeline.''
 \subsection{Symbolic Operator Inventory}
 
 \begin{table}[h!]
-\centering\small
+\centering
+\MEtablelayout
 \begin{tabularx}{\linewidth}{llX}
-\toprule
+\rowcolor{MEGray}
 \textbf{Op.} & \textbf{Name} & \textbf{Role / Example} \\
-\midrule
 \me{+}  & Plus      & Future offset (optional): \me{1d gou} \\
 \me{-}  & Minus     & Past offset / compound binder: \me{-1d}, \me{haus-fuud} \\
 \me{*}  & Star      & Universal quantifier: \me{*cat} \\
@@ -348,11 +385,11 @@ critical transmissions by echoing prefixes as full words: \me{3boi trii uoc nau}
 \section{Base Lexicon}
 
 \begin{table}[h!]
-\centering\small
+\centering
+\MEtablelayout
 \begin{tabularx}{\linewidth}{lXlX}
-\toprule
+\rowcolor{MEGray}
 \textbf{English} & \textbf{MinEnglish} & \textbf{English} & \textbf{MinEnglish} \\
-\midrule
 be / is     & \me{bi}   & have       & \me{hav}   \\
 do          & \me{du}   & go         & \me{gou}   \\
 come        & \me{cum}  & make       & \me{meic}  \\
@@ -369,11 +406,11 @@ eat         & \me{iit}  & run        & \me{run}   \\
 \subsection{Academic \& Computational Lexicon}
 
 \begin{table}[h!]
-\centering\small
+\centering
+\MEtablelayout
 \begin{tabularx}{\linewidth}{llX}
-\toprule
+\rowcolor{MEGray}
 \textbf{Domain} & \textbf{English} & \textbf{MinEnglish (Roots)} \\
-\midrule
 \textit{Science}    & Hypothesis  & \me{aidia-test} (idea-test) \\
                     & Algorithm   & \me{rul-mat} (rule-math) \\
                     & Evolution   & \me{ceinj-taim} (change-time) \\
@@ -433,7 +470,7 @@ Compression = character count reduction vs. standard English.
 {Will you eat dinner with us tomorrow evening?}
 {u1d iit diner uid *i?}
 {You in-one-day eat one-dinner with all-of-us?}
-{45}{22}{51.1}
+{45}{21}{53.3}
 {The future operator and compact pronoun group remove a large auxiliary phrase.}
 
 \corpusExample{5}
@@ -445,9 +482,9 @@ Compression = character count reduction vs. standard English.
 
 \corpusExample{6}
 {The meeting was held on January fifteenth, twenty twenty-six, at two thirty in the afternoon.}
-{miiting 2026-01-15 14:30 bi held.}
-{One-meeting 2026-01-15 14:30 be held.}
-{93}{33}{64.5}
+{miiting 2026-01-15 14:30 held.}
+{One-meeting 2026-01-15 14:30 held.}
+{93}{30}{67.7}
 {Absolute timestamp notation produces the strongest compression in the corpus.}
 
 \corpusExample{7}
@@ -463,14 +500,14 @@ Compression = character count reduction vs. standard English.
 {We are going to the extremely new restaurant tomorrow at seven in the evening.}
 {*i1d gou tu restaurant >>niu @ 19:00.}
 {All-of-us in-one-day go to one-restaurant extremely-new at 19:00.}
-{78}{38}{51.3}
+{78}{37}{52.6}
 {Intensity markers and time notation shorten descriptive detail without changing meaning.}
 
 \corpusExample{9}
 {Look out! The glass window was just broken by the angry man.}
-{uac!! uindou glas breic bai man angri.}
+{uac!! uindou glas -0s breic bai man angri.}
 {Watch! One-window glass just-now break by one-man angry.}
-{60}{39}{35.0}
+{60}{42}{30.0}
 {The warning idiom becomes a single imperative, and the passive stays compact.}
 
 \corpusExample{10}
@@ -484,30 +521,30 @@ Compression = character count reduction vs. standard English.
 
 \corpusExample{11}
 {If you don't stop running, you will fall and break your legs.}
-{if u1no stop tu run, u1fol an breic tu u's 2leg.}
-{If you-now-not stop [Obj] run, you-now-fall and break [Obj] your two-leg.}
-{61}{48}{21.3}
+{if u1no stop tu run, u1d fol an breic tu u's 2leg.}
+{If you-now-not stop [Obj] run, you-in-one-day fall and break [Obj] your two-leg.}
+{61}{50}{18.0}
 {Conditionals remain explicit, but the clause still carries a lot of event content.}
 
 \corpusExample{12}
 {Every morning I drink two cups of coffee and eat one piece of toast before work.}
 {*morning i*drinc 2cup cofi an *iit piis toust bifor uorc.}
 {Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece toast before work.}
-{80}{58}{27.5}
+{80}{57}{28.7}
 {Habitual markers reduce repeated aspect information across coordinated verbs.}
 
 \corpusExample{13}
 {Take three eggs, add two cups of flour, and mix everything together for ten minutes.}
 {teic 3eg, ad 2cup flaur, an mics *ting for 10m.}
 {Take three-egg, add two-cup flour, and mix all-thing for ten-minutes.}
-{84}{48}{42.9}
+{84}{47}{44.0}
 {Imperatives and generalized quantity tokens compress recipe-style instructions well.}
 
 \corpusExample{14}
 {Please give me two glasses of water, I am very thirsty.}
-{~u giv i 2glas uoter, i bi >tersti.}
-{Polite-you-give I two-glass water, I be very-thirsty.}
-{55}{35}{36.4}
+{~u giv tu i 2glas uoter, i bi >tersti.}
+{Polite-you-give [Obj] I two-glass water, I be very-thirsty.}
+{55}{38}{30.9}
 {A deferential pronoun plus intensity marker replaces polite English padding.}
 
 \subsection{Dialogue \& Description}
@@ -530,7 +567,7 @@ Compression = character count reduction vs. standard English.
 {I might go to the party, but she loves him and he does not love her.}
 {i1d ~can gou tu parti, but s1luv h an h no luv s.}
 {I in-future might go to one-party, but she-now-love he and he not love she.}
-{68}{50}{26.5}
+{68}{49}{27.9}
 {Probabilistic modality and regular negation compress a multi-clause sentence into a short linear form.}
 
 \corpusExample{18}
@@ -542,32 +579,32 @@ Compression = character count reduction vs. standard English.
 
 \corpusExample{19}
 {The children were playing in the park when it started raining heavily.}
-{*ciald in parc uen t-0s start rein >hevi.}
-{Any-child just-now in(verb) one-park when it-just-now start rain very-heavily.}
-{70}{42}{40.0}
+{*ciald plei in parc uen t-0s start rein >hevi.}
+{Any-child play in one-park when it-just-now start rain very-heavily.}
+{70}{46}{34.3}
 {Preposition-as-verb structure and intensity marking remove multiple English helper words.}
 
 \corpusExample{20}
 {How much does this car cost? It is too expensive for me.}
 {haum dis car cost? t bi >>ecspensiv for i.}
 {How-much this car cost? It be extremely-expensive for I.}
-{56}{43}{23.2}
+{56}{42}{25.0}
 {The syntax is regular, but the sentence still carries a relatively dense lexical load.}
 
 \subsection{Advanced Domains}
 
 \corpusExample{21}
 {The spaceship launched into orbit after the countdown reached zero.}
-{speisship lonci in orbit after caunt-daun hic 0.}
-{One-spaceship just-now launch in one-orbit after one-count-down hit zero.}
-{67}{48}{28.4}
+{speisship -0s lonci in orbit after caunt-daun -0s hic 0.}
+{One-spaceship just-now launch in one-orbit after one-count-down just-now hit zero.}
+{67}{56}{16.4}
 {Compound formation and numeric notation compress technical narrative moderately well.}
 
 \corpusExample{22}
 {To be or not to be, that is the question we must all answer eventually.}
 {bi or no bi, dat bi cuesciun *i must anser in taim.}
 {Be or not be, that be one-question all-of-us must answer in future-time.}
-{71}{52}{26.8}
+{71}{51}{28.2}
 {Logical operators and universal grouping reduce philosophical phrasing without altering structure.}
 
 \corpusExample{23}
@@ -579,16 +616,16 @@ Compression = character count reduction vs. standard English.
 
 \corpusExample{24}
 {The president announced a new tax policy that will affect middle class families.}
-{prezident anauns tacs-polisi niu dat 1d apect *pamili clas-midl.}
+{prezident -0s anauns tacs-polisi niu dat 1d apect *pamili clas-midl.}
 {One-president just-now announce one-tax-policy new that in-future affect any-family class-middle.}
-{80}{65}{18.8}
+{80}{68}{15.0}
 {The sentence stays readable, but domain terms limit the total reduction.}
 
 \corpusExample{25}
 {The doctor prescribed antibiotics to treat the patient's severe bacterial infection.}
-{doctor prescraib tu antibiotik tu triit bacteriel infecshun >siirius peishent's.}
-{One-doctor just-now prescribe [Obj] one-antibiotic to treat one-bacterial-infection very-serious one-patient's.}
-{84}{80}{4.8}
+{doctor -0s prescraib tu antibiotik tu triit peishent's infecshun bacteriel >siirius.}
+{One-doctor just-now prescribe [Obj] one-antibiotic to treat one-patient's infection bacterial very-serious.}
+{84}{84}{0.0}
 {Medical vocabulary is already compact in English, so regularization adds only a small gain.}
 
 \corpusExample{26}
@@ -614,9 +651,9 @@ Compression = character count reduction vs. standard English.
 
 \corpusExample{29}
 {The wind whispered through the ancient trees as the silver moon rose in the sky.}
-{uind uisper tru *trii >ould az muun silver raiz in scai.}
+{uind -0s uisper tru *trii >ould az muun silver -0s raiz in scai.}
 {One-wind just-now whisper through any-tree very-old as one-moon silver just-now rise in one-sky.}
-{80}{57}{28.7}
+{80}{64}{20.0}
 {Poetic description still benefits from post-modifiers and compact event framing.}
 
 \corpusExample{30}
@@ -628,23 +665,23 @@ Compression = character count reduction vs. standard English.
 
 \corpusExample{31}
 {The defendant formally pleaded not guilty to all charges presented by the court.}
-{diipendant formal pliid no gilti tu *carj prizent bai tu cort.}
-{One-defendant just-now formal plead not guilty to any-charge present by [Obj] one-court.}
-{80}{63}{21.3}
+{diipendant -0s pliid formal no gilti tu *carj prizent bai cort.}
+{One-defendant just-now plead formally not-guilty to any-charge presented by one-court.}
+{80}{63}{21.2}
 {Legal transliterations remain relatively long, so most savings come from grammar.}
 
 \corpusExample{32}
 {Boil the water, add a pinch of salt, and stir constantly until the sauce thickens.}
 {boil tu uoter, ad tu pinci solt, an *ster until sos >tic.}
 {Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce very-thick.}
-{82}{58}{29.3}
+{82}{57}{30.5}
 {Imperatives and generic aspect markers compress procedural language effectively.}
 
 \corpusExample{33}
 {I have never felt this way about anyone before, you changed my entire life.}
-{-1d *no fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.}
-{I-just-now-yesterday any-not feel this way about any-person before, you yesterday change [Obj] my life very-whole.}
-{75}{67}{10.7}
+{i no *fiil dis ue abaut *person bifor, u -0s ceinj i's laif >hol.}
+{I not habitually-feel this way about any-person before, you just-now change my life very-whole.}
+{75}{65}{13.3}
 {Emotive language gains less because it relies on many core semantic roots.}
 
 \corpusExample{34}
@@ -656,26 +693,26 @@ Compression = character count reduction vs. standard English.
 
 \corpusExample{35}
 {Hyperinflation destroys purchasing power and severely halts economic development.}
-{>>haiperinflashun distroi tu pauer-bai an >siirius holt tu divelopment economik.}
-{Extremely-hyperinflation now-destroy [Obj] power-buy and very-serious halt [Obj] development economic.}
-{81}{80}{1.2}
+{haiperinflashun *distroi tu pauer-bai an >siirius holt tu divelopment economik.}
+{Hyperinflation habitually-destroy [Obj] power-buy and very-serious halt [Obj] development economic.}
+{81}{79}{2.5}
 {Low compression reflects the need to preserve long international academic vocabulary.}
 
 %---
 \section{Information Density Analysis}
 
 \begin{table}[h!]
-\centering\small
+\centering
+\MEtablelayout
 \begin{tabularx}{\linewidth}{lrX}
-\toprule
+\rowcolor{MEGray}
 \textbf{Example} & \textbf{Reduction} & \textbf{Key Mechanism} \\
-\midrule
-Ex.~6: Timestamp     & 63.4\% & ISO 8601 replaces 59 chars \\
+Ex.~6: Timestamp     & 67.7\% & ISO 8601 replaces long alphabetic date phrasing \\
 Ex.~5: Approximation & 58.6\% & \me{\~{}50person} vs.\ ``About fifty people'' \\
-Ex.~4: Future Q      & 48.9\% & \me{1d} eliminates ``will'' auxiliary \\
+Ex.~4/8: Future packing & 52--53\% & tense prefixing plus compact pronoun/time notation \\
 \midrule
-Ex.~18: Family       &  8.5\% & Latinate nouns resist compression \\
-Ex.~31: Legal        & 23.3\% & Domain transliterations are long \\
+Ex.~25: Medical      &  0.0\% & technical vocabulary erases most compression gains \\
+Ex.~35: Macroecon.   &  2.5\% & long international academic roots dominate the line \\
 \bottomrule
 \end{tabularx}
 \caption{Compression Extremes (n=35 corpus)}
@@ -683,9 +720,9 @@ Ex.~31: Legal        & 23.3\% & Domain transliterations are long \\
 
 \textbf{Corpus Density Metric:}
 \begin{itemize}[leftmargin=*,noitemsep]
-    \item Total English characters: \textbf{2,633}
-    \item Total MinEnglish characters: \textbf{1,711}
-    \item \textbf{Average reduction: 35.0\%}
+    \item Total English characters: \textbf{2,546}
+    \item Total MinEnglish characters: \textbf{1,827}
+    \item \textbf{Average reduction: 28.2\%}
 \end{itemize}
 
 The maximum gains occur where English relies on auxiliary verb chains and
@@ -707,6 +744,28 @@ the prohibition of metaphorical obfuscation inherently conflicts with natural
 human cognitive behavior$^{[3]}$. Widespread adoption would likely prompt
 measurable psychological resistance, as the protocol disables the linguistic
 mechanisms humans rely on to manage sociological complexity.
+
+%---
+\section{Conclusion}
+
+MinEnglish V1.0.0 establishes a stable baseline for the project: a deliberately
+regularized English-derived system built around explicit quantity, explicit
+time, phonetic simplification, and operator-based syntax. Across the 35-sentence
+comparative corpus, the specification demonstrates that these design choices can
+produce substantial character-count reduction while preserving a recognizable
+relationship to standard English.
+
+Just as importantly, the current release clarifies the project's real position.
+MinEnglish is best understood not as a finished universal language replacement,
+but as a formalized communication protocol and compression-oriented grammar
+experiment. Its strongest value lies in showing how much of English can be made
+regular, explicit, and computationally tractable without discarding the core
+lexical shell.
+
+V1.0.0 therefore serves as both a usable specification and a foundation for the
+next stage of refinement. Future versions should focus on validating the system
+more broadly, reducing remaining ambiguities, and sharpening the boundary between
+the minimal core grammar and its optional compression extensions.
 
 %---
 \section*{References}

@@ -10,6 +10,15 @@ The result is a leaner, fully regular version of English: same vocabulary, same
 phonemes, same word order — but with predictable spelling, explicit quantities,
 and precise time operators.
 
+## AI Attribution
+
+This specification was developed with extensive assistance from large language
+models. **Claude Opus 4.6 Thinking** (Anthropic), **Gemini 3.1 Pro** (Google
+DeepMind), and **GPT-5.4** (OpenAI) contributed to the drafting,
+formalization, revision, and example generation documented herein. The
+intellectual framework, design decisions, and authorship remain those of the
+human author.
+
 ## Key Features
 
 - **Easy to Learn:** MinEnglish abolishes the concept of "exceptions" entirely.
@@ -35,7 +44,7 @@ and precise time operators.
 ## Performance
 
 Across a 35-sentence corpus comparing American English against MinEnglish, the
-protocol achieves an average **~35.0% byte-length density reduction** by
+protocol achieves an average **28.2% byte-length density reduction** by
 applying Information Theory principles to eliminate Claude Shannon redundancy.
 
 ## Documentation
@@ -43,7 +52,7 @@ applying Information Theory principles to eliminate Claude Shannon redundancy.
 - The full specifications and ruleset can be found in `MinEnglish.md` or
   compiled into `MinEnglish.pdf`.
 - An Academic Review of the system architecture can be found in
-  `academic_review.md`.
+  `Academic_Review.md`.
 
 ## License
 

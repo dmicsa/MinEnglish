@@ -68,31 +68,31 @@ acknowledges the primary adoption challenge: human habit.
 To ensure acoustic discernibility across diverse linguistic backgrounds, the
 vowel space is constrained to five cardinal points:
 
-| Grapheme | Phoneme | English Equivalent | Example |
-| :------- | :------ | :----------------- | :------ |
-| **a**    | /æ/     | c**a**t            | cat     |
-| **e**    | /ɛ/     | b**e**d            | bed     |
-| **i**    | /ɪ/     | b**i**t            | bit     |
-| **o**    | /ɒ/     | h**o**t            | hot     |
-| **u**    | /ʌ/     | b**u**t            | but     |
+| MinEnglish | English Equivalent |
+| :--------- | :----------------- |
+| **a** (/æ/) | c**a**t (cat) |
+| **e** (/ɛ/) | b**e**d (bed) |
+| **i** (/ɪ/) | b**i**t (bit) |
+| **o** (/ɒ/) | h**o**t (hot) |
+| **u** (/ʌ/) | b**u**t (but) |
 
 ### 2.2 Long Vowels and Diphthongs
 
 Diphthongs and elongated vowels are encoded as contiguous grapheme pairs,
 preserving the 1-to-1 spelling mapping without requiring macron diacritics.
 
-| Grapheme | Phoneme | English Equivalent | Example   |
-| :------- | :------ | :----------------- | :-------- |
-| **ei**   | /eɪ/    | d**ay**, m**a**ke  | dei, meic |
-| **ii**   | /iː/    | s**ee**, **ea**t   | sii, iit  |
-| **ai**   | /aɪ/    | l**i**ke, m**y**   | laic, mai |
-| **ou**   | /oʊ/    | g**o**, n**o**     | gou, nou  |
-| **uu**   | /uː/    | f**oo**d, t**oo**  | fuud, tuu |
-| **au**   | /aʊ/    | h**ow**, h**ou**se | hau, haus |
-| **oi**   | /ɔɪ/    | b**oy**            | boi       |
-| **ar**   | /ɑːr/   | c**ar**            | car       |
-| **or**   | /ɔːr/   | f**or**            | for       |
-| **er**   | /ɜːr/   | h**er**, b**ir**d  | her, berd |
+| MinEnglish | English Equivalent |
+| :--------- | :----------------- |
+| **ei** (/eɪ/) | d**ay**, m**a**ke (dei, meic) |
+| **ii** (/iː/) | s**ee**, **ea**t (sii, iit) |
+| **ai** (/aɪ/) | l**i**ke, m**y** (laic, mai) |
+| **ou** (/oʊ/) | g**o**, n**o** (gou, nou) |
+| **uu** (/uː/) | f**oo**d, t**oo** (fuud, tuu) |
+| **au** (/aʊ/) | h**ow**, h**ou**se (hau, haus) |
+| **oi** (/ɔɪ/) | b**oy** (boi) |
+| **ar** (/ɑːr/) | c**ar** (car) |
+| **or** (/ɔːr/) | f**or** (for) |
+| **er** (/ɜːr/) | h**er**, b**ir**d (her, berd) |
 
 ### 2.3 Consonants
 
@@ -331,13 +331,13 @@ Pronouns operate as highly compressed, single-character spatial indices.
 Plurality logic inherits the identical numerical prefixing system utilized by
 canonical nouns.
 
-| Singular | Referent               | Plural Array | Array Referent              |
-| :------- | :--------------------- | :----------- | :-------------------------- |
-| **i**    | First-person singular  | `5i`         | First-person group (n=5)    |
-| **u**    | Second-person singular | `3u`         | Second-person group (n=3)   |
-| **h**    | Third-person masculine | `4h`         | Masculine demographic (n=4) |
-| **s**    | Third-person feminine  | `21s`        | Feminine demographic (n=21) |
-| **t**    | Third-person inanimate | `*t`         | Inanimate collective        |
+| MinEnglish Singular | MinEnglish Plural |
+| :------------------ | :---------------- |
+| **i** (I) | `5i` (We five) |
+| **u** (You) | `3u` (You three) |
+| **h** (He) | `4h` (They four males) |
+| **s** (She) | `21s` (They 21 females) |
+| **t** (It) | `*t` (They things) |
 
 > **Genitive Case Marking:** Possession is indicated universally via the `'s`
 > suffix with no exceptions. (e.g., `i's`, `u's`, `h's`, `s's`, `t's`).
@@ -585,42 +585,61 @@ Below is the strict parsing configuration for a standard declarative sentence.
 
 ### 4.1 Fundamentals
 
-| English     | MinEnglish          | English    | MinEnglish          |
-| ----------- | ------------------- | ---------- | ------------------- |
-| be / is     | **bi**              | have       | **hav**             |
-| do          | **du**              | go         | **gou**             |
-| come        | **cum**             | make       | **meic**            |
-| take        | **teic**            | give       | **giv**             |
-| see         | **sii**             | know       | **nou**             |
-| think       | **tinc**            | say / tell | **sei** / **tel**   |
-| want / need | **uant** / **niid** | use / find | **iuz** / **faind** |
+| English | MinEnglish |
+| :--- | :--- |
+| be / is | **bi** |
+| do | **du** |
+| come | **cum** |
+| take | **teic** |
+| see | **sii** |
+| think | **tinc** |
+| want / need | **uant** / **niid** |
+| have | **hav** |
+| go | **gou** |
+| make | **meic** |
+| give | **giv** |
+| know | **nou** |
+| say / tell | **sei** / **tel** |
+| use / find | **iuz** / **faind** |
 
 ### 4.2 Time, Numbers, Nature
 
-| English       | MinEnglish                   | English      | MinEnglish          |
-| ------------- | ---------------------------- | ------------ | ------------------- |
-| 1, 2, 3, 4, 5 | uan, tuu, trii, for, faiv    | day / night  | **dei** / **nait**  |
-| 6, 7, 8, 9, 0 | sics, seven, eit, nain, ziro | month / year | **munt** / **iir**  |
-| 10, 100, 1k   | ten, hundrid, tauzund        | sun / moon   | **sun** / **muun**  |
-| time          | **taim**                     | rain / snow  | **rein** / **snou** |
+| English | MinEnglish |
+| :--- | :--- |
+| 1, 2, 3, 4, 5 | uan, tuu, trii, for, faiv |
+| 6, 7, 8, 9, 0 | sics, seven, eit, nain, ziro |
+| 10, 100, 1k | ten, hundrid, tauzund |
+| time | **taim** |
+| day / night | **dei** / **nait** |
+| month / year | **munt** / **iir** |
+| sun / moon | **sun** / **muun** |
+| rain / snow | **rein** / **snou** |
 
 ### 4.3 People & Body
 
-| English        | MinEnglish             | English     | MinEnglish         |
-| -------------- | ---------------------- | ----------- | ------------------ |
-| person / child | **person** / **ciald** | head / eye  | **hed** / **ai**   |
-| man / woman    | **man** / **uuman**    | mouth       | **maut**           |
-| mother-father  | **muder** / **fader**  | arm / leg   | **arm** / **leg**  |
-| friend         | **frend**              | hand / foot | **hand** / **fut** |
+| English | MinEnglish |
+| :--- | :--- |
+| person / child | **person** / **ciald** |
+| man / woman | **man** / **uuman** |
+| mother-father | **muder** / **fader** |
+| friend | **frend** |
+| head / eye | **hed** / **ai** |
+| mouth | **maut** |
+| arm / leg | **arm** / **leg** |
+| hand / foot | **hand** / **fut** |
 
 ### 4.4 Basic Adjectives & Colors
 
-| English     | MinEnglish         | English       | MinEnglish           |
-| ----------- | ------------------ | ------------- | -------------------- |
-| big / small | **big** / **smol** | hot / cold    | **hot** / **could**  |
-| good / bad  | **gud** / **bad**  | happy / sad   | **hapi** / **sad**   |
-| new / old   | **niu** / **ould** | quick / slow  | **cuic** / **slou**  |
-| red / blue  | **red** / **bluu** | green / black | **griin** / **blac** |
+| English | MinEnglish |
+| :--- | :--- |
+| big / small | **big** / **smol** |
+| good / bad | **gud** / **bad** |
+| new / old | **niu** / **ould** |
+| red / blue | **red** / **bluu** |
+| hot / cold | **hot** / **could** |
+| happy / sad | **hapi** / **sad** |
+| quick / slow | **cuic** / **slou** |
+| green / black | **griin** / **blac** |
 
 ---
 

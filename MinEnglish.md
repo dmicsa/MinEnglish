@@ -34,10 +34,18 @@ aim is to **remove** the inconsistencies, redundancies, and irregularities that
 burden English — not to replace it with something foreign. The result is a
 leaner, fully regular version of English: same vocabulary, same phonemes, same
 word order — but with predictable spelling, explicit quantities, and precise
-time operators. This specification documents the phonological, morphological,
-and syntactic rules targeting the stable release, demonstrates a 35.0% average
-character reduction over standard English across a 35-sentence corpus, and
-acknowledges the primary adoption challenge: human habit.
+time operators.
+
+Because MinEnglish enforces an absolute mathematical structure with zero
+exceptions, it yields two immediate practical benefits: it is **Easy to Learn**
+(there are no irregular cases to memorize) and **Easy to Type** (due to a strict
+lowercase axiom, dense phonetic spelling, and single-character mathematical
+operators).
+
+This specification documents the phonological, morphological, and syntactic
+rules targeting the stable release, demonstrates a 35.0% average character
+reduction over standard English across a 35-sentence corpus, and acknowledges
+the primary adoption challenge: human habit.
 
 ---
 
@@ -68,31 +76,31 @@ acknowledges the primary adoption challenge: human habit.
 To ensure acoustic discernibility across diverse linguistic backgrounds, the
 vowel space is constrained to five cardinal points:
 
-| MinEnglish | English Equivalent |
-| :--------- | :----------------- |
-| **a** (/æ/) | c**a**t (cat) |
-| **e** (/ɛ/) | b**e**d (bed) |
-| **i** (/ɪ/) | b**i**t (bit) |
-| **o** (/ɒ/) | h**o**t (hot) |
-| **u** (/ʌ/) | b**u**t (but) |
+| MinEnglish  | English Equivalent |
+| :---------- | :----------------- |
+| **a** (/æ/) | c**a**t (cat)      |
+| **e** (/ɛ/) | b**e**d (bed)      |
+| **i** (/ɪ/) | b**i**t (bit)      |
+| **o** (/ɒ/) | h**o**t (hot)      |
+| **u** (/ʌ/) | b**u**t (but)      |
 
 ### 2.2 Long Vowels and Diphthongs
 
 Diphthongs and elongated vowels are encoded as contiguous grapheme pairs,
 preserving the 1-to-1 spelling mapping without requiring macron diacritics.
 
-| MinEnglish | English Equivalent |
-| :--------- | :----------------- |
-| **ei** (/eɪ/) | d**ay**, m**a**ke (dei, meic) |
-| **ii** (/iː/) | s**ee**, **ea**t (sii, iit) |
-| **ai** (/aɪ/) | l**i**ke, m**y** (laic, mai) |
-| **ou** (/oʊ/) | g**o**, n**o** (gou, nou) |
-| **uu** (/uː/) | f**oo**d, t**oo** (fuud, tuu) |
-| **au** (/aʊ/) | h**ow**, h**ou**se (hau, haus) |
-| **oi** (/ɔɪ/) | b**oy** (boi) |
-| **ar** (/ɑːr/) | c**ar** (car) |
-| **or** (/ɔːr/) | f**or** (for) |
-| **er** (/ɜːr/) | h**er**, b**ir**d (her, berd) |
+| MinEnglish     | English Equivalent             |
+| :------------- | :----------------------------- |
+| **ei** (/eɪ/)  | d**ay**, m**a**ke (dei, meic)  |
+| **ii** (/iː/)  | s**ee**, **ea**t (sii, iit)    |
+| **ai** (/aɪ/)  | l**i**ke, m**y** (laic, mai)   |
+| **ou** (/oʊ/)  | g**o**, n**o** (gou, nou)      |
+| **uu** (/uː/)  | f**oo**d, t**oo** (fuud, tuu)  |
+| **au** (/aʊ/)  | h**ow**, h**ou**se (hau, haus) |
+| **oi** (/ɔɪ/)  | b**oy** (boi)                  |
+| **ar** (/ɑːr/) | c**ar** (car)                  |
+| **or** (/ɔːr/) | f**or** (for)                  |
+| **er** (/ɜːr/) | h**er**, b**ir**d (her, berd)  |
 
 ### 2.3 Consonants
 
@@ -331,13 +339,13 @@ Pronouns operate as highly compressed, single-character spatial indices.
 Plurality logic inherits the identical numerical prefixing system utilized by
 canonical nouns.
 
-| MinEnglish Singular | MinEnglish Plural |
-| :------------------ | :---------------- |
-| **i** (I) | `5i` (We five) |
-| **u** (You) | `3u` (You three) |
-| **h** (He) | `4h` (They four males) |
-| **s** (She) | `21s` (They 21 females) |
-| **t** (It) | `*t` (They things) |
+| MinEnglish Singular | MinEnglish Plural       |
+| :------------------ | :---------------------- |
+| **i** (I)           | `5i` (We five)          |
+| **u** (You)         | `3u` (You three)        |
+| **h** (He)          | `4h` (They four males)  |
+| **s** (She)         | `21s` (They 21 females) |
+| **t** (It)          | `*t` (They things)      |
 
 > **Genitive Case Marking:** Possession is indicated universally via the `'s`
 > suffix with no exceptions. (e.g., `i's`, `u's`, `h's`, `s's`, `t's`).
@@ -585,60 +593,60 @@ Below is the strict parsing configuration for a standard declarative sentence.
 
 ### 4.1 Fundamentals
 
-| English | MinEnglish |
-| :--- | :--- |
-| be / is | **bi** |
-| do | **du** |
-| come | **cum** |
-| take | **teic** |
-| see | **sii** |
-| think | **tinc** |
+| English     | MinEnglish          |
+| :---------- | :------------------ |
+| be / is     | **bi**              |
+| do          | **du**              |
+| come        | **cum**             |
+| take        | **teic**            |
+| see         | **sii**             |
+| think       | **tinc**            |
 | want / need | **uant** / **niid** |
-| have | **hav** |
-| go | **gou** |
-| make | **meic** |
-| give | **giv** |
-| know | **nou** |
-| say / tell | **sei** / **tel** |
-| use / find | **iuz** / **faind** |
+| have        | **hav**             |
+| go          | **gou**             |
+| make        | **meic**            |
+| give        | **giv**             |
+| know        | **nou**             |
+| say / tell  | **sei** / **tel**   |
+| use / find  | **iuz** / **faind** |
 
 ### 4.2 Time, Numbers, Nature
 
-| English | MinEnglish |
-| :--- | :--- |
-| 1, 2, 3, 4, 5 | uan, tuu, trii, for, faiv |
+| English       | MinEnglish                   |
+| :------------ | :--------------------------- |
+| 1, 2, 3, 4, 5 | uan, tuu, trii, for, faiv    |
 | 6, 7, 8, 9, 0 | sics, seven, eit, nain, ziro |
-| 10, 100, 1k | ten, hundrid, tauzund |
-| time | **taim** |
-| day / night | **dei** / **nait** |
-| month / year | **munt** / **iir** |
-| sun / moon | **sun** / **muun** |
-| rain / snow | **rein** / **snou** |
+| 10, 100, 1k   | ten, hundrid, tauzund        |
+| time          | **taim**                     |
+| day / night   | **dei** / **nait**           |
+| month / year  | **munt** / **iir**           |
+| sun / moon    | **sun** / **muun**           |
+| rain / snow   | **rein** / **snou**          |
 
 ### 4.3 People & Body
 
-| English | MinEnglish |
-| :--- | :--- |
+| English        | MinEnglish             |
+| :------------- | :--------------------- |
 | person / child | **person** / **ciald** |
-| man / woman | **man** / **uuman** |
-| mother-father | **muder** / **fader** |
-| friend | **frend** |
-| head / eye | **hed** / **ai** |
-| mouth | **maut** |
-| arm / leg | **arm** / **leg** |
-| hand / foot | **hand** / **fut** |
+| man / woman    | **man** / **uuman**    |
+| mother-father  | **muder** / **fader**  |
+| friend         | **frend**              |
+| head / eye     | **hed** / **ai**       |
+| mouth          | **maut**               |
+| arm / leg      | **arm** / **leg**      |
+| hand / foot    | **hand** / **fut**     |
 
 ### 4.4 Basic Adjectives & Colors
 
-| English | MinEnglish |
-| :--- | :--- |
-| big / small | **big** / **smol** |
-| good / bad | **gud** / **bad** |
-| new / old | **niu** / **ould** |
-| red / blue | **red** / **bluu** |
-| hot / cold | **hot** / **could** |
-| happy / sad | **hapi** / **sad** |
-| quick / slow | **cuic** / **slou** |
+| English       | MinEnglish           |
+| :------------ | :------------------- |
+| big / small   | **big** / **smol**   |
+| good / bad    | **gud** / **bad**    |
+| new / old     | **niu** / **ould**   |
+| red / blue    | **red** / **bluu**   |
+| hot / cold    | **hot** / **could**  |
+| happy / sad   | **hapi** / **sad**   |
+| quick / slow  | **cuic** / **slou**  |
 | green / black | **griin** / **blac** |
 
 ---

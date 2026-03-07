@@ -1,0 +1,2073 @@
+\newpage
+
+\begin{quote}
+\textbf{Versioning:} MinEnglish follows
+\href{https://semver.org}{Semantic Versioning}.
+\texttt{MAJOR.MINOR.PATCH} --- breaking rule changes increment MAJOR.
+\texttt{0.x.y} indicates active pre-stable development; \texttt{1.0.0}
+marks the first frozen specification.
+
+\textbf{AI Attribution:} This specification was developed with extensive
+assistance from large language models. \textbf{Claude Opus} (Anthropic),
+\textbf{Gemini 2.5 Pro} (Google DeepMind), and \textbf{Antigravity}
+(Google DeepMind) contributed to the drafting, formalization, revision,
+and example generation documented herein. The intellectual framework,
+design decisions, and authorship remain those of the human author.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\newpage
+
+\subsection{Abstract}\label{abstract}
+
+MinEnglish is a formal simplification and clarification of Modern
+English. Its aim is to \textbf{remove} the inconsistencies,
+redundancies, and irregularities that burden English --- not to replace
+it with something foreign. The result is a leaner, fully regular version
+of English: same vocabulary, same phonemes, same word order --- but with
+predictable spelling, explicit quantities, and precise time operators.
+
+Because MinEnglish enforces an absolute mathematical structure with zero
+exceptions, it yields two immediate practical benefits: it is
+\textbf{Easy to Learn} (there are no irregular cases to memorize) and
+\textbf{Easy to Type} (due to a strict lowercase axiom, dense phonetic
+spelling, and single-character mathematical operators).
+
+This specification documents the phonological, morphological, and
+syntactic rules targeting the stable release, demonstrates a 35.0\%
+average character reduction over standard English across a 35-sentence
+corpus, and acknowledges the primary adoption challenge: human habit.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\newpage
+
+\subsection{1. Key Features}\label{key-features}
+
+\begin{quote}
+\textbf{Mission:} MinEnglish simplifies, clarifies, and formalizes
+Modern English. It removes constraints --- it does not add them. Every
+rule below exists to \textbf{eliminate} an inconsistency or ambiguity
+already present in English.
+\end{quote}
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.1386}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.8614}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Feature
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+What it removes from English
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Easy to Learn} & Removes the concept of ``exceptions'' entirely.
+There are no irregular verbs, unpredictable spellings, or confusing
+contextual plurals. \\
+\textbf{Easy to Type} & Removes excessive keystrokes and finger travel.
+Relies on a strict lowercase axiom and mathematical operators to
+prioritize digital efficiency. \\
+\textbf{Phonetic Spelling} & Removes the burden of memorizing irregular
+spelling. Every letter has one sound, every sound one letter.
+(\texttt{knight} → \texttt{nait}, \texttt{enough} → \texttt{inuf}) \\
+\textbf{Explicit Quantities} & Removes ambiguous pluralization.
+\texttt{cats} vs \texttt{cat} is a noise-channel problem. \texttt{3cat}
+is unambiguous. Singular is the default --- no suffix needed. \\
+\textbf{Regular Time} & Removes 12+ irregular tense forms. One temporal
+operator (\texttt{-1d}, \texttt{1d}, \texttt{:5Y}) does the work of
+went/gone/had gone/will go/would have gone. \\
+\textbf{Symbolic Operators} & Replaces multi-word constructs with single
+tokens already familiar from math and logic (\texttt{\&}, ` \\
+\textbf{Zero Exceptions} & Removes the entire category of irregular
+verbs, irregular plurals, and silent letters. What works for one word
+works for all words. \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\newpage
+
+\subsection{2. Phonology and
+Orthography}\label{phonology-and-orthography}
+
+\subsubsection{2.1 Vowels}\label{vowels}
+
+To ensure acoustic discernibility across diverse linguistic backgrounds,
+the vowel space is constrained to five cardinal points:
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+MinEnglish & English Equivalent \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{a} (/æ/) & c\textbf{a}t (cat) \\
+\textbf{e} (/ɛ/) & b\textbf{e}d (bed) \\
+\textbf{i} (/ɪ/) & b\textbf{i}t (bit) \\
+\textbf{o} (/ɒ/) & h\textbf{o}t (hot) \\
+\textbf{u} (/ʌ/) & b\textbf{u}t (but) \\
+\end{longtable}
+}
+
+\subsubsection{2.2 Long Vowels and
+Diphthongs}\label{long-vowels-and-diphthongs}
+
+Diphthongs and elongated vowels are encoded as contiguous grapheme
+pairs, preserving the 1-to-1 spelling mapping without requiring macron
+diacritics.
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+MinEnglish & English Equivalent \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{ei} (/eɪ/) & d\textbf{ay}, m\textbf{a}ke (dei, meic) \\
+\textbf{ii} (/iː/) & s\textbf{ee}, \textbf{ea}t (sii, iit) \\
+\textbf{ai} (/aɪ/) & l\textbf{i}ke, m\textbf{y} (laic, mai) \\
+\textbf{ou} (/oʊ/) & g\textbf{o}, n\textbf{o} (gou, nou) \\
+\textbf{uu} (/uː/) & f\textbf{oo}d, t\textbf{oo} (fuud, tuu) \\
+\textbf{au} (/aʊ/) & h\textbf{ow}, h\textbf{ou}se (hau, haus) \\
+\textbf{oi} (/ɔɪ/) & b\textbf{oy} (boi) \\
+\textbf{ar} (/ɑːr/) & c\textbf{ar} (car) \\
+\textbf{or} (/ɔːr/) & f\textbf{or} (for) \\
+\textbf{er} (/ɜːr/) & h\textbf{er}, b\textbf{ir}d (her, berd) \\
+\end{longtable}
+}
+
+\subsubsection{2.3 Consonants}\label{consonants}
+
+Consonantal mappings prioritize acoustic clarity while resolving
+historical orthographic collisions (such as the hard-soft \emph{c}
+boundary).
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1119}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0746}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.6269}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1866}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Grapheme
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Phoneme
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Application Rule
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Example
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{c} & /k/ & Soft, unaspirated velar plosive. & cat, cum, cup,
+bac \\
+\textbf{k} & /kʰ/ & Hard, aspirated velar plosive. & king, kiip, kic \\
+\textbf{ci} / \textbf{ce} & /tʃ/ & Voiceless palato-alveolar affricate.
+The vowel functions as an orthographic trigger. & ciald, cier, ceic
+(check) \\
+\textbf{u} & /w/ & Semivowel substitution for \emph{w}. & uoter, uid \\
+\textbf{i} & /j/ & Semivowel substitution for \emph{y}. & ies, iir \\
+\textbf{t} & /t/ or /θ/ & Alveolar plosive; assumes the voiceless dental
+fricative locally. & tinc, trii \\
+\textbf{d} & /d/ or /ð/ & Alveolar plosive; assumes the voiced dental
+fricative locally. & de, dat \\
+\end{longtable}
+}
+
+\begin{quote}
+\textbf{Aspiration Differentiation (\texttt{k} vs \texttt{c}):} The
+aspirated /kʰ/ is strictly represented by \texttt{k}, whereas the
+unaspirated variant uses \texttt{c}. Following sibilants (e.g., /s/),
+where aspiration naturally diminishes, \texttt{c} is mandated (e.g.,
+\emph{scan}, \emph{scip}).
+\end{quote}
+
+\subsubsection{\texorpdfstring{2.3.1 Lexical Prosody Marker
+(\texttt{\textquotesingle{}})}{2.3.1 Lexical Prosody Marker (\textquotesingle)}}\label{lexical-prosody-marker}
+
+Because MinEnglish eliminates the redundant double consonants and silent
+terminal vowels often used as prosodic cues in natural English, lexical
+stress can become ambiguous for computational parsers. The apostrophe
+(\texttt{\textquotesingle{}}) is instituted as an optional prosody
+marker, to be affixed immediately preceding the stressed vowel in
+pedagogy or lexicography.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ecsp\textquotesingle{}ensiv} (Stress alignment on the initial
+  \emph{e})
+\item
+  \texttt{iuniv\textquotesingle{}ersiti} (Stress alignment on the medial
+  \emph{e})
+\item
+  \texttt{compi\textquotesingle{}uuter} (Stress alignment on the first
+  \emph{u})
+\end{itemize}
+
+\subsubsection{2.4 Digraphs}\label{digraphs}
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Digraph & Phoneme & Example \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{sh} & /ʃ/ & ship → ship \\
+\textbf{ng} & /ŋ/ & song → song \\
+\textbf{zh} & /ʒ/ & vision → vizhun \\
+\end{longtable}
+}
+
+\begin{quote}
+Note: The standard English \emph{ch} (/tʃ/) is not utilized. It is
+strictly encoded as \texttt{ci} to maintain morphemic consistency.
+\end{quote}
+
+\subsubsection{2.5 Orthographic Normalization
+Constraints}\label{orthographic-normalization-constraints}
+
+To enforce the phonetic isomorphism principle, historical orthographic
+artifacts must be algorithmically stripped.
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3579}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4211}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2211}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Historical Pattern
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+MinEnglish Normalization
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Example
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Silent \textbf{e}, \textbf{k}, \textbf{g}, \textbf{gh} & Nullified &
+meic, nou, noum, nait \\
+\textbf{gh} or \textbf{ph} rendered as /f/ & Regressive substitution to
+\textbf{f} & laf, foun \\
+\textbf{ck} cluster & Resolved to \textbf{c} or \textbf{k} by aspiration
+& bac, kic \\
+\textbf{x} cluster & Decomposed to \textbf{cs} & bocs, necst \\
+\textbf{-tion} / \textbf{-sion} & Phoneticized to \textbf{-shun} /
+\textbf{-zhun} & neishun, vizhun \\
+\textbf{-tch} & Phoneticized to \textbf{-ci} & maci, caci \\
+Double consonants & Replaced with unitary equivalents & leter, hapi \\
+Soft \textbf{c} (/s/) & Regressive substitution to \textbf{s} & sel,
+siti \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\newpage
+
+\subsection{3. Morphology and Syntax}\label{morphology-and-syntax}
+
+\begin{quote}
+\textbf{Core Constraint: Morphological Invariance.} Lexical items never
+undergo morphological derivation or inflection. Grammatical
+relationships are managed exclusively through standardized operators and
+rigid syntactic ordering.
+\end{quote}
+
+\subsubsection{3.1 Nouns and Quantitative
+Prefixes}\label{nouns-and-quantitative-prefixes}
+
+To eliminate the biological error-amplifier of plural suffixes (where
+the loss of a terminal sibilant in a noisy channel alters the
+mathematical quantity of a sentence), MinEnglish mandates explicit
+numerical prefixing. \textbf{Morphological plurals are abolished.}
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Prefix & Semantic Value & Example \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{1} & Unitary / Singular & \texttt{1cat} (a cat) \\
+\texttt{3} & Exact enumeration & \texttt{3cat} (three cats) \\
+\texttt{*} & Universal / Generic set & \texttt{*cat} (cats, across all
+domains) \\
+\texttt{\textasciitilde{}5} & Approximate enumeration &
+\texttt{\textasciitilde{}5cat} (approximately five cats) \\
+\texttt{0} & Null set & \texttt{0cat} (zero cats) \\
+\end{longtable}
+}
+
+\begin{quote}
+\textbf{Absence of Articles:} The quantitative operator \texttt{1}
+functionally replaces the indefinite article. Definiteness is
+established contextually or via demonstrative pronouns.
+\end{quote}
+
+\subsubsection{3.1.1 Numerical Processing
+Efficiency}\label{numerical-processing-efficiency}
+
+To minimize phonological bandwidth, integers exceeding 99 bypass
+categorical naming structures and are processed as pure digit strings.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{3456} = \texttt{trii\ for\ faiv\ sics}
+\item
+  \texttt{2026} = \texttt{tuu\ ziro\ tuu\ sics}
+\end{itemize}
+
+\subsubsection{3.1.2 Proper Noun
+Encapsulation}\label{proper-noun-encapsulation}
+
+Phonetic normalization of global proper nouns creates destructive
+variations that impair search retrieval and semantic persistence.
+
+\textbf{Rule:} Proper Nouns (specific entities, geographical locations,
+nominal brands) retain their canonical native orthography. First-letter
+capitalization acts as an escape character, signaling to the parser that
+local phonetic rules are suspended for the duration of the token.
+
+\begin{quote}
+\textbf{Strict Lowercase Axiom:} Because capitalization is an active
+mathematical operator (the Escape key), MinEnglish strictly prohibits
+capitalizing the first letter of sentences. Capitalizing a
+sentence-starting word would force parsers to guess whether the word is
+an escaped proper noun or standard orthographic decoration, destroying
+mathematical purity. All standard MinEnglish text is strictly lowercase.
+\end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{person\ Isabella} (Denotes the individual Isabella;
+  phonetically preserved).
+\item
+  \texttt{cuntri\ France} (Denotes the sovereign state of France).
+\end{itemize}
+
+\subsubsection{3.1.3 Fractional and Decimal
+Operators}\label{fractional-and-decimal-operators}
+
+Spoken mathematics is standardized via the \texttt{/} (slais) and
+\texttt{.} (point) operators, providing a syntactically uniform method
+for subdividing physical objects or abstract metrics.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Fractions:} \texttt{1/2} (uan slais tuu) = One-half.
+  \texttt{3/4apel} (trii slais for apel) = Three-quarters of an apple.
+\item
+  \textbf{Decimals:} \texttt{0.5} (ziro point faiv). \texttt{99.9} (nain
+  nain point nain).
+\end{itemize}
+
+\subsubsection{3.1.4 Token Optionality
+Rules}\label{token-optionality-rules}
+
+Three categories of token may be omitted when their value is recoverable
+from context. \textbf{Parsers must implement the following defaults when
+a token is absent:}
+
+\paragraph{\texorpdfstring{Rule A --- Implicit Singular (\texttt{1}
+optional)}{Rule A --- Implicit Singular (1 optional)}}\label{rule-a-implicit-singular-1-optional}
+
+When no quantitative prefix is present before a noun, the parser
+defaults to singular (\texttt{1}). The explicit \texttt{1} is required
+only when disambiguation from a preceding plural context is necessary.
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Explicit & Implicit & Meaning \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{1cat\ sit\ on\ 1mat} & \texttt{cat\ sit\ on\ mat} & A cat sits
+on a mat \\
+\texttt{1dog\ run\ in\ 1parc} & \texttt{dog\ run\ in\ parc} & A dog runs
+in a park \\
+\end{longtable}
+}
+
+\begin{quote}
+\textbf{Note:} If the previous noun was plural, explicit \texttt{1} is
+required to re-establish singular: \texttt{3cat\ run,\ den\ 1cat\ stop.}
+\end{quote}
+
+\paragraph{\texorpdfstring{Rule B --- Implicit First Person (\texttt{i}
+optional)}{Rule B --- Implicit First Person (i optional)}}\label{rule-b-implicit-first-person-i-optional}
+
+When the subject is first-person singular and the sentence structure is
+declarative, the pronoun \texttt{i} may be omitted. The parser defaults
+to \texttt{i} when no subject precedes the verb block.
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2812}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2656}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4531}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Explicit
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Implicit
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{i1laic\ cat} & \texttt{laic\ cat} & I like a cat \\
+\texttt{i-1d\ gou\ tu\ stor} & \texttt{-1d\ gou\ tu\ stor} & I went to
+the store yesterday \\
+\end{longtable}
+}
+
+\begin{quote}
+\textbf{Disambiguation:} If a third-person pronoun or noun immediately
+precedes the verb, \texttt{i} is not assumed. The implicit-I rule only
+fires when the verb begins the sentence.
+\end{quote}
+
+\paragraph{Rule C --- Implicit Present Tense (temporal marker
+optional)}\label{rule-c-implicit-present-tense-temporal-marker-optional}
+
+A verb with no temporal prefix is already defined as present continuous.
+Additionally, the discrete present marker \texttt{1} (as in
+\texttt{h1laic}) is also optional when the subject is explicit and no
+tense ambiguity exists. The \texttt{1} attachment is required only for
+disambiguation or emphasis.
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Explicit & Implicit & Meaning \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{h1laic\ 1cat} & \texttt{h\ laic\ cat} & He likes a cat \\
+\texttt{i1run\ fast} & \texttt{run\ fast} & I run fast \\
+\end{longtable}
+}
+
+\subsubsection{3.2 Verbs --- Temporal
+Mechanics}\label{verbs-temporal-mechanics}
+
+Irregular conjugations are functionally inefficient. MinEnglish
+regulates time via temporal operators that target an absolute
+mathematical timeline. A verb without a temporal operator defaults to
+present continuous.
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1200}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4100}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4700}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Operator
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Temporal Value
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Example
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\emph{(null)} & Present continuous (default) & \texttt{iit} (eating) \\
+\texttt{1} & Present discrete (attachment operator) & \texttt{i1iit} (I
+eat) \\
+\texttt{*} & Habitual / Universal continuity & \texttt{*iit} (eats
+perpetually) \\
+\texttt{-0s} & Immediate past vector (zero offset) & \texttt{-0s\ sii}
+(just perceived) \\
+\texttt{-1d} & Past vector (one day offset) & \texttt{-1d\ iit} (ate
+yesterday) \\
+\texttt{:5Y} & Duration scalar (five years) & \texttt{:5Y\ studi} (has
+studied for five years) \\
+\texttt{1d} & Future vector (\texttt{+} accepted but optional) &
+\texttt{1d\ gou} (will go tomorrow) \\
+\texttt{2026-12-25} & Absolute timestamp & \texttt{2026-12-25\ gou}
+(transit scheduled for Dec 25) \\
+\end{longtable}
+}
+
+\begin{quote}
+\textbf{Direction Convention:} The \texttt{-} prefix marks past vectors
+(required). Future offsets default to positive --- a bare numeric offset
+(\texttt{1d}, \texttt{2h}, \texttt{1Y}) always points forward. The
+\texttt{:} operator spans a duration rather than pointing to a discrete
+moment.
+\end{quote}
+
+\subsubsection{3.2.1 Temporal Stacking (Complex
+Timelines)}\label{temporal-stacking-complex-timelines}
+
+Natural language manages chronological depth via ``perfect'' tenses,
+increasing syntactic distance between subject and action. MinEnglish
+resolves deep time by permitting left-to-right stacking of temporal
+operators, enabling precise algebraic timeline construction.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{-0s\ -1d\ iit} = I just-now yesterday ate (I had already eaten
+  by yesterday's timeline).
+\item
+  \texttt{-1d\ 2h\ iit} = Yesterday, offset by +2 hours, I ate.
+\end{itemize}
+
+\subsubsection{3.3 Modifiers and Scalar
+Intensity}\label{modifiers-and-scalar-intensity}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Adjectival Ordering:} Adjectives strictly post-modify nouns
+  (\texttt{cat\ big}).
+\item
+  \textbf{Adverbial Ordering:} Adverbs post-modify verbs
+  (\texttt{run\ fast}).
+\item
+  \textbf{Comparative Mechanics:} Driven by scalar progression
+  \texttt{mor} and \texttt{most} (\texttt{cat\ mor\ big}).
+\item
+  \textbf{Intensity Combinators (\texttt{\textgreater{}},
+  \texttt{\textgreater{}\textgreater{}}, \texttt{\textless{}},
+  \texttt{\textless{}\textless{}}):} Adjectives and adverbs lack
+  morphological escalation (no ``-er'' or ``-est''). Instead, magnitude
+  is modulated using absolute mathematical prefixes that attach directly
+  to the front of their target.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{\textgreater{}big} = Positive magnification (very big)
+  \item
+    \texttt{\textgreater{}\textgreater{}big} = Extreme maximization
+    (massive, huge)
+  \item
+    \texttt{\textless{}big} = Negative attenuation (slightly big)
+  \item
+    \texttt{\textless{}\textless{}big} = Extreme minimization (tiny,
+    very small)
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{\texorpdfstring{3.3.1 Universal Predicators (\texttt{du}
+/
+\texttt{meic})}{3.3.1 Universal Predicators (du / meic)}}\label{universal-predicators-du-meic}
+
+Because MinEnglish permits any token to accept an operational prefix,
+inappropriate syntactic mapping can yield semantic anomalies. The
+universal predicators \texttt{du} (experiential interaction) and
+\texttt{meic} (generative action) serve as formal verbalizers for
+noun-class tokens.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{du\ parc} = I interact with the park (replaces the ambiguous
+  \texttt{parc}).
+\item
+  \texttt{s-1d\ meic\ fuud} = She generated food (replaces the anomalous
+  \texttt{s-1d\ fuud}).
+\end{itemize}
+
+\subsubsection{3.4 Pronominal Indexing}\label{pronominal-indexing}
+
+Pronouns operate as highly compressed, single-character spatial indices.
+Plurality logic inherits the identical numerical prefixing system
+utilized by canonical nouns.
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+MinEnglish Singular & MinEnglish Plural \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{i} (I) & \texttt{5i} (We five) \\
+\textbf{u} (You) & \texttt{3u} (You three) \\
+\textbf{h} (He) & \texttt{4h} (They four males) \\
+\textbf{s} (She) & \texttt{21s} (They 21 females) \\
+\textbf{t} (It) & \texttt{*t} (They things) \\
+\end{longtable}
+}
+
+\begin{quote}
+\textbf{Genitive Case Marking:} Possession is indicated universally via
+the \texttt{\textquotesingle{}s} suffix with no exceptions. (e.g.,
+\texttt{i\textquotesingle{}s}, \texttt{u\textquotesingle{}s},
+\texttt{h\textquotesingle{}s}, \texttt{s\textquotesingle{}s},
+\texttt{t\textquotesingle{}s}).
+\end{quote}
+
+\subsubsection{3.4.1 Syntactic Agglutination
+(Attachment)}\label{syntactic-agglutination-attachment}
+
+For maximum data throughput, the single-character pronominal index
+agglutinates physically to the succeeding temporal operator, eliminating
+whitespace parsing overhead.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{h1laic    (he likes)}
+\NormalTok{s1run     (she runs)}
+\NormalTok{u:2h uorc (you worked spanning two hours)}
+\NormalTok{s*run     (she runs generically)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{3.4.2 Auditory Disambiguation (Prefix
+Positioning)}\label{auditory-disambiguation-prefix-positioning}
+
+Agglutination can generate overlapping vowel harmonics (e.g.,
+\texttt{in} or \texttt{if\ i*no}), increasing transmission error rates.
+To preserve auditory clarity boundaries, pronominal indices have
+flexible positioning relative to the temporal operator.
+
+\begin{itemize}
+\tightlist
+\item
+  Canonical: \texttt{i-1d} (I yesterday)
+\item
+  Permuted: \texttt{1d-i} (Yesterday I; mitigates harmonic overlap after
+  preceding vowels)
+\end{itemize}
+
+\subsubsection{3.4.3 Pronominal Deference}\label{pronominal-deference}
+
+By default, the syntactic structure is declarative and absolute. To
+inject social deference or epistemological uncertainty, the
+approximation operator \texttt{\textasciitilde{}} is bound to the
+pronoun.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{u\ giv} = Absolute directive (You give).
+\item
+  \texttt{\textasciitilde{}u\ giv} = Deferred directive (Could you
+  please give).
+\item
+  \texttt{\textasciitilde{}tinc} = Epistemological deferment (It seems
+  to me).
+\end{itemize}
+
+\subsubsection{3.5 Negation}\label{negation}
+
+Negation is uniquely expressed by attaching the \texttt{!} prefix
+directly to the target word (typically the verb or adjective) without a
+space.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{!laic\ cat} = I do not like the cat.
+\item
+  \texttt{u1d\ !cum} = You will not come tomorrow.
+\item
+  \texttt{*h\ !can\ spiic} = None of them can speak.
+\item
+  \texttt{bi\ !gud} = It is not good.
+\end{itemize}
+
+\subsubsection{3.6 Sentence Structure \& Conjunction
+Reduction}\label{sentence-structure-conjunction-reduction}
+
+\begin{quote}
+\textbf{Subject + Time-Verb + Number-Object + Modifiers}
+\end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{laic cat \textgreater{}big.            → I like a very big cat.}
+\NormalTok{*h{-}1d bai 3buc.              → They bought 3 books yesterday.}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{3.6.1 Conjunction Reduction}\label{conjunction-reduction}
+
+If multiple actions share the same subject, you can drop the subject
+after \texttt{an} or \texttt{or} (Conjunction Reduction):
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{iit\ an\ drinc} = I eat and (I) drink.
+\item
+  \texttt{iit\ an\ h1drinc} = I eat and he drinks.
+\end{itemize}
+
+\subsubsection{3.7 Modality (can, must,
+should)}\label{modality-can-must-should}
+
+Modality verbs follow the time prefix, creating a composite verb phrase:
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1159}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3188}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.5652}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Modal
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Example
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{can} & ability / permission & \texttt{can\ iit} = I can eat \\
+\textbf{must} & necessity / obligation & \texttt{u1d\ must\ cum} = You
+must come tomorrow \\
+\textbf{shud} & advice / should & \texttt{*h\ shud\ lern} = They should
+learn \\
+\textbf{\textasciitilde can} & probability / might &
+\texttt{i1d\ \textasciitilde{}can\ gou} = I might go tomorrow \\
+\end{longtable}
+}
+
+\subsubsection{3.8 Passive Voice}\label{passive-voice}
+
+Formed by moving the Object to the front, and following the verb with
+\texttt{bai} (by).
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1196}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3261}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.5543}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Voice
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+MinEnglish Structure
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Example
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Active} & Subj + Time-Verb + Obj & \texttt{boi\ kic\ bol} (A boy
+just kicked a ball) \\
+\textbf{Passive} & Obj + Time-Verb + \texttt{bai} + Subj &
+\texttt{bol\ kic\ bai\ boi} (A ball was just kicked by a boy) \\
+\end{longtable}
+}
+
+\subsubsection{\texorpdfstring{3.8.1 The Direct Object Marker
+(\texttt{tu})}{3.8.1 The Direct Object Marker (tu)}}\label{the-direct-object-marker-tu}
+
+Because MinEnglish removes noun-verb class distinctions (any word can
+technically be a verb with \texttt{1}), complex sentences can blur the
+line between a chained verb and a direct object noun. \textbf{Rule:}
+When a noun could be mistaken for a verb, prefix it with the transitive
+operator \texttt{tu} (acting like Esperanto's -n accusative).
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{laic\ tu\ cat} = I like the cat (Prevents reading as ``I like
+  and I cat'').
+\item
+  \texttt{s1giv\ tu\ h\ buc} = She gives him a book.
+\end{itemize}
+
+\subsubsection{3.9 Connectors, Prepositions, Tone
+Markers}\label{connectors-prepositions-tone-markers}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Logic:} \texttt{an} / \texttt{\&} (and), \texttt{or} /
+  \texttt{\textbar{}} (or), \texttt{\^{}} (xor), \texttt{but} (but),
+  \texttt{if} (if), \texttt{cos} (because), \texttt{sou} (so),
+  \texttt{den} (then).
+\item
+  \textbf{Shortcuts:} \texttt{@} (at), \texttt{\textgreater{}} (over /
+  more than), \texttt{\textless{}} (under / less than).
+\item
+  \textbf{Tone:} \texttt{!} (emphasis), \texttt{?} (question),
+  \texttt{..} (hesitation), \texttt{\^{}} (sarcasm).
+\end{itemize}
+
+\begin{quote}
+\textbf{Symbolic Connectors:} \texttt{\&} and \texttt{\textbar{}} are
+fully equivalent to \texttt{an} and \texttt{or} respectively, and are
+preferred in dense or technical text. In speech, both forms are
+pronounced identically (\texttt{an}, \texttt{or}).
+\end{quote}
+
+\subsubsection{\texorpdfstring{3.9.1 Terminal Punctuation \& Negation
+(\texttt{!},
+\texttt{?})}{3.9.1 Terminal Punctuation \& Negation (!, ?)}}\label{terminal-punctuation-negation}
+
+To maintain familiarity and avoid syntactic overcomplication, MinEnglish
+uses the standard English terminal punctuation marks (\texttt{?} and
+\texttt{!}) located at the end of the sentence clause.
+
+However, the \texttt{!} symbol has a dual function depending on
+whitespace spacing:
+
+\begin{itemize}
+\item
+  \textbf{Exclamation (Space/End):} When placed at the end of a sentence
+  or separated by a space, it acts natively as an exclamation. Doubling
+  the terminal marks (\texttt{!!} or \texttt{??}) is supported and
+  explicitly defined as an aggressive, warning, or obnoxious tone
+  multiplier.
+\item
+  \textbf{Negation Prefix (Attached):} When attached directly to the
+  front of a word with \emph{no space}, it acts as the logical NOT
+  operator.
+\item
+  \texttt{uen\ u1gou??} = \textbf{When} do you go?! (Obnoxious
+  Interrogation)
+\item
+  \texttt{uoci!!} = Watch out! (Aggressive Warning)
+\item
+  \texttt{i\ !laic\ cat.} = I do \textbf{not} like cats. (Negation)
+\item
+  \texttt{!gud} = Not good.
+\item
+  \texttt{huu}, \texttt{uat}, \texttt{uai}, \texttt{haum} (who, what,
+  why, how much-many).
+\end{itemize}
+
+\subsubsection{\texorpdfstring{3.9.2 Clause Anchors (\texttt{\{} /
+\texttt{\}})}{3.9.2 Clause Anchors (\{ / \})}}\label{clause-anchors}
+
+Because MinEnglish removes grammatical cases and subordinate conjunction
+fluff, deeply center-embedded sentences will physically overwhelm human
+short-term memory (the phonological loop). \textbf{Rule:} When nesting 2
+or more clauses, the speaker \emph{must} use the explicit mathematical
+scope operators \texttt{\{} and \texttt{\}} to define the boundaries of
+the nested subset.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{man\ \{\ dat\ dog\ \{\ dat\ ciald\ luv\ \}\ -1d\ bait\ \}\ run\ auei.}
+\item
+  \emph{Translation:} The man {[}who the dog {[}that the child loves{]}
+  bit{]} ran away.
+\end{itemize}
+
+\begin{quote}
+\textbf{Phonetic Pronunciation (\texttt{co} / \texttt{oc}):} In purely
+auditory communication where typographical braces cannot be vocalized
+efficiently, the strings \texttt{co} (clause open) and \texttt{oc}
+(clause close) are the mandatory phonetic equivalents to \texttt{\{} and
+\texttt{\}}.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Auditory Mapping:}
+  \texttt{man\ co\ dat\ dog\ co\ dat\ ciald\ luv\ oc\ -1d\ bait\ oc\ run\ auei.}
+\end{itemize}
+\end{quote}
+
+\subsubsection{3.9.3 Arithmetic \& Logical Operator
+Inventory}\label{arithmetic-logical-operator-inventory}
+
+MinEnglish formally adopts five symbolic operators as first-class
+syntactic tokens. \texttt{/} is reserved for fractions and math (see
+3.1.4) and is \textbf{not} a compound word operator.
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.0930}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1047}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4884}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3140}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Operator
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Name
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Primary Role
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Example
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{+} & Plus & Future offset (optional; bare N = default) &
+\texttt{1d\ gou} = will go tomorrow \\
+\texttt{-} & Minus & Past offset (required) & \texttt{-1d\ iit} = ate
+yesterday \\
+\texttt{*} & Star & Universal / generic quantifier & \texttt{*cat} = all
+cats \\
+\texttt{\&} & Ampersand & Logical AND (≡ \texttt{an}) &
+\texttt{laic\ cat\ \&\ dog} \\
+\texttt{\textbar{}} & Pipe & Logical OR (≡ \texttt{or}) & \\
+\texttt{\^{}} & Caret & Logical XOR (Exclusive OR) &
+\texttt{iit\ cat\ \^{}\ dog} (one only) \\
+\end{longtable}
+}
+
+\begin{quote}
+\texttt{*i} means ``all of us'' (universal quantifier on first-person
+pronoun) --- not habitual verb. When \texttt{*} prefixes a pronoun it
+quantifies it; when it prefixes a verb it marks habitual action. Parsers
+distinguish by token class.
+\end{quote}
+
+\subsubsection{3.9.4 Preposition Verbs}\label{preposition-verbs}
+
+To avoid repeating the verb ``to be'' (\texttt{bi}), prepositions can
+act as verbs simply by attaching a time prefix to them.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{haus\ in\ siti} = The house is in a city (\texttt{in} acts as
+  the verb ``to be in'').
+\item
+  \texttt{cat\ -1d\ on\ mat} = The cat was on a mat yesterday.
+\end{itemize}
+
+\subsubsection{3.10 Abjad Mode (Extreme
+Shorthand)}\label{abjad-mode-extreme-shorthand}
+
+For ultra-fast texting or constrained bandwidth, MinEnglish formally
+defines ``Abjad Mode''. \textbf{Rule:} Drop all vowels \emph{unless} the
+word starts with a vowel or doing so breaks a core operator.
+
+\begin{itemize}
+\tightlist
+\item
+  Standard / English: \texttt{tinc\ u\ bi\ \textgreater{}liit} (I think
+  you are very late)
+\item
+  Abjad Mode: \texttt{tnc\ u\ b\ \textgreater{}lt}
+\end{itemize}
+
+\subsubsection{3.11 Semantic Idiom
+Standardization}\label{semantic-idiom-standardization}
+
+English relies on illogical phrasal verbs (``Look out!'' = beware;
+``Give up'' = surrender). MinEnglish rejects phrasal idioms entirely. A
+direct translation of ``Look out'' (\texttt{luc\ aut}) is strictly
+literal: point your eyes outside. \textbf{Rule:} Idioms must be
+translated to their literal action equivalent.
+
+\begin{itemize}
+\tightlist
+\item
+  ``Look out!'' → \texttt{uoci!!} (Watch intensely!)
+\item
+  ``Give up'' → \texttt{stop\ tu\ trai} (Stop to try)
+\end{itemize}
+
+\subsubsection{3.12 Orthographic Stress
+Engine}\label{orthographic-stress-engine}
+
+To solve the ambiguity of spoken MinEnglish without relying on the
+optional \texttt{\textquotesingle{}} marker, standardizes default
+pronunciation logic for parsers and speakers. \textbf{Rule:} Always
+stress the \textbf{first vowel} of a root word \emph{unless} it is a
+recognized prefix-suffix. In compound words, stress the first syllable
+of the primary noun.
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{c\textquotesingle{}ompiuuter} (Stress the O)
+\item
+  \texttt{b\textquotesingle{}ioloji} (Stress the I)
+\end{itemize}
+
+\subsubsection{3.13 Echo-Tagging (Aviation/Noisy
+Protocol)}\label{echo-tagging-aviationnoisy-protocol}
+
+Claude Shannon's Information Theory proves that ``noise'' requires
+``redundancy'' to fix. MinEnglish's maximum data density strips all
+redundancy (\texttt{3boi\ uoc} marks plural only once). In high-noise
+environments (construction, radios, wind), MinEnglish fails
+catastrophically if one syllable drops. \textbf{Rule:} For critical
+transmissions, a speaker may artificially inflate Shannon redundancy to
+100\% by ``echoing'' the prefix as a full word \emph{after} the root.
+
+\begin{itemize}
+\tightlist
+\item
+  Standard: \texttt{3boi\ uoc} (Three boys are walking)
+\item
+  Echo-Tagged: \texttt{3boi\ trii\ uoc\ nau} (Three boys three
+  are-walking now)
+\end{itemize}
+
+\subsubsection{3.14 Formal Syntax (Backus-Naur
+Form)}\label{formal-syntax-backus-naur-form}
+
+The absolute regularity of MinEnglish allows it to be algorithmically
+validated. Below is the strict parsing configuration for a standard
+declarative sentence.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}sentence\textgreater{}      ::= [\textless{}subject\_block\textgreater{}] \textless{}verb\_block\textgreater{} [\textless{}object\_block\textgreater{}] [\textless{}modifier\_block\textgreater{}]...}
+\NormalTok{\textless{}subject\_block\textgreater{} ::= \textless{}noun\_phrase\textgreater{} | \textless{}pronoun\_phrase\textgreater{}}
+\NormalTok{\textless{}object\_block\textgreater{}  ::= \textless{}noun\_phrase\textgreater{} | \textless{}pronoun\_phrase\textgreater{}}
+
+\NormalTok{\textless{}noun\_phrase\textgreater{}   ::= \textless{}quantity\textgreater{} \textless{}noun\_root\textgreater{} [\textless{}adjective\_phrase\textgreater{}]}
+\NormalTok{\textless{}pronoun\_phrase\textgreater{}::= [\textless{}quantity\textgreater{}] \textless{}pronoun\_root\textgreater{}}
+\NormalTok{\textless{}adjective\_phrase\textgreater{} ::= [\textless{}intensity\textgreater{}] \textless{}adjective\_root\textgreater{}}
+
+\NormalTok{\textless{}verb\_block\textgreater{}    ::= [\textless{}temporal\_vector\textgreater{}] \textless{}verb\_root\textgreater{} [\textless{}adverb\_phrase\textgreater{}]}
+\NormalTok{\textless{}temporal\_vector\textgreater{} ::= \textless{}time\_prefix\textgreater{} | \textless{}duration\_prefix\textgreater{} | \textless{}unix\_timestamp\textgreater{}}
+
+\NormalTok{\textless{}clause\textgreater{}        ::= "\{" \textless{}connective\textgreater{} \textless{}sentence\textgreater{} "\}"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\newpage
+
+\subsection{4. Base Lexicon}\label{base-lexicon}
+
+\subsubsection{4.1 Fundamentals}\label{fundamentals}
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+English & MinEnglish \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+be / is & \textbf{bi} \\
+do & \textbf{du} \\
+come & \textbf{cum} \\
+take & \textbf{teic} \\
+see & \textbf{sii} \\
+think & \textbf{tinc} \\
+want / need & \textbf{uant} / \textbf{niid} \\
+have & \textbf{hav} \\
+go & \textbf{gou} \\
+make & \textbf{meic} \\
+give & \textbf{giv} \\
+know & \textbf{nou} \\
+say / tell & \textbf{sei} / \textbf{tel} \\
+use / find & \textbf{iuz} / \textbf{faind} \\
+\end{longtable}
+}
+
+\subsubsection{4.2 Time, Numbers, Nature}\label{time-numbers-nature}
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+English & MinEnglish \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1, 2, 3, 4, 5 & uan, tuu, trii, for, faiv \\
+6, 7, 8, 9, 0 & sics, seven, eit, nain, ziro \\
+10, 100, 1k & ten, hundrid, tauzund \\
+time & \textbf{taim} \\
+day / night & \textbf{dei} / \textbf{nait} \\
+month / year & \textbf{munt} / \textbf{iir} \\
+sun / moon & \textbf{sun} / \textbf{muun} \\
+rain / snow & \textbf{rein} / \textbf{snou} \\
+\end{longtable}
+}
+
+\subsubsection{4.3 People \& Body}\label{people-body}
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+English & MinEnglish \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+person / child & \textbf{person} / \textbf{ciald} \\
+man / woman & \textbf{man} / \textbf{uuman} \\
+mother-father & \textbf{muder} / \textbf{fader} \\
+friend & \textbf{frend} \\
+head / eye & \textbf{hed} / \textbf{ai} \\
+mouth & \textbf{maut} \\
+arm / leg & \textbf{arm} / \textbf{leg} \\
+hand / foot & \textbf{hand} / \textbf{fut} \\
+\end{longtable}
+}
+
+\subsubsection{4.4 Basic Adjectives \&
+Colors}\label{basic-adjectives-colors}
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+English & MinEnglish \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+big / small & \textbf{big} / \textbf{smol} \\
+good / bad & \textbf{gud} / \textbf{bad} \\
+new / old & \textbf{niu} / \textbf{ould} \\
+red / blue & \textbf{red} / \textbf{bluu} \\
+hot / cold & \textbf{hot} / \textbf{could} \\
+happy / sad & \textbf{hapi} / \textbf{sad} \\
+quick / slow & \textbf{cuic} / \textbf{slou} \\
+green / black & \textbf{griin} / \textbf{blac} \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\newpage
+
+\subsection{5. Syntactic Reference
+Guide}\label{syntactic-reference-guide}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{NOUN:       \textless{}count\textgreater{}\textless{}noun\textgreater{}         3cat, *dog, \textasciitilde{}10person, 0eror}
+\NormalTok{PROPER:     \textless{}count\textgreater{}\textless{}noun\textgreater{} \textless{}Name\textgreater{}  person Isabella, cuntri Spain}
+\NormalTok{MATH:       \textless{}num\textgreater{}/\textless{}num\textgreater{}, \textless{}num\textgreater{}.\textless{}num\textgreater{}  1/2apel, 0.5bol}
+\NormalTok{VERB:       (none)=present        sit, iit, run (default now)}
+\NormalTok{            1 = present (attach)  h1laic, tinc}
+\NormalTok{            * = any/all/habitual  *iit, *run}
+\NormalTok{            Nd = future (+ optional)  1d gou, 2h start}
+\NormalTok{            {-}Nd = past            {-}1d iit, {-}2h}
+\NormalTok{            : = duration          :5Y studi (studying for 5 years)}
+\NormalTok{ADJ:        \textless{}noun\textgreater{} \textless{}adj\textgreater{}          cat big, haus niu}
+\NormalTok{INTENSITY:  \textgreater{}/\textless{} \textless{}adj\textgreater{}             cat \textgreater{}big (very big), cat \textless{}big (slightly)}
+\NormalTok{MODAL:      \textless{}modal\textgreater{} \textless{}verb\textgreater{}        can run, shud iit, \textasciitilde{}can cum}
+\NormalTok{NEG:        no \textless{}verb\textgreater{}             no laic, {-}1d no cum}
+\NormalTok{QUEST:      ... ?                 u laic cat?}
+\NormalTok{COMPARE:    mor / most \textless{}adj\textgreater{}      mor big, most big}
+\NormalTok{APPROX:     \textasciitilde{}\textless{}value\textgreater{}              \textasciitilde{}5, \textasciitilde{}big}
+\NormalTok{GENERIC:    *\textless{}noun\textgreater{}, *\textless{}verb\textgreater{}      *dog *laic *fuud}
+\NormalTok{PASSIVE:    \textless{}Obj\textgreater{} bai \textless{}Subj\textgreater{}      bol kic bai i (ball kicked by me)}
+\NormalTok{ATTACH:     \textless{}pronoun\textgreater{}\textless{}prefix\textgreater{}     h1laic, {-}1d, s1run}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Consonant Key}\label{consonant-key}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{c = /k/ soft (cat, cum, bac)      k = /kʰ/ hard (king, kiip, kic)}
+\NormalTok{ci / ce = /tʃ/ (ciald, cier, ceic) sh = /ʃ/   ng = /ŋ/   zh = /ʒ/}
+\NormalTok{u = /w/ (uoter, uid)              i = /j/ (ies, iir)}
+\NormalTok{t = /t/ (tinc, trii)              d = /d/ (de, dat)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Pronouns}\label{pronouns}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{i = I/me       u = you        h = he{-}him}
+\NormalTok{s = she{-}her    t = it         dis = this      dat = that}
+
+\NormalTok{Plural: 5i = we five, *u = you all, 3h = 3 males, *s = they{-}females, *t = they{-}things}
+\NormalTok{Possess: i\textquotesingle{}s, u\textquotesingle{}s, h\textquotesingle{}s, s\textquotesingle{}, t\textquotesingle{}s}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\newpage
+
+\subsection{6. Comparative Corpus}\label{comparative-corpus}
+
+\subsubsection{Simple \& Truths}\label{simple-truths}
+
+\paragraph{Ex. 1}\label{ex.-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: The three cats are sitting on the big red mat. (46)}
+\NormalTok{ME: 3cat sit on mat big red. (24)}
+\NormalTok{BT: Three{-}cat sit on one{-}mat big red.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 47.8\% Δ
+
+\textbf{Observation:} High compression achieved via removal of definite
+articles, auxiliary verbs, and strict phonetic normalization.
+\end{quote}
+
+\paragraph{Ex. 2}\label{ex.-2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Dogs are loyal animals that love their owners. (46)}
+\NormalTok{ME: *dog bi *animal loial dat *luv *h\textquotesingle{}s ouner. (42)}
+\NormalTok{BT: Any{-}dog be any{-}animal loyal that any{-}love any{-}their owner.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 8.7\% Δ
+
+\textbf{Observation:} Universal deference operators (\texttt{*})
+substitute complex plural or aggregate noun constraints.
+\end{quote}
+
+\subsubsection{Relatives \& Times}\label{relatives-times}
+
+\paragraph{Ex. 3}\label{ex.-3}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Yesterday I bought two books and three apples at the store. (59)}
+\NormalTok{ME: {-}1d bai 2buc an 3apel @ stor. (29)}
+\NormalTok{BT: I one{-}day{-}ago buy two{-}book and three{-}apple at one{-}store.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\textbf{Compression:} 50.8\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\newpage
+
+\subsection{7. Comparative Information Density
+Analysis}\label{comparative-information-density-analysis}
+
+The transmission efficiency (information density) of MinEnglish was
+modeled against a 35-sentence standard English corpus. Efficiency is
+measured locally in byte-length (character count reduction).
+
+\subsubsection{Top Compression Vectors
+vs.~Deficits}\label{top-compression-vectors-vs.-deficits}
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0714}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.6786}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Highest Reductions
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Char Δ
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Variable Vector
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Ex. 6:} Absolute Timestamp & \textbf{63.4\%} &
+\texttt{2026-01-15\ 14:30} collapses 59 English alphabetical characters
+into absolute numeric notation. \\
+\textbf{Ex. 5:} Approximation & \textbf{58.6\%} &
+\texttt{\textasciitilde{}50person} collapses multi-word approximation
+phrases (``About fifty people''). \\
+\textbf{Ex. 4, 12, 30:} Modality \& Tense &
+\textbf{\textasciitilde45.0\%} & Prefixing operators (\texttt{1d},
+\texttt{btuiin\ 12:00}) computationally squash auxiliary verb chains. \\
+\end{longtable}
+}
+
+{\def\LTcaptype{} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2183}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0634}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.7183}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Lowest Reductions
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Char Δ
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Variable Vector
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Ex. 18:} Lexical Description & \textbf{8.5\%} & Base nouns of
+Latinate origin (\texttt{hospital}, \texttt{iuniversiti}) maintain
+protracted phonetic transcriptions. \\
+\textbf{Ex. 31:} Legal Domain & \textbf{20.0\%} & Domain-specific
+transliterations (\texttt{diipendant}, \texttt{carj}) resist operator
+optimization. \\
+\end{longtable}
+}
+
+\textbf{Corpus Density Metric (n=35):}
+
+\begin{itemize}
+\tightlist
+\item
+  Total Standard English Bytes (Chars): \textbf{2633}
+\item
+  Total MinEnglish Bytes (Chars): \textbf{1711}
+\item
+  Average Information Density Gain (Length Reduction): \textbf{35.0\%}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\newpage
+
+\subsection{8. Theoretical Limitations: The Human Biological
+Factor}\label{theoretical-limitations-the-human-biological-factor}
+
+The structural additions of previous linguistic protocols
+(Literalization \texttt{\_}, Clause Anchors \texttt{co}/\texttt{oc}, and
+Echo-Tagging) establish MinEnglish as a mathematically and
+informationally optimized transmission system. It addresses standard
+linguistic inefficiencies:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Short-Term Memory Bounds:} Clause anchors act as explicit
+  stack managers for human working memory, permitting indefinite
+  center-embedding.
+\item
+  \textbf{Transmission Integrity:} Echo-Tagging permits dynamic
+  redundancy scaling to guarantee fidelity in high-loss environments
+  (Shannon's Theorem).
+\end{enumerate}
+
+\subsubsection{8.1 Psychological Friction}\label{psychological-friction}
+
+The primary identified limitation of MinEnglish exists externally to its
+syntactic structure; the limitation is biological. Mammalian
+communicative pathways evolved to facilitate social cohesion,
+hierarchical navigation, and emotional subtext, often utilizing
+ambiguity to reduce friction.
+
+MinEnglish's computational design enforces an objective, algebraic
+paradigm. The absolute requirement for temporal precision, numerical
+exactness, and the prohibition of metaphorical obfuscation inherently
+conflicts with natural human cognitive behavior. Widespread neurological
+adoption of MinEnglish natively would likely prompt measurable
+psychological resistance, as the protocol disables the linguistic
+mechanisms humans rely on to process and mitigate sociological
+complexity.
+
+\subsubsection{8.2 Global Formalization
+Standards}\label{global-formalization-standards}
+
+As MinEnglish is designed to be a mathematically and informationally
+optimized transmission system, it inherently relies on existing,
+globally accepted objective standards to eliminate ambiguity. We
+strongly recommend that all implementations, translations, and corpus
+generations of MinEnglish strictly adhere to the following universal
+formalisms:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Chronometry:} All temporal references should default to
+  Universal Coordinated Time (UTC) or Universal Standard Time (UST)
+  representations (e.g., \texttt{14:30Z}).
+\item
+  \textbf{Measurement:} Only the International System of Units (SI /
+  Metric System) should be utilized for weights, measures, distances,
+  and volumes.
+\item
+  \textbf{Mathematics:} Equations, variable definitions, and complex
+  mathematical relationships should be expressed natively in LaTeX
+  syntax to avoid ad-hoc lexical transcriptions.
+\item
+  \textbf{Dates:} Adherence strictly to the ISO 8601 standard
+  (\texttt{YYYY-MM-DD}).
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\newpage
+
+\subsection{9. References}\label{references}
+
+\begin{itemize}
+\tightlist
+\item
+  Shannon, C. E. (1948). A mathematical theory of communication.
+  \emph{Bell System Technical Journal}, 27(3), 379--423.
+\item
+  Miller, G. A. (1956). The magical number seven, plus or minus two:
+  Some limits on our capacity for processing information.
+  \emph{Psychological Review}, 63(2), 81--97.
+\item
+  Chomsky, N. (1957). \emph{Syntactic Structures}. Mouton.
+\item
+  Zipf, G. K. (1949). \emph{Human Behavior and the Principle of Least
+  Effort}. Addison-Wesley.
+\item
+  Ogden, C. K. (1930). \emph{Basic English: A General Introduction with
+  Rules and Grammar}. Kegan Paul.
+\item
+  Zamenhof, L. L. (1887). \emph{Dr.~Esperanto's International Language}.
+\item
+  Pinker, S. (1994). \emph{The Language Instinct: How the Mind Creates
+  Language}. William Morrow.
+\item
+  Sapir, E. (1921). \emph{Language: An Introduction to the Study of
+  Speech}. Harcourt, Brace.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\newpage
+
+\subsection{Appendix A: Full Comparative
+Corpus}\label{appendix-a-full-comparative-corpus}
+
+\subsubsection{Ex. 4}\label{ex.-4}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Will you eat dinner with us tomorrow evening? (45)}
+\NormalTok{ME: u1d iit diner uid *i? (22)}
+\NormalTok{BT: You in{-}one{-}day eat one{-}dinner with all{-}of{-}us?}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 51.1\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\paragraph{Ex. 5}\label{ex.-5}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: About fifty people arrived at approximately three o\textquotesingle{}clock. (58)}
+\NormalTok{ME: \textasciitilde{}50person ariv @ \textasciitilde{}15:00. (24)}
+\NormalTok{BT: Approximately{-}fifty{-}person arrive at approximately{-}15:00.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 58.6\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\paragraph{Ex. 6}\label{ex.-6}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: The meeting was held on January fifteenth, twenty twenty{-}six, at two thirty in the afternoon. (93)}
+\NormalTok{ME: miiting 2026{-}01{-}15 14:30 bi held. (33)}
+\NormalTok{BT: One{-}meeting 2026{-}01{-}15 14:30 be held.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 64.5\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\paragraph{Ex. 7}\label{ex.-7}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: I have been studying English for five years but I still cannot speak fluently. (78)}
+\NormalTok{ME: :5Y studi inglish but i !can spiic fluuent. (44)}
+\NormalTok{BT: For{-}five{-}years study English but I negation{-}can speak fluent.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 42.3\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\subsubsection{Complex Modifiers \&
+Voice}\label{complex-modifiers-voice}
+
+\paragraph{Ex. 8}\label{ex.-8}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: We are going to the extremely new restaurant tomorrow at seven in the evening. (78)}
+\NormalTok{ME: *i1d gou tu restaurant \textgreater{}\textgreater{}niu @ 19:00. (38)}
+\NormalTok{BT: All{-}of{-}us in{-}one{-}day go to one{-}restaurant extremely{-}new at 19:00.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 51.3\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\paragraph{Ex. 9}\label{ex.-9}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Look out! The glass window was just broken by the angry man. (60)}
+\NormalTok{ME: uoci!! uindou glas breic bai man angri. (39)}
+\NormalTok{BT: Watch! One{-}window glass just{-}now break by one{-}man angry.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 35.0\% Δ
+
+\textbf{Observation:} Exclamatory prefixes (\texttt{!!}) enforce
+immediate semantic parsing, bypassing syntactic buildup.
+\end{quote}
+
+\paragraph{Ex. 10}\label{ex.-10}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: She must give her book to him before she can start working. (59)}
+\NormalTok{ME: s1must giv s\textquotesingle{}s buc tu h bifor s1can start tu uorc. (50)}
+\NormalTok{BT: She{-}now{-}must give her book to he before she{-}now{-}can start [Object] one{-}work.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 15.3\% Δ
+
+\textbf{Observation:} General lexical optimization and phonetic spelling
+reduction.
+\end{quote}
+
+\subsubsection{Conditionals, Logic \&
+Commands}\label{conditionals-logic-commands}
+
+\paragraph{Ex. 11}\label{ex.-11}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: If you don\textquotesingle{}t stop running, you will fall and break your legs. (61)}
+\NormalTok{ME: if u1!stop tu run, u1fol an breic tu u\textquotesingle{}s 2leg. (48)}
+\NormalTok{BT: If you{-}now{-}negation{-}stop [Obj] run, you{-}now{-}fall and break [Obj] your two{-}leg.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 21.3\% Δ
+
+\textbf{Observation:} General lexical optimization and phonetic spelling
+reduction.
+\end{quote}
+
+\paragraph{Ex. 12}\label{ex.-12}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Every morning I drink two cups of coffee and eat one piece of toast before work. (80)}
+\NormalTok{ME: *morning i*drinc 2cup cofi an *iit piis toust bifor uorc. (58)}
+\NormalTok{BT: Any{-}morning I{-}habitually{-}drink two{-}cup coffee and habitually{-}eat one{-}piece toast before work.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 27.5\% Δ
+
+\textbf{Observation:} Universal deference operators (\texttt{*})
+substitute complex plural or aggregate noun constraints.
+\end{quote}
+
+\paragraph{Ex. 13}\label{ex.-13}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Take three eggs, add two cups of flour, and mix everything together for ten minutes. (84)}
+\NormalTok{ME: teic 3eg, ad 2cup flaur, an mics *ting for 10m. (48)}
+\NormalTok{BT: Take three{-}egg, add two{-}cup flour, and mix all{-}thing for ten{-}minutes.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 42.9\% Δ
+
+\textbf{Observation:} Universal deference operators (\texttt{*})
+substitute complex plural or aggregate noun constraints.
+\end{quote}
+
+\paragraph{Ex. 14}\label{ex.-14}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Please give me two glasses of water, I am very thirsty. (55)}
+\NormalTok{ME: \textasciitilde{}u giv i 2glas uoter, i bi \textgreater{}tersti. (35)}
+\NormalTok{BT: Polite{-}you{-}give I two{-}glass water, I be very{-}thirsty.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 36.4\% Δ
+
+\textbf{Observation:} Approximation operators
+(\texttt{\textasciitilde{}}) drastically reduce multi-word phrasings
+like ``about'' or ``approximately''.
+\end{quote}
+
+\subsubsection{Dialogue \& Description}\label{dialogue-description}
+
+\paragraph{Ex. 15}\label{ex.-15}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: "How many children do you have?" "I have two boys and one girl." (64)}
+\NormalTok{ME: "haum *ciald u hav?" "i hav 2boi an gerl." (42)}
+\NormalTok{BT: "How{-}many any{-}child you have?" "I have two{-}boy and one{-}girl."}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 35.9\% Δ
+
+\textbf{Observation:} Interrogative prefixes condense investigative
+clauses into single tokens.
+\end{quote}
+
+\paragraph{Ex. 16}\label{ex.-16}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Last year, she traveled to five different countries and learned three new languages because she wanted to understand the world better. (134)}
+\NormalTok{ME: s{-}1Y travel tu 5cuntri diferent an lern 3languij niu cos s{-}1Y uant understand uerld mor gud. (92)}
+\NormalTok{BT: She one{-}year{-}ago travel to five{-}country different and learn three{-}language new because she one{-}year{-}ago want understand one{-}world more good.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 31.3\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\paragraph{Ex. 17}\label{ex.-17}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: I might go to the party, but she loves him and he does not love her. (68)}
+\NormalTok{ME: i1d \textasciitilde{}can gou tu parti, but s1luv h an h !luv s. (50)}
+\NormalTok{BT: I in{-}future might go to one{-}party, but she{-}now{-}love he and he negation{-}love she.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 26.5\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\paragraph{Ex. 18}\label{ex.-18}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: My brother works at a hospital and my sister studies at the university. (71)}
+\NormalTok{ME: i\textquotesingle{}s bruder *uorc @ hospital an i\textquotesingle{}s sister *studi @ iuniversiti. (63)}
+\NormalTok{BT: My brother any{-}work at one{-}hospital and my sister any{-}study at one{-}university.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\emph{Low compression --- long Latin words maintain their length.}
+11.3\% Δ
+
+\textbf{Observation:} Universal deference operators (\texttt{*})
+substitute complex plural or aggregate noun constraints.
+\end{quote}
+
+\paragraph{Ex. 19}\label{ex.-19}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: The children were playing in the park when it started raining heavily. (70)}
+\NormalTok{ME: *ciald in parc uen t{-}0s start rein \textgreater{}hevi. (42)}
+\NormalTok{BT: Any{-}child just{-}now in(verb) one{-}park when it{-}just{-}now start rain very{-}heavily.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 40.0\% Δ
+
+\textbf{Observation:} Intensity operators (\texttt{\textgreater{}},
+\texttt{\textgreater{}\textgreater{}}) eliminate lengthy adverbial
+modifiers.
+\end{quote}
+
+\paragraph{Ex. 20}\label{ex.-20}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: How much does this car cost? It is too expensive for me. (56)}
+\NormalTok{ME: haum dis car cost? t bi \textgreater{}\textgreater{}ecspensiv for i. (43)}
+\NormalTok{BT: How{-}much this car cost? It be extremely{-}expensive for I.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 23.2\% Δ
+
+\textbf{Observation:} Intensity operators (\texttt{\textgreater{}},
+\texttt{\textgreater{}\textgreater{}}) eliminate lengthy adverbial
+modifiers.
+\end{quote}
+
+\subsubsection{Advanced Domains (Sci-Fi, Philosophy,
+Business)}\label{advanced-domains-sci-fi-philosophy-business}
+
+\paragraph{Ex. 21}\label{ex.-21}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: The spaceship launched into orbit after the countdown reached zero. (67)}
+\NormalTok{ME: speisship lonci in orbit after caunt{-}daun hit 0. (48)}
+\NormalTok{BT: One{-}spaceship just{-}now launch in one{-}orbit after one{-}count{-}down hit zero.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 28.4\% Δ
+
+\textbf{Observation:} General lexical optimization and phonetic spelling
+reduction.
+\end{quote}
+
+\paragraph{Ex. 22}\label{ex.-22}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: To be or not to be, that is the question we must all answer eventually. (71)}
+\NormalTok{ME: bi or !bi, dat bi cuesciun *i must anser in taim. (51)}
+\NormalTok{BT: Be or not{-}be, that be one{-}question all{-}of{-}us must answer in future{-}time.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 26.8\% Δ
+
+\textbf{Observation:} Universal deference operators (\texttt{*})
+substitute complex plural or aggregate noun constraints.
+\end{quote}
+
+\paragraph{Ex. 23}\label{ex.-23}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Our company needs to optimize its supply chain to maximize profit margins next year. (84)}
+\NormalTok{ME: *i\textquotesingle{}s compani niid optimaiz t\textquotesingle{}s suplai{-}cein tu macsimaiz *marjin{-}profit 1Y. (74)}
+\NormalTok{BT: All{-}of{-}us{-}possessive company need optimize its supply{-}chain to maximize any{-}margin{-}profit next{-}year.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 11.9\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\paragraph{Ex. 24}\label{ex.-24}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: The president announced a new tax policy that will affect middle class families. (80)}
+\NormalTok{ME: prezident anauns tacs{-}polisi niu dat 1d afect *famili clas{-}midl. (65)}
+\NormalTok{BT: One{-}president just{-}now announce one{-}tax{-}policy new that in{-}future affect any{-}family class{-}middle.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 18.8\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\paragraph{Ex. 25}\label{ex.-25}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: The doctor prescribed antibiotics to treat the patient\textquotesingle{}s severe bacterial infection. (84)}
+\NormalTok{ME: doctor prescraib tu antibiotik tu triit bacteriel infecshun \textgreater{}siirius peishent\textquotesingle{}s. (80)}
+\NormalTok{BT: One{-}doctor just{-}now prescribe [Obj] one{-}antibiotic to treat one{-}bacterial{-}infection very{-}serious one{-}patient\textquotesingle{}s.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 4.8\% Δ
+
+\textbf{Observation:} Intensity operators (\texttt{\textgreater{}},
+\texttt{\textgreater{}\textgreater{}}) eliminate lengthy adverbial
+modifiers.
+\end{quote}
+
+\paragraph{Ex. 26}\label{ex.-26}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: The three bedroom house with a large backyard is currently on the market for rent. (82)}
+\NormalTok{ME: haus 3bedruum uid baciard big in marcet for rent nau. (53)}
+\NormalTok{BT: One{-}house three{-}bedroom with one{-}backyard big now{-}in one{-}market for rent now.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 35.4\% Δ
+
+\textbf{Observation:} General lexical optimization and phonetic spelling
+reduction.
+\end{quote}
+
+\paragraph{Ex. 27}\label{ex.-27}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: If the server crashes, the backup system will automatically restore the database. (81)}
+\NormalTok{ME: if server craish, backup sistem 1d otoristor daatabeis. (55)}
+\NormalTok{BT: If one{-}server crash, one{-}backup{-}system in{-}future auto{-}restore one{-}database.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 32.1\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\paragraph{Ex. 28}\label{ex.-28}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Global warming is melting the polar ice caps faster than scientists predicted. (78)}
+\NormalTok{ME: gloubal uorming melt *cap{-}ais poular \textgreater{}fast dan *saientist {-}1d pridiict. (71)}
+\NormalTok{BT: Global{-}warming now{-}melt any{-}cap{-}ice polar more{-}fast than any{-}scientist past{-}predict.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 9.0\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\paragraph{Ex. 29}\label{ex.-29}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: The wind whispered through the ancient trees as the silver moon rose in the sky. (80)}
+\NormalTok{ME: uind uisper tru *trii \textgreater{}ould az muun silver raiz in scai. (57)}
+\NormalTok{BT: One{-}wind just{-}now whisper through any{-}tree very{-}old as one{-}moon silver just{-}now rise in one{-}sky.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 28.7\% Δ
+
+\textbf{Observation:} Intensity operators (\texttt{\textgreater{}},
+\texttt{\textgreater{}\textgreater{}}) eliminate lengthy adverbial
+modifiers.
+\end{quote}
+
+\paragraph{Logistics}\label{logistics}
+
+\paragraph{Ex. 30}\label{ex.-30}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: The delivery truck will arrive with your package between noon and two o\textquotesingle{}clock. (78)}
+\NormalTok{ME: diliveri truc 1d ariv uid u\textquotesingle{}s pacij btuiin 12:00 an 14:00. (58)}
+\NormalTok{BT: One{-}delivery{-}truck in{-}future arrive with your package between 12:00 and 14:00.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 25.6\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\paragraph{Ex. 31}\label{ex.-31}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: The defendant formally pleaded not guilty to all charges presented by the court. (80)}
+\NormalTok{ME: diifendant formal pliid !gilti tu *ciarj prizent bai cort. (59)}
+\NormalTok{BT: One{-}defendant just{-}now formal plead not guilty to any{-}charge present by one{-}court.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 21.3\% Δ
+
+\textbf{Observation:} Universal deference operators (\texttt{*})
+substitute complex plural or aggregate noun constraints.
+\end{quote}
+
+\paragraph{Ex. 32}\label{ex.-32}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Boil the water, add a pinch of salt, and stir constantly until the sauce thickens. (82)}
+\NormalTok{ME: boil tu uoter, ad tu pince solt, an *ster until sos \textgreater{}tic. (58)}
+\NormalTok{BT: Boil [Obj] one{-}water, add [Obj] one{-}pinch salt, and any{-}stir until one{-}sauce very{-}thick.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 29.3\% Δ
+
+\textbf{Observation:} Intensity operators (\texttt{\textgreater{}},
+\texttt{\textgreater{}\textgreater{}}) eliminate lengthy adverbial
+modifiers.
+\end{quote}
+
+\paragraph{Ex. 33}\label{ex.-33}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: I have never felt this way about anyone before, you changed my entire life. (75)}
+\NormalTok{ME: {-}1d *!fiil dis ue abaut *person bifor, u {-}1d ceinj i\textquotesingle{}s laif \textgreater{}hol. (67)}
+\NormalTok{BT: I{-}just{-}now{-}yesterday any{-}negation{-}feel this way about any{-}person before, you yesterday change [Obj] my life very{-}whole.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 10.7\% Δ
+
+\textbf{Observation:} Temporal operators (\texttt{-1d}, \texttt{1d},
+\texttt{:5Y}) collapse complex tense architectures and prepositional
+phrases.
+\end{quote}
+
+\paragraph{Ex. 34}\label{ex.-34}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Go straight for two miles, then turn left at the second traffic light you see. (78)}
+\NormalTok{ME: gou streit for 2mail, den tern left @ trapic lait tuu u1sii. (60)}
+\NormalTok{BT: Go straight for two{-}mile, then turn left at one{-}traffic{-}light two you{-}now{-}see.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 23.1\% Δ
+
+\textbf{Observation:} General lexical optimization and phonetic spelling
+reduction.
+\end{quote}
+
+\paragraph{Ex. 35}\label{ex.-35}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EN: Hyperinflation destroys purchasing power and severely halts economic development. (81)}
+\NormalTok{ME: \textgreater{}\textgreater{}haiperinflashun distroi tu pauer{-}bai an \textgreater{}siirius holt tu divelopment economik. (80)}
+\NormalTok{BT: Extremely{-}hyperinflation now{-}destroy [Obj] power{-}buy and very{-}serious halt [Obj] development economic.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Compression:} 1.2\% Δ
+
+\textbf{Observation:} Low compression due to retention of exact
+international academic vocabulary.
+\end{quote}
+
+\newpage
+
+\subsection{Appendix B: License}\label{appendix-b-license}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{MIT License}
+
+\NormalTok{Copyright (c) 2026 Dan Micsa, PhD}
+
+\NormalTok{Permission is hereby granted, free of charge, to any person obtaining a copy}
+\NormalTok{of this language specification and associated documentation files (the}
+\NormalTok{"Specification"), to deal in the Specification without restriction, including}
+\NormalTok{without limitation the rights to use, copy, modify, merge, publish,}
+\NormalTok{distribute, sublicense, and{-}or sell copies of the Specification, and to}
+\NormalTok{permit persons to whom the Specification is furnished to do so, subject to}
+\NormalTok{the following conditions:}
+
+\NormalTok{The above copyright notice and this permission notice shall be included in}
+\NormalTok{all copies or substantial portions of the Specification.}
+
+\NormalTok{THE SPECIFICATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS}
+\NormalTok{OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,}
+\NormalTok{FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE}
+\NormalTok{AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER}
+\NormalTok{LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING}
+\NormalTok{FROM, OUT OF OR IN CONNECTION WITH THE SPECIFICATION OR THE USE OR OTHER}
+\NormalTok{DEALINGS IN THE SPECIFICATION.}
+\end{Highlighting}
+\end{Shaded}

@@ -1,0 +1,1285 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.10.9)  7 MAR 2026 15:01
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./MinEnglish.tex
+(MinEnglish.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count183
+\c@section=\count184
+\c@subsection=\count185
+\c@subsubsection=\count186
+\c@paragraph=\count187
+\c@subparagraph=\count188
+\c@figure=\count189
+\c@table=\count190
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count191
+\Gm@cntv=\count192
+\c@Gm@tempcnt=\count193
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
+\Gm@dimlist=\toks18
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.
+sty (C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-01-04 L3 programming layer (loader) 
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xetex
+.def
+File: l3backend-xetex.def 2024-01-04 L3 backend support: XeTeX
+\g__graphics_track_int=\count194
+\l__pdf_internal_box=\box51
+\g__pdf_backend_object_int=\count195
+\g__pdf_backend_annotation_int=\count196
+\g__pdf_backend_link_int=\count197
+))
+Package: xparse 2023-10-10 L3 Experimental document command parser
+)
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex.s
+ty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count198
+\l__fontspec_language_int=\count199
+\l__fontspec_strnum_int=\count266
+\l__fontspec_tmp_int=\count267
+\l__fontspec_tmpa_int=\count268
+\l__fontspec_tmpb_int=\count269
+\l__fontspec_tmpc_int=\count270
+\l__fontspec_em_int=\count271
+\l__fontspec_emdef_int=\count272
+\l__fontspec_strong_int=\count273
+\l__fontspec_strongdef_int=\count274
+\l__fontspec_tmpa_dim=\dimen149
+\l__fontspec_tmpb_dim=\dimen150
+\l__fontspec_tmpc_dim=\dimen151
+ (C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg)))
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.sty
+Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count275
+)
+\MT@toks=\toks19
+\MT@tempbox=\box52
+\MT@count=\count276
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
+LaTeX Info: Redefining \leftprotrusion on input line 1060.
+\MT@prot@toks=\toks20
+LaTeX Info: Redefining \rightprotrusion on input line 1078.
+LaTeX Info: Redefining \textls on input line 1368.
+\MT@outer@kern=\dimen152
+LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
+\MT@listname@count=\count277
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-xetex
+.def
+File: microtype-xetex.def 2023/03/13 v3.1a Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 238.
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.cfg
+File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
+)) (C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen153
+\ar@mcellbox=\box53
+\extrarowheight=\dimen154
+\NC@list=\toks21
+\extratabsurround=\skip50
+\backup@length=\skip51
+\ar@cellbox=\box54
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen155
+\lightrulewidth=\dimen156
+\cmidrulewidth=\dimen157
+\belowrulesep=\dimen158
+\belowbottomsep=\dimen159
+\aboverulesep=\dimen160
+\abovetopsep=\dimen161
+\cmidrulesep=\dimen162
+\cmidrulekern=\dimen163
+\defaultaddspace=\dimen164
+\@cmidla=\count278
+\@cmidlb=\count279
+\@aboverulesep=\dimen165
+\@belowrulesep=\dimen166
+\@thisruleclass=\count280
+\@lastruleclass=\count281
+\@thisrulewidth=\dimen167
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen168
+\TX@old@table=\dimen169
+\TX@old@col=\dimen170
+\TX@target=\dimen171
+\TX@delta=\dimen172
+\TX@cols=\count282
+\TX@ftn=\toks22
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefineke
+ys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.s
+ty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)) (C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro.s
+ty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitle
+string.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count283
+)
+\@linkdim=\dimen173
+\Hy@linkcounter=\count284
+\Hy@pagecounter=\count285
+ (C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count286
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing OFF on input line 4201.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4448.
+\c@Hy@tempcnt=\count287
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4786.
+\XeTeXLinkMargin=\dimen174
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.s
+ty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count288
+\Field@Width=\dimen175
+\Fld@charsize=\dimen176
+Package hyperref Info: Hyper figures OFF on input line 6065.
+Package hyperref Info: Link nesting OFF on input line 6070.
+Package hyperref Info: Hyper index ON on input line 6073.
+Package hyperref Info: backreferencing OFF on input line 6080.
+Package hyperref Info: Link coloring OFF on input line 6085.
+Package hyperref Info: Link coloring with OCG OFF on input line 6090.
+Package hyperref Info: PDF/A mode OFF on input line 6095.
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count289
+\c@Item=\count290
+\c@Hfootnote=\count291
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
+File: hxetex.def 2023-11-26 v7.01g Hyperref driver for XeTeX
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box55
+\c@Hy@AnnotLevel=\count292
+\HyField@AnnotCount=\count293
+\Fld@listcount=\count294
+\c@bookmark@seq@number=\count295
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilec
+heck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecou
+nter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip52
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip53
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks23
+\ex@=\dimen177
+))
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen178
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count296
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count297
+\leftroot@=\count298
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count299
+\DOTSCASE@=\count300
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box56
+\strutbox@=\box57
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen179
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count301
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count302
+\dotsspace@=\muskip17
+\c@parentequation=\count303
+\dspbrk@lvl=\count304
+\tag@help=\toks24
+\row@=\count305
+\column@=\count306
+\maxfields@=\count307
+\andhelp@=\toks25
+\eqnshift@=\dimen180
+\alignsep@=\dimen181
+\tagshift@=\dimen182
+\tagwidth@=\dimen183
+\totwidth@=\dimen184
+\lineht@=\dimen185
+\@envbody=\toks26
+\multlinegap=\skip54
+\multlinetaggap=\skip55
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count308
+\lst@gtempboxa=\box58
+\lst@token=\toks28
+\lst@length=\count309
+\lst@currlwidth=\dimen186
+\lst@column=\count310
+\lst@pos=\count311
+\lst@lostspace=\dimen187
+\lst@width=\dimen188
+\lst@newlines=\count312
+\lst@lineno=\count313
+\lst@maxwidth=\dimen189
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count314
+\lst@skipnumbers=\count315
+\lst@framebox=\box59
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 274.
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip56
+\enit@outerparindent=\dimen190
+\enit@toks=\toks29
+\enit@inbox=\box60
+\enit@count@id=\count316
+\enitdp@description=\count317
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/appendix\appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count318
+\c@@ppsavesec=\count319
+\c@@ppsaveapp=\count320
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box61
+\beforetitleunit=\skip57
+\aftertitleunit=\skip58
+\ttl@plus=\dimen191
+\ttl@minus=\dimen192
+\ttl@toksa=\toks30
+\titlewidth=\dimen193
+\titlewidthlast=\dimen194
+\titlewidthfirst=\dimen195
+)
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty
+Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
+)
+
+Package fontspec Info: Font family 'Cambria(0)' created for font 'Cambria'
+(fontspec)             with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"Cambria/OT:script=latn;language=dflt;mapping=tex-tex
+t;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"Cambria/OT:script=latn;language=dflt;+smcp;mapping=t
+ex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"Cambria/B/OT:script=latn;language=dflt;mapping=tex-t
+ext;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->"Cambria/B/OT:script=latn;language=dflt;+smcp;mapping
+=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"Cambria/I/OT:script=latn;language=dflt;mapping=tex-t
+ext;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->"Cambria/I/OT:script=latn;language=dflt;+smcp;mapping
+=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"Cambria/BI/OT:script=latn;language=dflt;mapping=tex-
+text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->"Cambria/BI/OT:script=latn;language=dflt;+smcp;mappin
+g=tex-text;"
+
+
+Package fontspec Info: Liberation Mono scale = 0.8835468568361618.
+
+
+Package fontspec Info: Liberation Mono scale = 0.8835468568361618.
+
+
+Package fontspec Info: Liberation Mono/B scale = 0.8835468568361618.
+
+
+Package fontspec Info: Liberation Mono/I scale = 0.8835468568361618.
+
+
+Package fontspec Info: Liberation Mono/BI scale = 0.8835468568361618.
+
+
+Package fontspec Info: Font family 'LiberationMono(0)' created for font
+(fontspec)             'Liberation Mono' with options
+(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=Word
+Space,Scale=MatchLowercase].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[0.8835468568361618]"Liberation
+(fontspec)             Mono/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[0.8835468568361618]"Liberation
+(fontspec)             Mono/B/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[0.8835468568361618]"Liberation
+(fontspec)             Mono/I/OT:script=latn;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[0.8835468568361618]"Liberation
+(fontspec)             Mono/BI/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font
+(fontspec)             =0\fontdimen 3\font \fontdimen 4\font =0\fontdimen
+(fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
+(fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
+
+Package hyperref Info: Option `colorlinks' set `true' on input line 34.
+
+(MinEnglish.aux)
+\openout1 = `MinEnglish.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 7
+2.
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmr.fd
+File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(54.2025pt, 505.89pt, 54.2025pt)
+* v-part:(T,H,B)=(54.2025pt, 686.56499pt, 54.2025pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=505.89pt
+* \textheight=686.56499pt
+* \oddsidemargin=-18.06749pt
+* \evensidemargin=-18.06749pt
+* \topmargin=-55.06749pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 72.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 72.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 72.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 72.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 72.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 72.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 72.
+LaTeX Font Info:    Redeclaring math accent \check on input line 72.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 72.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 72.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 72.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 72.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 72.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 72.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/Cambria(0)/m/n on input line 72.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 72.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/Cambria(0)/m/n on input line 72.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/Cambria(0)/m/n --> TU/Cambria(0)/m/n on input line 7
+2.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/Cambria(0)/m/it on input line 72.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/Cambria(0)/b/n on input line 72.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 72.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/LiberationMono(0)/m/n on input line
+ 72.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/Cambria(0)/m/n --> TU/Cambria(0)/b/n on input line 7
+2.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/Cambria(0)/b/it on input line 72.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 72.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/LiberationMono(0)/b/n on input line
+ 72.
+LaTeX Info: Redefining \microtypecontext on input line 72.
+Package microtype Info: Applying patch `item' on input line 72.
+Package microtype Info: Applying patch `toc' on input line 72.
+Package microtype Info: Applying patch `eqnum' on input line 72.
+Package microtype Info: Applying patch `footnote' on input line 72.
+Package microtype Info: Applying patch `verbatim' on input line 72.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `Cambria' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package hyperref Info: Link coloring ON on input line 72.
+(MinEnglish.out) (MinEnglish.out)
+\@outlinefile=\write3
+\openout3 = `MinEnglish.out'.
+
+\c@lstlisting=\count321
+
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+[1
+
+] (MinEnglish.toc
+LaTeX Font Info:    Font shape `TU/LiberationMono(0)/m/n' will be
+(Font)              scaled to size 10.60254pt on input line 10.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `LiberationMono' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+)
+\tf@toc=\write4
+\openout4 = `MinEnglish.toc'.
+
+ [2
+
+]
+Overfull \hbox (10.67952pt too wide) in paragraph at lines 109--110
+[]\TU/Cambria(0)/b/n/12 Phonetic Isomorphism: \TU/Cambria(0)/m/n/12 1-to-1 grap
+heme-phoneme correspondence eliminates orthographic mem-
+ []
+
+[3
+
+]
+Overfull \hbox (10.0811pt too wide) in paragraph at lines 145--149
+[]\TU/Cambria(0)/m/n/12 Diphthongs are encoded as contiguous grapheme pairs, pr
+eserving the 1-to-1 mapping without macron
+ []
+
+LaTeX Font Info:    Font shape `TU/LiberationMono(0)/b/n' will be
+(Font)              scaled to size 10.60254pt on input line 170.
+[4
+
+]
+LaTeX Font Info:    Font shape `TU/LiberationMono(0)/b/n' will be
+(Font)              scaled to size 12.72304pt on input line 213.
+ [5
+
+] [6]
+(C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+LaTeX Font Info:    Font shape `TU/LiberationMono(0)/b/n' will be
+(Font)              scaled to size 9.6748pt on input line 343.
+
+[7] [8
+
+]
+Overfull \hbox (1.08546pt too wide) in paragraph at lines 403--406
+\TU/Cambria(0)/m/n/12 Back-translations reconstruct compositional logic. Compre
+ssion = character count reduction vs. stan-
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 414--414
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 421--421
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 430--430
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 437--437
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+[9
+
+]
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 444--444
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 451--451
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--451
+[]|\TU/LiberationMono(0)/m/n/10.95 The meeting was held on January fifteenth, t
+wenty twenty-six, at
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 458--458
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--458
+[]|\TU/LiberationMono(0)/m/n/10.95 I have been studying English for five years 
+but I still cannot
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 467--467
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+[]|\TU/LiberationMono(0)/m/n/10.95 We are going to the extremely new restaurant
+ tomorrow at seven in
+ []
+
+[10]
+Overfull \hbox (2.67366pt too wide) in paragraph at lines 467--467
+\TU/Cambria(0)/b/n/12 Observation: \TU/Cambria(0)/m/n/12 Intensity markers and 
+time notation shorten descriptive detail without changing mean-
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 474--474
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 481--481
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 481--481
+[]|\TU/LiberationMono(0)/m/n/10.95 She-now-must give her book to he before she-
+now-can start [Object]
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 490--490
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+[]|\TU/LiberationMono(0)/m/n/10.95 If you-now-not stop [Obj] run, you-now-fall 
+and break [Obj] your
+ []
+
+[11]
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 497--497
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
+[]|\TU/LiberationMono(0)/m/n/10.95 Every morning I drink two cups of coffee and
+ eat one piece of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
+[]|\TU/LiberationMono(0)/m/n/10.95 Any-morning I-habitually-drink two-cup coffe
+e and habitually-eat
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 504--504
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 504--504
+[]|\TU/LiberationMono(0)/m/n/10.95 Take three eggs, add two cups of flour, and 
+mix everything
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 504--504
+[]|\TU/LiberationMono(0)/m/n/10.95 Take three-egg, add two-cup flour, and mix a
+ll-thing for
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 511--511
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 520--520
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 520--520
+[]|\TU/LiberationMono(0)/m/n/10.95 \"How many children do you have?\" \"I have 
+two boys and one
+ []
+
+[12]
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 527--527
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+[]|\TU/LiberationMono(0)/m/n/10.95 Last year, she traveled to five different co
+untries and learned
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+\TU/LiberationMono(0)/m/n/10.95 three new languages because she wanted to under
+stand the world
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+[]|\TU/LiberationMono(0)/m/n/10.95 s-1Y travel tu 5cuntri diferent an lern 3lan
+guij niu cos s-1Y uant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+[]|\TU/LiberationMono(0)/m/n/10.95 She one-year-ago travel to five-country diff
+erent and learn
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+\TU/LiberationMono(0)/m/n/10.95 three-language new because she one-year-ago wan
+t understand
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 534--534
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
+[]|\TU/LiberationMono(0)/m/n/10.95 I might go to the party, but she loves him a
+nd he does not love
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--534
+[]|\TU/LiberationMono(0)/m/n/10.95 I in-future might go to one-party, but she-n
+ow-love he and he not
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 541--541
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 541--541
+[]|\TU/LiberationMono(0)/m/n/10.95 My brother works at a hospital and my sister
+ studies at the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 541--541
+[]|\TU/LiberationMono(0)/m/n/10.95 My brother any-work at one-hospital and my s
+ister any-study at
+ []
+
+[13]
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 548--548
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 548--548
+[]|\TU/LiberationMono(0)/m/n/10.95 The children were playing in the park when i
+t started raining
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 548--548
+[]|\TU/LiberationMono(0)/m/n/10.95 Any-child just-now in(verb) one-park when it
+-just-now start rain
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 555--555
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 564--564
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--564
+[]|\TU/LiberationMono(0)/m/n/10.95 The spaceship launched into orbit after the 
+countdown reached
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--564
+[]|\TU/LiberationMono(0)/m/n/10.95 One-spaceship just-now launch in one-orbit a
+fter one-count-down
+ []
+
+[14]
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 571--571
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 571--571
+[]|\TU/LiberationMono(0)/m/n/10.95 To be or not to be, that is the question we 
+must all answer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 571--571
+[]|\TU/LiberationMono(0)/m/n/10.95 Be or not be, that be one-question all-of-us
+ must answer in
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 578--578
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 578--578
+[]|\TU/LiberationMono(0)/m/n/10.95 Our company needs to optimize its supply cha
+in to maximize profit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 578--578
+[]|\TU/LiberationMono(0)/m/n/10.95 *i's compani niid optimaiz t's suplai-cein t
+u macsimaiz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 578--578
+[]|\TU/LiberationMono(0)/m/n/10.95 All-of-us-possessive company need optimize i
+ts supply-chain to
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 585--585
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 585--585
+[]|\TU/LiberationMono(0)/m/n/10.95 The president announced a new tax policy tha
+t will affect middle
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 585--585
+[]|\TU/LiberationMono(0)/m/n/10.95 One-president just-now announce one-tax-poli
+cy new that in-future
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 592--592
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 592--592
+[]|\TU/LiberationMono(0)/m/n/10.95 The doctor prescribed antibiotics to treat t
+he patient's severe
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 592--592
+[]|\TU/LiberationMono(0)/m/n/10.95 doctor prescraib tu antibiotik tu triit bact
+eriel infecshun
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 592--592
+[]|\TU/LiberationMono(0)/m/n/10.95 One-doctor just-now prescribe [Obj] one-anti
+biotic to treat
+ []
+
+[15]
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 599--599
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 599--599
+[]|\TU/LiberationMono(0)/m/n/10.95 The three bedroom house with a large backyar
+d is currently on the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 599--599
+[]|\TU/LiberationMono(0)/m/n/10.95 One-house three-bedroom with one-backyard bi
+g now-in one-market
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 606--606
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 606--606
+[]|\TU/LiberationMono(0)/m/n/10.95 If the server crashes, the backup system wil
+l automatically
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 606--606
+[]|\TU/LiberationMono(0)/m/n/10.95 If one-server crash, one-backup-system in-fu
+ture auto-restore
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 613--613
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 613--613
+[]|\TU/LiberationMono(0)/m/n/10.95 Global warming is melting the polar ice caps
+ faster than
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 613--613
+[]|\TU/LiberationMono(0)/m/n/10.95 gloubal uorming melt *cap-ais poular >fast d
+an *saientist -1d
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 613--613
+[]|\TU/LiberationMono(0)/m/n/10.95 Global-warming now-melt any-cap-ice polar mo
+re-fast than
+ []
+
+[16]
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 620--620
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--620
+[]|\TU/LiberationMono(0)/m/n/10.95 The wind whispered through the ancient trees
+ as the silver moon
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--620
+[]|\TU/LiberationMono(0)/m/n/10.95 One-wind just-now whisper through any-tree v
+ery-old as one-moon
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 627--627
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 627--627
+[]|\TU/LiberationMono(0)/m/n/10.95 The delivery truck will arrive with your pac
+kage between noon and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 627--627
+[]|\TU/LiberationMono(0)/m/n/10.95 One-delivery-truck in-future arrive with you
+r package between
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 634--634
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--634
+[]|\TU/LiberationMono(0)/m/n/10.95 The defendant formally pleaded not guilty to
+ all charges presented
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--634
+[]|\TU/LiberationMono(0)/m/n/10.95 One-defendant just-now formal plead not guil
+ty to any-charge
+ []
+
+[17]
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 641--641
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 641--641
+[]|\TU/LiberationMono(0)/m/n/10.95 Boil the water, add a pinch of salt, and sti
+r constantly until the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 641--641
+[]|\TU/LiberationMono(0)/m/n/10.95 Boil [Obj] one-water, add [Obj] one-pinch sa
+lt, and any-stir until
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 648--648
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--648
+[]|\TU/LiberationMono(0)/m/n/10.95 I have never felt this way about anyone befo
+re, you changed my
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--648
+[]|\TU/LiberationMono(0)/m/n/10.95 -1d *no fiil dis ue abaut *person bifor, u -
+1d ceinj i's laif
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--648
+[]|\TU/LiberationMono(0)/m/n/10.95 I-just-now-yesterday any-not feel this way a
+bout any-person
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 655--655
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--655
+[]|\TU/LiberationMono(0)/m/n/10.95 Go straight for two miles, then turn left at
+ the second traffic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--655
+[]|\TU/LiberationMono(0)/m/n/10.95 Go straight for two-mile, then turn left at 
+one-traffic-light two
+ []
+
+
+Overfull \hbox (1.71906pt too wide) in paragraph at lines 662--662
+ []|\TU/Cambria(0)/b/n/10.95 Chars|
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\TU/LiberationMono(0)/m/n/10.95 Hyperinflation destroys purchasing power and
+ severely halts
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\TU/LiberationMono(0)/m/n/10.95 >>haiperinflashun distroi tu pauer-bai an >s
+iirius holt tu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\TU/LiberationMono(0)/m/n/10.95 Extremely-hyperinflation now-destroy [Obj] p
+ower-buy and
+ []
+
+[18] [19] [20
+
+] [21
+
+] [22
+
+] [23
+
+] (MinEnglish.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+Package rerunfilecheck Info: File `MinEnglish.out' has not changed.
+(rerunfilecheck)             Checksum: 01FA38F85433E9BB0A59A6E6A5A0A4CA;6135.
+ ) 
+Here is how much of TeX's memory you used:
+ 16182 strings out of 409615
+ 301360 string characters out of 5774373
+ 2072191 words of memory out of 5000000
+ 38088 multiletter control sequences out of 15000+600000
+ 564711 words of font info for 104 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 79i,11n,119p,1009b,1311s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on MinEnglish.xdv (23 pages, 347292 bytes).

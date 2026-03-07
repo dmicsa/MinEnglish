@@ -1,10 +1,11 @@
-\documentclass[10pt,onecolumn,letterpaper]{article}
+\documentclass[12pt,onecolumn,letterpaper]{article}
 
 \usepackage{geometry}
 \geometry{letterpaper, margin=0.75in}
 
-\usepackage{times}
+\usepackage{fontspec}
 \usepackage{microtype}
+\usepackage{array}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
@@ -14,6 +15,11 @@
 \usepackage{enumitem}
 \usepackage{appendix}
 \usepackage{titlesec}
+\usepackage{indentfirst}
+
+\setmainfont{Cambria}
+\setmonofont{Liberation Mono}[Scale=MatchLowercase]
+\setlength{\parindent}{0pt}
 
 \newcommand{\sectionbreak}{\clearpage}
 
@@ -37,6 +43,24 @@
 }
 
 \newcommand{\me}[1]{\texttt{#1}}
+\newcommand{\mecode}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\corpusExample}[8]{%
+\subsubsection*{Ex.~#1}
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{2.45cm}X>{\raggedleft\arraybackslash}p{0.95cm}@{}}
+\toprule
+ & \textbf{Text} & \textbf{Chars} \\
+\midrule
+English & \mecode{#2} & #5 \\
+MinEnglish & \mecode{#3} & #6 \\
+Back & \mecode{#4} & \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\noindent\textbf{Compression:} #7\% $\Delta$\\
+\textbf{Observation:} #8\par\vspace{0.85em}
+}
 
 \title{\Huge\textbf{MinEnglish Language Specification}\\[0.2em]
 \LARGE\textit{V1.0.0 --- Stable Release}\\[0.3em]
@@ -382,120 +406,260 @@ Compression = character count reduction vs. standard English.
 
 \subsection{Simple Statements \& Universal Truths}
 
-\textbf{Ex.~1 --- Simple (45.7\%):} Three-part English determiner + progressive collapses to a single quantitative prefix plus present-tense default.\\
-\me{3cat sit on mat big red.} \textit{(25 chars vs.\ 46)}
+\corpusExample{1}
+{The three cats are sitting on the big red mat.}
+{3cat sit on mat big red.}
+{Three-cat sit on one-mat big red.}
+{46}{24}{47.8}
+{High compression comes from removing articles, auxiliary verbs, and redundant inflection.}
 
-\textbf{Ex.~2 --- General Truth (8.7\%):} Universal \me{*} and habitual verb removes ``is'' and ``that.'' Low compression: Latinate nouns resist optimization.\\
-\me{*dog bi *animal loial dat *luv *h's ouner.} \textit{(42 chars vs.\ 46)}
+\corpusExample{2}
+{Dogs are loyal animals that love their owners.}
+{*dog bi *animal loial dat *luv *h's ouner.}
+{Any-dog be any-animal loyal that any-love any-their owner.}
+{46}{42}{8.7}
+{Universal quantification keeps the meaning precise, but the sentence still depends on longer lexical material.}
 
 \subsection{Past Events, Times, and Futures}
 
-\textbf{Ex.~3 --- Past Event (47.5\%):} The vector \me{-1d} replaces ``Yesterday I'' in two chars. Number-nouns need no articles.\\
-\me{-1d bai 2buc an 3apel @ stor.} \textit{(29 chars vs.\ 59)}
+\corpusExample{3}
+{Yesterday I bought two books and three apples at the store.}
+{-1d bai 2buc an 3apel @ stor.}
+{I one-day-ago buy two-book and three-apple at one-store.}
+{59}{29}{50.8}
+{Temporal prefixes compress tense and adverbial framing into a short operator block.}
 
-\textbf{Ex.~4 --- Future + Question (48.9\%):} Bare numeric future \me{1d} replaces ``will you.'' The bare \me{?} at the end marks interrogative.\\
-\me{u 1d iit diner uid *i?} \textit{(23 chars vs.\ 45)}
+\corpusExample{4}
+{Will you eat dinner with us tomorrow evening?}
+{u1d iit diner uid *i?}
+{You in-one-day eat one-dinner with all-of-us?}
+{45}{22}{51.1}
+{The future operator and compact pronoun group remove a large auxiliary phrase.}
 
-\textbf{Ex.~5 --- Approximation (58.6\%):} \me{\~{}} replaces ``About fifty'' with two chars. ISO 24hr time avoids ``three o'clock in the afternoon.''\\
-\me{\~{}50person ariv @ \~{}15:00.} \textit{(24 chars vs.\ 58)}
+\corpusExample{5}
+{About fifty people arrived at approximately three o'clock.}
+{~50person ariv @ ~15:00.}
+{Approximately-fifty-person arrive at approximately-15:00.}
+{58}{24}{58.6}
+{Approximation and clock notation replace long English paraphrases very efficiently.}
 
-\textbf{Ex.~6 --- Specific DateTime (63.4\%):} Highest compression. ISO~8601 timestamp replaces 59 English chars.\\
-\me{miiting 2026-01-15 14:30 bi held.} \textit{(33 chars vs.\ 93)}
+\corpusExample{6}
+{The meeting was held on January fifteenth, twenty twenty-six, at two thirty in the afternoon.}
+{miiting 2026-01-15 14:30 bi held.}
+{One-meeting 2026-01-15 14:30 be held.}
+{93}{33}{64.5}
+{Absolute timestamp notation produces the strongest compression in the corpus.}
 
-\textbf{Ex.~7 --- Duration + Contrast (38.5\%):} The \me{:5Y} duration scalar replaces ``have been studying for five years.''\\
-\me{:5Y studi inglish but i !can spiic fluuent.} \textit{(45 chars vs.\ 78)}
+\corpusExample{7}
+{I have been studying English for five years but I still cannot speak fluently.}
+{:5Y studi inglish but i no can spiic fluuent.}
+{For-five-years study English but I not can speak fluent.}
+{78}{45}{42.3}
+{Duration marking removes a long perfect-progressive construction with one compact prefix.}
 
 \subsection{Complex Modifiers \& Voice}
 
-\textbf{Ex.~8 --- Intensity \& Compound (47.1\%):} Double combinator \me{>>niu} = ``extremely new.'' Compound \me{fuud-haus} = restaurant.\\
-\me{*i1d gou tu fuud-haus >>niu @ 19:00.} \textit{(39 chars vs.\ 78)}
+\corpusExample{8}
+{We are going to the extremely new restaurant tomorrow at seven in the evening.}
+{*i1d gou tu restaurant >>niu @ 19:00.}
+{All-of-us in-one-day go to one-restaurant extremely-new at 19:00.}
+{78}{38}{51.3}
+{Intensity markers and time notation shorten descriptive detail without changing meaning.}
 
-\textbf{Ex.~9 --- Passive Voice (47.5\%):} Emphatic \me{uoci!!} collapses ``Look out!'' Passive formed by fronting object before verb.\\
-\me{uoci!! uindou glas -0s breic bai man angri.} \textit{(44 chars vs.\ 60)}
+\corpusExample{9}
+{Look out! The glass window was just broken by the angry man.}
+{uac!! uindou glas breic bai man angri.}
+{Watch! One-window glass just-now break by one-man angry.}
+{60}{39}{35.0}
+{The warning idiom becomes a single imperative, and the passive stays compact.}
 
-\textbf{Ex.~10 --- Modality \& Possessive (29.2\%):} Modals \me{must} and \me{can} attach to pronominal temporal block. Genitive is universally \me{'s}.\\
-\me{s1must giv s's buc tu h bifor s1can start tu uorc.} \textit{(50 chars vs.\ 61)}
+\corpusExample{10}
+{She must give her book to him before she can start working.}
+{s1must giv s's buc tu h bifor s1can start tu uorc.}
+{She-now-must give her book to he before she-now-can start [Object] one-work.}
+{59}{50}{15.3}
+{Modal structure stays regular, but the sentence keeps more semantic content than the highest-gain cases.}
 
 \subsection{Conditionals, Logic \& Commands}
 
-\textbf{Ex.~11 --- Conditional (31.1\%):} \me{if} precedes clause directly. Negation \me{!} and object marker \me{tu} prevent ambiguity.\\
-\me{if u1!stop tu run, u1fol an breic tu u's 2leg.} \textit{(48 chars vs.\ 61)}
+\corpusExample{11}
+{If you don't stop running, you will fall and break your legs.}
+{if u1no stop tu run, u1fol an breic tu u's 2leg.}
+{If you-now-not stop [Obj] run, you-now-fall and break [Obj] your two-leg.}
+{61}{48}{21.3}
+{Conditionals remain explicit, but the clause still carries a lot of event content.}
 
-\textbf{Ex.~12 --- Conjunction Reduction (35.2\%):} Subject dropped after \me{an}. Habitual \me{*iit} replaces ``eat one piece of toast.''\\
-\me{*morning i*drinc 2cup cofi an *iit piis toust bifor uorc.} \textit{(58 chars vs.\ 82)}
+\corpusExample{12}
+{Every morning I drink two cups of coffee and eat one piece of toast before work.}
+{*morning i*drinc 2cup cofi an *iit piis toust bifor uorc.}
+{Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece toast before work.}
+{80}{58}{27.5}
+{Habitual markers reduce repeated aspect information across coordinated verbs.}
 
-\textbf{Ex.~13 --- Instructions (42.9\%):} Bare imperatives. Universal \me{*ting} (everything) in 5 chars.\\
-\me{teic 3eg, ad 2cup flaur, an mics *ting for 10m.} \textit{(48 chars vs.\ 84)}
+\corpusExample{13}
+{Take three eggs, add two cups of flour, and mix everything together for ten minutes.}
+{teic 3eg, ad 2cup flaur, an mics *ting for 10m.}
+{Take three-egg, add two-cup flour, and mix all-thing for ten-minutes.}
+{84}{48}{42.9}
+{Imperatives and generalized quantity tokens compress recipe-style instructions well.}
 
-\textbf{Ex.~14 --- Polite Request (32.7\%):} Deference operator \me{\~{}} on pronoun: \me{\~{}u giv} = ``Could you please give.''\\
-\me{\~{}u giv i 2glas uoter, i bi >tersti.} \textit{(35 chars vs.\ 55)}
+\corpusExample{14}
+{Please give me two glasses of water, I am very thirsty.}
+{~u giv i 2glas uoter, i bi >tersti.}
+{Polite-you-give I two-glass water, I be very-thirsty.}
+{55}{35}{36.4}
+{A deferential pronoun plus intensity marker replaces polite English padding.}
 
 \subsection{Dialogue \& Description}
 
-\textbf{Ex.~15 --- Conversation (34.4\%):} Interrogative \me{?haum} replaces ``how many.'' Number-nouns need no articles or pluralization morphemes.\\
-\me{"?haum ciald u hav?" "hav 2boi an gerl."} \textit{(41 chars vs.\ 64)}
+\corpusExample{15}
+{\"How many children do you have?\" \"I have two boys and one girl.\"}
+{"haum ciald u hav?" "i hav 2boi an gerl."}
+{"How-many child you have?" "I have two-boy and one-girl."}
+{64}{41}{35.9}
+{Question words and bare number-nouns remove articles and plural marking cleanly.}
 
-\textbf{Ex.~16 --- Narrative (30.6\%):} Vector \me{-1Y} = ``Last year.'' \me{cos} = ``because she wanted to understand.'' Compression limited by Latinate nouns.\\
-\me{s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s uant understand uerld mor gud.} \textit{(92 chars vs.\ 134)}
+\corpusExample{16}
+{Last year, she traveled to five different countries and learned three new languages because she wanted to understand the world better.}
+{s-1Y travel tu 5cuntri diferent an lern 3languij niu cos s-1Y uant understand uerld mor gud.}
+{She one-year-ago travel to five-country different and learn three-language new because she one-year-ago want understand one-world more good.}
+{134}{92}{31.3}
+{Long narrative content still benefits from temporal packing and reduced function words.}
 
-\textbf{Ex.~17 --- Probability (41.0\%):} Combined modal \me{\~{}can} = probabilistic future. Focus \me{!} targets negation scope.\\
-\me{i1d \~{}can gou tu parti, but s1luv h an h !luv s.} \textit{(50 chars vs.\ 69)}
+\corpusExample{17}
+{I might go to the party, but she loves him and he does not love her.}
+{i1d ~can gou tu parti, but s1luv h an h no luv s.}
+{I in-future might go to one-party, but she-now-love he and he not love she.}
+{68}{50}{26.5}
+{Probabilistic modality and regular negation compress a multi-clause sentence into a short linear form.}
 
-\textbf{Ex.~18 --- Family Description (8.5\%):} Lowest compression. Latinate nouns \me{hospital}, \me{iuniversiti} maintain protracted transcriptions.\\
-\me{i's bruder *uorc @ hospital an i's sister *studi @ iuniversiti.} \textit{(63 chars vs.\ 71)}
+\corpusExample{18}
+{My brother works at a hospital and my sister studies at the university.}
+{i's bruder *uorc @ hospital an i's sister *studi @ iuniversiti.}
+{My brother any-work at one-hospital and my sister any-study at one-university.}
+{71}{63}{11.3}
+{Compression stays low when the sentence depends on longer academic or Latinate roots.}
 
-\textbf{Ex.~19 --- Weather (27.1\%):} Preposition-verb \me{in parc} avoids ``be in.'' Temporal stacking \me{-0s start} = ``when it started.''\\
-\me{*ciald in parc uen t-0s start rein >hevi.} \textit{(43 chars vs.\ 70)}
+\corpusExample{19}
+{The children were playing in the park when it started raining heavily.}
+{*ciald in parc uen t-0s start rein >hevi.}
+{Any-child just-now in(verb) one-park when it-just-now start rain very-heavily.}
+{70}{42}{40.0}
+{Preposition-as-verb structure and intensity marking remove multiple English helper words.}
 
-\textbf{Ex.~20 --- Price Comparison (21.4\%):} Fronted \me{?haum}. Double combinator \me{>>ecspensiv} = ``too expensive.''\\
-\me{?haum dis car cost? t bi >>ecspensiv for i.} \textit{(43 chars vs.\ 56)}
+\corpusExample{20}
+{How much does this car cost? It is too expensive for me.}
+{haum dis car cost? t bi >>ecspensiv for i.}
+{How-much this car cost? It be extremely-expensive for I.}
+{56}{43}{23.2}
+{The syntax is regular, but the sentence still carries a relatively dense lexical load.}
 
 \subsection{Advanced Domains}
 
-\textbf{Ex.~21 --- Science Fiction (35.6\%):} Compound \me{speisship} (spaceship). Compound \me{caunt-daun} (countdown). Immediate past \me{-0s} = ``launched.''\\
-\me{speisship -0s lonci in orbit after caunt-daun hit 0.} \textit{(52 chars vs.\ 67)}
+\corpusExample{21}
+{The spaceship launched into orbit after the countdown reached zero.}
+{speisship lonci in orbit after caunt-daun hic 0.}
+{One-spaceship just-now launch in one-orbit after one-count-down hit zero.}
+{67}{48}{28.4}
+{Compound formation and numeric notation compress technical narrative moderately well.}
 
-\textbf{Ex.~22 --- Philosophy (25.0\%):} Bare infinitive \me{bi} = ``to be.'' Future-time token \me{taim} (future time) generalizes ``eventually.''\\
-\me{bi or !bi, dat bi cuesciun *i must anser in taim.} \textit{(51 chars vs.\ 71)}
+\corpusExample{22}
+{To be or not to be, that is the question we must all answer eventually.}
+{bi or no bi, dat bi cuesciun *i must anser in taim.}
+{Be or not be, that be one-question all-of-us must answer in future-time.}
+{71}{52}{26.8}
+{Logical operators and universal grouping reduce philosophical phrasing without altering structure.}
 
-\textbf{Ex.~23 --- Business (28.7\%):} Possessive \me{*i's compani} (our company). Compound \me{cein-suplai} (supply chain). Future \me{1Y} = next year.\\
-\me{*i's compani niid optimaiz t's cein-suplai tu macsimaiz *marjin-profit 1Y.} \textit{(74 chars vs.\ 83)}
+\corpusExample{23}
+{Our company needs to optimize its supply chain to maximize profit margins next year.}
+{*i's compani niid optimaiz t's suplai-cein tu macsimaiz *marjin-profit 1Y.}
+{All-of-us-possessive company need optimize its supply-chain to maximize any-margin-profit next-year.}
+{84}{74}{11.9}
+{Business vocabulary retains much of its length, so the gain comes mainly from grammar compression.}
 
-\textbf{Ex.~24 --- Politics (29.5\%):} Immediate past \me{-0s} compresses ``announced'' to two chars. Relative \me{dat 1d apect} avoids ``that will affect.''\\
-\me{prezident anauns nolisi-tacs niu dat 1d apect *pamili clas-midl.} \textit{(65 chars vs.\ 78)}
+\corpusExample{24}
+{The president announced a new tax policy that will affect middle class families.}
+{prezident anauns tacs-polisi niu dat 1d apect *pamili clas-midl.}
+{One-president just-now announce one-tax-policy new that in-future affect any-family class-middle.}
+{80}{65}{18.8}
+{The sentence stays readable, but domain terms limit the total reduction.}
 
-\textbf{Ex.~25 --- Medicine (36.9\%):} Root compound \me{bac-med} (antibiotics). Compound \me{bac-sic} (bacterial infection).\\
-\me{doctor prescraib tu *bac-med tu triit bac-sic >siirius peishent's.} \textit{(67 chars vs.\ 84)}
+\corpusExample{25}
+{The doctor prescribed antibiotics to treat the patient's severe bacterial infection.}
+{doctor prescraib tu antibiotik tu triit bacteriel infecshun >siirius peishent's.}
+{One-doctor just-now prescribe [Obj] one-antibiotic to treat one-bacterial-infection very-serious one-patient's.}
+{84}{80}{4.8}
+{Medical vocabulary is already compact in English, so regularization adds only a small gain.}
 
-\textbf{Ex.~26 --- Real Estate (34.2\%):} Compound \me{ruum-bed} (bedroom). Compound \me{iard-bac} (backyard). \me{nau} = ``currently.''\\
-\me{haus 3ruum-bed uid iard-bac big in marcet for rent nau.} \textit{(54 chars vs.\ 82)}
+\corpusExample{26}
+{The three bedroom house with a large backyard is currently on the market for rent.}
+{haus 3bedruum uid baciard big in marcet for rent nau.}
+{One-house three-bedroom with one-backyard big now-in one-market for rent now.}
+{82}{53}{35.4}
+{Compound nouns and the preposition-verb pattern remove several English helpers at once.}
 
-\textbf{Ex.~27 --- Programming (32.9\%):} Compound \me{sistem-bacup}. Root-compressed \me{otoristor} (auto-restore).\\
-\me{if server craish, sistem-bacup 1d otoristor daatabeis.} \textit{(55 chars vs.\ 81)}
+\corpusExample{27}
+{If the server crashes, the backup system will automatically restore the database.}
+{if server craish, backup sistem 1d otoristor daatabeis.}
+{If one-server crash, one-backup-system in-future auto-restore one-database.}
+{81}{55}{32.1}
+{The future operator and compound technical vocabulary shorten a longer procedural sentence.}
 
-\textbf{Ex.~28 --- Environment (34.0\%):} Ordered compound \me{gloubal-iurm} (global warming). Comparative \me{>fast dan} = ``faster than.''\\
-\me{gloubal-iurm melt *cap-ais poular >fast dan *saientist -1d pridiict.} \textit{(68 chars vs.\ 78)}
+\corpusExample{28}
+{Global warming is melting the polar ice caps faster than scientists predicted.}
+{gloubal uorming melt *cap-ais poular >fast dan *saientist -1d pridiict.}
+{Global-warming now-melt any-cap-ice polar more-fast than any-scientist past-predict.}
+{78}{71}{9.0}
+{Scientific phrasing compresses only slightly because most of the content sits in core roots.}
 
-\textbf{Ex.~29 --- Literature (29.2\%):} Immediate past \me{-0s} applies to both verbs simultaneously. Adjective post-modifier requires no comma.\\
-\me{uind uisper tru *trii >ould az muun silver raiz in scai.} \textit{(57 chars vs.\ 80)}
+\corpusExample{29}
+{The wind whispered through the ancient trees as the silver moon rose in the sky.}
+{uind uisper tru *trii >ould az muun silver raiz in scai.}
+{One-wind just-now whisper through any-tree very-old as one-moon silver just-now rise in one-sky.}
+{80}{57}{28.7}
+{Poetic description still benefits from post-modifiers and compact event framing.}
 
-\textbf{Ex.~30 --- Logistics (43.4\%):} Compound \me{truc-diliveri}. Preposition \me{btuiin} handles time ranges without ``o'clock.''\\
-\me{truc-diliveri 1d ariv uid u's pacij btuiin 12:00 an 14:00.} \textit{(59 chars vs.\ 78)}
+\corpusExample{30}
+{The delivery truck will arrive with your package between noon and two o'clock.}
+{diliveri truc 1d ariv uid u's pacij btuiin 12:00 an 14:00.}
+{One-delivery-truck in-future arrive with your package between 12:00 and 14:00.}
+{78}{58}{25.6}
+{Range notation and future marking reduce a long scheduling phrase into short tokens.}
 
-\textbf{Ex.~31 --- Legal (23.3\%):} Transliterations (\me{diipendant}, \me{ciarj}) resist optimization. Second-lowest compression.\\
-\me{diipendant formal pliid !gilti tu *ciarj prizent bai cort.} \textit{(59 chars vs.\ 80)}
+\corpusExample{31}
+{The defendant formally pleaded not guilty to all charges presented by the court.}
+{diipendant formal pliid no gilti tu *carj prizent bai tu cort.}
+{One-defendant just-now formal plead not guilty to any-charge present by [Obj] one-court.}
+{80}{63}{21.3}
+{Legal transliterations remain relatively long, so most savings come from grammar.}
 
-\textbf{Ex.~32 --- Cooking (34.3\%):} Bare imperatives. Object marker \me{tu} prevents ambiguity. Generic \me{*ster} = stir continuously.\\
-\me{boil tu uoter, ad tu pince solt, an *ster until sos >tic.} \textit{(58 chars vs.\ 82)}
+\corpusExample{32}
+{Boil the water, add a pinch of salt, and stir constantly until the sauce thickens.}
+{boil tu uoter, ad tu pinci solt, an *ster until sos >tic.}
+{Boil [Obj] one-water, add [Obj] one-pinch salt, and any-stir until one-sauce very-thick.}
+{82}{58}{29.3}
+{Imperatives and generic aspect markers compress procedural language effectively.}
 
-\textbf{Ex.~33 --- Emotion (40.5\%):} Temporal stacking \me{-0s -1d} = ``have never before.'' Universal negation \me{*!fiil} = ``never felt.''\\
-\me{-1d *!fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.} \textit{(67 chars vs.\ 75)}
+\corpusExample{33}
+{I have never felt this way about anyone before, you changed my entire life.}
+{-1d *no fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.}
+{I-just-now-yesterday any-not feel this way about any-person before, you yesterday change [Obj] my life very-whole.}
+{75}{67}{10.7}
+{Emotive language gains less because it relies on many core semantic roots.}
 
-\textbf{Ex.~34 --- Navigation (38.8\%):} Ordinal \me{tuu} for ``second'' traffic light. Interrogative-relative \me{u sii} resolves trailing reference.\\
-\me{gou streit for 2mail, den tern left @ lait-trapic tuu u sii.} \textit{(61 chars vs.\ 78)}
+\corpusExample{34}
+{Go straight for two miles, then turn left at the second traffic light you see.}
+{gou streit for 2mail, den tern left @ trapic lait tuu u1sii.}
+{Go straight for two-mile, then turn left at one-traffic-light two you-now-see.}
+{78}{60}{23.1}
+{Direction commands still compress through number notation and reduced function words.}
 
-\textbf{Ex.~35 --- Abstract Economics (33.3\%):} Compound \me{rap-mun} collapses ``hyperinflation'' from 14 chars to 7. Double combinator expresses ``hyper-'' intensity.\\
-\me{>>rap-mun distroi tu pauer-bai an >siirius holt tu divelopment-mun.} \textit{(67 chars vs.\ 81)}
+\corpusExample{35}
+{Hyperinflation destroys purchasing power and severely halts economic development.}
+{>>haiperinflashun distroi tu pauer-bai an >siirius holt tu divelopment economik.}
+{Extremely-hyperinflation now-destroy [Obj] power-buy and very-serious halt [Obj] development economic.}
+{81}{80}{1.2}
+{Low compression reflects the need to preserve long international academic vocabulary.}
 
 %---
 \section{Information Density Analysis}

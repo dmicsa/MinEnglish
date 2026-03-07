@@ -390,7 +390,7 @@ token is invariant and does not conjugate.
 
 ### 3.6 Sentence Structure & Conjunction Reduction
 
-**Subject + Time-Verb + Number-Object + Modifiers**
+#### Canonical Order
 
 ```efi
 laic cat >big.            → I like a very big cat.
@@ -604,7 +604,7 @@ Below is the strict parsing configuration for a standard declarative sentence.
 
 ## 5. Syntactic Reference Guide
 
-```
+```text
 NOUN:       <count><noun>         3cat, *dog, ~10person, 0eror
 PROPER:     <count><noun> <Name>  person Isabella, cuntri Spain
 MATH:       <num>/<num>, <num>.<num>  1/2apel, 0.5bol
@@ -629,7 +629,7 @@ ATTACH:     <pronoun><prefix>     h1laic, -1d, s1run
 
 ### Consonant Key
 
-```
+```text
 c = /k/ soft (cat, cum, bac)      k = /kʰ/ hard (king, kiip, kic)
 ci = /tʃ/ (ciald, cier, final i silent) sh = /ʃ/   ng = /ŋ/   zh = /ʒ/
 u = /w/ (uoter, uid)              i = /j/ (ies, iir)
@@ -638,7 +638,7 @@ t = /t/ (tinc, trii)              d = /d/ (de, dat)
 
 ### Pronouns
 
-```
+```text
 i = I/me       u = you        h = he-him
 s = she-her    t = it         dis = this      dat = that
 
@@ -670,7 +670,7 @@ Possess: i's, u's, h's, s's, t's
 |                | Text                                                       | Chars |
 | -------------- | ---------------------------------------------------------- | ----- |
 | **English**    | Dogs are loyal animals that love their owners.             | 46    |
-| **MinEnglish** | *dog bi *animal loial dat *luv *h's ouner.                 | 42    |
+| **MinEnglish** | \*dog bi \*animal loial dat \*luv \*h's ouner.             | 42    |
 | **↩ Back**     | Any-dog be any-animal loyal that any-love any-their owner. |       |
 
 > **Compression:** 8.7% Δ
@@ -678,7 +678,7 @@ Possess: i's, u's, h's, s's, t's
 > **Observation:** Universal deference operators (`*`) substitute complex plural
 > or aggregate noun constraints.
 
-### Relatives & Times
+### Appendix Corpus Continuation
 
 #### Ex. 3
 
@@ -786,6 +786,10 @@ adhere to the following universal formalisms:
 
 ## Appendix A: Full Comparative Corpus
 
+<!-- markdownlint-disable MD060 -->
+
+### Relatives & Times
+
 #### Ex. 4
 
 |                | Text                                          | Chars |
@@ -855,11 +859,11 @@ adhere to the following universal formalisms:
 
 #### Ex. 9
 
-|                | Text                                                               | Chars |
-| -------------- | ------------------------------------------------------------------ | ----- |
-| **English**    | Look out! The glass window was just broken by the angry man.       | 60    |
-| **MinEnglish** | uac!! uindou glas breic bai man angri.                            | 39    |
-| **↩ Back**     | Watch! One-window glass just-now break by one-man angry. |       |
+|                | Text                                                        | Chars |
+| -------------- | ----------------------------------------------------------- | ----- |
+| **English**    | Look out! The glass window was just broken by the angry man. | 60    |
+| **MinEnglish** | uac!! uindou glas breic bai man angri.                      | 39    |
+| **↩ Back**     | Watch! One-window glass just-now break by one-man angry.   |       |
 
 > **Compression:** 35.0% Δ
 >
@@ -894,10 +898,10 @@ adhere to the following universal formalisms:
 
 #### Ex. 12
 
-|                | Text                                                                                          | Chars |
-| -------------- | --------------------------------------------------------------------------------------------- | ----- |
+|                | Text                                                                                           | Chars |
+| -------------- | ---------------------------------------------------------------------------------------------- | ----- |
 | **English**    | Every morning I drink two cups of coffee and eat one piece of toast before work.              | 80    |
-| **MinEnglish** | *morning i*drinc 2cup cofi an \*iit piis toust bifor uorc.                                    | 58    |
+| **MinEnglish** | \*morning i\*drinc 2cup cofi an \*iit piis toust bifor uorc.                                 | 58    |
 | **↩ Back**     | Any-morning I-habitually-drink two-cup coffee and habitually-eat one-piece toast before work. |       |
 
 > **Compression:** 27.5% Δ
@@ -961,11 +965,11 @@ adhere to the following universal formalisms:
 
 #### Ex. 17
 
-|                | Text                                                                              | Chars |
-| -------------- | --------------------------------------------------------------------------------- | ----- |
-| **English**    | I might go to the party, but she loves him and he does not love her.              | 68    |
-| **MinEnglish** | i1d ~can gou tu parti, but s1luv h an h no luv s.                                | 50    |
-| **↩ Back**     | I in-future might go to one-party, but she-now-love he and he not love she. |       |
+|                | Text                                                                                | Chars |
+| -------------- | ----------------------------------------------------------------------------------- | ----- |
+| **English**    | I might go to the party, but she loves him and he does not love her.                | 68    |
+| **MinEnglish** | i1d ~can gou tu parti, but s1luv h an h no luv s.                                   | 50    |
+| **↩ Back**     | I in-future might go to one-party, but she-now-love he and he not love she.         |       |
 
 > **Compression:** 26.5% Δ
 >
@@ -974,11 +978,11 @@ adhere to the following universal formalisms:
 
 #### Ex. 18
 
-|                | Text                                                                           | Chars |
-| -------------- | ------------------------------------------------------------------------------ | ----- |
-| **English**    | My brother works at a hospital and my sister studies at the university.        | 71    |
-| **MinEnglish** | i's bruder *uorc @ hospital an i's sister *studi @ iuniversiti.                | 63    |
-| **↩ Back**     | My brother any-work at one-hospital and my sister any-study at one-university. |       |
+|                | Text                                                                            | Chars |
+| -------------- | ------------------------------------------------------------------------------- | ----- |
+| **English**    | My brother works at a hospital and my sister studies at the university.         | 71    |
+| **MinEnglish** | i's bruder \*uorc @ hospital an i's sister \*studi @ iuniversiti.              | 63    |
+| **↩ Back**     | My brother any-work at one-hospital and my sister any-study at one-university.  |       |
 
 > _Low compression — long Latin words maintain their length._
 
@@ -1002,11 +1006,11 @@ adhere to the following universal formalisms:
 
 #### Ex. 20
 
-|                | Text                                                              | Chars |
-| -------------- | ----------------------------------------------------------------- | ----- |
-| **English**    | How much does this car cost? It is too expensive for me.          | 56    |
-| **MinEnglish** | haum dis car cost? t bi >>ecspensiv for i.                       | 43    |
-| **↩ Back**     | How-much this car cost? It be extremely-expensive for I. |       |
+|                | Text                                                               | Chars |
+| -------------- | ------------------------------------------------------------------ | ----- |
+| **English**    | How much does this car cost? It is too expensive for me.           | 56    |
+| **MinEnglish** | haum dis car cost? t bi >>ecspensiv for i.                         | 43    |
+| **↩ Back**     | How-much this car cost? It be extremely-expensive for I.           |       |
 
 > **Compression:** 23.2% Δ
 >
@@ -1042,10 +1046,10 @@ adhere to the following universal formalisms:
 
 #### Ex. 23
 
-|                | Text                                                                                                 | Chars |
-| -------------- | ---------------------------------------------------------------------------------------------------- | ----- |
+|                | Text                                                                                                  | Chars |
+| -------------- | ----------------------------------------------------------------------------------------------------- | ----- |
 | **English**    | Our company needs to optimize its supply chain to maximize profit margins next year.                 | 84    |
-| **MinEnglish** | *i's compani niid optimaiz t's suplai-cein tu macsimaiz *marjin-profit 1Y.                           | 74    |
+| **MinEnglish** | \*i's compani niid optimaiz t's suplai-cein tu macsimaiz \*marjin-profit 1Y.                         | 74    |
 | **↩ Back**     | All-of-us-possessive company need optimize its supply-chain to maximize any-margin-profit next-year. |       |
 
 > **Compression:** 11.9% Δ
@@ -1106,10 +1110,10 @@ adhere to the following universal formalisms:
 
 #### Ex. 28
 
-|                | Text                                                                                 | Chars |
-| -------------- | ------------------------------------------------------------------------------------ | ----- |
-| **English**    | Global warming is melting the polar ice caps faster than scientists predicted.       | 78    |
-| **MinEnglish** | gloubal uorming melt *cap-ais poular >fast dan *saientist -1d pridiict.              | 71    |
+|                | Text                                                                                  | Chars |
+| -------------- | ------------------------------------------------------------------------------------- | ----- |
+| **English**    | Global warming is melting the polar ice caps faster than scientists predicted.        | 78    |
+| **MinEnglish** | gloubal uorming melt \*cap-ais poular >fast dan \*saientist -1d pridiict.            | 71    |
 | **↩ Back**     | Global-warming now-melt any-cap-ice polar more-fast than any-scientist past-predict. |       |
 
 > **Compression:** 9.0% Δ
@@ -1176,7 +1180,7 @@ adhere to the following universal formalisms:
 |                | Text                                                                                                               | Chars |
 | -------------- | ------------------------------------------------------------------------------------------------------------------ | ----- |
 | **English**    | I have never felt this way about anyone before, you changed my entire life.                                        | 75    |
-| **MinEnglish** | -1d *no fiil dis ue abaut *person bifor, u -1d ceinj i's laif >hol.                                                | 67    |
+| **MinEnglish** | -1d \*no fiil dis ue abaut \*person bifor, u -1d ceinj i's laif >hol. | 67    |
 | **↩ Back**     | I-just-now-yesterday any-not feel this way about any-person before, you yesterday change [Obj] my life very-whole. |       |
 
 > **Compression:** 10.7% Δ
@@ -1211,9 +1215,11 @@ adhere to the following universal formalisms:
 > **Observation:** Low compression due to retention of exact international
 > academic vocabulary.
 
+<!-- markdownlint-enable MD060 -->
+
 ## Appendix B: License
 
-```
+```text
 MIT License
 
 Copyright (c) 2026 Dan Micsa, PhD

@@ -472,7 +472,7 @@ However, the `!` symbol has a dual function depending on whitespace spacing:
   with _no space_, it acts as the logical NOT operator.
 
 - `uen u1gou??` = **When** do you go?! (Obnoxious Interrogation)
-- `uac!!` = Watch out! (Aggressive Warning)
+- `uoci!!` = Watch out! (Aggressive Warning)
 - `i !laic cat.` = I do **not** like cats. (Negation)
 - `!gud` = Not good.
 - `huu`, `uat`, `uai`, `haum` (who, what, why, how much-many).
@@ -541,7 +541,7 @@ surrender). MinEnglish rejects phrasal idioms entirely. A direct translation of
 "Look out" (`luc aut`) is strictly literal: point your eyes outside. **Rule:**
 Idioms must be translated to their literal action equivalent.
 
-- "Look out!" → `Uac!!` (Watch intensely!)
+- "Look out!" → `uoci!!` (Watch intensely!)
 - "Give up" → `stop tu trai` (Stop to try)
 
 ### 3.12 Orthographic Stress Engine
@@ -924,7 +924,7 @@ BT: All-of-us in-one-day go to one-restaurant extremely-new at 19:00.
 
 ```text
 EN: Look out! The glass window was just broken by the angry man. (60)
-ME: uac!! uindou glas breic bai man angri. (39)
+ME: uoci!! uindou glas breic bai man angri. (39)
 BT: Watch! One-window glass just-now break by one-man angry.
 ```
 
@@ -1084,7 +1084,7 @@ BT: How-much this car cost? It be extremely-expensive for I.
 
 ```text
 EN: The spaceship launched into orbit after the countdown reached zero. (67)
-ME: speisship lonci in orbit after caunt-daun hic 0. (48)
+ME: speisship lonci in orbit after caunt-daun hit 0. (48)
 BT: One-spaceship just-now launch in one-orbit after one-count-down hit zero.
 ```
 
@@ -1096,8 +1096,8 @@ BT: One-spaceship just-now launch in one-orbit after one-count-down hit zero.
 
 ```text
 EN: To be or not to be, that is the question we must all answer eventually. (71)
-ME: bi or no bi, dat bi cuesciun *i must anser in taim. (52)
-BT: Be or not be, that be one-question all-of-us must answer in future-time.
+ME: bi or !bi, dat bi cuesciun *i must anser in taim. (51)
+BT: Be or not-be, that be one-question all-of-us must answer in future-time.
 ```
 
 > **Compression:** 26.8% Δ
@@ -1122,7 +1122,7 @@ BT: All-of-us-possessive company need optimize its supply-chain to maximize any-
 
 ```text
 EN: The president announced a new tax policy that will affect middle class families. (80)
-ME: prezident anauns tacs-polisi niu dat 1d apect \*pamili clas-midl. (65)
+ME: prezident anauns tacs-polisi niu dat 1d afect *famili clas-midl. (65)
 BT: One-president just-now announce one-tax-policy new that in-future affect any-family class-middle.
 ```
 
@@ -1214,8 +1214,8 @@ BT: One-delivery-truck in-future arrive with your package between 12:00 and 14:0
 
 ```text
 EN: The defendant formally pleaded not guilty to all charges presented by the court. (80)
-ME: diipendant formal pliid !gilti tu *carj prizent bai tu cort. (63)
-BT: One-defendant just-now formal plead not guilty to any-charge present by [Obj] one-court.
+ME: diifendant formal pliid !gilti tu *ciarj prizent bai cort. (59)
+BT: One-defendant just-now formal plead not guilty to any-charge present by one-court.
 ```
 
 > **Compression:** 21.3% Δ

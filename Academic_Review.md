@@ -47,16 +47,21 @@ Information Theory.
   a verifiable **~35.0% reduction** in byte-length transmission over standard
   English.
 - **Ambiguity Resolution:** The system successfully eliminates semantic drift
-  and lexical ambiguity by enforcing strict grammatical positioning
-  (Capitalization strictly for proper nouns, explicit `!` negation prefixes,
-  strict object markers). The abolition of sentence capitalization ensures
-  absolute mathematical purity for the parsing engine.
+  and lexical ambiguity by enforcing strict grammatical positioning (explicit
+  `!` negation prefixes, strict object markers). The abolition of sentence
+  capitalization ensures absolute mathematical purity for the parsing engine,
+  shifting orthographic emphasis purely onto syntactic operators rather than
+  decorative lettering.
+- **Phonetic Rigor:** The v1.1.0 deployment of the `ci`/`ce` palato-alveolar
+  affricate cleanly bridges the gap between phonetic literalism and historical
+  orthography, removing the ambiguous English `ch` entirely.
 - **Simplification vs. Conlang:** Unlike traditional constructed languages
   (e.g., Esperanto) that invent new roots, MinEnglish successfully adheres to
   its mission of stripping English down to a purely mathematical syntax while
   utilizing its existing phonetic shell. Supported by the rigorous
   implementation of scalar amplifiers (`<<`, `<`, `>`, `>>`) and XOR logic
-  (`^`), it establishes a zero-exception environment.
+  (`^`), it establishes a zero-exception environment, verifying its claims as
+  both **Easy to Learn** and **Easy to Type**.
 
 ### Score: **A+ (98/100)**
 

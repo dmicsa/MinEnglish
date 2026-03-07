@@ -10,7 +10,7 @@ The result is a leaner, fully regular version of English: same vocabulary, same
 phonemes, same word order — but with predictable spelling, explicit quantities,
 and precise time operators.
 
-## Core Benefits
+## Key Features
 
 - **Easy to Learn:** MinEnglish abolishes the concept of "exceptions" entirely.
   There are no irregular verbs, no unpredictable spellings, and no confusing
@@ -21,8 +21,6 @@ and precise time operators.
   Noun escapes). Combined with mathematical operators (`^`, `&`, `|`, `<`, `>`)
   and highly compressed spelling, MinEnglish drastically reduces keystrokes and
   finger travel on hardware and mobile keyboards.
-
-## Key Design Principles
 
 1. **Phonetic Spelling**: Every letter has one sound, every sound one letter.
    (`knight` → `nait`, `enough` → `inuf`)

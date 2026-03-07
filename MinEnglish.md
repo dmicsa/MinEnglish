@@ -477,26 +477,24 @@ However, the `!` symbol has a dual function depending on whitespace spacing:
 - `!gud` = Not good.
 - `huu`, `uat`, `uai`, `haum` (who, what, why, how much-many).
 
-### 3.9.2 Clause Anchors (`co` / `oc`)
+### 3.9.2 Clause Anchors (`{` / `}`)
 
 Because MinEnglish removes grammatical cases and subordinate conjunction fluff,
 deeply center-embedded sentences will physically overwhelm human short-term
 memory (the phonological loop). **Rule:** When nesting 2 or more clauses, the
-speaker _must_ use `co` (clause open) to start the subset, and `oc` (clause
-close) to return to the parent set.
+speaker _must_ use the explicit mathematical scope operators `{` and `}` to
+define the boundaries of the nested subset.
 
-- `man co dat dog co dat ciald luv oc -1d bait oc run auei.`
+- `man { dat dog { dat ciald luv } -1d bait } run auei.`
 - _Translation:_ The man [who the dog [that the child loves] bit] ran away.
 
-> **Orthographic Scope Analysis (`{ }`):** In strictly written or digital
-> mediums, the auditory `co` and `oc` tokens can be visually substituted with
-> the standard logical syntax braces `{` and `}` for enhanced structural
-> readability. However, because typographical braces cannot be vocalized
-> efficiently without injecting multi-syllable Latin terms ("brace open", "brace
-> close"), the `co` / `oc` strings remain the mandatory universal phonetic
-> standard for speech.
+> **Phonetic Pronunciation (`co` / `oc`):** In purely auditory communication
+> where typographical braces cannot be vocalized efficiently, the strings `co`
+> (clause open) and `oc` (clause close) are the mandatory phonetic equivalents
+> to `{` and `}`.
 >
-> - **Syntax Mapping:** `man { dat dog { dat ciald luv } -1d bait } run auei.`
+> - **Auditory Mapping:**
+>   `man co dat dog co dat ciald luv oc -1d bait oc run auei.`
 
 ### 3.9.3 Arithmetic & Logical Operator Inventory
 
@@ -584,7 +582,7 @@ Below is the strict parsing configuration for a standard declarative sentence.
 <verb_block>    ::= [<temporal_vector>] <verb_root> [<adverb_phrase>]
 <temporal_vector> ::= <time_prefix> | <duration_prefix> | <unix_timestamp>
 
-<clause>        ::= "co" <connective> <sentence> "oc"
+<clause>        ::= "{" <connective> <sentence> "}"
 ```
 
 ---

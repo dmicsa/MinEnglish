@@ -21,17 +21,16 @@ and precise time operators.
   Noun escapes). Combined with mathematical operators (`^`, `&`, `|`, `<`, `>`)
   and highly compressed spelling, MinEnglish drastically reduces keystrokes and
   finger travel on hardware and mobile keyboards.
-
-1. **Phonetic Spelling**: Every letter has one sound, every sound one letter.
-   (`knight` → `nait`, `enough` → `inuf`)
-2. **Explicit Quantities**: Plurals are explicitly numbered to prevent noisy
-   channel errors. Singular is the default. (`3cat` instead of `cats`)
-3. **Regular Time**: Tenses are simplified into algebraic operators (`-1d`,
-   `1d`, `:5Y`) instead of irregular verbs.
-4. **Symbolic Operators**: Adopts familiar logical syntax (`&`, `|`, `^`, `>`,
-   `<`) to compress compound constructs.
-5. **Zero Exceptions**: Irregular verbs, irregular plurals, and silent letters
-   are completely abolished.
+- **Phonetic Spelling**: Every letter has one sound, every sound one letter.
+  (`knight` → `nait`, `enough` → `inuf`)
+- **Explicit Quantities**: Plurals are explicitly numbered to prevent noisy
+  channel errors. Singular is the default. (`3cat` instead of `cats`)
+- **Regular Time**: Tenses are simplified into algebraic operators (`-1d`, `1d`,
+  `:5Y`) instead of irregular verbs.
+- **Symbolic Operators**: Adopts familiar logical syntax (`&`, `|`, `^`, `>`,
+  `<`) to compress compound constructs.
+- **Zero Exceptions**: Irregular verbs, irregular plurals, and silent letters
+  are completely abolished.
 
 ## Performance
 

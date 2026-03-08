@@ -1,0 +1,17 @@
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.xdv
+*.synctex.gz
+
+# Python cache
+__pycache__/
+*.py[cod]
+.mypy_cache/
+
+# Editor/system noise
+.vscode/

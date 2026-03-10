@@ -2,6 +2,8 @@
 
 > _"uat u spic is uat u spel."_
 
+**Author:** Dan Micsa, PhD | **ORCID:** [0009-0004-3989-6067](https://orcid.org/0009-0004-3989-6067)
+
 MinEnglish is a formal simplification and clarification of Modern English. Its
 aim is to **remove** the inconsistencies, redundancies, and irregularities that
 burden English — not to replace it with something foreign.

@@ -3,8 +3,9 @@
 > _Uat u spic is uat u spel._
 
 **Author:** Dan Micsa, PhD (<<dmicsa@gmail.com>>) | **Repository:**
-[GitHub](https://github.com/dmicsa/MinEnglish) | **License:** MIT (see Appendix)
-| **Version:** 1.0.0 — March 2026
+[GitHub](https://github.com/dmicsa/MinEnglish) | **ORCID:**
+[0009-0004-3989-6067](https://orcid.org/0009-0004-3989-6067) | **License:** MIT
+(see Appendix) | **Version:** 1.0.0 — March 2026
 
 > **Versioning:** MinEnglish follows [Semantic Versioning](https://semver.org).
 > `MAJOR.MINOR.PATCH` — breaking rule changes increment MAJOR. `0.x.y` indicates
